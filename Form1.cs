@@ -134,6 +134,9 @@ namespace ClinicManagement
                 OpenChildForm(new Forms.UsageForm());
             else if (CurrentPageBtn == _import)
                 OpenChildForm(new Forms.ImportForm());
+            else if (CurrentPageBtn == _statistic)
+                OpenChildForm(new Forms.StatisticForm());
+
         }
 
         private void HandleClose(object sender, EventArgs e)

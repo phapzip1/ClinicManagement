@@ -15,6 +15,14 @@ namespace ClinicManagement.Forms
         public StatisticForm()
         {
             InitializeComponent();
+
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MM yyyy";
+            dateTimePicker1.ShowUpDown = true;
+
+            // data: STT, Ngày, Số Bệnh Nhân, Doanh Thu, Tỷ Lệ. (Báo cáo doanh thu theo tháng)
+            // tháng, năm --> tên thuốc, đơn vị, số lượng nhập, số lượng tồn kho, Tổng chi phí "full".(Báo cáo nhập thuốc)
         }
+
     }
 }
