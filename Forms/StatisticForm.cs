@@ -21,8 +21,7 @@ namespace ClinicManagement.Forms
             dateTimePicker1.ShowUpDown = true;
 
             // data: STT, Ngày, Số Bệnh Nhân, Doanh Thu, Tỷ Lệ. (Báo cáo doanh thu theo tháng)
-            // tháng, năm --> tên thuốc, đơn vị, số lượng nhập, số lượng tồn kho, Tổng chi phí "full".(Báo cáo nhập thuốc)
-        }
-
+            // tháng, năm --> tên thuốc, đơn vị, số lượng nhập, số lượng tồn kho, Tổng chi phí "full".(Báo cáo nhập thuốc)                     
+        }      
     }
 }
