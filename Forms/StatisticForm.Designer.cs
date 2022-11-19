@@ -34,7 +34,9 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbbYear = new CustomControls.RJControls.RJComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbbMonth = new CustomControls.RJControls.RJComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnExport = new ClinicManagement.Classes.RJButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -67,7 +69,9 @@
             // 
             this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(166)))), ((int)(((byte)(250)))));
             this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
-            this.gradientPanel1.Controls.Add(this.dateTimePicker1);
+            this.gradientPanel1.Controls.Add(this.cbbYear);
+            this.gradientPanel1.Controls.Add(this.label1);
+            this.gradientPanel1.Controls.Add(this.cbbMonth);
             this.gradientPanel1.Controls.Add(this.label2);
             this.gradientPanel1.Controls.Add(this.btnExport);
             this.gradientPanel1.Controls.Add(this.panel2);
@@ -78,26 +82,79 @@
             this.gradientPanel1.Size = new System.Drawing.Size(1189, 846);
             this.gradientPanel1.TabIndex = 13;
             // 
-            // dateTimePicker1
+            // cbbYear
             // 
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(148)))), ((int)(((byte)(235)))));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(294, 64);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 30);
-            this.dateTimePicker1.TabIndex = 6;
+            this.cbbYear.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbbYear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.cbbYear.BorderSize = 3;
+            this.cbbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbYear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbbYear.ForeColor = System.Drawing.Color.DimGray;
+            this.cbbYear.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbbYear.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(218)))), ((int)(((byte)(252)))));
+            this.cbbYear.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbbYear.Location = new System.Drawing.Point(415, 54);
+            this.cbbYear.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbbYear.Name = "cbbYear";
+            this.cbbYear.Padding = new System.Windows.Forms.Padding(3);
+            this.cbbYear.Size = new System.Drawing.Size(108, 41);
+            this.cbbYear.TabIndex = 16;
+            this.cbbYear.Texts = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(343, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 26);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Năm:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbbMonth
+            // 
+            this.cbbMonth.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbbMonth.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.cbbMonth.BorderSize = 3;
+            this.cbbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMonth.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbbMonth.ForeColor = System.Drawing.Color.DimGray;
+            this.cbbMonth.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbbMonth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbbMonth.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(218)))), ((int)(((byte)(252)))));
+            this.cbbMonth.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbbMonth.Location = new System.Drawing.Point(200, 54);
+            this.cbbMonth.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbbMonth.Name = "cbbMonth";
+            this.cbbMonth.Padding = new System.Windows.Forms.Padding(3);
+            this.cbbMonth.Size = new System.Drawing.Size(108, 41);
+            this.cbbMonth.TabIndex = 13;
+            this.cbbMonth.Texts = "";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
             this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(148, 68);
+            this.label2.Location = new System.Drawing.Point(112, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 26);
+            this.label2.Size = new System.Drawing.Size(81, 26);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Thời gian:";
+            this.label2.Text = "Tháng:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnExport
@@ -111,7 +168,7 @@
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExport.ForeColor = System.Drawing.Color.Black;
-            this.btnExport.Location = new System.Drawing.Point(850, 56);
+            this.btnExport.Location = new System.Drawing.Point(879, 49);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(180, 50);
             this.btnExport.TabIndex = 12;
@@ -228,7 +285,7 @@
             this.btnSeeInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeeInformation.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSeeInformation.ForeColor = System.Drawing.Color.Black;
-            this.btnSeeInformation.Location = new System.Drawing.Point(636, 56);
+            this.btnSeeInformation.Location = new System.Drawing.Point(666, 49);
             this.btnSeeInformation.Name = "btnSeeInformation";
             this.btnSeeInformation.Size = new System.Drawing.Size(180, 50);
             this.btnSeeInformation.TabIndex = 10;
@@ -246,6 +303,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "StatisticForm";
             this.Text = "Báo cáo doanh thu";
+            this.Load += new System.EventHandler(this.StatisticForm_Load);
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -258,7 +316,6 @@
         private SaveFileDialog saveFileDialog1;
         private TableLayoutPanel tableLayoutPanel4;
         private Classes.GradientPanel gradientPanel1;
-        private DateTimePicker dateTimePicker1;
         private Label label2;
         private Classes.RJButton btnExport;
         private Panel panel2;
@@ -269,5 +326,8 @@
         private DataGridViewTextBoxColumn DT;
         private DataGridViewTextBoxColumn TL;
         private Classes.RJButton btnSeeInformation;
+        private CustomControls.RJControls.RJComboBox cbbMonth;
+        private Label label1;
+        private CustomControls.RJControls.RJComboBox cbbYear;
     }
 }

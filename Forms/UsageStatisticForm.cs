@@ -21,17 +21,23 @@ namespace ClinicManagement.Forms
     {
         DataTable dtBAOCAOSUDUNGTHUOC = new DataTable();       
         DBAccess dBAccess = new DBAccess();
+        int yearnow = DateTime.Now.Year;
+        int monthnow = DateTime.Now.Month;
         public UsageStatisticForm()
         {
-            InitializeComponent();
-            dateTimePicker4.Format = DateTimePickerFormat.Custom;
-            dateTimePicker4.CustomFormat = "MM yyyy";
-            dateTimePicker4.ShowUpDown = true;
+            InitializeComponent();            
 
             dataGridView4.AllowUserToAddRows = false;         
             saveFileDialog1.Filter = "Excel |*.xlsx";
             saveFileDialog1.Title = "Báo cáo doanh thu theo tháng";
-            
+
+
+            cbbMonth.Texts = "10";
+            cbbYear.Texts = "2022";
+            for (int i=2000; i <= yearnow ; i++)  // fill cbbYear
+            {
+                cbbYear.Items.Add(i.ToString());
+            }
         }
 
         private void ToExcel(DataGridView dataGridView1, string fileName)
@@ -84,7 +90,9 @@ namespace ClinicManagement.Forms
         }
         private void btnExport_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (dataGridView4.Rows.Count == 0)
+                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem thông tin' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
                 ToExcel(dataGridView4, saveFileDialog1.FileName);
@@ -92,8 +100,8 @@ namespace ClinicManagement.Forms
         }
         private void btnSeeInformation2_Click(object sender, EventArgs e)
         {
-            string month = dateTimePicker4.Value.ToString("MM");
-            string year = dateTimePicker4.Value.ToString("yyyy");
+            string month = cbbMonth.SelectedItem.ToString();
+            string year = cbbYear.SelectedItem.ToString();
 
             dataGridView4.Rows.Clear();
             dtBAOCAOSUDUNGTHUOC.Clear();
@@ -113,6 +121,12 @@ namespace ClinicManagement.Forms
             {
                 MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void UsageStatisticForm_Load(object sender, EventArgs e)
+        {
+            cbbMonth.SelectedItem = monthnow.ToString();
+            cbbYear.SelectedItem = yearnow.ToString();
         }
     }
 }

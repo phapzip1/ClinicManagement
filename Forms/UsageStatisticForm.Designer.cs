@@ -50,18 +50,20 @@
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.cbbYear = new CustomControls.RJControls.RJComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbbMonth = new CustomControls.RJControls.RJComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnExport = new ClinicManagement.Classes.RJButton();
+            this.btnSeeInformation = new ClinicManagement.Classes.RJButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.btnSeeInformation = new ClinicManagement.Classes.RJButton();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -297,38 +299,93 @@
             // 
             this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(166)))), ((int)(((byte)(250)))));
             this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
-            this.gradientPanel1.Controls.Add(this.dateTimePicker4);
+            this.gradientPanel1.Controls.Add(this.cbbYear);
             this.gradientPanel1.Controls.Add(this.label7);
+            this.gradientPanel1.Controls.Add(this.cbbMonth);
+            this.gradientPanel1.Controls.Add(this.label8);
             this.gradientPanel1.Controls.Add(this.btnExport);
-            this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Controls.Add(this.btnSeeInformation);
+            this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(1185, 876);
             this.gradientPanel1.TabIndex = 14;
             // 
-            // dateTimePicker4
+            // cbbYear
             // 
-            this.dateTimePicker4.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(148)))), ((int)(((byte)(235)))));
-            this.dateTimePicker4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker4.Location = new System.Drawing.Point(294, 64);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(151, 30);
-            this.dateTimePicker4.TabIndex = 6;
+            this.cbbYear.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbbYear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.cbbYear.BorderSize = 3;
+            this.cbbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbYear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbbYear.ForeColor = System.Drawing.Color.DimGray;
+            this.cbbYear.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbbYear.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(218)))), ((int)(((byte)(252)))));
+            this.cbbYear.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbbYear.Location = new System.Drawing.Point(419, 52);
+            this.cbbYear.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbbYear.Name = "cbbYear";
+            this.cbbYear.Padding = new System.Windows.Forms.Padding(3);
+            this.cbbYear.Size = new System.Drawing.Size(108, 41);
+            this.cbbYear.TabIndex = 22;
+            this.cbbYear.Texts = "";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
             this.label7.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(148, 68);
+            this.label7.Location = new System.Drawing.Point(347, 59);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 26);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Thời gian:";
+            this.label7.Size = new System.Drawing.Size(66, 26);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Năm:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbbMonth
+            // 
+            this.cbbMonth.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbbMonth.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.cbbMonth.BorderSize = 3;
+            this.cbbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbMonth.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbbMonth.ForeColor = System.Drawing.Color.DimGray;
+            this.cbbMonth.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cbbMonth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbbMonth.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(218)))), ((int)(((byte)(252)))));
+            this.cbbMonth.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbbMonth.Location = new System.Drawing.Point(204, 52);
+            this.cbbMonth.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbbMonth.Name = "cbbMonth";
+            this.cbbMonth.Padding = new System.Windows.Forms.Padding(3);
+            this.cbbMonth.Size = new System.Drawing.Size(108, 41);
+            this.cbbMonth.TabIndex = 20;
+            this.cbbMonth.Texts = "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label8.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(116, 59);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 26);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Tháng:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnExport
             // 
@@ -341,14 +398,34 @@
             this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExport.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExport.ForeColor = System.Drawing.Color.Black;
-            this.btnExport.Location = new System.Drawing.Point(850, 56);
+            this.btnExport.Location = new System.Drawing.Point(883, 47);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(180, 50);
-            this.btnExport.TabIndex = 12;
+            this.btnExport.TabIndex = 19;
             this.btnExport.Text = "In báo cáo";
             this.btnExport.TextColor = System.Drawing.Color.Black;
             this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnSeeInformation
+            // 
+            this.btnSeeInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnSeeInformation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnSeeInformation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnSeeInformation.BorderRadius = 20;
+            this.btnSeeInformation.BorderSize = 2;
+            this.btnSeeInformation.FlatAppearance.BorderSize = 0;
+            this.btnSeeInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeeInformation.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSeeInformation.ForeColor = System.Drawing.Color.Black;
+            this.btnSeeInformation.Location = new System.Drawing.Point(670, 47);
+            this.btnSeeInformation.Name = "btnSeeInformation";
+            this.btnSeeInformation.Size = new System.Drawing.Size(180, 50);
+            this.btnSeeInformation.TabIndex = 18;
+            this.btnSeeInformation.Text = "Xem thông tin";
+            this.btnSeeInformation.TextColor = System.Drawing.Color.Black;
+            this.btnSeeInformation.UseVisualStyleBackColor = false;
+            this.btnSeeInformation.Click += new System.EventHandler(this.btnSeeInformation2_Click);
             // 
             // panel2
             // 
@@ -410,26 +487,6 @@
             this.dataGridView4.Size = new System.Drawing.Size(1076, 669);
             this.dataGridView4.TabIndex = 1;
             // 
-            // btnSeeInformation
-            // 
-            this.btnSeeInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSeeInformation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSeeInformation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnSeeInformation.BorderRadius = 20;
-            this.btnSeeInformation.BorderSize = 2;
-            this.btnSeeInformation.FlatAppearance.BorderSize = 0;
-            this.btnSeeInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeeInformation.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSeeInformation.ForeColor = System.Drawing.Color.Black;
-            this.btnSeeInformation.Location = new System.Drawing.Point(636, 56);
-            this.btnSeeInformation.Name = "btnSeeInformation";
-            this.btnSeeInformation.Size = new System.Drawing.Size(180, 50);
-            this.btnSeeInformation.TabIndex = 10;
-            this.btnSeeInformation.Text = "Xem thông tin";
-            this.btnSeeInformation.TextColor = System.Drawing.Color.Black;
-            this.btnSeeInformation.UseVisualStyleBackColor = false;
-            this.btnSeeInformation.Click += new System.EventHandler(this.btnSeeInformation2_Click);
-            // 
             // STT
             // 
             this.STT.FillWeight = 70F;
@@ -476,6 +533,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UsageStatisticForm";
             this.Text = "Báo cáo sử dụng thuốc";
+            this.Load += new System.EventHandler(this.UsageStatisticForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -517,17 +575,19 @@
         private DateTimePicker dateTimePicker3;
         private Label label6;
         private Classes.GradientPanel gradientPanel1;
-        private DateTimePicker dateTimePicker4;
-        private Label label7;
-        private Classes.RJButton btnExport;
         private Panel panel2;
         private DataGridView dataGridView4;
-        private Classes.RJButton btnSeeInformation;
         private SaveFileDialog saveFileDialog1;
         private DataGridViewTextBoxColumn STT;
         private DataGridViewTextBoxColumn MT;
         private DataGridViewTextBoxColumn DVT;
         private DataGridViewTextBoxColumn SL;
         private DataGridViewTextBoxColumn SLD;
+        private CustomControls.RJControls.RJComboBox cbbYear;
+        private Label label7;
+        private CustomControls.RJControls.RJComboBox cbbMonth;
+        private Label label8;
+        private Classes.RJButton btnExport;
+        private Classes.RJButton btnSeeInformation;
     }
 }

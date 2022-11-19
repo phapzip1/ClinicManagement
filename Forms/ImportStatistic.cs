@@ -17,16 +17,20 @@ namespace ClinicManagement.Forms
     {
         DataTable dtBAOCAONHAPTHUOC = new DataTable();      
         DBAccess dBAccess = new DBAccess();
+        int yearnow = DateTime.Now.Year;
+        int monthnow = DateTime.Now.Month;
         public ImportStatistic()
         {
             InitializeComponent();
-            dateTimePicker3.Format = DateTimePickerFormat.Custom;
-            dateTimePicker3.CustomFormat = "MM yyyy";
-            dateTimePicker3.ShowUpDown = true;
-
+            
             dataGridView1.AllowUserToAddRows = false;
             saveFileDialog1.Filter = "Excel |*.xlsx";
             saveFileDialog1.Title = "Báo cáo doanh thu theo tháng";
+
+            for (int i = 2000; i <= yearnow; i++)  // fill cbbYear
+            {
+                cbbYear.Items.Add(i.ToString());
+            }
         }
 
         private void ToExcel(DataGridView dataGridView1, string fileName)
@@ -79,7 +83,9 @@ namespace ClinicManagement.Forms
         }
         private void btnExport_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (dataGridView1.Rows.Count == 0)
+                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem thông tin' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
                 ToExcel(dataGridView1, saveFileDialog1.FileName);
@@ -87,8 +93,8 @@ namespace ClinicManagement.Forms
         }
         private void btnSeeInformation3_Click(object sender, EventArgs e)
         {
-            string month = dateTimePicker3.Value.ToString("MM");
-            string year = dateTimePicker3.Value.ToString("yyyy");
+            string month = cbbMonth.SelectedItem.ToString();
+            string year = cbbYear.SelectedItem.ToString();
 
             dtBAOCAONHAPTHUOC.Clear();
             dataGridView1.Rows.Clear();
@@ -107,6 +113,12 @@ namespace ClinicManagement.Forms
             }
             else            
                 MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);           
+        }
+
+        private void ImportStatistic_Load(object sender, EventArgs e)
+        {
+            cbbMonth.SelectedItem = monthnow.ToString();
+            cbbYear.SelectedItem = yearnow.ToString();
         }
     }
 }

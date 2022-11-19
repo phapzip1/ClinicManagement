@@ -1,4 +1,5 @@
-﻿using DatabaseProject;
+﻿using ClinicManagement.Classes;
+using DatabaseProject;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ClinicManagement.Forms
 {
@@ -16,19 +18,22 @@ namespace ClinicManagement.Forms
     {
         DBAccess dBAccess = new DBAccess();
         DataTable dtCTBAOCAODOANHTHU = new DataTable();
-        
+        int yearnow = DateTime.Now.Year;
+        int monthnow = DateTime.Now.Month;
         public StatisticForm()
         {
             InitializeComponent();
-
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.CustomFormat = "MM yyyy";
-            dateTimePicker1.ShowUpDown = true;          
+                 
             dataGridView1.AllowUserToAddRows = false;         
             saveFileDialog1.Filter = "Excel |*.xlsx";
             saveFileDialog1.Title = "Báo cáo doanh thu theo tháng";
+           
+            for (int i=2000; i <= yearnow ; i++)  // fill cbbYear
+            {
+                cbbYear.Items.Add(i.ToString());
+            }
+            
         }
-              
         private void ToExcel(DataGridView dataGridView1, string fileName)
         {
             //khai báo thư viện hỗ trợ Microsoft.Office.Interop.Excel
@@ -79,7 +84,9 @@ namespace ClinicManagement.Forms
         }
         private void btnExport_Click(object sender, EventArgs e)
         {                      
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (dataGridView1.Rows.Count == 0)
+                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem thông tin' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
                 ToExcel(dataGridView1, saveFileDialog1.FileName);
@@ -87,9 +94,10 @@ namespace ClinicManagement.Forms
         }
 
         private void btnSeeInformation_Click_1(object sender, EventArgs e)
-        {
-            string month = dateTimePicker1.Value.ToString("MM");
-            string year = dateTimePicker1.Value.ToString("yyyy");
+        {                
+
+            string month = cbbMonth.SelectedItem.ToString();          
+            string year = cbbYear.SelectedItem.ToString();
 
             dtCTBAOCAODOANHTHU.Clear();
             dataGridView1.Rows.Clear();
@@ -109,6 +117,11 @@ namespace ClinicManagement.Forms
             {
                 MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+        private void StatisticForm_Load(object sender, EventArgs e)
+        {          
+            cbbMonth.SelectedItem = monthnow.ToString();          
+            cbbYear.SelectedItem = yearnow.ToString();
         }
     }
 }
