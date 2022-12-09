@@ -91,7 +91,7 @@ namespace ClinicManagement.Forms
         private void btnExport_Click(object sender, EventArgs e)
         {
             if (dataGridView4.Rows.Count == 0)
-                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem thông tin' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem báo cáo' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog

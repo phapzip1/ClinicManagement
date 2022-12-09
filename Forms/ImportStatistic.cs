@@ -84,7 +84,7 @@ namespace ClinicManagement.Forms
         private void btnExport_Click(object sender, EventArgs e)
         {
             if (dataGridView1.Rows.Count == 0)
-                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem thông tin' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem báo cáo' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
@@ -93,6 +93,7 @@ namespace ClinicManagement.Forms
         }
         private void btnSeeInformation3_Click(object sender, EventArgs e)
         {
+            int totalprice = 0;
             string month = cbbMonth.SelectedItem.ToString();
             string year = cbbYear.SelectedItem.ToString();
 
@@ -104,15 +105,25 @@ namespace ClinicManagement.Forms
             dBAccess.readDatathroughAdapter(query1, dtBAOCAONHAPTHUOC);
 
             if (dtBAOCAONHAPTHUOC.Rows.Count >= 1)
-            {
+            {        
                 for (int i = 0; i < dtBAOCAONHAPTHUOC.Rows.Count; i++)
                 {   
                     dataGridView1.Rows.Add(i + 1, dtBAOCAONHAPTHUOC.Rows[i]["MATHUOC"].ToString(), dtBAOCAONHAPTHUOC.Rows[i]["MADONVI"].ToString(), dtBAOCAONHAPTHUOC.Rows[i]["TENDV"].ToString(), dtBAOCAONHAPTHUOC.Rows[i]["SLNHAP"].ToString(), dtBAOCAONHAPTHUOC.Rows[i]["SLTON"].ToString(), dtBAOCAONHAPTHUOC.Rows[i]["TONGTIEN"].ToString());
-
+                    totalprice += int.Parse(dtBAOCAONHAPTHUOC.Rows[i]["TONGTIEN"].ToString());
                 }
+
+                lbltotalprice.Text = totalprice.ToString() + " VNĐ";
+                groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
             }
-            else            
-                MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);           
+            else
+            {
+                MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lbltotalprice.Text = ".................................";
+                groupBox1.Text = "Tổng hợp báo cáo";
+            }
+
+            
+                
         }
 
         private void ImportStatistic_Load(object sender, EventArgs e)
