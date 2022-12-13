@@ -113,8 +113,6 @@ namespace ClinicManagement.Forms
                     dataGridView1.Rows.Add(i + 1, dtCTBAOCAODOANHTHU.Rows[i]["NGAY"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["SOBENHNHAN"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["DOANHTHU"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["TYLE"].ToString());
                     totalpatients += int.Parse(dtCTBAOCAODOANHTHU.Rows[i]["SOBENHNHAN"].ToString());
                     totalrevenue += int.Parse(dtCTBAOCAODOANHTHU.Rows[i]["DOANHTHU"].ToString());
-                    
-
                 }
 
                 lbltotalpatients.Text = totalpatients.ToString() + " người";
