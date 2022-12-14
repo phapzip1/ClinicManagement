@@ -3,62 +3,110 @@ using System;
 using ClinicManagement.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-
-#nullable disable
 
 namespace ClinicManagement.Migrations
 {
     [DbContext(typeof(ClinicDbContext))]
-    [Migration("20221212170453_Clinic")]
+    [Migration("20221214062907_Clinic")]
     partial class Clinic
     {
-        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64)
+                .HasAnnotation("ProductVersion", "5.0.13");
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            modelBuilder.Entity("ClinicManagement.DTOs.BillDTO", b =>
+                {
+                    b.Property<byte[]>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varbinary(16)");
+
+                    b.Property<uint>("MedicalCost")
+                        .HasColumnType("int unsigned");
+
+                    b.Property<byte[]>("MedicalNoteId")
+                        .IsRequired()
+                        .HasColumnType("varbinary(16)");
+
+                    b.Property<uint>("MedicineCost")
+                        .HasColumnType("int unsigned");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MedicalNoteId");
+
+                    b.ToTable("Bills");
+                });
 
             modelBuilder.Entity("ClinicManagement.DTOs.IllnessDTO", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<byte[]>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("varbinary(16)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Symptom")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("Illness");
                 });
 
-            modelBuilder.Entity("ClinicManagement.DTOs.MedicalNoteDTO", b =>
+            modelBuilder.Entity("ClinicManagement.DTOs.ImportDTO", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<byte[]>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("varbinary(16)");
 
                     b.Property<DateTime>("CreateIn")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
-                    b.Property<Guid>("IllnessId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<uint>("Price")
+                        .HasColumnType("int unsigned");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Imports");
+                });
+
+            modelBuilder.Entity("ClinicManagement.DTOs.ImportDetailDTO", b =>
+                {
+                    b.Property<byte[]>("ImportId")
+                        .HasColumnType("varbinary(16)");
+
+                    b.Property<byte[]>("MedicineId")
+                        .HasColumnType("varbinary(16)");
+
+                    b.HasKey("ImportId", "MedicineId");
+
+                    b.ToTable("ImportDetail");
+                });
+
+            modelBuilder.Entity("ClinicManagement.DTOs.MedicalNoteDTO", b =>
+                {
+                    b.Property<byte[]>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("varbinary(16)");
+
+                    b.Property<DateTime>("CreateIn")
+                        .HasColumnType("datetime");
+
+                    b.Property<byte[]>("IllnessId")
+                        .IsRequired()
+                        .HasColumnType("varbinary(16)");
 
                     b.Property<string>("PatientId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("varchar(767)");
 
                     b.HasKey("Id");
 
@@ -71,17 +119,18 @@ namespace ClinicManagement.Migrations
 
             modelBuilder.Entity("ClinicManagement.DTOs.MedicalNoteDetailDTO", b =>
                 {
-                    b.Property<Guid>("MedicineId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<byte[]>("MedicineId")
+                        .HasColumnType("varbinary(16)");
 
-                    b.Property<Guid>("MedicalNoteId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<byte[]>("MedicalNoteId")
+                        .HasColumnType("varbinary(16)");
 
-                    b.Property<Guid>("MethodId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<byte[]>("MethodId")
+                        .IsRequired()
+                        .HasColumnType("varbinary(16)");
 
-                    b.Property<long>("Quantity")
-                        .HasColumnType("bigint");
+                    b.Property<uint>("Quantity")
+                        .HasColumnType("int unsigned");
 
                     b.HasKey("MedicineId", "MedicalNoteId");
 
@@ -94,22 +143,23 @@ namespace ClinicManagement.Migrations
 
             modelBuilder.Entity("ClinicManagement.DTOs.MedicineDTO", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<byte[]>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("varbinary(16)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
-                    b.Property<long>("Price")
-                        .HasColumnType("bigint");
+                    b.Property<uint>("Price")
+                        .HasColumnType("int unsigned");
 
-                    b.Property<long>("Stock")
-                        .HasColumnType("bigint");
+                    b.Property<uint>("Stock")
+                        .HasColumnType("int unsigned");
 
-                    b.Property<Guid>("UnitId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<byte[]>("UnitId")
+                        .IsRequired()
+                        .HasColumnType("varbinary(16)");
 
                     b.HasKey("Id");
 
@@ -120,13 +170,13 @@ namespace ClinicManagement.Migrations
 
             modelBuilder.Entity("ClinicManagement.DTOs.MethodDTO", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<byte[]>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("varbinary(16)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -136,22 +186,22 @@ namespace ClinicManagement.Migrations
             modelBuilder.Entity("ClinicManagement.DTOs.PatientDTO", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("varchar(767)");
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("Dob")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Fullname")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Gender")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -160,17 +210,28 @@ namespace ClinicManagement.Migrations
 
             modelBuilder.Entity("ClinicManagement.DTOs.UnitDTO", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<byte[]>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("varbinary(16)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("Units");
+                });
+
+            modelBuilder.Entity("ClinicManagement.DTOs.BillDTO", b =>
+                {
+                    b.HasOne("ClinicManagement.DTOs.MedicalNoteDTO", "MedicalNote")
+                        .WithMany()
+                        .HasForeignKey("MedicalNoteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MedicalNote");
                 });
 
             modelBuilder.Entity("ClinicManagement.DTOs.MedicalNoteDTO", b =>

@@ -10,7 +10,6 @@
             MedicineCost = medicineCost;
             MedicalCost = medicalCost;
         }
-
         public Guid Id { get; }
         public Guid MedicalNoteId { get; }
         public string Name { get; }

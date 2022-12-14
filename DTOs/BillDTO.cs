@@ -10,7 +10,6 @@ namespace ClinicManagement.DTOs
         [ForeignKey("MedicalNote")]
         public Guid MedicalNoteId { get; set; }
         public virtual MedicalNoteDTO MedicalNote { get; set; }
-        public string Name { get; set; }
         public uint MedicineCost { get; set; }
         public uint MedicalCost { get; set; }
     }

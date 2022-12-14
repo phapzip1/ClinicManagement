@@ -1,8 +1,8 @@
 ﻿namespace ClinicManagement.Models
 {
-    public class Ilness
+    public class Illness
     {
-        public Ilness(Guid id, string name, string symptom)
+        public Illness(Guid id, string name, string symptom)
         {
             Id = id;
             Name = name;

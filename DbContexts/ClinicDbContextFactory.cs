@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace ClinicManagement.DbContexts
 {
@@ -14,7 +13,7 @@ namespace ClinicManagement.DbContexts
 
         public ClinicDbContext CreateDbContext()
         {
-            DbContextOptions option = new DbContextOptionsBuilder().UseSqlServer(_connectionString).Options;
+            DbContextOptions option = new DbContextOptionsBuilder().UseMySQL(_connectionString).Options;
             return new ClinicDbContext(option);
         }
     }

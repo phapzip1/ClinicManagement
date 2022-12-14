@@ -1,20 +1,21 @@
 using ClinicManagement.DbContexts;
+using ClinicManagement.Services;
 using Microsoft.EntityFrameworkCore;
+using ClinicManagement.Models;
 
 namespace ClinicManagement
 {
     internal static class Program
     {
-        private const string CONNECTION_STRING = "Server=DESKTOP-OUTFK9N;Database=Clinic;Integrated Security=true;Trust Server Certificate=true;";
+        private const string CONNECTION_STRING = "server=clinic-do-user-13077884-0.b.db.ondigitalocean.com;port=25060;database=clinic;user=doadmin;password=AVNS_9tiZWj1IIbWbJFEFmxw;";
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            DbContextOptions options = new DbContextOptionsBuilder().UseSqlServer("Server=DESKTOP-OUTFK9N;Database=Clinic;Integrated Security=true;Trust Server Certificate=true;").Options;
-
-            using (ClinicDbContext dbContext = new ClinicDbContext(options))
+            ClinicDbContextFactory _clinicDbContextFactory = new ClinicDbContextFactory(CONNECTION_STRING);
+            using (ClinicDbContext dbContext = _clinicDbContextFactory.CreateDbContext())
             {
                 dbContext.Database.Migrate();
             }
