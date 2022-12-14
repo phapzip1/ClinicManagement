@@ -21,5 +21,10 @@ namespace ClinicManagement.Forms
         {
 
         }
+
+        private void pl_IllnessInfor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

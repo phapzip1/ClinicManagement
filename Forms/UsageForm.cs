@@ -26,30 +26,30 @@ namespace ClinicManagement.Forms
         //Hàm 
         private void ResetMonitor1()
         {
-            tbxUnitID.Texts = string.Empty;
+            //tbxUnitID.Texts = string.Empty;
             tbxUnitName.Text = string.Empty;
 
-            tbxUnitID.ReadOnly= false;
+            //tbxUnitID.ReadOnly= false;
             tbxUnitName.ReadOnly= false;
         }
 
         private void ReserMonitor2()
         {
-            tbxUsageID.Text = string.Empty;
+            //tbxUsageID.Text = string.Empty;
             tbxUsageName.Text = string.Empty;
 
-            tbxUsageID.ReadOnly= false;
+           // tbxUsageID.ReadOnly= false;
             tbxUsageName.ReadOnly= false;
         }
         //Xử lý
         private void btnAddUnit_Click(object sender, EventArgs e)
         {
-            tbxUnitID.ReadOnly= true;
+            //tbxUnitID.ReadOnly= true;
             int _id = 1;
             _id = dBAccess.executeQuery("SELECT TOP 1 MADV FROM DONVI ORDER BY MADV DESC");
             if (_id > 1) { _id = _id + 1; }
             else _id = 1;
-            tbxUnitID.Texts = _id.ToString();
+            //tbxUnitID.Texts = _id.ToString();
         }
 
         private void btnUpdateUnit_Click(object sender, EventArgs e)

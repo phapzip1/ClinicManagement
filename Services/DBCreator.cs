@@ -80,10 +80,5 @@ namespace ClinicManagement.Services
                 Address = patient.Address
             };
         }
-
-        public Task CreateImport(Import import)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -43,7 +43,8 @@ namespace ClinicManagement.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            Guid guid= Guid.NewGuid();  
+            tbxMedicalBillNumber.Texts= guid.ToString();    
         }
 
         private void rbtnNotList_CheckedChanged(object sender, EventArgs e)

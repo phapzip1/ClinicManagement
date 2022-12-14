@@ -39,9 +39,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.plMedicalBillInfor = new System.Windows.Forms.Panel();
             this.cbxIllness = new CustomControls.RJControls.RJComboBox();
-            this.cbxMedical = new CustomControls.RJControls.RJComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.cbx_IllnessCate = new CustomControls.RJControls.RJComboBox();
             this.cbxSympton = new CustomControls.RJControls.RJComboBox();
             this.cbxUsage = new CustomControls.RJControls.RJComboBox();
             this.cbx_MedicalCate = new CustomControls.RJControls.RJComboBox();
@@ -64,7 +61,6 @@
             this.btnAdd = new ClinicManagement.Classes.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -105,9 +101,6 @@
             // 
             this.plMedicalBillInfor.BackColor = System.Drawing.Color.SkyBlue;
             this.plMedicalBillInfor.Controls.Add(this.cbxIllness);
-            this.plMedicalBillInfor.Controls.Add(this.cbxMedical);
-            this.plMedicalBillInfor.Controls.Add(this.label13);
-            this.plMedicalBillInfor.Controls.Add(this.cbx_IllnessCate);
             this.plMedicalBillInfor.Controls.Add(this.cbxSympton);
             this.plMedicalBillInfor.Controls.Add(this.cbxUsage);
             this.plMedicalBillInfor.Controls.Add(this.cbx_MedicalCate);
@@ -130,7 +123,6 @@
             this.plMedicalBillInfor.Controls.Add(this.btnAdd);
             this.plMedicalBillInfor.Controls.Add(this.label2);
             this.plMedicalBillInfor.Controls.Add(this.label1);
-            this.plMedicalBillInfor.Controls.Add(this.label7);
             this.plMedicalBillInfor.Controls.Add(this.label6);
             this.plMedicalBillInfor.Controls.Add(this.label5);
             this.plMedicalBillInfor.Controls.Add(this.label4);
@@ -158,56 +150,6 @@
             this.cbxIllness.Size = new System.Drawing.Size(216, 38);
             this.cbxIllness.TabIndex = 73;
             this.cbxIllness.Texts = "";
-            // 
-            // cbxMedical
-            // 
-            this.cbxMedical.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbxMedical.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbxMedical.BorderSize = 1;
-            this.cbxMedical.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbxMedical.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxMedical.ForeColor = System.Drawing.Color.DimGray;
-            this.cbxMedical.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbxMedical.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbxMedical.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbxMedical.Location = new System.Drawing.Point(562, 27);
-            this.cbxMedical.MinimumSize = new System.Drawing.Size(50, 20);
-            this.cbxMedical.Name = "cbxMedical";
-            this.cbxMedical.Padding = new System.Windows.Forms.Padding(1);
-            this.cbxMedical.Size = new System.Drawing.Size(216, 38);
-            this.cbxMedical.TabIndex = 72;
-            this.cbxMedical.Texts = "";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(411, 39);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(118, 26);
-            this.label13.TabIndex = 71;
-            this.label13.Text = "Tên thuốc:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbx_IllnessCate
-            // 
-            this.cbx_IllnessCate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbx_IllnessCate.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbx_IllnessCate.BorderSize = 1;
-            this.cbx_IllnessCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbx_IllnessCate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbx_IllnessCate.ForeColor = System.Drawing.Color.DimGray;
-            this.cbx_IllnessCate.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbx_IllnessCate.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbx_IllnessCate.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbx_IllnessCate.Location = new System.Drawing.Point(183, 202);
-            this.cbx_IllnessCate.MinimumSize = new System.Drawing.Size(50, 20);
-            this.cbx_IllnessCate.Name = "cbx_IllnessCate";
-            this.cbx_IllnessCate.Padding = new System.Windows.Forms.Padding(1);
-            this.cbx_IllnessCate.Size = new System.Drawing.Size(216, 38);
-            this.cbx_IllnessCate.TabIndex = 70;
-            this.cbx_IllnessCate.Texts = "";
             // 
             // cbxSympton
             // 
@@ -570,18 +512,6 @@
             this.label1.Size = new System.Drawing.Size(231, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "Thông tin phiếu khám bệnh";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(3, 214);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(153, 26);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Tên loại bệnh:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -966,7 +896,6 @@
 
         #endregion
         private Panel plMedicalBillInfor;
-        private Label label7;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -1012,12 +941,9 @@
         private Classes.CustomTextBox tbxPrice;
         private Classes.CustomTextBox tbxFinalPrice;
         private Classes.CustomTextBox tbxMedicalBillPatient;
-        private CustomControls.RJControls.RJComboBox cbx_IllnessCate;
         private CustomControls.RJControls.RJComboBox cbxSympton;
         private CustomControls.RJControls.RJComboBox cbxUsage;
         private CustomControls.RJControls.RJComboBox cbx_MedicalCate;
-        private CustomControls.RJControls.RJComboBox cbxMedical;
-        private Label label13;
         private CustomControls.RJControls.RJComboBox cbxIllness;
     }
 }
