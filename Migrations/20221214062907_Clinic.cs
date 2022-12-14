@@ -212,6 +212,9 @@ namespace ClinicManagement.Migrations
                 name: "IX_Medicines_UnitId",
                 table: "Medicines",
                 column: "UnitId");
+
+            migrationBuilder.Sql("CREATE TRIGGER Bill_MedicalCost_Insert ");
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
