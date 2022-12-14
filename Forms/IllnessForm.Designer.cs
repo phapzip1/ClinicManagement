@@ -603,7 +603,6 @@
             this.txbIllnessSymptom.Name = "txbIllnessSymptom";
             this.txbIllnessSymptom.Size = new System.Drawing.Size(211, 27);
             this.txbIllnessSymptom.TabIndex = 20;
-            this.txbIllnessSymptom.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // btnSaveIllness
             // 
@@ -724,7 +723,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "IllnessForm";
             this.Text = "Loại bệnh và bệnh";
-            this.Load += new System.EventHandler(this.IllnessForm_Load);
             this.pl_IllnessCategory.ResumeLayout(false);
             this.pl_IllnessCategory.PerformLayout();
             this.panel3.ResumeLayout(false);

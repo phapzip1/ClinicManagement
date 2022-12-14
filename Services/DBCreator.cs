@@ -35,6 +35,18 @@ namespace ClinicManagement.Services
             }
         }
 
+        public async Task CreateImport(Import import)
+        {
+            using (ClinicDbContext context = _dbContextFactory.CreateDbContext())
+            {
+                ImportDTO importDTO = new ImportDTO()
+                {
+
+
+                };
+            }
+        }
+
         private MedicalNoteDetailDTO ToMedicalNoteDetailDTO(MedicalNoteDetail detail)
         {
             return new MedicalNoteDetailDTO()
@@ -68,5 +80,7 @@ namespace ClinicManagement.Services
                 Address = patient.Address
             };
         }
+
+        
     }
 }

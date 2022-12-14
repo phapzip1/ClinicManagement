@@ -24,7 +24,7 @@ namespace ClinicManagement.DbContexts
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<MedicalNoteDetailDTO>().HasKey(e => new {e.MedicineId, e.MedicalNoteId });
             modelBuilder.Entity<ImportDetailDTO>().HasKey(e => new { e.ImportId, e.MedicineId });
-            modelBuilder.Entity<Import>
+            modelBuilder.Entity<ParameterDTO>().HasNoKey();
         }
     }
 }
