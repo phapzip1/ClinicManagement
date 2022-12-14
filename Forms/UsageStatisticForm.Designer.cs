@@ -422,7 +422,7 @@
             this.btnSeeInformation.Name = "btnSeeInformation";
             this.btnSeeInformation.Size = new System.Drawing.Size(180, 50);
             this.btnSeeInformation.TabIndex = 18;
-            this.btnSeeInformation.Text = "Xem thông tin";
+            this.btnSeeInformation.Text = "Xem báo cáo";
             this.btnSeeInformation.TextColor = System.Drawing.Color.Black;
             this.btnSeeInformation.UseVisualStyleBackColor = false;
             this.btnSeeInformation.Click += new System.EventHandler(this.btnSeeInformation2_Click);

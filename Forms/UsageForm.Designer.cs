@@ -41,14 +41,14 @@
             this.MaCachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenCachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbxUsageName = new ClinicManagement.Classes.CustomTextBox();
+            this.tbxUsageID = new ClinicManagement.Classes.CustomTextBox();
             this.btnSearchUsage = new ClinicManagement.Classes.RJButton();
             this.btnNotSaveUsage = new ClinicManagement.Classes.RJButton();
             this.btnSaveUsage = new ClinicManagement.Classes.RJButton();
             this.btnUpdateUsage = new ClinicManagement.Classes.RJButton();
             this.btnAddUsage = new ClinicManagement.Classes.RJButton();
-            this.txbUsageID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txbUsageName = new System.Windows.Forms.TextBox();
             this.lblIllnessCategory = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -58,14 +58,14 @@
             this.MaDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.tbxUnitName = new ClinicManagement.Classes.CustomTextBox();
+            this.tbxUnitID = new ClinicManagement.Classes.CustomTextBox();
             this.btnSearchUnit = new ClinicManagement.Classes.RJButton();
             this.btnNotSaveUnit = new ClinicManagement.Classes.RJButton();
             this.btnSaveUnit = new ClinicManagement.Classes.RJButton();
             this.btnUpdateUnit = new ClinicManagement.Classes.RJButton();
             this.btnAddUnit = new ClinicManagement.Classes.RJButton();
-            this.txbUnitID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txbUnitName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.plIllnessCategory.SuspendLayout();
@@ -85,9 +85,9 @@
             this.plIllnessCategory.Controls.Add(this.panel3);
             this.plIllnessCategory.Controls.Add(this.panel2);
             this.plIllnessCategory.Controls.Add(this.label1);
-            this.plIllnessCategory.Location = new System.Drawing.Point(11, 429);
+            this.plIllnessCategory.Location = new System.Drawing.Point(11, 420);
             this.plIllnessCategory.Name = "plIllnessCategory";
-            this.plIllnessCategory.Size = new System.Drawing.Size(1150, 388);
+            this.plIllnessCategory.Size = new System.Drawing.Size(1150, 414);
             this.plIllnessCategory.TabIndex = 4;
             // 
             // label12
@@ -95,7 +95,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(708, 37);
+            this.label12.Location = new System.Drawing.Point(648, 37);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(215, 24);
             this.label12.TabIndex = 19;
@@ -104,9 +104,9 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dtgvPatientList);
-            this.panel3.Location = new System.Drawing.Point(489, 64);
+            this.panel3.Location = new System.Drawing.Point(349, 64);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(645, 298);
+            this.panel3.Size = new System.Drawing.Size(798, 347);
             this.panel3.TabIndex = 18;
             // 
             // dtgvPatientList
@@ -152,7 +152,7 @@
             this.dtgvPatientList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
             this.dtgvPatientList.RowTemplate.Height = 29;
             this.dtgvPatientList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPatientList.Size = new System.Drawing.Size(645, 298);
+            this.dtgvPatientList.Size = new System.Drawing.Size(798, 347);
             this.dtgvPatientList.TabIndex = 5;
             // 
             // MaCachDung
@@ -171,20 +171,58 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel2.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel2.Controls.Add(this.tbxUsageName);
+            this.panel2.Controls.Add(this.tbxUsageID);
             this.panel2.Controls.Add(this.btnSearchUsage);
             this.panel2.Controls.Add(this.btnNotSaveUsage);
             this.panel2.Controls.Add(this.btnSaveUsage);
             this.panel2.Controls.Add(this.btnUpdateUsage);
             this.panel2.Controls.Add(this.btnAddUsage);
-            this.panel2.Controls.Add(this.txbUsageID);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txbUsageName);
             this.panel2.Controls.Add(this.lblIllnessCategory);
-            this.panel2.Location = new System.Drawing.Point(14, 64);
+            this.panel2.Location = new System.Drawing.Point(3, 64);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(469, 298);
+            this.panel2.Size = new System.Drawing.Size(340, 347);
             this.panel2.TabIndex = 17;
+            // 
+            // tbxUsageName
+            // 
+            this.tbxUsageName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxUsageName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxUsageName.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxUsageName.BorderSize = 1;
+            this.tbxUsageName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxUsageName.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxUsageName.Location = new System.Drawing.Point(47, 130);
+            this.tbxUsageName.Multiline = false;
+            this.tbxUsageName.Name = "tbxUsageName";
+            this.tbxUsageName.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxUsageName.PasswordChar = false;
+            this.tbxUsageName.ReadOnly = false;
+            this.tbxUsageName.Size = new System.Drawing.Size(248, 38);
+            this.tbxUsageName.TabIndex = 27;
+            this.tbxUsageName.Texts = "";
+            this.tbxUsageName.UnderlinedStyle = false;
+            // 
+            // tbxUsageID
+            // 
+            this.tbxUsageID.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxUsageID.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxUsageID.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxUsageID.BorderSize = 1;
+            this.tbxUsageID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxUsageID.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxUsageID.Location = new System.Drawing.Point(47, 60);
+            this.tbxUsageID.Multiline = false;
+            this.tbxUsageID.Name = "tbxUsageID";
+            this.tbxUsageID.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxUsageID.PasswordChar = false;
+            this.tbxUsageID.ReadOnly = false;
+            this.tbxUsageID.Size = new System.Drawing.Size(248, 38);
+            this.tbxUsageID.TabIndex = 26;
+            this.tbxUsageID.Texts = "";
+            this.tbxUsageID.UnderlinedStyle = false;
             // 
             // btnSearchUsage
             // 
@@ -197,13 +235,14 @@
             this.btnSearchUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearchUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchUsage.Location = new System.Drawing.Point(256, 201);
+            this.btnSearchUsage.Location = new System.Drawing.Point(161, 244);
             this.btnSearchUsage.Name = "btnSearchUsage";
-            this.btnSearchUsage.Size = new System.Drawing.Size(117, 50);
+            this.btnSearchUsage.Size = new System.Drawing.Size(110, 50);
             this.btnSearchUsage.TabIndex = 23;
             this.btnSearchUsage.Text = "Tra cứu";
             this.btnSearchUsage.TextColor = System.Drawing.Color.Black;
             this.btnSearchUsage.UseVisualStyleBackColor = false;
+            this.btnSearchUsage.Click += new System.EventHandler(this.btnSearchUsage_Click);
             // 
             // btnNotSaveUsage
             // 
@@ -216,9 +255,9 @@
             this.btnNotSaveUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveUsage.Location = new System.Drawing.Point(127, 201);
+            this.btnNotSaveUsage.Location = new System.Drawing.Point(43, 244);
             this.btnNotSaveUsage.Name = "btnNotSaveUsage";
-            this.btnNotSaveUsage.Size = new System.Drawing.Size(117, 50);
+            this.btnNotSaveUsage.Size = new System.Drawing.Size(110, 50);
             this.btnNotSaveUsage.TabIndex = 22;
             this.btnNotSaveUsage.Text = "Không lưu";
             this.btnNotSaveUsage.TextColor = System.Drawing.Color.Black;
@@ -235,7 +274,7 @@
             this.btnSaveUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveUsage.Location = new System.Drawing.Point(307, 125);
+            this.btnSaveUsage.Location = new System.Drawing.Point(224, 188);
             this.btnSaveUsage.Name = "btnSaveUsage";
             this.btnSaveUsage.Size = new System.Drawing.Size(99, 50);
             this.btnSaveUsage.TabIndex = 19;
@@ -254,7 +293,7 @@
             this.btnUpdateUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateUsage.Location = new System.Drawing.Point(195, 125);
+            this.btnUpdateUsage.Location = new System.Drawing.Point(112, 188);
             this.btnUpdateUsage.Name = "btnUpdateUsage";
             this.btnUpdateUsage.Size = new System.Drawing.Size(106, 50);
             this.btnUpdateUsage.TabIndex = 18;
@@ -273,7 +312,7 @@
             this.btnAddUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnAddUsage.Location = new System.Drawing.Point(95, 125);
+            this.btnAddUsage.Location = new System.Drawing.Point(12, 188);
             this.btnAddUsage.Name = "btnAddUsage";
             this.btnAddUsage.Size = new System.Drawing.Size(94, 50);
             this.btnAddUsage.TabIndex = 17;
@@ -281,40 +320,24 @@
             this.btnAddUsage.TextColor = System.Drawing.Color.Black;
             this.btnAddUsage.UseVisualStyleBackColor = false;
             // 
-            // txbUsageID
-            // 
-            this.txbUsageID.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.txbUsageID.Location = new System.Drawing.Point(188, 27);
-            this.txbUsageID.Name = "txbUsageID";
-            this.txbUsageID.Size = new System.Drawing.Size(260, 27);
-            this.txbUsageID.TabIndex = 13;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(15, 68);
+            this.label4.Location = new System.Drawing.Point(47, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 26);
             this.label4.TabIndex = 16;
             this.label4.Text = "Tên cách dùng:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txbUsageName
-            // 
-            this.txbUsageName.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.txbUsageName.Location = new System.Drawing.Point(188, 70);
-            this.txbUsageName.Name = "txbUsageName";
-            this.txbUsageName.Size = new System.Drawing.Size(253, 27);
-            this.txbUsageName.TabIndex = 14;
-            // 
             // lblIllnessCategory
             // 
             this.lblIllnessCategory.AutoSize = true;
-            this.lblIllnessCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.lblIllnessCategory.BackColor = System.Drawing.Color.Transparent;
             this.lblIllnessCategory.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblIllnessCategory.Location = new System.Drawing.Point(15, 28);
+            this.lblIllnessCategory.Location = new System.Drawing.Point(43, 31);
             this.lblIllnessCategory.Name = "lblIllnessCategory";
             this.lblIllnessCategory.Size = new System.Drawing.Size(160, 26);
             this.lblIllnessCategory.TabIndex = 15;
@@ -339,9 +362,9 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(11, 45);
+            this.panel1.Location = new System.Drawing.Point(11, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1150, 364);
+            this.panel1.Size = new System.Drawing.Size(1150, 402);
             this.panel1.TabIndex = 20;
             // 
             // label2
@@ -349,7 +372,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(723, 37);
+            this.label2.Location = new System.Drawing.Point(671, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(176, 24);
             this.label2.TabIndex = 19;
@@ -358,9 +381,9 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.dataGridView1);
-            this.panel4.Location = new System.Drawing.Point(489, 64);
+            this.panel4.Location = new System.Drawing.Point(349, 64);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(645, 297);
+            this.panel4.Size = new System.Drawing.Size(798, 335);
             this.panel4.TabIndex = 18;
             // 
             // dataGridView1
@@ -406,7 +429,7 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(645, 297);
+            this.dataGridView1.Size = new System.Drawing.Size(798, 335);
             this.dataGridView1.TabIndex = 5;
             // 
             // MaDonVi
@@ -425,20 +448,58 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel5.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel5.Controls.Add(this.tbxUnitName);
+            this.panel5.Controls.Add(this.tbxUnitID);
             this.panel5.Controls.Add(this.btnSearchUnit);
             this.panel5.Controls.Add(this.btnNotSaveUnit);
             this.panel5.Controls.Add(this.btnSaveUnit);
             this.panel5.Controls.Add(this.btnUpdateUnit);
             this.panel5.Controls.Add(this.btnAddUnit);
-            this.panel5.Controls.Add(this.txbUnitID);
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.txbUnitName);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(14, 64);
+            this.panel5.Location = new System.Drawing.Point(3, 64);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(469, 297);
+            this.panel5.Size = new System.Drawing.Size(340, 335);
             this.panel5.TabIndex = 17;
+            // 
+            // tbxUnitName
+            // 
+            this.tbxUnitName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxUnitName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxUnitName.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxUnitName.BorderSize = 1;
+            this.tbxUnitName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxUnitName.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxUnitName.Location = new System.Drawing.Point(33, 120);
+            this.tbxUnitName.Multiline = false;
+            this.tbxUnitName.Name = "tbxUnitName";
+            this.tbxUnitName.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxUnitName.PasswordChar = false;
+            this.tbxUnitName.ReadOnly = false;
+            this.tbxUnitName.Size = new System.Drawing.Size(279, 38);
+            this.tbxUnitName.TabIndex = 25;
+            this.tbxUnitName.Texts = "";
+            this.tbxUnitName.UnderlinedStyle = false;
+            // 
+            // tbxUnitID
+            // 
+            this.tbxUnitID.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxUnitID.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxUnitID.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxUnitID.BorderSize = 1;
+            this.tbxUnitID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxUnitID.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxUnitID.Location = new System.Drawing.Point(33, 50);
+            this.tbxUnitID.Multiline = false;
+            this.tbxUnitID.Name = "tbxUnitID";
+            this.tbxUnitID.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxUnitID.PasswordChar = false;
+            this.tbxUnitID.ReadOnly = false;
+            this.tbxUnitID.Size = new System.Drawing.Size(279, 38);
+            this.tbxUnitID.TabIndex = 24;
+            this.tbxUnitID.Texts = "";
+            this.tbxUnitID.UnderlinedStyle = false;
             // 
             // btnSearchUnit
             // 
@@ -451,7 +512,7 @@
             this.btnSearchUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearchUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchUnit.Location = new System.Drawing.Point(256, 201);
+            this.btnSearchUnit.Location = new System.Drawing.Point(173, 235);
             this.btnSearchUnit.Name = "btnSearchUnit";
             this.btnSearchUnit.Size = new System.Drawing.Size(117, 50);
             this.btnSearchUnit.TabIndex = 23;
@@ -470,7 +531,7 @@
             this.btnNotSaveUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveUnit.Location = new System.Drawing.Point(127, 201);
+            this.btnNotSaveUnit.Location = new System.Drawing.Point(50, 235);
             this.btnNotSaveUnit.Name = "btnNotSaveUnit";
             this.btnNotSaveUnit.Size = new System.Drawing.Size(117, 50);
             this.btnNotSaveUnit.TabIndex = 22;
@@ -489,7 +550,7 @@
             this.btnSaveUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveUnit.Location = new System.Drawing.Point(307, 125);
+            this.btnSaveUnit.Location = new System.Drawing.Point(224, 179);
             this.btnSaveUnit.Name = "btnSaveUnit";
             this.btnSaveUnit.Size = new System.Drawing.Size(99, 50);
             this.btnSaveUnit.TabIndex = 19;
@@ -508,7 +569,7 @@
             this.btnUpdateUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateUnit.Location = new System.Drawing.Point(195, 125);
+            this.btnUpdateUnit.Location = new System.Drawing.Point(112, 179);
             this.btnUpdateUnit.Name = "btnUpdateUnit";
             this.btnUpdateUnit.Size = new System.Drawing.Size(106, 50);
             this.btnUpdateUnit.TabIndex = 18;
@@ -527,7 +588,7 @@
             this.btnAddUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnAddUnit.Location = new System.Drawing.Point(95, 125);
+            this.btnAddUnit.Location = new System.Drawing.Point(12, 179);
             this.btnAddUnit.Name = "btnAddUnit";
             this.btnAddUnit.Size = new System.Drawing.Size(94, 50);
             this.btnAddUnit.TabIndex = 17;
@@ -535,40 +596,24 @@
             this.btnAddUnit.TextColor = System.Drawing.Color.Black;
             this.btnAddUnit.UseVisualStyleBackColor = false;
             // 
-            // txbUnitID
-            // 
-            this.txbUnitID.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.txbUnitID.Location = new System.Drawing.Point(188, 27);
-            this.txbUnitID.Name = "txbUnitID";
-            this.txbUnitID.Size = new System.Drawing.Size(253, 27);
-            this.txbUnitID.TabIndex = 13;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(15, 68);
+            this.label3.Location = new System.Drawing.Point(33, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 26);
             this.label3.TabIndex = 16;
             this.label3.Text = "Tên đơn vị:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txbUnitName
-            // 
-            this.txbUnitName.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.txbUnitName.Location = new System.Drawing.Point(188, 70);
-            this.txbUnitName.Name = "txbUnitName";
-            this.txbUnitName.Size = new System.Drawing.Size(253, 27);
-            this.txbUnitName.TabIndex = 14;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(15, 28);
+            this.label5.Location = new System.Drawing.Point(33, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 26);
             this.label5.TabIndex = 15;
@@ -624,9 +669,7 @@
         private Classes.RJButton btnSaveUsage;
         private Classes.RJButton btnUpdateUsage;
         private Classes.RJButton btnAddUsage;
-        private TextBox txbUsageID;
         private Label label4;
-        private TextBox txbUsageName;
         private Label lblIllnessCategory;
         private Label label1;
         private Panel panel1;
@@ -639,14 +682,16 @@
         private Classes.RJButton btnSaveUnit;
         private Classes.RJButton btnUpdateUnit;
         private Classes.RJButton btnAddUnit;
-        private TextBox txbUnitID;
         private Label label3;
-        private TextBox txbUnitName;
         private Label label5;
         private Label label6;
         private DataGridViewTextBoxColumn MaCachDung;
         private DataGridViewTextBoxColumn TenCachDung;
         private DataGridViewTextBoxColumn MaDonVi;
         private DataGridViewTextBoxColumn TenDonVi;
+        private Classes.CustomTextBox tbxUnitID;
+        private Classes.CustomTextBox tbxUsageName;
+        private Classes.CustomTextBox tbxUsageID;
+        private Classes.CustomTextBox tbxUnitName;
     }
 }

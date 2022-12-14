@@ -91,7 +91,7 @@ namespace ClinicManagement.Forms
         private void btnExport_Click(object sender, EventArgs e)
         {
             if (dataGridView4.Rows.Count == 0)
-                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem thông tin' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem báo cáo' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
@@ -105,7 +105,7 @@ namespace ClinicManagement.Forms
 
             dataGridView4.Rows.Clear();
             dtBAOCAOSUDUNGTHUOC.Clear();
-            string query = "Select * from BAOCAOSUDUNGTHUOC Where THANG = '" + Int32.Parse(month) + "' and NAM = '" + Int32.Parse(year) + "'";
+            string query = "select BAOCAOSUDUNGTHUOC.MATHUOC, DONVI.TENDV, SLDUNG, SOLANDUNG  from BAOCAOSUDUNGTHUOC, THUOC, DONVI Where BAOCAOSUDUNGTHUOC.MATHUOC = THUOC.MATHUOC and THUOC.MADONVI = DONVI.MADV and THANG = '" + Int32.Parse(month) + "' and NAM = '" + Int32.Parse(year) + "'";
             dBAccess.readDatathroughAdapter(query, dtBAOCAOSUDUNGTHUOC);
 
 
@@ -113,7 +113,7 @@ namespace ClinicManagement.Forms
             {
                 for (int i = 0; i < dtBAOCAOSUDUNGTHUOC.Rows.Count; i++)
                 {   // STT, Thuốc, đơn vị tính, số lượng, số lần dùng
-                    dataGridView4.Rows.Add(i + 1, dtBAOCAOSUDUNGTHUOC.Rows[i]["MATHUOC"].ToString(), dtBAOCAOSUDUNGTHUOC.Rows[i]["DONVITINH"].ToString(), dtBAOCAOSUDUNGTHUOC.Rows[i]["SLDUNG"].ToString(), dtBAOCAOSUDUNGTHUOC.Rows[i]["SOLANDUNG"].ToString());
+                    dataGridView4.Rows.Add(i + 1, dtBAOCAOSUDUNGTHUOC.Rows[i]["MATHUOC"].ToString(), dtBAOCAOSUDUNGTHUOC.Rows[i]["TENDV"].ToString(), dtBAOCAOSUDUNGTHUOC.Rows[i]["SLDUNG"].ToString(), dtBAOCAOSUDUNGTHUOC.Rows[i]["SOLANDUNG"].ToString());
 
                 }            
             }

@@ -16,15 +16,5 @@ namespace ClinicManagement.Forms
         {
             InitializeComponent();
         }
-
-        private void IllnessForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

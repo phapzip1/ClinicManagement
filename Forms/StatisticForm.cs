@@ -85,7 +85,7 @@ namespace ClinicManagement.Forms
         private void btnExport_Click(object sender, EventArgs e)
         {                      
             if (dataGridView1.Rows.Count == 0)
-                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem thông tin' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem báo cáo' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 //gọi hàm ToExcel() với tham số là dtgDSHS và filename từ SaveFileDialog
@@ -94,8 +94,9 @@ namespace ClinicManagement.Forms
         }
 
         private void btnSeeInformation_Click_1(object sender, EventArgs e)
-        {                
-
+        {
+            int totalpatients = 0;
+            int totalrevenue = 0;
             string month = cbbMonth.SelectedItem.ToString();          
             string year = cbbYear.SelectedItem.ToString();
 
@@ -106,17 +107,29 @@ namespace ClinicManagement.Forms
             dBAccess.readDatathroughAdapter(query, dtCTBAOCAODOANHTHU);
 
             if (dtCTBAOCAODOANHTHU.Rows.Count >= 1)
-            {
-                
+            {           
                 for (int i = 0; i < dtCTBAOCAODOANHTHU.Rows.Count; i++)
                 {
                     dataGridView1.Rows.Add(i + 1, dtCTBAOCAODOANHTHU.Rows[i]["NGAY"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["SOBENHNHAN"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["DOANHTHU"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["TYLE"].ToString());
-                }                              
+                    totalpatients += int.Parse(dtCTBAOCAODOANHTHU.Rows[i]["SOBENHNHAN"].ToString());
+                    totalrevenue += int.Parse(dtCTBAOCAODOANHTHU.Rows[i]["DOANHTHU"].ToString());
+                }
+
+                lbltotalpatients.Text = totalpatients.ToString() + " người";
+                lbltotalrevenue.Text = totalrevenue.ToString() + " VNĐ";
+                groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
+
+
             }
             else
             {
                 MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lbltotalpatients.Text = "........................................";
+                lbltotalrevenue.Text = "........................................";
+                groupBox1.Text = "Tổng hợp báo cáo";
             }
+
+            
         }
         private void StatisticForm_Load(object sender, EventArgs e)
         {          

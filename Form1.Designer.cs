@@ -80,7 +80,7 @@
             this._mainLayout.RowCount = 2;
             this._mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 107F));
             this._mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._mainLayout.Size = new System.Drawing.Size(1463, 960);
+            this._mainLayout.Size = new System.Drawing.Size(1301, 740);
             this._mainLayout.TabIndex = 0;
             this._mainLayout.Click += new System.EventHandler(this.HandleClose);
             // 
@@ -109,7 +109,7 @@
             this._navContainer.Location = new System.Drawing.Point(0, 107);
             this._navContainer.Margin = new System.Windows.Forms.Padding(0);
             this._navContainer.Name = "_navContainer";
-            this._navContainer.Size = new System.Drawing.Size(286, 853);
+            this._navContainer.Size = new System.Drawing.Size(286, 633);
             this._navContainer.TabIndex = 1;
             // 
             // _logout
@@ -152,7 +152,7 @@
             this._profile.Size = new System.Drawing.Size(286, 80);
             this._profile.TabIndex = 16;
             this._profile.Tag = "NavBtn";
-            this._profile.Text = "     Quản lý tài khoản";
+            this._profile.Text = "     Đổi mật khẩu";
             this._profile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._profile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._profile.UseVisualStyleBackColor = true;
@@ -484,7 +484,7 @@
             this._titleBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this._titleBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this._titleBar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this._titleBar.Size = new System.Drawing.Size(1177, 107);
+            this._titleBar.Size = new System.Drawing.Size(1015, 107);
             this._titleBar.TabIndex = 3;
             this._titleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleBarMouseDown);
             // 
@@ -497,7 +497,7 @@
             this._title.Location = new System.Drawing.Point(0, 42);
             this._title.Margin = new System.Windows.Forms.Padding(0);
             this._title.Name = "_title";
-            this._title.Size = new System.Drawing.Size(1177, 65);
+            this._title.Size = new System.Drawing.Size(1015, 65);
             this._title.TabIndex = 0;
             this._title.Text = "Page Name";
             this._title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -509,7 +509,7 @@
             this._controlBar.Controls.Add(this._resizeBtn);
             this._controlBar.Controls.Add(this._closeBtn);
             this._controlBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this._controlBar.Location = new System.Drawing.Point(1059, 0);
+            this._controlBar.Location = new System.Drawing.Point(897, 0);
             this._controlBar.Margin = new System.Windows.Forms.Padding(0);
             this._controlBar.Name = "_controlBar";
             this._controlBar.Size = new System.Drawing.Size(118, 42);
@@ -567,14 +567,14 @@
             this._innerFrame.Location = new System.Drawing.Point(286, 107);
             this._innerFrame.Margin = new System.Windows.Forms.Padding(0);
             this._innerFrame.Name = "_innerFrame";
-            this._innerFrame.Size = new System.Drawing.Size(1177, 853);
+            this._innerFrame.Size = new System.Drawing.Size(1015, 633);
             this._innerFrame.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1463, 960);
+            this.ClientSize = new System.Drawing.Size(1301, 740);
             this.Controls.Add(this._mainLayout);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

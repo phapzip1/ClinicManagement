@@ -16,5 +16,10 @@ namespace ClinicManagement.Forms
         {
             InitializeComponent();
         }
+
+        private void btnSearchUsage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

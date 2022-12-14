@@ -1,3 +1,4 @@
+using ClinicManagement.Forms;
 using System.Runtime.InteropServices;
 
 namespace ClinicManagement
@@ -115,6 +116,13 @@ namespace ClinicManagement
         private void HandleNavigate(object sender, EventArgs e) {
             if (((Button)sender) == CurrentPageBtn)
                 return;
+            if (((Button)sender) == _profile)
+            {
+                ChangePasswordForm dialog = new ChangePasswordForm();
+                dialog.FormBorderStyle = FormBorderStyle.FixedSingle;
+                dialog.ShowDialog();
+                return;
+            }
             Button prev = CurrentPageBtn;
             CurrentPageBtn = ((Button)sender);
 
@@ -140,6 +148,8 @@ namespace ClinicManagement
                 OpenChildForm(new Forms.UsageStatisticForm());
             else if (CurrentPageBtn == _importReporting)
                 OpenChildForm(new Forms.ImportStatistic());
+            else if (CurrentPageBtn == _rules)
+                OpenChildForm(new Forms.RegulationsForm());
 
         }
 

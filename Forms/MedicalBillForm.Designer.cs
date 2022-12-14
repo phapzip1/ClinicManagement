@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.plMedicalBillInfor = new System.Windows.Forms.Panel();
-            this.txbMoney = new System.Windows.Forms.TextBox();
-            this.txbPrice = new System.Windows.Forms.TextBox();
-            this.nudNumber = new System.Windows.Forms.NumericUpDown();
-            this.cbUsage = new System.Windows.Forms.ComboBox();
-            this.cbMedicine = new System.Windows.Forms.ComboBox();
-            this.cbMedicineCategory = new System.Windows.Forms.ComboBox();
+            this.cbxIllness = new CustomControls.RJControls.RJComboBox();
+            this.cbxMedical = new CustomControls.RJControls.RJComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbx_IllnessCate = new CustomControls.RJControls.RJComboBox();
+            this.cbxSympton = new CustomControls.RJControls.RJComboBox();
+            this.cbxUsage = new CustomControls.RJControls.RJComboBox();
+            this.cbx_MedicalCate = new CustomControls.RJControls.RJComboBox();
+            this.tbxMedicalNumer = new ClinicManagement.Classes.CustomTextBox();
+            this.tbxPrice = new ClinicManagement.Classes.CustomTextBox();
+            this.tbxFinalPrice = new ClinicManagement.Classes.CustomTextBox();
+            this.tbxMedicalBillPatient = new ClinicManagement.Classes.CustomTextBox();
+            this.tbxMedicalillNumber = new ClinicManagement.Classes.CustomTextBox();
+            this.rbtnNotMedicalList = new ClinicManagement.Classes.RJRadioButton();
+            this.dtpkMedicalBill = new ClinicManagement.Classes.RJDatePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txbIllness = new System.Windows.Forms.TextBox();
             this.btnHistory = new ClinicManagement.Classes.RJButton();
             this.btnExit = new ClinicManagement.Classes.RJButton();
             this.btnSave = new ClinicManagement.Classes.RJButton();
             this.btnUpdate = new ClinicManagement.Classes.RJButton();
             this.btnAdd = new ClinicManagement.Classes.RJButton();
-            this.cbIllnessCategory = new System.Windows.Forms.ComboBox();
-            this.cbSymptom = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txbPatientID = new System.Windows.Forms.TextBox();
-            this.txbPatient = new System.Windows.Forms.TextBox();
-            this.cbxNotMedicalList = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -92,7 +92,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluongthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plMedicalBillInfor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPatientList)).BeginInit();
@@ -104,31 +103,31 @@
             // 
             // plMedicalBillInfor
             // 
-            this.plMedicalBillInfor.BackColor = System.Drawing.Color.AliceBlue;
-            this.plMedicalBillInfor.Controls.Add(this.txbMoney);
-            this.plMedicalBillInfor.Controls.Add(this.txbPrice);
-            this.plMedicalBillInfor.Controls.Add(this.nudNumber);
-            this.plMedicalBillInfor.Controls.Add(this.cbUsage);
-            this.plMedicalBillInfor.Controls.Add(this.cbMedicine);
-            this.plMedicalBillInfor.Controls.Add(this.cbMedicineCategory);
+            this.plMedicalBillInfor.BackColor = System.Drawing.Color.SkyBlue;
+            this.plMedicalBillInfor.Controls.Add(this.cbxIllness);
+            this.plMedicalBillInfor.Controls.Add(this.cbxMedical);
+            this.plMedicalBillInfor.Controls.Add(this.label13);
+            this.plMedicalBillInfor.Controls.Add(this.cbx_IllnessCate);
+            this.plMedicalBillInfor.Controls.Add(this.cbxSympton);
+            this.plMedicalBillInfor.Controls.Add(this.cbxUsage);
+            this.plMedicalBillInfor.Controls.Add(this.cbx_MedicalCate);
+            this.plMedicalBillInfor.Controls.Add(this.tbxMedicalNumer);
+            this.plMedicalBillInfor.Controls.Add(this.tbxPrice);
+            this.plMedicalBillInfor.Controls.Add(this.tbxFinalPrice);
+            this.plMedicalBillInfor.Controls.Add(this.tbxMedicalBillPatient);
+            this.plMedicalBillInfor.Controls.Add(this.tbxMedicalillNumber);
+            this.plMedicalBillInfor.Controls.Add(this.rbtnNotMedicalList);
+            this.plMedicalBillInfor.Controls.Add(this.dtpkMedicalBill);
             this.plMedicalBillInfor.Controls.Add(this.label8);
             this.plMedicalBillInfor.Controls.Add(this.label9);
             this.plMedicalBillInfor.Controls.Add(this.label10);
             this.plMedicalBillInfor.Controls.Add(this.label11);
             this.plMedicalBillInfor.Controls.Add(this.label12);
-            this.plMedicalBillInfor.Controls.Add(this.label13);
-            this.plMedicalBillInfor.Controls.Add(this.txbIllness);
             this.plMedicalBillInfor.Controls.Add(this.btnHistory);
             this.plMedicalBillInfor.Controls.Add(this.btnExit);
             this.plMedicalBillInfor.Controls.Add(this.btnSave);
             this.plMedicalBillInfor.Controls.Add(this.btnUpdate);
             this.plMedicalBillInfor.Controls.Add(this.btnAdd);
-            this.plMedicalBillInfor.Controls.Add(this.cbIllnessCategory);
-            this.plMedicalBillInfor.Controls.Add(this.cbSymptom);
-            this.plMedicalBillInfor.Controls.Add(this.dateTimePicker1);
-            this.plMedicalBillInfor.Controls.Add(this.txbPatientID);
-            this.plMedicalBillInfor.Controls.Add(this.txbPatient);
-            this.plMedicalBillInfor.Controls.Add(this.cbxNotMedicalList);
             this.plMedicalBillInfor.Controls.Add(this.label2);
             this.plMedicalBillInfor.Controls.Add(this.label1);
             this.plMedicalBillInfor.Controls.Add(this.label7);
@@ -141,67 +140,262 @@
             this.plMedicalBillInfor.Size = new System.Drawing.Size(781, 392);
             this.plMedicalBillInfor.TabIndex = 2;
             // 
-            // txbMoney
+            // cbxIllness
             // 
-            this.txbMoney.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.txbMoney.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbMoney.Location = new System.Drawing.Point(570, 193);
-            this.txbMoney.Name = "txbMoney";
-            this.txbMoney.Size = new System.Drawing.Size(202, 27);
-            this.txbMoney.TabIndex = 5;
-            this.txbMoney.Text = "0";
+            this.cbxIllness.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbxIllness.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbxIllness.BorderSize = 1;
+            this.cbxIllness.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbxIllness.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbxIllness.ForeColor = System.Drawing.Color.DimGray;
+            this.cbxIllness.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbxIllness.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbxIllness.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbxIllness.Location = new System.Drawing.Point(183, 246);
+            this.cbxIllness.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbxIllness.Name = "cbxIllness";
+            this.cbxIllness.Padding = new System.Windows.Forms.Padding(1);
+            this.cbxIllness.Size = new System.Drawing.Size(216, 38);
+            this.cbxIllness.TabIndex = 73;
+            this.cbxIllness.Texts = "";
             // 
-            // txbPrice
+            // cbxMedical
             // 
-            this.txbPrice.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.txbPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbPrice.Location = new System.Drawing.Point(570, 155);
-            this.txbPrice.Name = "txbPrice";
-            this.txbPrice.Size = new System.Drawing.Size(202, 27);
-            this.txbPrice.TabIndex = 4;
-            this.txbPrice.Text = "0";
+            this.cbxMedical.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbxMedical.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbxMedical.BorderSize = 1;
+            this.cbxMedical.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbxMedical.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbxMedical.ForeColor = System.Drawing.Color.DimGray;
+            this.cbxMedical.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbxMedical.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbxMedical.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbxMedical.Location = new System.Drawing.Point(562, 27);
+            this.cbxMedical.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbxMedical.Name = "cbxMedical";
+            this.cbxMedical.Padding = new System.Windows.Forms.Padding(1);
+            this.cbxMedical.Size = new System.Drawing.Size(216, 38);
+            this.cbxMedical.TabIndex = 72;
+            this.cbxMedical.Texts = "";
             // 
-            // nudNumber
+            // label13
             // 
-            this.nudNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nudNumber.Location = new System.Drawing.Point(570, 117);
-            this.nudNumber.Name = "nudNumber";
-            this.nudNumber.Size = new System.Drawing.Size(202, 27);
-            this.nudNumber.TabIndex = 57;
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(411, 39);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(118, 26);
+            this.label13.TabIndex = 71;
+            this.label13.Text = "Tên thuốc:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cbUsage
+            // cbx_IllnessCate
             // 
-            this.cbUsage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbUsage.FormattingEnabled = true;
-            this.cbUsage.Location = new System.Drawing.Point(570, 232);
-            this.cbUsage.Name = "cbUsage";
-            this.cbUsage.Size = new System.Drawing.Size(202, 28);
-            this.cbUsage.TabIndex = 56;
+            this.cbx_IllnessCate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbx_IllnessCate.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbx_IllnessCate.BorderSize = 1;
+            this.cbx_IllnessCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbx_IllnessCate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbx_IllnessCate.ForeColor = System.Drawing.Color.DimGray;
+            this.cbx_IllnessCate.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbx_IllnessCate.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbx_IllnessCate.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbx_IllnessCate.Location = new System.Drawing.Point(183, 202);
+            this.cbx_IllnessCate.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbx_IllnessCate.Name = "cbx_IllnessCate";
+            this.cbx_IllnessCate.Padding = new System.Windows.Forms.Padding(1);
+            this.cbx_IllnessCate.Size = new System.Drawing.Size(216, 38);
+            this.cbx_IllnessCate.TabIndex = 70;
+            this.cbx_IllnessCate.Texts = "";
             // 
-            // cbMedicine
+            // cbxSympton
             // 
-            this.cbMedicine.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbMedicine.FormattingEnabled = true;
-            this.cbMedicine.Location = new System.Drawing.Point(570, 78);
-            this.cbMedicine.Name = "cbMedicine";
-            this.cbMedicine.Size = new System.Drawing.Size(202, 28);
-            this.cbMedicine.TabIndex = 55;
+            this.cbxSympton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbxSympton.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbxSympton.BorderSize = 1;
+            this.cbxSympton.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbxSympton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbxSympton.ForeColor = System.Drawing.Color.DimGray;
+            this.cbxSympton.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbxSympton.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbxSympton.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbxSympton.Location = new System.Drawing.Point(183, 158);
+            this.cbxSympton.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbxSympton.Name = "cbxSympton";
+            this.cbxSympton.Padding = new System.Windows.Forms.Padding(1);
+            this.cbxSympton.Size = new System.Drawing.Size(216, 38);
+            this.cbxSympton.TabIndex = 69;
+            this.cbxSympton.Texts = "";
             // 
-            // cbMedicineCategory
+            // cbxUsage
             // 
-            this.cbMedicineCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbMedicineCategory.FormattingEnabled = true;
-            this.cbMedicineCategory.Location = new System.Drawing.Point(570, 38);
-            this.cbMedicineCategory.Name = "cbMedicineCategory";
-            this.cbMedicineCategory.Size = new System.Drawing.Size(202, 28);
-            this.cbMedicineCategory.TabIndex = 54;
+            this.cbxUsage.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbxUsage.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbxUsage.BorderSize = 1;
+            this.cbxUsage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbxUsage.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbxUsage.ForeColor = System.Drawing.Color.DimGray;
+            this.cbxUsage.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbxUsage.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbxUsage.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbxUsage.Location = new System.Drawing.Point(562, 246);
+            this.cbxUsage.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbxUsage.Name = "cbxUsage";
+            this.cbxUsage.Padding = new System.Windows.Forms.Padding(1);
+            this.cbxUsage.Size = new System.Drawing.Size(216, 38);
+            this.cbxUsage.TabIndex = 68;
+            this.cbxUsage.Texts = "";
+            // 
+            // cbx_MedicalCate
+            // 
+            this.cbx_MedicalCate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbx_MedicalCate.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbx_MedicalCate.BorderSize = 1;
+            this.cbx_MedicalCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbx_MedicalCate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbx_MedicalCate.ForeColor = System.Drawing.Color.DimGray;
+            this.cbx_MedicalCate.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbx_MedicalCate.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbx_MedicalCate.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbx_MedicalCate.Location = new System.Drawing.Point(562, 71);
+            this.cbx_MedicalCate.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbx_MedicalCate.Name = "cbx_MedicalCate";
+            this.cbx_MedicalCate.Padding = new System.Windows.Forms.Padding(1);
+            this.cbx_MedicalCate.Size = new System.Drawing.Size(216, 38);
+            this.cbx_MedicalCate.TabIndex = 67;
+            this.cbx_MedicalCate.Texts = "";
+            // 
+            // tbxMedicalNumer
+            // 
+            this.tbxMedicalNumer.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxMedicalNumer.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxMedicalNumer.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxMedicalNumer.BorderSize = 1;
+            this.tbxMedicalNumer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxMedicalNumer.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxMedicalNumer.Location = new System.Drawing.Point(562, 115);
+            this.tbxMedicalNumer.Multiline = false;
+            this.tbxMedicalNumer.Name = "tbxMedicalNumer";
+            this.tbxMedicalNumer.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxMedicalNumer.PasswordChar = false;
+            this.tbxMedicalNumer.ReadOnly = false;
+            this.tbxMedicalNumer.Size = new System.Drawing.Size(216, 38);
+            this.tbxMedicalNumer.TabIndex = 66;
+            this.tbxMedicalNumer.Texts = "0";
+            this.tbxMedicalNumer.UnderlinedStyle = false;
+            // 
+            // tbxPrice
+            // 
+            this.tbxPrice.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxPrice.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxPrice.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxPrice.BorderSize = 1;
+            this.tbxPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxPrice.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxPrice.Location = new System.Drawing.Point(562, 158);
+            this.tbxPrice.Multiline = false;
+            this.tbxPrice.Name = "tbxPrice";
+            this.tbxPrice.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxPrice.PasswordChar = false;
+            this.tbxPrice.ReadOnly = false;
+            this.tbxPrice.Size = new System.Drawing.Size(216, 38);
+            this.tbxPrice.TabIndex = 65;
+            this.tbxPrice.Texts = "0";
+            this.tbxPrice.UnderlinedStyle = false;
+            // 
+            // tbxFinalPrice
+            // 
+            this.tbxFinalPrice.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxFinalPrice.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxFinalPrice.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxFinalPrice.BorderSize = 1;
+            this.tbxFinalPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxFinalPrice.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxFinalPrice.Location = new System.Drawing.Point(562, 202);
+            this.tbxFinalPrice.Multiline = false;
+            this.tbxFinalPrice.Name = "tbxFinalPrice";
+            this.tbxFinalPrice.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxFinalPrice.PasswordChar = false;
+            this.tbxFinalPrice.ReadOnly = false;
+            this.tbxFinalPrice.Size = new System.Drawing.Size(216, 38);
+            this.tbxFinalPrice.TabIndex = 64;
+            this.tbxFinalPrice.Texts = "0";
+            this.tbxFinalPrice.UnderlinedStyle = false;
+            // 
+            // tbxMedicalBillPatient
+            // 
+            this.tbxMedicalBillPatient.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxMedicalBillPatient.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxMedicalBillPatient.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxMedicalBillPatient.BorderSize = 1;
+            this.tbxMedicalBillPatient.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxMedicalBillPatient.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxMedicalBillPatient.Location = new System.Drawing.Point(183, 114);
+            this.tbxMedicalBillPatient.Multiline = false;
+            this.tbxMedicalBillPatient.Name = "tbxMedicalBillPatient";
+            this.tbxMedicalBillPatient.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxMedicalBillPatient.PasswordChar = false;
+            this.tbxMedicalBillPatient.ReadOnly = false;
+            this.tbxMedicalBillPatient.Size = new System.Drawing.Size(216, 38);
+            this.tbxMedicalBillPatient.TabIndex = 61;
+            this.tbxMedicalBillPatient.Texts = "";
+            this.tbxMedicalBillPatient.UnderlinedStyle = false;
+            // 
+            // tbxMedicalillNumber
+            // 
+            this.tbxMedicalillNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxMedicalillNumber.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxMedicalillNumber.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxMedicalillNumber.BorderSize = 1;
+            this.tbxMedicalillNumber.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxMedicalillNumber.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxMedicalillNumber.Location = new System.Drawing.Point(183, 27);
+            this.tbxMedicalillNumber.Multiline = false;
+            this.tbxMedicalillNumber.Name = "tbxMedicalillNumber";
+            this.tbxMedicalillNumber.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxMedicalillNumber.PasswordChar = false;
+            this.tbxMedicalillNumber.ReadOnly = false;
+            this.tbxMedicalillNumber.Size = new System.Drawing.Size(216, 38);
+            this.tbxMedicalillNumber.TabIndex = 60;
+            this.tbxMedicalillNumber.Texts = "";
+            this.tbxMedicalillNumber.UnderlinedStyle = false;
+            // 
+            // rbtnNotMedicalList
+            // 
+            this.rbtnNotMedicalList.AutoSize = true;
+            this.rbtnNotMedicalList.CheckedColor = System.Drawing.Color.Navy;
+            this.rbtnNotMedicalList.Location = new System.Drawing.Point(183, 290);
+            this.rbtnNotMedicalList.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtnNotMedicalList.Name = "rbtnNotMedicalList";
+            this.rbtnNotMedicalList.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtnNotMedicalList.Size = new System.Drawing.Size(174, 24);
+            this.rbtnNotMedicalList.TabIndex = 59;
+            this.rbtnNotMedicalList.TabStop = true;
+            this.rbtnNotMedicalList.Text = "Không kê khai thuốc";
+            this.rbtnNotMedicalList.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rbtnNotMedicalList.UseVisualStyleBackColor = true;
+            this.rbtnNotMedicalList.CheckedChanged += new System.EventHandler(this.rbtnNotList_CheckedChanged);
+            this.rbtnNotMedicalList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rbtnNotList_MouseClick);
+            // 
+            // dtpkMedicalBill
+            // 
+            this.dtpkMedicalBill.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.dtpkMedicalBill.BorderSize = 0;
+            this.dtpkMedicalBill.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpkMedicalBill.Location = new System.Drawing.Point(183, 78);
+            this.dtpkMedicalBill.Name = "dtpkMedicalBill";
+            this.dtpkMedicalBill.Size = new System.Drawing.Size(216, 29);
+            this.dtpkMedicalBill.SkinColor = System.Drawing.Color.Navy;
+            this.dtpkMedicalBill.TabIndex = 58;
+            this.dtpkMedicalBill.TextColor = System.Drawing.Color.White;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(405, 234);
+            this.label8.Location = new System.Drawing.Point(411, 258);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(127, 26);
             this.label8.TabIndex = 53;
@@ -211,9 +405,9 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(405, 194);
+            this.label9.Location = new System.Drawing.Point(411, 214);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(123, 26);
             this.label9.TabIndex = 52;
@@ -223,9 +417,9 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(405, 156);
+            this.label10.Location = new System.Drawing.Point(411, 170);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 26);
             this.label10.TabIndex = 51;
@@ -235,9 +429,9 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(405, 118);
+            this.label11.Location = new System.Drawing.Point(411, 126);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(110, 26);
             this.label11.TabIndex = 50;
@@ -247,35 +441,14 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(405, 80);
+            this.label12.Location = new System.Drawing.Point(411, 81);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(118, 26);
             this.label12.TabIndex = 49;
             this.label12.Text = "Tên thuốc:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
-            this.label13.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(405, 40);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(159, 26);
-            this.label13.TabIndex = 48;
-            this.label13.Text = "Tên loại thuốc:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txbIllness
-            // 
-            this.txbIllness.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.txbIllness.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbIllness.Location = new System.Drawing.Point(183, 233);
-            this.txbIllness.Name = "txbIllness";
-            this.txbIllness.Size = new System.Drawing.Size(216, 27);
-            this.txbIllness.TabIndex = 3;
             // 
             // btnHistory
             // 
@@ -288,7 +461,7 @@
             this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistory.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnHistory.ForeColor = System.Drawing.Color.Black;
-            this.btnHistory.Location = new System.Drawing.Point(602, 327);
+            this.btnHistory.Location = new System.Drawing.Point(604, 339);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(156, 50);
             this.btnHistory.TabIndex = 46;
@@ -307,13 +480,14 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(457, 327);
+            this.btnExit.Location = new System.Drawing.Point(459, 339);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(139, 50);
             this.btnExit.TabIndex = 39;
             this.btnExit.Text = "Huỷ";
             this.btnExit.TextColor = System.Drawing.Color.Black;
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSave
             // 
@@ -326,7 +500,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(312, 327);
+            this.btnSave.Location = new System.Drawing.Point(314, 339);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(139, 50);
             this.btnSave.TabIndex = 40;
@@ -345,7 +519,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(167, 328);
+            this.btnUpdate.Location = new System.Drawing.Point(169, 340);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(139, 50);
             this.btnUpdate.TabIndex = 6;
@@ -364,74 +538,21 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(22, 328);
+            this.btnAdd.Location = new System.Drawing.Point(24, 340);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(139, 50);
             this.btnAdd.TabIndex = 38;
             this.btnAdd.Text = "Khám";
             this.btnAdd.TextColor = System.Drawing.Color.Black;
             this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // cbIllnessCategory
-            // 
-            this.cbIllnessCategory.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbIllnessCategory.FormattingEnabled = true;
-            this.cbIllnessCategory.Location = new System.Drawing.Point(183, 192);
-            this.cbIllnessCategory.Name = "cbIllnessCategory";
-            this.cbIllnessCategory.Size = new System.Drawing.Size(216, 28);
-            this.cbIllnessCategory.TabIndex = 29;
-            // 
-            // cbSymptom
-            // 
-            this.cbSymptom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbSymptom.FormattingEnabled = true;
-            this.cbSymptom.Location = new System.Drawing.Point(183, 154);
-            this.cbSymptom.Name = "cbSymptom";
-            this.cbSymptom.Size = new System.Drawing.Size(216, 28);
-            this.cbSymptom.TabIndex = 28;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 79);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker1.TabIndex = 26;
-            // 
-            // txbPatientID
-            // 
-            this.txbPatientID.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.txbPatientID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbPatientID.Location = new System.Drawing.Point(183, 117);
-            this.txbPatientID.Name = "txbPatientID";
-            this.txbPatientID.Size = new System.Drawing.Size(216, 27);
-            this.txbPatientID.TabIndex = 2;
-            // 
-            // txbPatient
-            // 
-            this.txbPatient.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.txbPatient.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txbPatient.Location = new System.Drawing.Point(183, 42);
-            this.txbPatient.Name = "txbPatient";
-            this.txbPatient.Size = new System.Drawing.Size(216, 27);
-            this.txbPatient.TabIndex = 1;
-            // 
-            // cbxNotMedicalList
-            // 
-            this.cbxNotMedicalList.AutoSize = true;
-            this.cbxNotMedicalList.Location = new System.Drawing.Point(13, 276);
-            this.cbxNotMedicalList.Name = "cbxNotMedicalList";
-            this.cbxNotMedicalList.Size = new System.Drawing.Size(165, 24);
-            this.cbxNotMedicalList.TabIndex = 23;
-            this.cbxNotMedicalList.Text = "Không kê khai thuốc";
-            this.cbxNotMedicalList.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(13, 234);
+            this.label2.Location = new System.Drawing.Point(3, 258);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 26);
             this.label2.TabIndex = 22;
@@ -452,9 +573,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(13, 194);
+            this.label7.Location = new System.Drawing.Point(3, 214);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(153, 26);
             this.label7.TabIndex = 20;
@@ -464,9 +585,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(13, 156);
+            this.label6.Location = new System.Drawing.Point(3, 170);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 26);
             this.label6.TabIndex = 19;
@@ -476,9 +597,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(13, 118);
+            this.label5.Location = new System.Drawing.Point(3, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(160, 26);
             this.label5.TabIndex = 18;
@@ -488,9 +609,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(13, 80);
+            this.label4.Location = new System.Drawing.Point(3, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 26);
             this.label4.TabIndex = 17;
@@ -500,9 +621,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(13, 43);
+            this.label3.Location = new System.Drawing.Point(3, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(166, 26);
             this.label3.TabIndex = 16;
@@ -512,7 +633,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(3, 12);
             this.label14.Name = "label14";
@@ -523,13 +644,13 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel2.BackColor = System.Drawing.Color.SkyBlue;
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.lblNextPatient);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Location = new System.Drawing.Point(967, 431);
+            this.panel2.Location = new System.Drawing.Point(967, 407);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(210, 403);
+            this.panel2.Size = new System.Drawing.Size(210, 427);
             this.panel2.TabIndex = 14;
             // 
             // panel4
@@ -537,7 +658,7 @@
             this.panel4.Controls.Add(this.dtgvPatientList);
             this.panel4.Location = new System.Drawing.Point(0, 91);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(210, 312);
+            this.panel4.Size = new System.Drawing.Size(210, 336);
             this.panel4.TabIndex = 15;
             // 
             // dtgvPatientList
@@ -548,15 +669,15 @@
             this.dtgvPatientList.AllowUserToResizeRows = false;
             this.dtgvPatientList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvPatientList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvPatientList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvPatientList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dtgvPatientList.ColumnHeadersHeight = 60;
             this.dtgvPatientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvPatientList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -566,24 +687,24 @@
             this.dtgvPatientList.EnableHeadersVisualStyles = false;
             this.dtgvPatientList.Location = new System.Drawing.Point(0, 0);
             this.dtgvPatientList.Name = "dtgvPatientList";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvPatientList.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvPatientList.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dtgvPatientList.RowHeadersVisible = false;
             this.dtgvPatientList.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.dtgvPatientList.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            this.dtgvPatientList.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dtgvPatientList.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgvPatientList.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dtgvPatientList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
             this.dtgvPatientList.RowTemplate.Height = 29;
             this.dtgvPatientList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPatientList.Size = new System.Drawing.Size(210, 312);
+            this.dtgvPatientList.Size = new System.Drawing.Size(210, 336);
             this.dtgvPatientList.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -638,15 +759,15 @@
             this.dtgvMedicalBill.AllowUserToResizeRows = false;
             this.dtgvMedicalBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvMedicalBill.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvMedicalBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvMedicalBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dtgvMedicalBill.ColumnHeadersHeight = 40;
             this.dtgvMedicalBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvMedicalBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -661,18 +782,18 @@
             this.dtgvMedicalBill.Location = new System.Drawing.Point(0, 0);
             this.dtgvMedicalBill.Name = "dtgvMedicalBill";
             this.dtgvMedicalBill.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvMedicalBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvMedicalBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dtgvMedicalBill.RowHeadersVisible = false;
             this.dtgvMedicalBill.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dtgvMedicalBill.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            this.dtgvMedicalBill.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dtgvMedicalBill.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgvMedicalBill.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dtgvMedicalBill.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
@@ -735,7 +856,6 @@
             this.label16.Size = new System.Drawing.Size(170, 24);
             this.label16.TabIndex = 17;
             this.label16.Text = "Danh sách thuốc";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // panel5
             // 
@@ -753,15 +873,15 @@
             this.dtgvMedicalList.AllowUserToResizeRows = false;
             this.dtgvMedicalList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvMedicalList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvMedicalList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvMedicalList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dtgvMedicalList.ColumnHeadersHeight = 60;
             this.dtgvMedicalList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvMedicalList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -772,18 +892,18 @@
             this.dtgvMedicalList.EnableHeadersVisualStyles = false;
             this.dtgvMedicalList.Location = new System.Drawing.Point(0, 0);
             this.dtgvMedicalList.Name = "dtgvMedicalList";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvMedicalList.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvMedicalList.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dtgvMedicalList.RowHeadersVisible = false;
             this.dtgvMedicalList.RowHeadersWidth = 51;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            this.dtgvMedicalList.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            this.dtgvMedicalList.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dtgvMedicalList.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgvMedicalList.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dtgvMedicalList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
@@ -830,7 +950,6 @@
             this.Text = "Phiếu khám bệnh";
             this.plMedicalBillInfor.ResumeLayout(false);
             this.plMedicalBillInfor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -851,14 +970,8 @@
         private Label label5;
         private Label label4;
         private Label label3;
-        private CheckBox cbxNotMedicalList;
         private Label label2;
         private Label label1;
-        private DateTimePicker dateTimePicker1;
-        private TextBox txbPatientID;
-        private TextBox txbPatient;
-        private ComboBox cbIllnessCategory;
-        private ComboBox cbSymptom;
         private Classes.RJButton btnExit;
         private Classes.RJButton btnSave;
         private Classes.RJButton btnUpdate;
@@ -880,24 +993,30 @@
         private DataGridViewTextBoxColumn Thuoc;
         private DataGridViewTextBoxColumn Soluong;
         private Classes.RJButton btnHistory;
-        private TextBox txbMoney;
-        private TextBox txbPrice;
-        private NumericUpDown nudNumber;
-        private ComboBox cbUsage;
-        private ComboBox cbMedicine;
-        private ComboBox cbMedicineCategory;
         private Label label8;
         private Label label9;
         private Label label10;
         private Label label11;
         private Label label12;
-        private Label label13;
-        private TextBox txbIllness;
         private Label label16;
         private Panel panel5;
         private DataGridView dtgvMedicalList;
         private DataGridViewTextBoxColumn Sothutu;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn Soluongthuoc;
+        private Classes.RJDatePicker dtpkMedicalBill;
+        private Classes.RJRadioButton rbtnNotMedicalList;
+        private Classes.CustomTextBox tbxMedicalillNumber;
+        private Classes.CustomTextBox tbxMedicalNumer;
+        private Classes.CustomTextBox tbxPrice;
+        private Classes.CustomTextBox tbxFinalPrice;
+        private Classes.CustomTextBox tbxMedicalBillPatient;
+        private CustomControls.RJControls.RJComboBox cbx_IllnessCate;
+        private CustomControls.RJControls.RJComboBox cbxSympton;
+        private CustomControls.RJControls.RJComboBox cbxUsage;
+        private CustomControls.RJControls.RJComboBox cbx_MedicalCate;
+        private CustomControls.RJControls.RJComboBox cbxMedical;
+        private Label label13;
+        private CustomControls.RJControls.RJComboBox cbxIllness;
     }
 }
