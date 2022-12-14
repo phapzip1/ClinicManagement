@@ -15,9 +15,7 @@ namespace DatabaseProject
         private static SqlDataAdapter adapter = new SqlDataAdapter();
         public SqlTransaction DbTran;
 
-        private static string strConnString = "Data Source=DESKTOP-AEEPUD3\\MSSQLSERVER01;Initial Catalog=DoAn;Integrated Security=True";
-
-
+        private static string strConnString = "Data Source=.;Initial Catalog=DoAn;Integrated Security=True";
 
         public void createConn()
         {
@@ -115,8 +113,10 @@ namespace DatabaseProject
                 throw ex;
             }
         }
-        public int executeQuery(SqlCommand dbCommand)
+        public int executeQuery(string query)
         {
+            int data = 0;
+            SqlCommand dbCommand = new SqlCommand(query, connection);
             try
             {
                 if (connection.State == 0)
@@ -127,8 +127,11 @@ namespace DatabaseProject
                 dbCommand.Connection = connection;
                 dbCommand.CommandType = CommandType.Text;
 
+                data = dbCommand.ExecuteNonQuery();
 
-                return dbCommand.ExecuteNonQuery();
+                closeConn();
+
+                return data;
             }
             catch (Exception ex)
             {
