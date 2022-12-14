@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.Devices;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ClinicManagement.DTOs
@@ -14,6 +13,7 @@ namespace ClinicManagement.DTOs
         [ForeignKey("Illness")]
         public Guid IllnessId { get; set; }
         public virtual IllnessDTO Illness { get; set; }
+        public string Symtoms { get; set; }
         public DateTime CreateIn { get; set; }
     }
 }

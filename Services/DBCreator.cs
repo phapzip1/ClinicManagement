@@ -65,6 +65,7 @@ namespace ClinicManagement.Services
                 Id = medicalNote.Id,
                 PatientId = medicalNote.PatientId,
                 IllnessId = medicalNote.IllnessId,
+                Symtoms = medicalNote.Symtoms,
                 CreateIn = medicalNote.CreateIn,
             };
         }

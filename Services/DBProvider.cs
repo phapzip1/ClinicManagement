@@ -36,7 +36,8 @@ namespace ClinicManagement.Services
                                 obj.patient.Fullname,
                                 obj.illness.Id,
                                 obj.illness.Name,
-                                obj.medicalnote.CreateIn,
+                                obj.medicalnote.Symtoms,
+                                obj.medicalnote.CreateIn,                         
                                 GetMedicalNoteDetail(obj.medicalnote.Id)
                                )).ToListAsync();
 
