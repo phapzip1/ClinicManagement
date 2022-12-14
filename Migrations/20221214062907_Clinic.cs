@@ -1,23 +1,19 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-#nullable disable
-
 namespace ClinicManagement.Migrations
 {
-    /// <inheritdoc />
     public partial class Clinic : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
                 name: "Illness",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Symptom = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Symptom = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -25,11 +21,36 @@ namespace ClinicManagement.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ImportDetail",
+                columns: table => new
+                {
+                    ImportId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    MedicineId = table.Column<byte[]>(type: "varbinary(16)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ImportDetail", x => new { x.ImportId, x.MedicineId });
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Imports",
+                columns: table => new
+                {
+                    Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    Price = table.Column<int>(type: "int unsigned", nullable: false),
+                    CreateIn = table.Column<DateTime>(type: "datetime", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Imports", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Methods",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,11 +61,11 @@ namespace ClinicManagement.Migrations
                 name: "Patients",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Fullname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Dob = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<string>(type: "varchar(767)", nullable: false),
+                    Fullname = table.Column<string>(type: "text", nullable: false),
+                    Gender = table.Column<string>(type: "text", nullable: false),
+                    Dob = table.Column<DateTime>(type: "datetime", nullable: false),
+                    Address = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -55,8 +76,8 @@ namespace ClinicManagement.Migrations
                 name: "Units",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,10 +88,10 @@ namespace ClinicManagement.Migrations
                 name: "MedicalNotes",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PatientId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    IllnessId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreateIn = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    PatientId = table.Column<string>(type: "varchar(767)", nullable: false),
+                    IllnessId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    CreateIn = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -93,11 +114,11 @@ namespace ClinicManagement.Migrations
                 name: "Medicines",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UnitId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Stock = table.Column<long>(type: "bigint", nullable: false),
-                    Price = table.Column<long>(type: "bigint", nullable: false)
+                    Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    UnitId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    Stock = table.Column<int>(type: "int unsigned", nullable: false),
+                    Price = table.Column<int>(type: "int unsigned", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -111,13 +132,33 @@ namespace ClinicManagement.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Bills",
+                columns: table => new
+                {
+                    Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    MedicalNoteId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    MedicineCost = table.Column<int>(type: "int unsigned", nullable: false),
+                    MedicalCost = table.Column<int>(type: "int unsigned", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Bills", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Bills_MedicalNotes_MedicalNoteId",
+                        column: x => x.MedicalNoteId,
+                        principalTable: "MedicalNotes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MedicalNoteDetail",
                 columns: table => new
                 {
-                    MedicalNoteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    MedicineId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Quantity = table.Column<long>(type: "bigint", nullable: false),
-                    MethodId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    MedicalNoteId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    MedicineId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    Quantity = table.Column<int>(type: "int unsigned", nullable: false),
+                    MethodId = table.Column<byte[]>(type: "varbinary(16)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -141,6 +182,11 @@ namespace ClinicManagement.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Bills_MedicalNoteId",
+                table: "Bills",
+                column: "MedicalNoteId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MedicalNoteDetail_MedicalNoteId",
@@ -168,9 +214,17 @@ namespace ClinicManagement.Migrations
                 column: "UnitId");
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Bills");
+
+            migrationBuilder.DropTable(
+                name: "ImportDetail");
+
+            migrationBuilder.DropTable(
+                name: "Imports");
+
             migrationBuilder.DropTable(
                 name: "MedicalNoteDetail");
 
