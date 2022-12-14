@@ -58,6 +58,19 @@ namespace ClinicManagement.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Parameters",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "varchar(767)", nullable: false),
+                    MedicalCost = table.Column<int>(type: "int unsigned", nullable: false),
+                    MaxPatient = table.Column<int>(type: "int unsigned", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Parameters", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Patients",
                 columns: table => new
                 {
@@ -91,6 +104,7 @@ namespace ClinicManagement.Migrations
                     Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
                     PatientId = table.Column<string>(type: "varchar(767)", nullable: false),
                     IllnessId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    Symtoms = table.Column<string>(type: "text", nullable: false),
                     CreateIn = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
@@ -212,9 +226,6 @@ namespace ClinicManagement.Migrations
                 name: "IX_Medicines_UnitId",
                 table: "Medicines",
                 column: "UnitId");
-
-            migrationBuilder.Sql("CREATE TRIGGER Bill_MedicalCost_Insert ");
-
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -230,6 +241,9 @@ namespace ClinicManagement.Migrations
 
             migrationBuilder.DropTable(
                 name: "MedicalNoteDetail");
+
+            migrationBuilder.DropTable(
+                name: "Parameters");
 
             migrationBuilder.DropTable(
                 name: "MedicalNotes");

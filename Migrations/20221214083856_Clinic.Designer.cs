@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClinicManagement.Migrations
 {
     [DbContext(typeof(ClinicDbContext))]
-    [Migration("20221214062907_Clinic")]
+    [Migration("20221214083856_Clinic")]
     partial class Clinic
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -108,6 +108,10 @@ namespace ClinicManagement.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(767)");
 
+                    b.Property<string>("Symtoms")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IllnessId");
@@ -181,6 +185,22 @@ namespace ClinicManagement.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Methods");
+                });
+
+            modelBuilder.Entity("ClinicManagement.DTOs.ParameterDTO", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(767)");
+
+                    b.Property<uint>("MaxPatient")
+                        .HasColumnType("int unsigned");
+
+                    b.Property<uint>("MedicalCost")
+                        .HasColumnType("int unsigned");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Parameters");
                 });
 
             modelBuilder.Entity("ClinicManagement.DTOs.PatientDTO", b =>
