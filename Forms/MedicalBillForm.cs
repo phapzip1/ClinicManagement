@@ -24,13 +24,13 @@ namespace ClinicManagement.Forms
         //Hàm
         private void ResetMedicalBill()
         {
-            tbxMedicalillNumber.Texts = string.Empty;
-            tbxMedicalillNumber.ReadOnly= true;
+            tbxMedicalBillNumber.Texts = string.Empty;
+            tbxMedicalBillNumber.ReadOnly= true;
 
             dtpkMedicalBill.Value = DateTime.Today;
             tbxMedicalBillPatient.Texts = string.Empty;  
 
-            tbxMedicalillNumber.Texts = string.Empty;
+            tbxMedicalBillNumber.Texts = string.Empty;
             tbxPrice.Text = string.Empty;
             tbxFinalPrice.Text = string.Empty;
         }
@@ -59,6 +59,14 @@ namespace ClinicManagement.Forms
             {
                 rbtnNotMedicalList.Checked = true;
                 isChecked = false;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if(isChecked == false && tbxMedicalNumer.Texts == string.Empty)
+            {
+                MessageBox.Show("Chưa kê khai thuốc!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop);
             }
         }
     }

@@ -1,4 +1,5 @@
 using ClinicManagement.DbContexts;
+using ClinicManagement.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClinicManagement
@@ -12,11 +13,16 @@ namespace ClinicManagement
         [STAThread]
         static void Main()
         {
-            DbContextOptions options = new DbContextOptionsBuilder().UseSqlServer("Server=.;Database=Clinic;Integrated Security=true;Trust Server Certificate=true;").Options;
+            //DbContextOptions options = new DbContextOptionsBuilder().UseSqlServer("Server=.;Database=Clinic;Integrated Security=true;Trust Server Certificate=true;").Options;
+            ClinicDbContextFactory clinicDbContextFactory = new ClinicDbContextFactory(CONNECTION_STRING);
 
-            using (ClinicDbContext dbContext = new ClinicDbContext(options))
+            using (ClinicDbContext dbContext = clinicDbContextFactory.CreateDbContext())
             {
+
                 dbContext.Database.Migrate();
+
+                IDataCreator dataCreator = new DBCreator(clinicDbContextFactory);
+                dataCreator.CreatePatient(new Models.Patient("7", "sang", "male", DateTime.Now, "faikfa"));
             }
 
 

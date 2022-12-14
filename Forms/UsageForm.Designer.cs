@@ -242,7 +242,6 @@
             this.btnSearchUsage.Text = "Tra cứu";
             this.btnSearchUsage.TextColor = System.Drawing.Color.Black;
             this.btnSearchUsage.UseVisualStyleBackColor = false;
-            this.btnSearchUsage.Click += new System.EventHandler(this.btnSearchUsage_Click);
             // 
             // btnNotSaveUsage
             // 
@@ -538,6 +537,7 @@
             this.btnNotSaveUnit.Text = "Không lưu";
             this.btnNotSaveUnit.TextColor = System.Drawing.Color.Black;
             this.btnNotSaveUnit.UseVisualStyleBackColor = false;
+            this.btnNotSaveUnit.Click += new System.EventHandler(this.btnNotSaveUnit_Click);
             // 
             // btnSaveUnit
             // 
@@ -557,6 +557,7 @@
             this.btnSaveUnit.Text = "Lưu";
             this.btnSaveUnit.TextColor = System.Drawing.Color.Black;
             this.btnSaveUnit.UseVisualStyleBackColor = false;
+            this.btnSaveUnit.Click += new System.EventHandler(this.btnSaveUnit_Click);
             // 
             // btnUpdateUnit
             // 
@@ -576,6 +577,7 @@
             this.btnUpdateUnit.Text = "Cập nhật";
             this.btnUpdateUnit.TextColor = System.Drawing.Color.Black;
             this.btnUpdateUnit.UseVisualStyleBackColor = false;
+            this.btnUpdateUnit.Click += new System.EventHandler(this.btnUpdateUnit_Click);
             // 
             // btnAddUnit
             // 
@@ -595,6 +597,7 @@
             this.btnAddUnit.Text = "Thêm";
             this.btnAddUnit.TextColor = System.Drawing.Color.Black;
             this.btnAddUnit.UseVisualStyleBackColor = false;
+            this.btnAddUnit.Click += new System.EventHandler(this.btnAddUnit_Click);
             // 
             // label3
             // 

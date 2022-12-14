@@ -16,5 +16,10 @@ namespace ClinicManagement.Forms
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Illness_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

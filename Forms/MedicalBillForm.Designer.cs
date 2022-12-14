@@ -49,7 +49,7 @@
             this.tbxPrice = new ClinicManagement.Classes.CustomTextBox();
             this.tbxFinalPrice = new ClinicManagement.Classes.CustomTextBox();
             this.tbxMedicalBillPatient = new ClinicManagement.Classes.CustomTextBox();
-            this.tbxMedicalillNumber = new ClinicManagement.Classes.CustomTextBox();
+            this.tbxMedicalBillNumber = new ClinicManagement.Classes.CustomTextBox();
             this.rbtnNotMedicalList = new ClinicManagement.Classes.RJRadioButton();
             this.dtpkMedicalBill = new ClinicManagement.Classes.RJDatePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -115,7 +115,7 @@
             this.plMedicalBillInfor.Controls.Add(this.tbxPrice);
             this.plMedicalBillInfor.Controls.Add(this.tbxFinalPrice);
             this.plMedicalBillInfor.Controls.Add(this.tbxMedicalBillPatient);
-            this.plMedicalBillInfor.Controls.Add(this.tbxMedicalillNumber);
+            this.plMedicalBillInfor.Controls.Add(this.tbxMedicalBillNumber);
             this.plMedicalBillInfor.Controls.Add(this.rbtnNotMedicalList);
             this.plMedicalBillInfor.Controls.Add(this.dtpkMedicalBill);
             this.plMedicalBillInfor.Controls.Add(this.label8);
@@ -342,24 +342,24 @@
             this.tbxMedicalBillPatient.Texts = "";
             this.tbxMedicalBillPatient.UnderlinedStyle = false;
             // 
-            // tbxMedicalillNumber
+            // tbxMedicalBillNumber
             // 
-            this.tbxMedicalillNumber.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxMedicalillNumber.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.tbxMedicalillNumber.BorderFocusColor = System.Drawing.Color.Turquoise;
-            this.tbxMedicalillNumber.BorderSize = 1;
-            this.tbxMedicalillNumber.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbxMedicalillNumber.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxMedicalillNumber.Location = new System.Drawing.Point(183, 27);
-            this.tbxMedicalillNumber.Multiline = false;
-            this.tbxMedicalillNumber.Name = "tbxMedicalillNumber";
-            this.tbxMedicalillNumber.Padding = new System.Windows.Forms.Padding(7);
-            this.tbxMedicalillNumber.PasswordChar = false;
-            this.tbxMedicalillNumber.ReadOnly = false;
-            this.tbxMedicalillNumber.Size = new System.Drawing.Size(216, 38);
-            this.tbxMedicalillNumber.TabIndex = 60;
-            this.tbxMedicalillNumber.Texts = "";
-            this.tbxMedicalillNumber.UnderlinedStyle = false;
+            this.tbxMedicalBillNumber.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxMedicalBillNumber.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxMedicalBillNumber.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxMedicalBillNumber.BorderSize = 1;
+            this.tbxMedicalBillNumber.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxMedicalBillNumber.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxMedicalBillNumber.Location = new System.Drawing.Point(183, 27);
+            this.tbxMedicalBillNumber.Multiline = false;
+            this.tbxMedicalBillNumber.Name = "tbxMedicalBillNumber";
+            this.tbxMedicalBillNumber.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxMedicalBillNumber.PasswordChar = false;
+            this.tbxMedicalBillNumber.ReadOnly = false;
+            this.tbxMedicalBillNumber.Size = new System.Drawing.Size(216, 38);
+            this.tbxMedicalBillNumber.TabIndex = 60;
+            this.tbxMedicalBillNumber.Texts = "";
+            this.tbxMedicalBillNumber.UnderlinedStyle = false;
             // 
             // rbtnNotMedicalList
             // 
@@ -507,6 +507,7 @@
             this.btnSave.Text = "Xong";
             this.btnSave.TextColor = System.Drawing.Color.Black;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -1006,7 +1007,7 @@
         private DataGridViewTextBoxColumn Soluongthuoc;
         private Classes.RJDatePicker dtpkMedicalBill;
         private Classes.RJRadioButton rbtnNotMedicalList;
-        private Classes.CustomTextBox tbxMedicalillNumber;
+        private Classes.CustomTextBox tbxMedicalBillNumber;
         private Classes.CustomTextBox tbxMedicalNumer;
         private Classes.CustomTextBox tbxPrice;
         private Classes.CustomTextBox tbxFinalPrice;

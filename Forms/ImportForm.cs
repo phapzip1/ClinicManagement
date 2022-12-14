@@ -16,5 +16,10 @@ namespace ClinicManagement.Forms
         {
             InitializeComponent();
         }
+
+        private void ImportForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -19,14 +19,15 @@ namespace ClinicManagement.Forms
         int yearnow = DateTime.Now.Year;
         DBAccess dBAccess = new DBAccess();
 
-        string id, fullname, address;
-        string gender;
-        DateTime dob;
+        static int MaxPatientInDay = 40;
+        static int ClickCount = 0;
 
         //Khởi tạo
         public PatientForm()
         {
             InitializeComponent();
+
+            //MaxPatientInDay= dBAccess.executeQuery("SELECT SOBNTOIDA FROM THAMSO");
 
             dtpkBob.MaxDate= DateTime.Now;
             ResetMonitor();
@@ -55,8 +56,8 @@ namespace ClinicManagement.Forms
         private void btnAdd_Click(object sender, EventArgs e)
         {
             int _id = 1;
-            _id = dBAccess.executeQuery("SELECT MAX(MABN) FROM BENHNHAN");
-            if (_id > 1) { _id++; }
+            _id = dBAccess.executeQuery("SELECT TOP 1 MABN FROM BENHNHAN ORDER BY MABN DESC");
+            if (_id > 1) { _id = _id + 1; }
             else _id = 1;
             //Khoá mã bệnh nhân
             tbxPatientID.ReadOnly = true;
@@ -71,23 +72,32 @@ namespace ClinicManagement.Forms
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            if (ClickCount > MaxPatientInDay) {
+                MessageBox.Show("Vượt quá số bệnh nhân có thể tiếp nhận trong ngày!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
 
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            string id, fullname, gender;
+
             id = tbxPatientID.Text.ToString();
             fullname = tbxPatientName.Text.ToString();
             if (rbtnPatientMale.Checked) { gender = "1"; }
             else { gender = "0"; }
-            address= tbxPatientAddress.Text.ToString();
+
+            Patient aPatient = new Patient(tbxPatientID.Text.ToString(), fullname, gender, dtpkBob.Value, tbxPatientAddress.Text.ToString());
 
             //Quy định
-            if(fullname.Length> 30)
+            if (fullname.Length> 30)
             {
                 MessageBox.Show("Tên quá dài!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (rbtnPatientFemale.Checked == rbtnPatientMale.Checked == false)
+            if (rbtnPatientFemale.Checked == rbtnPatientMale.Checked == false)
             {
                 MessageBox.Show("Hãy chọn giới tính!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
