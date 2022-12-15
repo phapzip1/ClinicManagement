@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClinicManagement.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -73,6 +74,11 @@ namespace ClinicManagement.Forms
             {
                 MessageBox.Show("Chưa kê khai thuốc!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop);
             }
+        }
+
+        private void timerMedical_Tick(object sender, EventArgs e)
+        {
+            lblNextPatient.Text = InforForm.Next_Patient.ToString();
         }
     }
 }

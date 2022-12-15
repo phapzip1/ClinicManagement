@@ -2,12 +2,13 @@ using ClinicManagement.DbContexts;
 using ClinicManagement.Services;
 using Microsoft.EntityFrameworkCore;
 using ClinicManagement.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ClinicManagement
 {
     internal static class Program
     {
-        private const string CONNECTION_STRING = "server=clinic-do-user-13077884-0.b.db.ondigitalocean.com;port=25060;database=clinic;user=doadmin;password=AVNS_9tiZWj1IIbWbJFEFmxw;";
+        private const string CONNECTION_STRING = "server=clinic-do-user-13077884-0.b.db.ondigitalocean.com;port=25060;database=clinic;user=doadmin;password=AVNS_9tiZWj1IIbWbJFEFmxw;";       
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -20,8 +21,8 @@ namespace ClinicManagement
 
                 //dbContext.Database.Migrate();
 
-                IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);
-                dataCreator.CreatePatient(new Models.Patient("7", "sang", "male", DateTime.Now, "faikfa"));
+                //IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);
+                //dataCreator.CreatePatient(new Models.Patient("8", "test", "male", DateTime.Now, "345"));
             }
 
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -52,6 +53,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lblNiceSave = new System.Windows.Forms.Label();
             this.dtpkBob = new ClinicManagement.Classes.RJDatePicker();
             this.rbtnPatientFemale = new ClinicManagement.Classes.RJRadioButton();
             this.rbtnPatientMale = new ClinicManagement.Classes.RJRadioButton();
@@ -67,6 +69,7 @@
             this.btnSave = new ClinicManagement.Classes.RJButton();
             this.btnAdd = new ClinicManagement.Classes.RJButton();
             this.lblPatientData = new System.Windows.Forms.Label();
+            this.timerPatient = new System.Windows.Forms.Timer(this.components);
             this.plPatientInfor.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPatientList)).BeginInit();
@@ -108,6 +111,7 @@
             this.btnGo.Text = "Vào khám";
             this.btnGo.TextColor = System.Drawing.Color.Black;
             this.btnGo.UseVisualStyleBackColor = false;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // tbxPatientIDNow
             // 
@@ -340,6 +344,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.lblNiceSave);
             this.panel5.Controls.Add(this.dtpkBob);
             this.panel5.Controls.Add(this.rbtnPatientFemale);
             this.panel5.Controls.Add(this.rbtnPatientMale);
@@ -356,6 +361,19 @@
             this.panel5.Size = new System.Drawing.Size(482, 217);
             this.panel5.TabIndex = 1;
             // 
+            // lblNiceSave
+            // 
+            this.lblNiceSave.AutoSize = true;
+            this.lblNiceSave.BackColor = System.Drawing.Color.Transparent;
+            this.lblNiceSave.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNiceSave.ForeColor = System.Drawing.Color.Navy;
+            this.lblNiceSave.Location = new System.Drawing.Point(293, 96);
+            this.lblNiceSave.Name = "lblNiceSave";
+            this.lblNiceSave.Size = new System.Drawing.Size(176, 26);
+            this.lblNiceSave.TabIndex = 27;
+            this.lblNiceSave.Text = "Lưu thành công!";
+            this.lblNiceSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // dtpkBob
             // 
             this.dtpkBob.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -371,7 +389,7 @@
             // rbtnPatientFemale
             // 
             this.rbtnPatientFemale.AutoSize = true;
-            this.rbtnPatientFemale.CheckedColor = System.Drawing.Color.DarkCyan;
+            this.rbtnPatientFemale.CheckedColor = System.Drawing.Color.Navy;
             this.rbtnPatientFemale.Location = new System.Drawing.Point(227, 99);
             this.rbtnPatientFemale.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbtnPatientFemale.Name = "rbtnPatientFemale";
@@ -386,7 +404,7 @@
             // rbtnPatientMale
             // 
             this.rbtnPatientMale.AutoSize = true;
-            this.rbtnPatientMale.CheckedColor = System.Drawing.Color.DarkCyan;
+            this.rbtnPatientMale.CheckedColor = System.Drawing.Color.Navy;
             this.rbtnPatientMale.Location = new System.Drawing.Point(161, 99);
             this.rbtnPatientMale.MinimumSize = new System.Drawing.Size(0, 21);
             this.rbtnPatientMale.Name = "rbtnPatientMale";
@@ -586,6 +604,11 @@
             this.lblPatientData.TabIndex = 0;
             this.lblPatientData.Text = "THÔNG TIN BỆNH NHÂN";
             // 
+            // timerPatient
+            // 
+            this.timerPatient.Interval = 1000;
+            this.timerPatient.Tick += new System.EventHandler(this.timerPatient_Tick);
+            // 
             // PatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -649,5 +672,7 @@
         private DataGridViewTextBoxColumn Gender;
         private DataGridViewTextBoxColumn YearOfBirth;
         private DataGridViewTextBoxColumn Address;
+        private Label lblNiceSave;
+        private System.Windows.Forms.Timer timerPatient;
     }
 }

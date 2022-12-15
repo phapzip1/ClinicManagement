@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace ClinicManagement
 {
     public partial class Form1 : Form
-    {
+    {        
         #region Custom title bar
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;

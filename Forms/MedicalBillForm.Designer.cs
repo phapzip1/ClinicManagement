@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -69,8 +70,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dtgvPatientList = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNextPatient = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -87,6 +86,8 @@
             this.Sothutu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluongthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timerMedical = new System.Windows.Forms.Timer(this.components);
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plMedicalBillInfor.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -619,7 +620,6 @@
             this.dtgvPatientList.ColumnHeadersHeight = 60;
             this.dtgvPatientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvPatientList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.dtgvPatientList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvPatientList.EnableHeadersVisualStyles = false;
@@ -644,20 +644,6 @@
             this.dtgvPatientList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvPatientList.Size = new System.Drawing.Size(210, 380);
             this.dtgvPatientList.TabIndex = 4;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 127.7511F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã số";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 124.0151F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Họ tên ";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // lblNextPatient
             // 
@@ -875,6 +861,17 @@
             this.Soluongthuoc.MinimumWidth = 6;
             this.Soluongthuoc.Name = "Soluongthuoc";
             // 
+            // timerMedical
+            // 
+            this.timerMedical.Tick += new System.EventHandler(this.timerMedical_Tick);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 124.0151F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Họ tên ";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
             // MedicalBillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -924,8 +921,6 @@
         private Panel panel4;
         private Panel panel3;
         private DataGridView dtgvPatientList;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridView dtgvMedicalBill;
         private Classes.RJButton btnHistory;
         private Label label8;
@@ -956,5 +951,7 @@
         private DataGridViewTextBoxColumn Thuoc;
         private DataGridViewTextBoxColumn Soluong;
         private Classes.CustomTextBox tbxMedicalBillDay;
+        private System.Windows.Forms.Timer timerMedical;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

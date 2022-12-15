@@ -1,8 +1,11 @@
 ﻿
+using ClinicManagement.DbContexts;
+using ClinicManagement.Services;
+
 namespace ClinicManagement.Models
 {
     public class Patient
-    {
+    {        
         //public Patient
         public Patient(string id, string fullname, string gender, DateTime dob, string address)
         {
@@ -18,7 +21,6 @@ namespace ClinicManagement.Models
         public string Gender { get; }
         public DateTime Dob { get; }
         public string Address { get; }
-
 
         //Biến static cho dtgv trong PatientForm (Để ké)
         private static int _id;
