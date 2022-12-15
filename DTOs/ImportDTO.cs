@@ -6,7 +6,7 @@ namespace ClinicManagement.DTOs
     {
         [Key]
         public Guid Id { get; set; }
-        public uint Price { get; set; }
+        public int Price { get; set; }
         public DateTime CreateIn { get; set; }
     }
 }

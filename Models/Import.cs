@@ -2,7 +2,7 @@
 {
     public class Import
     {
-        public Import(Guid id, DateTime createIn, uint price, IEnumerable<ImportDetail> details)
+        public Import(Guid id, DateTime createIn, int price, IEnumerable<ImportDetail> details)
         {
             Id = id;
             CreateIn = createIn;
@@ -12,7 +12,7 @@
 
         public Guid Id { get; }
         public DateTime CreateIn { get; }
-        public uint Price { get; }
+        public int Price { get; }
         public IEnumerable<ImportDetail> Details { get; }
     }
 }

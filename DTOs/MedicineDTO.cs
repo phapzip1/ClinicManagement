@@ -11,7 +11,7 @@ namespace ClinicManagement.DTOs
         [ForeignKey("Unit")]
         public Guid UnitId { get; set; }
         public UnitDTO Unit { get; set;}
-        public uint Stock { get; set; }
-        public uint Price { get; set; }
+        public int Stock { get; set; }
+        public int Price { get; set; }
     }
 }

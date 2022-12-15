@@ -6,7 +6,8 @@ namespace ClinicManagement.DTOs
     {
         [Key]
         public string Id { get; set; }
-        public uint MedicalCost { get; set; }
-        public uint MaxPatient { get; set; }
+        public int MedicalCost { get; set; }
+        public int MaxPatient { get; set; }
+        public string Password { get; set; }
     }
 }

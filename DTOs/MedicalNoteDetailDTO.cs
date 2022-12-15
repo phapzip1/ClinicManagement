@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ClinicManagement.DTOs
 {
@@ -11,9 +10,9 @@ namespace ClinicManagement.DTOs
         [ForeignKey("Medicine")]
         public Guid MedicineId { get; set; }
         public virtual MedicineDTO Medicine { get; set; }
-        public uint Quantity { get; set; }
+        public int Quantity { get; set; }
         [ForeignKey("Method")]
         public Guid MethodId { get; set; }
-        public MethodDTO  Method { get; set; }
+        public virtual MethodDTO  Method { get; set; }
     }
 }

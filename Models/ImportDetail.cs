@@ -2,7 +2,7 @@
 {
     public class ImportDetail
     {
-        public ImportDetail(Guid importId, Guid medicineId, string name, string unitName, uint quantity, uint price)
+        public ImportDetail(Guid importId, Guid medicineId, string name, string unitName, int quantity, int price)
         {
             ImportId = importId;
             MedicineId = medicineId;
@@ -16,7 +16,12 @@
         public Guid MedicineId { get; }
         public string Name { get; }
         public string UnitName { get; }
-        public uint Quantity { get; }
-        public uint Price { get; }
+        public int Quantity { get; }
+        public int Price { get; }
+
+        public int Sum
+        {
+            get => Quantity * Price; 
+        }
     }
 }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClinicManagement.Migrations
 {
     [DbContext(typeof(ClinicDbContext))]
-    [Migration("20221214083856_Clinic")]
+    [Migration("20221215085635_Clinic")]
     partial class Clinic
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,15 +25,15 @@ namespace ClinicManagement.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("varbinary(16)");
 
-                    b.Property<uint>("MedicalCost")
-                        .HasColumnType("int unsigned");
+                    b.Property<int>("MedicalCost")
+                        .HasColumnType("int");
 
                     b.Property<byte[]>("MedicalNoteId")
                         .IsRequired()
                         .HasColumnType("varbinary(16)");
 
-                    b.Property<uint>("MedicineCost")
-                        .HasColumnType("int unsigned");
+                    b.Property<int>("MedicineCost")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -70,8 +70,8 @@ namespace ClinicManagement.Migrations
                     b.Property<DateTime>("CreateIn")
                         .HasColumnType("datetime");
 
-                    b.Property<uint>("Price")
-                        .HasColumnType("int unsigned");
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -86,7 +86,15 @@ namespace ClinicManagement.Migrations
                     b.Property<byte[]>("MedicineId")
                         .HasColumnType("varbinary(16)");
 
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
                     b.HasKey("ImportId", "MedicineId");
+
+                    b.HasIndex("MedicineId");
 
                     b.ToTable("ImportDetail");
                 });
@@ -133,8 +141,8 @@ namespace ClinicManagement.Migrations
                         .IsRequired()
                         .HasColumnType("varbinary(16)");
 
-                    b.Property<uint>("Quantity")
-                        .HasColumnType("int unsigned");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("MedicineId", "MedicalNoteId");
 
@@ -155,11 +163,11 @@ namespace ClinicManagement.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<uint>("Price")
-                        .HasColumnType("int unsigned");
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
-                    b.Property<uint>("Stock")
-                        .HasColumnType("int unsigned");
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
 
                     b.Property<byte[]>("UnitId")
                         .IsRequired()
@@ -192,11 +200,15 @@ namespace ClinicManagement.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("varchar(767)");
 
-                    b.Property<uint>("MaxPatient")
-                        .HasColumnType("int unsigned");
+                    b.Property<int>("MaxPatient")
+                        .HasColumnType("int");
 
-                    b.Property<uint>("MedicalCost")
-                        .HasColumnType("int unsigned");
+                    b.Property<int>("MedicalCost")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -252,6 +264,25 @@ namespace ClinicManagement.Migrations
                         .IsRequired();
 
                     b.Navigation("MedicalNote");
+                });
+
+            modelBuilder.Entity("ClinicManagement.DTOs.ImportDetailDTO", b =>
+                {
+                    b.HasOne("ClinicManagement.DTOs.ImportDTO", "Import")
+                        .WithMany()
+                        .HasForeignKey("ImportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ClinicManagement.DTOs.MedicineDTO", "Medicine")
+                        .WithMany()
+                        .HasForeignKey("MedicineId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Import");
+
+                    b.Navigation("Medicine");
                 });
 
             modelBuilder.Entity("ClinicManagement.DTOs.MedicalNoteDTO", b =>

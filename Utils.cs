@@ -1,10 +1,11 @@
-﻿using System.Drawing.Text;
+﻿using System.Data;
+using System.Drawing.Text;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
 namespace ClinicManagement
 {
-    internal class Utils
+    public static class Utils
     {
         #region FontLoader and Getter
 
@@ -49,6 +50,34 @@ namespace ClinicManagement
 
         #region ColorConverter
         public static Color FromHex(string code) => ColorTranslator.FromHtml(code);
+
+        #endregion
+
+        #region Others
+        public static DataTable ToDataTable<T>(this List<T> items)
+        {
+            var tb = new DataTable(typeof(T).Name);
+
+            PropertyInfo[] props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            foreach (var prop in props)
+            {
+                tb.Columns.Add(prop.Name, prop.PropertyType);
+            }
+
+            foreach (var item in items)
+            {
+                var values = new object[props.Length];
+                for (var i = 0; i < props.Length; i++)
+                {
+                    values[i] = props[i].GetValue(item, null);
+                }
+
+                tb.Rows.Add(values);
+            }
+
+            return tb;
+        }
 
         #endregion
     }
