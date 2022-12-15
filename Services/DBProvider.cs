@@ -2,6 +2,7 @@
 using ClinicManagement.DTOs;
 using ClinicManagement.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
 
 namespace ClinicManagement.Services
 {
@@ -37,7 +38,7 @@ namespace ClinicManagement.Services
                                 obj.illness.Id,
                                 obj.illness.Name,
                                 obj.medicalnote.Symtoms,
-                                obj.medicalnote.CreateIn,                         
+                                obj.medicalnote.CreateIn,
                                 GetMedicalNoteDetail(obj.medicalnote.Id)
                                )).ToListAsync();
 
@@ -96,7 +97,7 @@ namespace ClinicManagement.Services
                     .Join(dbContext.MedicalNoteDetail, p => p.medicine.Id, f => f.MedicineId, (p, f) => new { medicine = p.medicine, unit = p.unit, detail = f })
                     .Join(dbContext.MedicalNotes, p => p.detail.MedicalNoteId, f => f.Id, (p, f) => new { medicine = p.medicine, unit = p.unit, detail = p.detail, note = f })
                     .GroupBy(p => new { Id = p.medicine.Id, Name = p.medicine.Name, UnitId = p.unit.Id, UnitName = p.unit.Name })
-                    .Select(obj => new UsageReport(obj.Key.Name, obj.Key.UnitName, (uint)obj.Sum(p => p.detail.Quantity), (uint)obj.Count()))
+                    .Select(obj => new UsageReport(obj.Key.Name, obj.Key.UnitName, obj.Sum(p => p.detail.Quantity), obj.Count()))
                     .ToListAsync();
             }
         }
@@ -110,7 +111,7 @@ namespace ClinicManagement.Services
                     .Join(dbContext.MedicalNotes, p => p.detail.MedicalNoteId, f => f.Id, (p, f) => new { medicine = p.medicine, unit = p.unit, detail = p.detail, note = f })
                     .Where(p => p.note.CreateIn.Month == month && p.note.CreateIn.Year == year)
                     .GroupBy(p => new { Id = p.medicine.Id, Name = p.medicine.Name, UnitId = p.unit.Id, UnitName = p.unit.Name })
-                    .Select(obj => new UsageReport(obj.Key.Name, obj.Key.UnitName, (uint)obj.Sum(p => p.detail.Quantity), (uint)obj.Count()))
+                    .Select(obj => new UsageReport(obj.Key.Name, obj.Key.UnitName, obj.Sum(p => p.detail.Quantity), obj.Count()))
                     .ToListAsync();
             }
         }
@@ -119,11 +120,64 @@ namespace ClinicManagement.Services
         {
             using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-                return await dbContext.Bills.Join(dbContext.MedicalNotes, p => p.MedicalNoteId, f => f.Id, (p, f) => new {bill = p, note = f })
+                return await dbContext.Bills.Join(dbContext.MedicalNotes, p => p.MedicalNoteId, f => f.Id, (p, f) => new { bill = p, note = f })
                     .Where(p => p.note.CreateIn.Month == month && p.note.CreateIn.Year == year)
-                    .GroupBy(p =>  new { p.note.CreateIn.Day })
-                    .Select(obj => new Statistic((uint)obj.Key.Day, (uint)obj.Count(), (uint)obj.Sum(p => p.bill.MedicalCost + p.bill.MedicineCost)))
+                    .GroupBy(p => new { p.note.CreateIn.Day })
+                    .Select(obj => new Statistic(obj.Key.Day, obj.Count(), obj.Sum(p => p.bill.MedicalCost + p.bill.MedicineCost)))
+                    .OrderBy(obj => obj.Day)
                     .ToListAsync();
+            }
+        }
+
+        public async Task<IEnumerable<ImportReport>> GetImportReport(int month, int year)
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                return await dbContext.Imports.Join(dbContext.ImportDetail, p => p.Id, f => f.ImportId, (p, f) => new { import = p, detail = f })
+                    .Join(dbContext.Medicines, p => p.detail.MedicineId, f => f.Id, (p, f) => new { import = p.import, detail = p.detail, medicine = f })
+                    .Join(dbContext.Units, p => p.medicine.UnitId, f => f.Id, (p, f) => new { import = p.import, detail = p.detail, medicine = p.medicine, unit = f })
+                    .Where(p => p.import.CreateIn.Month == month && p.import.CreateIn.Year == year)
+                    .GroupBy(p => new { Id = p.medicine.Id, Name = p.medicine.Name, UnitId = p.unit.Id, UnitName = p.unit.Name })
+                    .Select(obj => new ImportReport(obj.Key.Name, obj.Key.UnitName, obj.Sum(p => p.detail.Quantity), obj.Sum(p => p.detail.Quantity * p.detail.Price)))
+                    .ToListAsync();
+            }
+        }
+
+        public async Task<Dictionary<string, int>> GetParams()
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                var pair = dbContext.Parameters.SingleOrDefault(p => p.Id == "1");
+                if (pair != null)
+                {
+                    Dictionary<string, int> dic = new Dictionary<string, int>();
+                    dic.Add("MaxPatients", pair.MaxPatient);
+                    dic.Add("MedicalCost", pair.MedicalCost);
+                    return dic;
+                }
+                return null;
+            }
+        }
+
+        public async Task<bool> VerifyPassword(string password)
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                /* Fetch the stored value */
+                string savedPasswordHash = dbContext.Parameters.SingleOrDefault(p => p.Id == "1").Password;
+                /* Extract the bytes */
+                byte[] hashBytes = Convert.FromBase64String(savedPasswordHash);
+                /* Get the salt */
+                byte[] salt = new byte[16];
+                Array.Copy(hashBytes, 0, salt, 0, 16);
+                /* Compute the hash on the password the user entered */
+                var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 100000);
+                byte[] hash = pbkdf2.GetBytes(20);
+                /* Compare the results */
+                for (int i = 0; i < 20; i++)
+                    if (hashBytes[i + 16] != hash[i])
+                        return false;
+                return true;
             }
         }
     }

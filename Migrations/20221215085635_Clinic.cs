@@ -21,23 +21,11 @@ namespace ClinicManagement.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ImportDetail",
-                columns: table => new
-                {
-                    ImportId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
-                    MedicineId = table.Column<byte[]>(type: "varbinary(16)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ImportDetail", x => new { x.ImportId, x.MedicineId });
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Imports",
                 columns: table => new
                 {
                     Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
-                    Price = table.Column<int>(type: "int unsigned", nullable: false),
+                    Price = table.Column<int>(type: "int", nullable: false),
                     CreateIn = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
@@ -62,8 +50,9 @@ namespace ClinicManagement.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "varchar(767)", nullable: false),
-                    MedicalCost = table.Column<int>(type: "int unsigned", nullable: false),
-                    MaxPatient = table.Column<int>(type: "int unsigned", nullable: false)
+                    MedicalCost = table.Column<int>(type: "int", nullable: false),
+                    MaxPatient = table.Column<int>(type: "int", nullable: false),
+                    Password = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -131,8 +120,8 @@ namespace ClinicManagement.Migrations
                     Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     UnitId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
-                    Stock = table.Column<int>(type: "int unsigned", nullable: false),
-                    Price = table.Column<int>(type: "int unsigned", nullable: false)
+                    Stock = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -151,8 +140,8 @@ namespace ClinicManagement.Migrations
                 {
                     Id = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
                     MedicalNoteId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
-                    MedicineCost = table.Column<int>(type: "int unsigned", nullable: false),
-                    MedicalCost = table.Column<int>(type: "int unsigned", nullable: false)
+                    MedicineCost = table.Column<int>(type: "int", nullable: false),
+                    MedicalCost = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -166,12 +155,38 @@ namespace ClinicManagement.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ImportDetail",
+                columns: table => new
+                {
+                    ImportId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    MedicineId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ImportDetail", x => new { x.ImportId, x.MedicineId });
+                    table.ForeignKey(
+                        name: "FK_ImportDetail_Imports_ImportId",
+                        column: x => x.ImportId,
+                        principalTable: "Imports",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ImportDetail_Medicines_MedicineId",
+                        column: x => x.MedicineId,
+                        principalTable: "Medicines",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MedicalNoteDetail",
                 columns: table => new
                 {
                     MedicalNoteId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
                     MedicineId = table.Column<byte[]>(type: "varbinary(16)", nullable: false),
-                    Quantity = table.Column<int>(type: "int unsigned", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     MethodId = table.Column<byte[]>(type: "varbinary(16)", nullable: false)
                 },
                 constraints: table =>
@@ -201,6 +216,11 @@ namespace ClinicManagement.Migrations
                 name: "IX_Bills_MedicalNoteId",
                 table: "Bills",
                 column: "MedicalNoteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ImportDetail_MedicineId",
+                table: "ImportDetail",
+                column: "MedicineId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MedicalNoteDetail_MedicalNoteId",
@@ -237,13 +257,13 @@ namespace ClinicManagement.Migrations
                 name: "ImportDetail");
 
             migrationBuilder.DropTable(
-                name: "Imports");
-
-            migrationBuilder.DropTable(
                 name: "MedicalNoteDetail");
 
             migrationBuilder.DropTable(
                 name: "Parameters");
+
+            migrationBuilder.DropTable(
+                name: "Imports");
 
             migrationBuilder.DropTable(
                 name: "MedicalNotes");

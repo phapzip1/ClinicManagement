@@ -2,7 +2,7 @@
 {
     public class MedicalNoteDetail
     {
-        public MedicalNoteDetail(Guid medicalNoteId, Guid medicineId, string medicineName, Guid unitId, string unitName, uint quantity, Guid methodId, string method)
+        public MedicalNoteDetail(Guid medicalNoteId, Guid medicineId, string medicineName, Guid unitId, string unitName, int quantity, Guid methodId, string method)
         {
             MedicalNoteId = medicalNoteId;
             MedicineId = medicineId;
@@ -19,7 +19,7 @@
         public string MedicineName { get; }
         public Guid UnitId { get; }
         public string UnitName { get; }
-        public uint Quantity { get; }
+        public int Quantity { get; }
         public Guid MethodId { get; }
         public string Method { get; }
     }

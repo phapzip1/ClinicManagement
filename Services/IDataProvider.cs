@@ -1,4 +1,5 @@
-﻿using ClinicManagement.Models;
+﻿
+using ClinicManagement.Models;
 
 namespace ClinicManagement.Services
 {
@@ -11,6 +12,8 @@ namespace ClinicManagement.Services
         Task<IEnumerable<UsageReport>> GetAllUsageReports();
         Task<IEnumerable<UsageReport>> GetAllUsageReports(int month, int year);
         Task<IEnumerable<Statistic>> GetStatistic(int month, int year);
-
+        Task<IEnumerable<ImportReport>> GetImportReport(int month, int year);
+        Task<bool> VerifyPassword(string password);
+        Task<Dictionary<string, int>> GetParams(); 
     }
 }

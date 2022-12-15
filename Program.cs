@@ -1,21 +1,22 @@
 using ClinicManagement.DbContexts;
-using ClinicManagement.Services;
 using Microsoft.EntityFrameworkCore;
-using ClinicManagement.Models;
-using System.Security.Cryptography.X509Certificates;
+using Microsoft.Extensions.Configuration;
 
 namespace ClinicManagement
 {
     internal static class Program
     {
-        private const string CONNECTION_STRING = "server=clinic-do-user-13077884-0.b.db.ondigitalocean.com;port=25060;database=clinic;user=doadmin;password=AVNS_9tiZWj1IIbWbJFEFmxw;";       
+        public static IConfiguration Configuration;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            ClinicDbContextFactory _clinicDbContextFactory = new ClinicDbContextFactory(CONNECTION_STRING);
+            var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            Configuration = builder.Build();
+
+            ClinicDbContextFactory _clinicDbContextFactory = new ClinicDbContextFactory(Configuration.GetSection("ConnectionStrings").Value.ToString());
             using (ClinicDbContext dbContext = _clinicDbContextFactory.CreateDbContext())
             {
 

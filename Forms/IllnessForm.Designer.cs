@@ -55,10 +55,12 @@
             this.btnAddIllness = new ClinicManagement.Classes.RJButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvIllnessList)).BeginInit();
             this.plIllnessInfor.SuspendLayout();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,7 +70,7 @@
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.plIllnessInfor);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(14, 16);
+            this.panel1.Location = new System.Drawing.Point(16, 19);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1161, 813);
@@ -181,7 +183,7 @@
             // 
             // plIllnessInfor
             // 
-            this.plIllnessInfor.BackColor = System.Drawing.Color.SkyBlue;
+            this.plIllnessInfor.BackColor = System.Drawing.Color.Transparent;
             this.plIllnessInfor.Controls.Add(this.rjComboBox2);
             this.plIllnessInfor.Controls.Add(this.rjComboBox1);
             this.plIllnessInfor.Controls.Add(this.customTextBox3);
@@ -436,13 +438,24 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "THÔNG TIN BỆNH";
             // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(166)))), ((int)(((byte)(250)))));
+            this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.gradientPanel1.Controls.Add(this.panel1);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1189, 845);
+            this.gradientPanel1.TabIndex = 21;
+            // 
             // IllnessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1189, 845);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.gradientPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "IllnessForm";
             this.Text = "Loại bệnh và bệnh";
@@ -452,6 +465,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvIllnessList)).EndInit();
             this.plIllnessInfor.ResumeLayout(false);
             this.plIllnessInfor.PerformLayout();
+            this.gradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -481,5 +495,6 @@
         private CustomControls.RJControls.RJComboBox rjComboBox1;
         private Classes.CustomTextBox customTextBox3;
         private Classes.CustomTextBox customTextBox2;
+        private Classes.GradientPanel gradientPanel1;
     }
 }

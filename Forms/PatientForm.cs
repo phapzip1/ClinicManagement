@@ -3,16 +3,19 @@ using ClinicManagement.Models;
 using ClinicManagement.Services;
 using DatabaseProject;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
+using Rectangle = System.Drawing.Rectangle;
 
 namespace ClinicManagement.Forms
 {
@@ -112,6 +115,7 @@ namespace ClinicManagement.Forms
                 InforForm.Next_Patient++;
                 lblNextPatient.Text = InforForm.Next_Patient.ToString();
 
+                //dtgvPatientList.Rows.Add(Patient());
             }
         }
 
@@ -173,6 +177,16 @@ namespace ClinicManagement.Forms
         {
             nextP++;
             Models.InforForm.Next_Patient = nextP;
+        }
+
+        private void rbtnPatientFemale_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics graphics= e.Graphics;
+            
+            Rectangle arena = new Rectangle(0, 0, this.Width, this.Height);
+            LinearGradientBrush linearGradientBrush = new LinearGradientBrush(arena, Color.FromArgb(115, 166, 250),
+                Color.FromArgb(184, 216, 252), 90F);
+            graphics.FillRectangle(linearGradientBrush, arena);
         }
     }
 }

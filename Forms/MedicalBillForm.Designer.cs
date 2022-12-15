@@ -57,7 +57,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnHistory = new ClinicManagement.Classes.RJButton();
             this.btnExit = new ClinicManagement.Classes.RJButton();
-            this.btnSave = new ClinicManagement.Classes.RJButton();
+            this.btnPrint = new ClinicManagement.Classes.RJButton();
             this.btnUpdate = new ClinicManagement.Classes.RJButton();
             this.btnAdd = new ClinicManagement.Classes.RJButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dtgvPatientList = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNextPatient = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -87,7 +88,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluongthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerMedical = new System.Windows.Forms.Timer(this.components);
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
             this.plMedicalBillInfor.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -96,11 +97,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMedicalBill)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMedicalList)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // plMedicalBillInfor
             // 
-            this.plMedicalBillInfor.BackColor = System.Drawing.Color.SkyBlue;
+            this.plMedicalBillInfor.BackColor = System.Drawing.Color.Transparent;
             this.plMedicalBillInfor.Controls.Add(this.tbxMedicalBillDay);
             this.plMedicalBillInfor.Controls.Add(this.cbxIllness);
             this.plMedicalBillInfor.Controls.Add(this.cbxSympton);
@@ -119,7 +121,7 @@
             this.plMedicalBillInfor.Controls.Add(this.label12);
             this.plMedicalBillInfor.Controls.Add(this.btnHistory);
             this.plMedicalBillInfor.Controls.Add(this.btnExit);
-            this.plMedicalBillInfor.Controls.Add(this.btnSave);
+            this.plMedicalBillInfor.Controls.Add(this.btnPrint);
             this.plMedicalBillInfor.Controls.Add(this.btnUpdate);
             this.plMedicalBillInfor.Controls.Add(this.btnAdd);
             this.plMedicalBillInfor.Controls.Add(this.label2);
@@ -128,7 +130,7 @@
             this.plMedicalBillInfor.Controls.Add(this.label5);
             this.plMedicalBillInfor.Controls.Add(this.label4);
             this.plMedicalBillInfor.Controls.Add(this.label3);
-            this.plMedicalBillInfor.Location = new System.Drawing.Point(12, 9);
+            this.plMedicalBillInfor.Location = new System.Drawing.Point(12, 12);
             this.plMedicalBillInfor.Name = "plMedicalBillInfor";
             this.plMedicalBillInfor.Size = new System.Drawing.Size(781, 348);
             this.plMedicalBillInfor.TabIndex = 2;
@@ -326,6 +328,7 @@
             // rbtnNotMedicalList
             // 
             this.rbtnNotMedicalList.AutoSize = true;
+            this.rbtnNotMedicalList.BackColor = System.Drawing.Color.White;
             this.rbtnNotMedicalList.CheckedColor = System.Drawing.Color.Navy;
             this.rbtnNotMedicalList.Location = new System.Drawing.Point(183, 246);
             this.rbtnNotMedicalList.MinimumSize = new System.Drawing.Size(0, 21);
@@ -336,7 +339,7 @@
             this.rbtnNotMedicalList.TabStop = true;
             this.rbtnNotMedicalList.Text = "Không kê khai thuốc";
             this.rbtnNotMedicalList.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rbtnNotMedicalList.UseVisualStyleBackColor = true;
+            this.rbtnNotMedicalList.UseVisualStyleBackColor = false;
             this.rbtnNotMedicalList.CheckedChanged += new System.EventHandler(this.rbtnNotList_CheckedChanged);
             this.rbtnNotMedicalList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rbtnNotList_MouseClick);
             // 
@@ -439,25 +442,25 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnSave
+            // btnPrint
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnSave.BorderRadius = 20;
-            this.btnSave.BorderSize = 2;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(312, 287);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(139, 50);
-            this.btnSave.TabIndex = 40;
-            this.btnSave.Text = "Xong";
-            this.btnSave.TextColor = System.Drawing.Color.Black;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnPrint.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnPrint.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnPrint.BorderRadius = 20;
+            this.btnPrint.BorderSize = 2;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnPrint.ForeColor = System.Drawing.Color.Black;
+            this.btnPrint.Location = new System.Drawing.Point(312, 287);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(139, 50);
+            this.btnPrint.TabIndex = 40;
+            this.btnPrint.Text = "In";
+            this.btnPrint.TextColor = System.Drawing.Color.Black;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
@@ -477,6 +480,7 @@
             this.btnUpdate.Text = "Lưu";
             this.btnUpdate.TextColor = System.Drawing.Color.Black;
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -583,13 +587,13 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SkyBlue;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.lblNextPatient);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Location = new System.Drawing.Point(967, 363);
+            this.panel2.Location = new System.Drawing.Point(967, 390);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(210, 471);
+            this.panel2.Size = new System.Drawing.Size(210, 447);
             this.panel2.TabIndex = 14;
             // 
             // panel4
@@ -597,7 +601,7 @@
             this.panel4.Controls.Add(this.dtgvPatientList);
             this.panel4.Location = new System.Drawing.Point(0, 91);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(210, 380);
+            this.panel4.Size = new System.Drawing.Size(210, 356);
             this.panel4.TabIndex = 15;
             // 
             // dtgvPatientList
@@ -642,8 +646,15 @@
             this.dtgvPatientList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
             this.dtgvPatientList.RowTemplate.Height = 29;
             this.dtgvPatientList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPatientList.Size = new System.Drawing.Size(210, 380);
+            this.dtgvPatientList.Size = new System.Drawing.Size(210, 356);
             this.dtgvPatientList.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.FillWeight = 124.0151F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Họ tên ";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // lblNextPatient
             // 
@@ -659,18 +670,20 @@
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(399, 360);
+            this.label15.Location = new System.Drawing.Point(352, 363);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(278, 24);
             this.label15.TabIndex = 15;
             this.label15.Text = "Danh sách phiếu khám bệnh";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dtgvMedicalBill);
-            this.panel3.Location = new System.Drawing.Point(12, 387);
+            this.panel3.Location = new System.Drawing.Point(12, 390);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(949, 447);
             this.panel3.TabIndex = 16;
@@ -777,9 +790,10 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(910, 9);
+            this.label16.Location = new System.Drawing.Point(911, 12);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(170, 24);
             this.label16.TabIndex = 17;
@@ -788,7 +802,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.dtgvMedicalList);
-            this.panel5.Location = new System.Drawing.Point(799, 36);
+            this.panel5.Location = new System.Drawing.Point(799, 39);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(378, 321);
             this.panel5.TabIndex = 18;
@@ -865,12 +879,21 @@
             // 
             this.timerMedical.Tick += new System.EventHandler(this.timerMedical_Tick);
             // 
-            // dataGridViewTextBoxColumn2
+            // gradientPanel1
             // 
-            this.dataGridViewTextBoxColumn2.FillWeight = 124.0151F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Họ tên ";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(166)))), ((int)(((byte)(250)))));
+            this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.gradientPanel1.Controls.Add(this.plMedicalBillInfor);
+            this.gradientPanel1.Controls.Add(this.panel2);
+            this.gradientPanel1.Controls.Add(this.label15);
+            this.gradientPanel1.Controls.Add(this.panel3);
+            this.gradientPanel1.Controls.Add(this.panel5);
+            this.gradientPanel1.Controls.Add(this.label16);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1189, 846);
+            this.gradientPanel1.TabIndex = 75;
             // 
             // MedicalBillForm
             // 
@@ -878,12 +901,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1189, 846);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.plMedicalBillInfor);
+            this.Controls.Add(this.gradientPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MedicalBillForm";
             this.Text = "Phiếu khám bệnh";
@@ -897,8 +915,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMedicalBill)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMedicalList)).EndInit();
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -911,7 +930,7 @@
         private Label label2;
         private Label label1;
         private Classes.RJButton btnExit;
-        private Classes.RJButton btnSave;
+        private Classes.RJButton btnPrint;
         private Classes.RJButton btnUpdate;
         private Classes.RJButton btnAdd;
         private Label label14;
@@ -953,5 +972,6 @@
         private Classes.CustomTextBox tbxMedicalBillDay;
         private System.Windows.Forms.Timer timerMedical;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private Classes.GradientPanel gradientPanel1;
     }
 }

@@ -2,7 +2,7 @@
 {
     public class UsageReport
     {
-        public UsageReport(string name, string unitName, uint quantity, uint time)
+        public UsageReport(string name, string unitName, int quantity, int time)
         {
             Name = name;
             UnitName = unitName;
@@ -12,7 +12,7 @@
 
         public string Name { get; }
         public string UnitName { get; }
-        public uint Quantity { get; }
-        public uint Time { get; }
+        public int Quantity { get; }
+        public int Time { get; }
     }
 }

@@ -80,5 +80,15 @@ namespace ClinicManagement.Forms
         {
             lblNextPatient.Text = InforForm.Next_Patient.ToString();
         }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

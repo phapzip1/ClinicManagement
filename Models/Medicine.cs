@@ -2,7 +2,7 @@
 {
     public class Medicine
     {
-        public Medicine(Guid id, string name, Guid unitId, string unitName, uint stock, uint price)
+        public Medicine(Guid id, string name, Guid unitId, string unitName, int stock, int price)
         {
             Id = id;
             Name = name;
@@ -16,8 +16,8 @@
         public string Name { get; }
         public Guid UnitId { get; }
         public string UnitName { get; }
-        public uint Stock { get; }
-        public uint Price { get; }
+        public int Stock { get; }
+        public int Price { get; }
 
     }
 }

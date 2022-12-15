@@ -32,8 +32,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this._max = new ClinicManagement.Classes.CustomTextBox();
+            this._fee = new ClinicManagement.Classes.CustomTextBox();
             this.rjButton1 = new ClinicManagement.Classes.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
@@ -68,8 +68,8 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.0584F));
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.textBox2, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this._max, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this._fee, 1, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(114, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -92,6 +92,7 @@
             this.label1.Size = new System.Drawing.Size(56, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Số bệnh nhân";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
@@ -104,26 +105,49 @@
             this.label2.Size = new System.Drawing.Size(53, 56);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tiền khám";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // _max
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(61, 4);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(107, 34);
-            this.textBox1.TabIndex = 2;
+            this._max.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._max.BackColor = System.Drawing.SystemColors.Window;
+            this._max.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this._max.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this._max.BorderSize = 1;
+            this._max.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._max.ForeColor = System.Drawing.Color.DimGray;
+            this._max.Location = new System.Drawing.Point(50, 0);
+            this._max.Margin = new System.Windows.Forms.Padding(0);
+            this._max.Multiline = false;
+            this._max.Name = "_max";
+            this._max.Padding = new System.Windows.Forms.Padding(7);
+            this._max.PasswordChar = false;
+            this._max.ReadOnly = false;
+            this._max.Size = new System.Drawing.Size(99, 34);
+            this._max.TabIndex = 2;
+            this._max.Texts = "";
+            this._max.UnderlinedStyle = false;
             // 
-            // textBox2
+            // _fee
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(61, 55);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(107, 34);
-            this.textBox2.TabIndex = 3;
+            this._fee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._fee.BackColor = System.Drawing.SystemColors.Window;
+            this._fee.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this._fee.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this._fee.BorderSize = 1;
+            this._fee.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this._fee.ForeColor = System.Drawing.Color.DimGray;
+            this._fee.Location = new System.Drawing.Point(50, 42);
+            this._fee.Margin = new System.Windows.Forms.Padding(0);
+            this._fee.Multiline = false;
+            this._fee.Name = "_fee";
+            this._fee.Padding = new System.Windows.Forms.Padding(7);
+            this._fee.PasswordChar = false;
+            this._fee.ReadOnly = false;
+            this._fee.Size = new System.Drawing.Size(99, 34);
+            this._fee.TabIndex = 3;
+            this._fee.Texts = "";
+            this._fee.UnderlinedStyle = false;
             // 
             // rjButton1
             // 
@@ -144,6 +168,7 @@
             this.rjButton1.Text = "Lưu";
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.Save_Handler);
             // 
             // panel1
             // 
@@ -178,9 +203,9 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
         private Classes.RJButton rjButton1;
         private Panel panel1;
+        private Classes.CustomTextBox _max;
+        private Classes.CustomTextBox _fee;
     }
 }
