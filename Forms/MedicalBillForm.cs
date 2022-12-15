@@ -19,18 +19,21 @@ namespace ClinicManagement.Forms
         public MedicalBillForm()
         {
             InitializeComponent();
+
+            tbxMedicalBillDay.ReadOnly= true;
+            tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
         }
 
         //Hàm
         private void ResetMedicalBill()
         {
-            tbxMedicalillNumber.Texts = string.Empty;
-            tbxMedicalillNumber.ReadOnly= true;
+            tbxMedicalBillNumber.Texts = string.Empty;
+            tbxMedicalBillNumber.ReadOnly= true;
 
-            dtpkMedicalBill.Value = DateTime.Today;
+            tbxMedicalBillDay.ReadOnly= true;
             tbxMedicalBillPatient.Texts = string.Empty;  
 
-            tbxMedicalillNumber.Texts = string.Empty;
+            tbxMedicalBillNumber.Texts = string.Empty;
             tbxPrice.Text = string.Empty;
             tbxFinalPrice.Text = string.Empty;
         }
@@ -43,7 +46,9 @@ namespace ClinicManagement.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            tbxMedicalBillNumber.ReadOnly= true;
+            Guid guid= Guid.NewGuid();  
+            tbxMedicalBillNumber.Texts= guid.ToString();    
         }
 
         private void rbtnNotList_CheckedChanged(object sender, EventArgs e)
@@ -59,6 +64,14 @@ namespace ClinicManagement.Forms
             {
                 rbtnNotMedicalList.Checked = true;
                 isChecked = false;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if(isChecked == false && tbxMedicalNumer.Texts == string.Empty)
+            {
+                MessageBox.Show("Chưa kê khai thuốc!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop);
             }
         }
     }

@@ -19,14 +19,17 @@ namespace ClinicManagement.Forms
         int yearnow = DateTime.Now.Year;
         DBAccess dBAccess = new DBAccess();
 
-        string id, fullname, address;
-        string gender;
-        DateTime dob;
+        static int MaxPatientInDay = 40;
+        static int ClickCount = 0;
+
+        Guid patient;
 
         //Khởi tạo
         public PatientForm()
         {
             InitializeComponent();
+
+            //MaxPatientInDay= dBAccess.executeQuery("SELECT SOBNTOIDA FROM THAMSO");
 
             dtpkBob.MaxDate= DateTime.Now;
             ResetMonitor();
@@ -44,7 +47,7 @@ namespace ClinicManagement.Forms
         {
             //Đặt màn hình về mặc định
             tbxPatientID.Texts = "";
-            tbxPatientID.ReadOnly = true;
+            tbxPatientID.ReadOnly = false;
             tbxPatientName.Texts = "";
             rbtnPatientMale.Checked = rbtnPatientFemale.Checked = false;
             tbxPatientAddress.Texts = "";
@@ -54,14 +57,13 @@ namespace ClinicManagement.Forms
         //Sự kiện
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int _id = 1;
-            _id = dBAccess.executeQuery("SELECT MAX(MABN) FROM BENHNHAN");
-            if (_id > 1) { _id++; }
-            else _id = 1;
+            tbxPatientID.ReadOnly= true;
+
+            patient = new Guid();
             //Khoá mã bệnh nhân
             tbxPatientID.ReadOnly = true;
             //Tạo mã bệnh nhân mới
-            tbxPatientID.Texts = _id.ToString();
+            tbxPatientID.Texts = patient.ToString();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -71,23 +73,32 @@ namespace ClinicManagement.Forms
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            if (ClickCount > MaxPatientInDay) {
+                MessageBox.Show("Vượt quá số bệnh nhân có thể tiếp nhận trong ngày!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
 
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            string id, fullname, gender;
+
             id = tbxPatientID.Text.ToString();
             fullname = tbxPatientName.Text.ToString();
-            if (rbtnPatientMale.Checked) { gender = "1"; }
-            else { gender = "0"; }
-            address= tbxPatientAddress.Text.ToString();
+            if (rbtnPatientMale.Checked) { gender = "male"; }
+            else { gender = "female"; }
+
+            Patient aPatient = new Patient(tbxPatientID.Text.ToString(), fullname, gender, dtpkBob.Value, tbxPatientAddress.Text.ToString());
 
             //Quy định
-            if(fullname.Length> 30)
+            if (fullname.Length> 30)
             {
                 MessageBox.Show("Tên quá dài!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (rbtnPatientFemale.Checked == rbtnPatientMale.Checked == false)
+            if (rbtnPatientFemale.Checked == rbtnPatientMale.Checked == false)
             {
                 MessageBox.Show("Hãy chọn giới tính!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

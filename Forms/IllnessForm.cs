@@ -16,5 +16,15 @@ namespace ClinicManagement.Forms
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Illness_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pl_IllnessInfor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
