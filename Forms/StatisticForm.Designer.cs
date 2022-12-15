@@ -46,12 +46,12 @@
             this.btnExport = new ClinicManagement.Classes.RJButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSeeInformation = new ClinicManagement.Classes.RJButton();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSeeInformation = new ClinicManagement.Classes.RJButton();
             this.gradientPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -298,43 +298,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1076, 492);
             this.dataGridView1.TabIndex = 1;
             // 
-            // STT
-            // 
-            this.STT.FillWeight = 70F;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            // 
-            // Ngay
-            // 
-            this.Ngay.HeaderText = "Ngày";
-            this.Ngay.MinimumWidth = 6;
-            this.Ngay.Name = "Ngay";
-            this.Ngay.ReadOnly = true;
-            // 
-            // SBN
-            // 
-            this.SBN.FillWeight = 125F;
-            this.SBN.HeaderText = "Số Bệnh Nhân";
-            this.SBN.MinimumWidth = 6;
-            this.SBN.Name = "SBN";
-            this.SBN.ReadOnly = true;
-            // 
-            // DT
-            // 
-            this.DT.HeaderText = "Doanh Thu";
-            this.DT.MinimumWidth = 6;
-            this.DT.Name = "DT";
-            this.DT.ReadOnly = true;
-            // 
-            // TL
-            // 
-            this.TL.HeaderText = "Tỷ Lệ";
-            this.TL.MinimumWidth = 6;
-            this.TL.Name = "TL";
-            this.TL.ReadOnly = true;
-            // 
             // btnSeeInformation
             // 
             this.btnSeeInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
@@ -354,6 +317,48 @@
             this.btnSeeInformation.TextColor = System.Drawing.Color.Black;
             this.btnSeeInformation.UseVisualStyleBackColor = false;
             this.btnSeeInformation.Click += new System.EventHandler(this.btnSeeInformation_Click_1);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "Index";
+            this.STT.FillWeight = 70F;
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // Ngay
+            // 
+            this.Ngay.DataPropertyName = "Day";
+            this.Ngay.HeaderText = "Ngày";
+            this.Ngay.MinimumWidth = 6;
+            this.Ngay.Name = "Ngay";
+            this.Ngay.ReadOnly = true;
+            // 
+            // SBN
+            // 
+            this.SBN.DataPropertyName = "PatientCount";
+            this.SBN.FillWeight = 125F;
+            this.SBN.HeaderText = "Số Bệnh Nhân";
+            this.SBN.MinimumWidth = 6;
+            this.SBN.Name = "SBN";
+            this.SBN.ReadOnly = true;
+            // 
+            // DT
+            // 
+            this.DT.DataPropertyName = "Revenue";
+            this.DT.HeaderText = "Doanh Thu";
+            this.DT.MinimumWidth = 6;
+            this.DT.Name = "DT";
+            this.DT.ReadOnly = true;
+            // 
+            // TL
+            // 
+            this.TL.DataPropertyName = "Ratio";
+            this.TL.HeaderText = "Tỷ Lệ";
+            this.TL.MinimumWidth = 6;
+            this.TL.Name = "TL";
+            this.TL.ReadOnly = true;
             // 
             // StatisticForm
             // 
@@ -383,11 +388,6 @@
         private Classes.RJButton btnExport;
         private Panel panel2;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn STT;
-        private DataGridViewTextBoxColumn Ngay;
-        private DataGridViewTextBoxColumn SBN;
-        private DataGridViewTextBoxColumn DT;
-        private DataGridViewTextBoxColumn TL;
         private Classes.RJButton btnSeeInformation;
         private CustomControls.RJControls.RJComboBox cbbMonth;
         private Label label1;
@@ -397,5 +397,10 @@
         private Label label3;
         private Label lbltotalrevenue;
         private Label lbltotalpatients;
+        private DataGridViewTextBoxColumn STT;
+        private DataGridViewTextBoxColumn Ngay;
+        private DataGridViewTextBoxColumn SBN;
+        private DataGridViewTextBoxColumn DT;
+        private DataGridViewTextBoxColumn TL;
     }
 }

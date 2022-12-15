@@ -123,7 +123,15 @@ namespace ClinicManagement
                 dialog.ShowDialog();
                 return;
             }
-            Button prev = CurrentPageBtn;
+            if (((Button)sender) == _backup)
+            {
+                LoginForm dialog = new LoginForm();
+                dialog.FormBorderStyle = FormBorderStyle.FixedSingle;
+                dialog.ShowDialog();
+                return;
+            }
+
+                Button prev = CurrentPageBtn;
             CurrentPageBtn = ((Button)sender);
 
             CurrentPageBtn.BackColor = Utils.FromHex("#201447");

@@ -1,4 +1,7 @@
 ﻿using ClinicManagement.Classes;
+using ClinicManagement.DbContexts;
+using ClinicManagement.Models;
+using ClinicManagement.Services;
 using DatabaseProject;
 using System;
 using System.Collections.Generic;
@@ -20,10 +23,23 @@ namespace ClinicManagement.Forms
         DataTable dtCTBAOCAODOANHTHU = new DataTable();
         int yearnow = DateTime.Now.Year;
         int monthnow = DateTime.Now.Month;
+
+        private BindingSource medicineDetailBinding;
+        private ClinicDbContextFactory factory;
+        private IDataProvider provider;
+
         public StatisticForm()
         {
             InitializeComponent();
-                 
+            factory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString()); // create location contact 
+            provider = new DBProvider(factory); // receive data 
+
+            medicineDetailBinding = new BindingSource() { DataSource = new List<IndexStatistic>() }; // create binding
+            
+
+            dataGridView1.DataSource = medicineDetailBinding;
+
+
             dataGridView1.AllowUserToAddRows = false;         
             saveFileDialog1.Filter = "Excel |*.xlsx";
             saveFileDialog1.Title = "Báo cáo doanh thu theo tháng";
@@ -103,31 +119,56 @@ namespace ClinicManagement.Forms
             dtCTBAOCAODOANHTHU.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-            string query = "Select * from CTBAOCAODOANHTHU Where THANG = '" + Int32.Parse(month) + "' and NAM = '" + Int32.Parse(year) + "'";
-            dBAccess.readDatathroughAdapter(query, dtCTBAOCAODOANHTHU);
 
-            if (dtCTBAOCAODOANHTHU.Rows.Count >= 1)
-            {           
-                for (int i = 0; i < dtCTBAOCAODOANHTHU.Rows.Count; i++)
-                {
-                    dataGridView1.Rows.Add(i + 1, dtCTBAOCAODOANHTHU.Rows[i]["NGAY"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["SOBENHNHAN"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["DOANHTHU"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["TYLE"].ToString());
-                    totalpatients += int.Parse(dtCTBAOCAODOANHTHU.Rows[i]["SOBENHNHAN"].ToString());
-                    totalrevenue += int.Parse(dtCTBAOCAODOANHTHU.Rows[i]["DOANHTHU"].ToString());
-                }
-
-                lbltotalpatients.Text = totalpatients.ToString() + " người";
-                lbltotalrevenue.Text = totalrevenue.ToString() + " VNĐ";
-                groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
-
-
-            }
-            else
+            provider.GetStatistic(int.Parse(month), int.Parse(year)).ContinueWith(res =>
             {
-                MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lbltotalpatients.Text = "........................................";
-                lbltotalrevenue.Text = "........................................";
-                groupBox1.Text = "Tổng hợp báo cáo";
-            }
+                if (res.Result.Count() >= 1) {
+                    int i = 1;
+                    foreach (var item in res.Result)
+                    {
+                        medicineDetailBinding.Add(new IndexStatistic(i++, item));
+                        totalpatients += item.PatientCount;
+                        totalrevenue += item.Revenue;
+                    }
+                    lbltotalpatients.Text = totalpatients.ToString() + " người";
+                    lbltotalrevenue.Text = totalrevenue.ToString() + " VNĐ";
+                    groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lbltotalpatients.Text = "........................................";
+                    lbltotalrevenue.Text = "........................................";
+                    groupBox1.Text = "Tổng hợp báo cáo";
+                }
+                
+            });
+            //string query = "Select * from CTBAOCAODOANHTHU Where THANG = '" + Int32.Parse(month) + "' and NAM = '" + Int32.Parse(year) + "'";
+            //dBAccess.readDatathroughAdapter(query, dtCTBAOCAODOANHTHU);
+
+            //if (dtCTBAOCAODOANHTHU.Rows.Count >= 1)
+            //{           
+
+            //    for (int i = 0; i < dtCTBAOCAODOANHTHU.Rows.Count; i++)
+            //    {
+            //        //dataGridView1.Rows.Add(i + 1, dtCTBAOCAODOANHTHU.Rows[i]["NGAY"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["SOBENHNHAN"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["DOANHTHU"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["TYLE"].ToString());
+            //        //totalpatients += int.Parse(dtCTBAOCAODOANHTHU.Rows[i]["SOBENHNHAN"].ToString());
+            //        //totalrevenue += int.Parse(dtCTBAOCAODOANHTHU.Rows[i]["DOANHTHU"].ToString());
+            //    }
+
+            //    lbltotalpatients.Text = totalpatients.ToString() + " người";
+            //    lbltotalrevenue.Text = totalrevenue.ToString() + " VNĐ";
+            //    groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
+
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    lbltotalpatients.Text = "........................................";
+            //    lbltotalrevenue.Text = "........................................";
+            //    groupBox1.Text = "Tổng hợp báo cáo";
+            //}
 
             
         }

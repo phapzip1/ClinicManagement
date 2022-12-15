@@ -59,7 +59,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -458,7 +458,7 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.MT,
+            this.TT,
             this.DVT,
             this.SL,
             this.SLD});
@@ -495,12 +495,12 @@
             this.STT.Name = "STT";
             this.STT.ReadOnly = true;
             // 
-            // MT
+            // TT
             // 
-            this.MT.HeaderText = "Mã Thuốc";
-            this.MT.MinimumWidth = 6;
-            this.MT.Name = "MT";
-            this.MT.ReadOnly = true;
+            this.TT.HeaderText = "Tên Thuốc";
+            this.TT.MinimumWidth = 6;
+            this.TT.Name = "TT";
+            this.TT.ReadOnly = true;
             // 
             // DVT
             // 
@@ -578,16 +578,16 @@
         private Panel panel2;
         private DataGridView dataGridView4;
         private SaveFileDialog saveFileDialog1;
-        private DataGridViewTextBoxColumn STT;
-        private DataGridViewTextBoxColumn MT;
-        private DataGridViewTextBoxColumn DVT;
-        private DataGridViewTextBoxColumn SL;
-        private DataGridViewTextBoxColumn SLD;
         private CustomControls.RJControls.RJComboBox cbbYear;
         private Label label7;
         private CustomControls.RJControls.RJComboBox cbbMonth;
         private Label label8;
         private Classes.RJButton btnExport;
         private Classes.RJButton btnSeeInformation;
+        private DataGridViewTextBoxColumn STT;
+        private DataGridViewTextBoxColumn TT;
+        private DataGridViewTextBoxColumn DVT;
+        private DataGridViewTextBoxColumn SL;
+        private DataGridViewTextBoxColumn SLD;
     }
 }

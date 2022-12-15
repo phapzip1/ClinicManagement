@@ -1,4 +1,6 @@
-﻿namespace ClinicManagement.Models
+﻿using System.Windows.Forms;
+
+namespace ClinicManagement.Models
 {
     public class Statistic
     {
@@ -7,6 +9,13 @@
             Day = day;
             PatientCount = patientCount;
             Revenue = revenue;
+        }
+
+        public Statistic (Statistic statistic)
+        {
+            this.Day = statistic.Day;
+            this.PatientCount = statistic.PatientCount;
+            this.Revenue = statistic.Revenue;
         }
 
         public int Day { get; }
