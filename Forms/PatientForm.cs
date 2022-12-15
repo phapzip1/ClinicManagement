@@ -22,6 +22,8 @@ namespace ClinicManagement.Forms
         static int MaxPatientInDay = 40;
         static int ClickCount = 0;
 
+        Guid patient;
+
         //Khởi tạo
         public PatientForm()
         {
@@ -45,7 +47,7 @@ namespace ClinicManagement.Forms
         {
             //Đặt màn hình về mặc định
             tbxPatientID.Texts = "";
-            tbxPatientID.ReadOnly = true;
+            tbxPatientID.ReadOnly = false;
             tbxPatientName.Texts = "";
             rbtnPatientMale.Checked = rbtnPatientFemale.Checked = false;
             tbxPatientAddress.Texts = "";
@@ -55,14 +57,13 @@ namespace ClinicManagement.Forms
         //Sự kiện
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int _id = 1;
-            _id = dBAccess.executeQuery("SELECT TOP 1 MABN FROM BENHNHAN ORDER BY MABN DESC");
-            if (_id > 1) { _id = _id + 1; }
-            else _id = 1;
+            tbxPatientID.ReadOnly= true;
+
+            patient = new Guid();
             //Khoá mã bệnh nhân
             tbxPatientID.ReadOnly = true;
             //Tạo mã bệnh nhân mới
-            tbxPatientID.Texts = _id.ToString();
+            tbxPatientID.Texts = patient.ToString();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -87,8 +88,8 @@ namespace ClinicManagement.Forms
 
             id = tbxPatientID.Text.ToString();
             fullname = tbxPatientName.Text.ToString();
-            if (rbtnPatientMale.Checked) { gender = "1"; }
-            else { gender = "0"; }
+            if (rbtnPatientMale.Checked) { gender = "male"; }
+            else { gender = "female"; }
 
             Patient aPatient = new Patient(tbxPatientID.Text.ToString(), fullname, gender, dtpkBob.Value, tbxPatientAddress.Text.ToString());
 

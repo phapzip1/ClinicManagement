@@ -81,9 +81,9 @@
             this.plIllnessCategory.Controls.Add(this.panel3);
             this.plIllnessCategory.Controls.Add(this.panel2);
             this.plIllnessCategory.Controls.Add(this.label1);
-            this.plIllnessCategory.Location = new System.Drawing.Point(11, 420);
+            this.plIllnessCategory.Location = new System.Drawing.Point(14, 420);
             this.plIllnessCategory.Name = "plIllnessCategory";
-            this.plIllnessCategory.Size = new System.Drawing.Size(1150, 414);
+            this.plIllnessCategory.Size = new System.Drawing.Size(1150, 413);
             this.plIllnessCategory.TabIndex = 4;
             // 
             // label12
@@ -177,18 +177,18 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(3, 64);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(340, 347);
+            this.panel2.Size = new System.Drawing.Size(341, 347);
             this.panel2.TabIndex = 17;
             // 
             // tbxUsageName
             // 
             this.tbxUsageName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxUsageName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxUsageName.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.tbxUsageName.BorderFocusColor = System.Drawing.Color.Turquoise;
             this.tbxUsageName.BorderSize = 1;
             this.tbxUsageName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxUsageName.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxUsageName.Location = new System.Drawing.Point(47, 130);
+            this.tbxUsageName.Location = new System.Drawing.Point(47, 131);
             this.tbxUsageName.Multiline = false;
             this.tbxUsageName.Name = "tbxUsageName";
             this.tbxUsageName.Padding = new System.Windows.Forms.Padding(7);
@@ -212,7 +212,7 @@
             this.btnSearchUsage.ForeColor = System.Drawing.Color.Black;
             this.btnSearchUsage.Location = new System.Drawing.Point(161, 244);
             this.btnSearchUsage.Name = "btnSearchUsage";
-            this.btnSearchUsage.Size = new System.Drawing.Size(110, 50);
+            this.btnSearchUsage.Size = new System.Drawing.Size(110, 51);
             this.btnSearchUsage.TabIndex = 23;
             this.btnSearchUsage.Text = "Tra cứu";
             this.btnSearchUsage.TextColor = System.Drawing.Color.Black;
@@ -231,7 +231,7 @@
             this.btnNotSaveUsage.ForeColor = System.Drawing.Color.Black;
             this.btnNotSaveUsage.Location = new System.Drawing.Point(43, 244);
             this.btnNotSaveUsage.Name = "btnNotSaveUsage";
-            this.btnNotSaveUsage.Size = new System.Drawing.Size(110, 50);
+            this.btnNotSaveUsage.Size = new System.Drawing.Size(110, 51);
             this.btnNotSaveUsage.TabIndex = 22;
             this.btnNotSaveUsage.Text = "Không lưu";
             this.btnNotSaveUsage.TextColor = System.Drawing.Color.Black;
@@ -250,7 +250,7 @@
             this.btnSaveUsage.ForeColor = System.Drawing.Color.Black;
             this.btnSaveUsage.Location = new System.Drawing.Point(224, 188);
             this.btnSaveUsage.Name = "btnSaveUsage";
-            this.btnSaveUsage.Size = new System.Drawing.Size(99, 50);
+            this.btnSaveUsage.Size = new System.Drawing.Size(99, 51);
             this.btnSaveUsage.TabIndex = 19;
             this.btnSaveUsage.Text = "Lưu";
             this.btnSaveUsage.TextColor = System.Drawing.Color.Black;
@@ -269,7 +269,7 @@
             this.btnUpdateUsage.ForeColor = System.Drawing.Color.Black;
             this.btnUpdateUsage.Location = new System.Drawing.Point(112, 188);
             this.btnUpdateUsage.Name = "btnUpdateUsage";
-            this.btnUpdateUsage.Size = new System.Drawing.Size(106, 50);
+            this.btnUpdateUsage.Size = new System.Drawing.Size(106, 51);
             this.btnUpdateUsage.TabIndex = 18;
             this.btnUpdateUsage.Text = "Cập nhật";
             this.btnUpdateUsage.TextColor = System.Drawing.Color.Black;
@@ -286,9 +286,9 @@
             this.btnAddUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnAddUsage.Location = new System.Drawing.Point(12, 188);
+            this.btnAddUsage.Location = new System.Drawing.Point(11, 188);
             this.btnAddUsage.Name = "btnAddUsage";
-            this.btnAddUsage.Size = new System.Drawing.Size(94, 50);
+            this.btnAddUsage.Size = new System.Drawing.Size(94, 51);
             this.btnAddUsage.TabIndex = 17;
             this.btnAddUsage.Text = "Thêm";
             this.btnAddUsage.TextColor = System.Drawing.Color.Black;
@@ -311,7 +311,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(460, 0);
+            this.label1.Location = new System.Drawing.Point(459, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(247, 24);
             this.label1.TabIndex = 2;
@@ -324,9 +324,9 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(11, 12);
+            this.panel1.Location = new System.Drawing.Point(14, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1150, 402);
+            this.panel1.Size = new System.Drawing.Size(1150, 403);
             this.panel1.TabIndex = 20;
             // 
             // label2
@@ -420,13 +420,13 @@
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(3, 64);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(340, 335);
+            this.panel5.Size = new System.Drawing.Size(341, 335);
             this.panel5.TabIndex = 17;
             // 
             // tbxUnitName
             // 
             this.tbxUnitName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxUnitName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbxUnitName.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.tbxUnitName.BorderFocusColor = System.Drawing.Color.Turquoise;
             this.tbxUnitName.BorderSize = 1;
             this.tbxUnitName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -455,7 +455,7 @@
             this.btnSearchUnit.ForeColor = System.Drawing.Color.Black;
             this.btnSearchUnit.Location = new System.Drawing.Point(173, 235);
             this.btnSearchUnit.Name = "btnSearchUnit";
-            this.btnSearchUnit.Size = new System.Drawing.Size(117, 50);
+            this.btnSearchUnit.Size = new System.Drawing.Size(117, 51);
             this.btnSearchUnit.TabIndex = 23;
             this.btnSearchUnit.Text = "Tra cứu";
             this.btnSearchUnit.TextColor = System.Drawing.Color.Black;
@@ -474,7 +474,7 @@
             this.btnNotSaveUnit.ForeColor = System.Drawing.Color.Black;
             this.btnNotSaveUnit.Location = new System.Drawing.Point(50, 235);
             this.btnNotSaveUnit.Name = "btnNotSaveUnit";
-            this.btnNotSaveUnit.Size = new System.Drawing.Size(117, 50);
+            this.btnNotSaveUnit.Size = new System.Drawing.Size(117, 51);
             this.btnNotSaveUnit.TabIndex = 22;
             this.btnNotSaveUnit.Text = "Không lưu";
             this.btnNotSaveUnit.TextColor = System.Drawing.Color.Black;
@@ -494,7 +494,7 @@
             this.btnSaveUnit.ForeColor = System.Drawing.Color.Black;
             this.btnSaveUnit.Location = new System.Drawing.Point(224, 179);
             this.btnSaveUnit.Name = "btnSaveUnit";
-            this.btnSaveUnit.Size = new System.Drawing.Size(99, 50);
+            this.btnSaveUnit.Size = new System.Drawing.Size(99, 51);
             this.btnSaveUnit.TabIndex = 19;
             this.btnSaveUnit.Text = "Lưu";
             this.btnSaveUnit.TextColor = System.Drawing.Color.Black;
@@ -514,7 +514,7 @@
             this.btnUpdateUnit.ForeColor = System.Drawing.Color.Black;
             this.btnUpdateUnit.Location = new System.Drawing.Point(112, 179);
             this.btnUpdateUnit.Name = "btnUpdateUnit";
-            this.btnUpdateUnit.Size = new System.Drawing.Size(106, 50);
+            this.btnUpdateUnit.Size = new System.Drawing.Size(106, 51);
             this.btnUpdateUnit.TabIndex = 18;
             this.btnUpdateUnit.Text = "Cập nhật";
             this.btnUpdateUnit.TextColor = System.Drawing.Color.Black;
@@ -532,9 +532,9 @@
             this.btnAddUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnAddUnit.Location = new System.Drawing.Point(12, 179);
+            this.btnAddUnit.Location = new System.Drawing.Point(11, 179);
             this.btnAddUnit.Name = "btnAddUnit";
-            this.btnAddUnit.Size = new System.Drawing.Size(94, 50);
+            this.btnAddUnit.Size = new System.Drawing.Size(94, 51);
             this.btnAddUnit.TabIndex = 17;
             this.btnAddUnit.Text = "Thêm";
             this.btnAddUnit.TextColor = System.Drawing.Color.Black;
@@ -558,7 +558,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(460, 0);
+            this.label6.Location = new System.Drawing.Point(459, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(196, 24);
             this.label6.TabIndex = 2;
@@ -568,7 +568,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 846);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(1189, 845);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.plIllnessCategory);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

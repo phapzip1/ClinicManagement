@@ -19,6 +19,9 @@ namespace ClinicManagement.Forms
         public MedicalBillForm()
         {
             InitializeComponent();
+
+            tbxMedicalBillDay.ReadOnly= true;
+            tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
         }
 
         //Hàm
@@ -27,7 +30,7 @@ namespace ClinicManagement.Forms
             tbxMedicalBillNumber.Texts = string.Empty;
             tbxMedicalBillNumber.ReadOnly= true;
 
-            dtpkMedicalBill.Value = DateTime.Today;
+            tbxMedicalBillDay.ReadOnly= true;
             tbxMedicalBillPatient.Texts = string.Empty;  
 
             tbxMedicalBillNumber.Texts = string.Empty;
@@ -43,6 +46,7 @@ namespace ClinicManagement.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            tbxMedicalBillNumber.ReadOnly= true;
             Guid guid= Guid.NewGuid();  
             tbxMedicalBillNumber.Texts= guid.ToString();    
         }
