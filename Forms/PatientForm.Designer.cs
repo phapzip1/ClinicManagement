@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -70,14 +69,12 @@
             this.btnSave = new ClinicManagement.Classes.RJButton();
             this.btnAdd = new ClinicManagement.Classes.RJButton();
             this.lblPatientData = new System.Windows.Forms.Label();
-            this.timerPatient = new System.Windows.Forms.Timer(this.components);
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dtgvQueue = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblNiceSave = new System.Windows.Forms.Label();
             this.plPatientInfor.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPatientList)).BeginInit();
@@ -123,6 +120,7 @@
             this.btnLast.Text = "Về cuối";
             this.btnLast.TextColor = System.Drawing.Color.Black;
             this.btnLast.UseVisualStyleBackColor = false;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnGo
             // 
@@ -620,11 +618,6 @@
             this.lblPatientData.TabIndex = 0;
             this.lblPatientData.Text = "THÔNG TIN BỆNH NHÂN";
             // 
-            // timerPatient
-            // 
-            this.timerPatient.Interval = 1000;
-            this.timerPatient.Tick += new System.EventHandler(this.timerPatient_Tick);
-            // 
             // gradientPanel1
             // 
             this.gradientPanel1.BackColor = System.Drawing.SystemColors.Menu;
@@ -632,7 +625,6 @@
             this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.panel4);
-            this.gradientPanel1.Controls.Add(this.lblNiceSave);
             this.gradientPanel1.Controls.Add(this.panel1);
             this.gradientPanel1.Controls.Add(this.label11);
             this.gradientPanel1.Controls.Add(this.plPatientInfor);
@@ -723,20 +715,6 @@
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // lblNiceSave
-            // 
-            this.lblNiceSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNiceSave.AutoSize = true;
-            this.lblNiceSave.BackColor = System.Drawing.Color.Transparent;
-            this.lblNiceSave.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNiceSave.ForeColor = System.Drawing.Color.Navy;
-            this.lblNiceSave.Location = new System.Drawing.Point(210, 345);
-            this.lblNiceSave.Name = "lblNiceSave";
-            this.lblNiceSave.Size = new System.Drawing.Size(176, 26);
-            this.lblNiceSave.TabIndex = 33;
-            this.lblNiceSave.Text = "Lưu thành công!";
-            this.lblNiceSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // PatientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -782,7 +760,6 @@
         private Label lblPatientData;
         private Classes.CustomTextBox tbxPatientIDNow;
         private Classes.RJButton btnGo;
-        private System.Windows.Forms.Timer timerPatient;
         private Classes.GradientPanel gradientPanel1;
         private TableLayoutPanel tableLayoutPanel1;
         private Classes.RJDatePicker dtpkBob;
@@ -794,7 +771,6 @@
         private Label label3;
         private Classes.CustomTextBox tbxPatientName;
         private Classes.CustomTextBox tbxPatientID;
-        private Label lblNiceSave;
         private CustomControls.RJControls.RJComboBox cbxGender;
         private DataGridViewTextBoxColumn PatientID;
         private DataGridViewTextBoxColumn PatientName;

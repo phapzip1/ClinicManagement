@@ -365,7 +365,5 @@ namespace CustomControls.RJControls
             base.OnResize(e);
             AdjustComboBoxDimensions();
         }
-
-
     }
 }

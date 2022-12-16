@@ -91,5 +91,14 @@ namespace ClinicManagement.Forms
         {
 
         }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            DialogResult= MessageBox.Show("Bạn chắc chắn muốn huỷ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.OK)
+            {
+                ResetMedicalBill();
+            }
+        }
     }
 }
