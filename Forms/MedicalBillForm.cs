@@ -21,6 +21,7 @@ namespace ClinicManagement.Forms
         {
             InitializeComponent();
 
+            lblNextPatient.Text = Models.InforForm.Next_Patient.ToString();
             tbxMedicalBillDay.ReadOnly= true;
             tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
         }

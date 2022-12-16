@@ -19,7 +19,7 @@ namespace ClinicManagement.Forms
             InitializeComponent();
 
             _clinicDbContextFactory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString());
-            provider = new DBProvider(_clinicDbContextFactory);
+            //provider = new DBProvider(_clinicDbContextFactory);
             creator = new DBCreator(_clinicDbContextFactory);
 
             medicineDetailBinding = new BindingSource() { DataSource = new List<ImportDetail>() };

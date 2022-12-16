@@ -4,6 +4,7 @@ using ClinicManagement.Services;
 using DatabaseProject;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Office.Interop.Excel;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,7 @@ namespace ClinicManagement.Forms
         {
             InitializeComponent();
 
+            lblNextPatient.Text = Models.InforForm.Next_Patient.ToString();
             ResetMonitor();
             lblNiceSave.Hide();
             timerPatient.Enabled = false;
@@ -52,12 +54,9 @@ namespace ClinicManagement.Forms
                 MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            // fill cbxPatientBirthday
-            //for (int i = yearnow; i >= 1900; i--)
-            //{
-            //    cbxPatientBirthday.Items.Add(i.ToString());
-            //}
-            //cbxPatientBirthday.SelectedItem = yearnow.ToString();
+            // fill cbxGender
+            cbxGender.Items.Add("Nam");
+            cbxGender.Items.Add("Nữ");
         }
 
         //Hàm
@@ -68,11 +67,10 @@ namespace ClinicManagement.Forms
             tbxPatientID.ReadOnly = true;
             tbxPatientName.Texts = "";
             tbxPatientName.ReadOnly = true;
-            rbtnPatientMale.Checked = rbtnPatientFemale.Checked = false;
             tbxPatientAddress.Texts = "";
             tbxPatientAddress.ReadOnly = true;
             dtpkBob.Value = DateTime.Now;
-
+            cbxGender.SelectedIndex = -1;
             timerPatient.Enabled = false;
         }
 
@@ -82,10 +80,15 @@ namespace ClinicManagement.Forms
                 tbxPatientID.ReadOnly = false;
                 tbxPatientName.Texts = "";
                 tbxPatientName.ReadOnly = false;
-                rbtnPatientMale.Checked = rbtnPatientFemale.Checked = false;
                 tbxPatientAddress.Texts = "";
                 tbxPatientAddress.ReadOnly = false;
+            cbxGender.SelectedIndex = -1;
                 dtpkBob.Value = DateTime.Today;
+        }
+
+        private void LoadDtgv()
+        {
+
         }
 
         //Sự kiện
@@ -115,29 +118,27 @@ namespace ClinicManagement.Forms
                 InforForm.Next_Patient++;
                 lblNextPatient.Text = InforForm.Next_Patient.ToString();
 
-                //dtgvPatientList.Rows.Add(Patient());
+                dtgvPatientList.Rows.Add("1", "1");
+                dtgvPatientList.Rows.Add("2", "2");
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string id, fullname, gender;
-
-            id = tbxPatientID.Text.ToString();
-            fullname = tbxPatientName.Text.ToString();
-            if (rbtnPatientMale.Checked) { gender = "male"; }
+            string gender;
+            if (cbxGender.Items.Equals("Nam")) { gender = "male"; }
             else { gender = "female"; }
 
-            aPatient = new Patient(tbxPatientID.Text.ToString(), fullname, gender, dtpkBob.Value, tbxPatientAddress.Text.ToString());
+            //aPatient = new Patient(tbxPatientID.Text.ToString(), fullname, gender, dtpkBob.Value, tbxPatientAddress.Text.ToString());
 
             //Quy định
-            if (fullname.Length> 30)
+            if (tbxPatientName.Texts.ToString().Length> 30)
             {
                 MessageBox.Show("Tên quá dài!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (rbtnPatientFemale.Checked == false && rbtnPatientMale.Checked == false)
+            else if(tbxPatientID.Texts.ToString() == "")
             {
-                MessageBox.Show("Hãy chọn giới tính!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ID không thể để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             //Lưu thông tin bệnh nhân
             try
@@ -147,10 +148,9 @@ namespace ClinicManagement.Forms
                 {
                     IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);
                     dbContext.Database.Migrate();
-                    dataCreator.CreatePatient(new Models.Patient(id, fullname, gender, dtpkBob.Value, tbxPatientAddress.Texts.ToString()));
-                    
-                    //dataCreator.CreatePatient(aPatient);
+                    dataCreator.CreatePatient(new Models.Patient(tbxPatientID.Texts.ToString(), tbxPatientName.Texts.ToString(), gender, dtpkBob.Value, tbxPatientAddress.Texts.ToString()));
 
+                    lblNiceSave.Show();
                     timerPatient.Start();
                 }
             }
@@ -164,6 +164,8 @@ namespace ClinicManagement.Forms
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn huỷ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.OK)
             ResetMonitor();
         }
 
@@ -175,18 +177,32 @@ namespace ClinicManagement.Forms
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            nextP++;
+            string searchValue = tbxPatientIDNow.Text.ToString();
+
+            //int rowIndex = -1;
+            //foreach (DataGridViewRow row in dtgvPatientList.Rows)
+            //{
+            //    if (row.Cells[0].Value.Equals(searchValue))
+            //    {
+            //        MessageBox.Show(searchValue, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        rowIndex = row.Index;
+            //        dtgvPatientList.Rows.Remove(row);
+
+            //        break;
+            //    }
+            //}
+
+            nextP--;
             Models.InforForm.Next_Patient = nextP;
         }
 
         private void rbtnPatientFemale_Paint(object sender, PaintEventArgs e)
         {
-            Graphics graphics= e.Graphics;
-            
-            Rectangle arena = new Rectangle(0, 0, this.Width, this.Height);
-            LinearGradientBrush linearGradientBrush = new LinearGradientBrush(arena, Color.FromArgb(115, 166, 250),
-                Color.FromArgb(184, 216, 252), 90F);
-            graphics.FillRectangle(linearGradientBrush, arena);
+            Graphics graph = e.Graphics;
+
+            //Draw border
+            using (Pen penBorder = new Pen(Color.CornflowerBlue, 2))
+                    graph.DrawRectangle(penBorder, 0, 0, this.Width - 0.5F, this.Height - 0.5F);
         }
     }
 }
