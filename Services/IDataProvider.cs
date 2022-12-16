@@ -9,6 +9,7 @@ namespace ClinicManagement.Services
         Task<IEnumerable<Medicine>> GetMedicines();
         Task<IEnumerable<Bill>> GetAllBills();
         Task<IEnumerable<Illness>> GetAllIllness();
+        Task<IEnumerable<MedicalNote>> GetAllMedicalNote();
         Task<IEnumerable<UsageReport>> GetAllUsageReports();
         Task<IEnumerable<UsageReport>> GetAllUsageReports(int month, int year);
         Task<IEnumerable<Statistic>> GetStatistic(int month, int year);

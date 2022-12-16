@@ -11,6 +11,13 @@ namespace ClinicManagement.Models
             Revenue = revenue;
         }
 
+        public Statistic(DateTime date, int patientCount, int revenue)
+        {
+            Day = date.Day;
+            PatientCount = patientCount;
+            Revenue = revenue;
+        }
+
         public Statistic (Statistic statistic)
         {
             this.Day = statistic.Day;
