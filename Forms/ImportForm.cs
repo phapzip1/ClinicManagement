@@ -38,6 +38,8 @@ namespace ClinicManagement.Forms
 
             _quantityTb.Minimum = 0;
             _priceTb.Minimum = 0;
+            _quantityTb.Maximum = decimal.MaxValue;
+            _priceTb.Maximum = decimal.MaxValue;
         }
 
 

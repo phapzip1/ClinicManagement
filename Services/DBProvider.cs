@@ -28,20 +28,19 @@ namespace ClinicManagement.Services
         {
             using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-                return await dbContext.MedicalNotes
-                            .Join(dbContext.Patients, m => m.PatientId, f => f.Id, (m, f) => new { m, f })
-                            .Join(dbContext.Illness, m => m.m.IllnessId, f => f.Id, (m, f) => new { medicalnote = m.m, patient = m.f, illness = f })
+                    return await dbContext.MedicalNotes                       
+                            .Join(dbContext.Patients, m => m.PatientId, f => f.Id, (m, f) => new { notes = m, patient = f })
+                            .Join(dbContext.Illness, m => m.notes.IllnessId, f => f.Id, (m, f) => new { notes = m.notes, patient = m.patient, illness = f })
                             .Select(obj => new MedicalNote(
-                                obj.medicalnote.Id,
+                                obj.notes.Id,
                                 obj.patient.Id,
                                 obj.patient.Fullname,
                                 obj.illness.Id,
                                 obj.illness.Name,
-                                obj.medicalnote.Symtoms,
-                                obj.medicalnote.CreateIn,
-                                GetMedicalNoteDetail(obj.medicalnote.Id)
+                                obj.notes.Symtoms,
+                                obj.notes.CreateIn,
+                                null
                                )).ToListAsync();
-
             }
         }
 
@@ -93,11 +92,12 @@ namespace ClinicManagement.Services
         {
             using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-                return await dbContext.Medicines.Join(dbContext.Units, p => p.UnitId, f => f.Id, (p, f) => new { medicine = p, unit = f })
-                    .Join(dbContext.MedicalNoteDetail, p => p.medicine.Id, f => f.MedicineId, (p, f) => new { medicine = p.medicine, unit = p.unit, detail = f })
-                    .Join(dbContext.MedicalNotes, p => p.detail.MedicalNoteId, f => f.Id, (p, f) => new { medicine = p.medicine, unit = p.unit, detail = p.detail, note = f })
-                    .GroupBy(p => new { Id = p.medicine.Id, Name = p.medicine.Name, UnitId = p.unit.Id, UnitName = p.unit.Name })
-                    .Select(obj => new UsageReport(obj.Key.Name, obj.Key.UnitName, obj.Sum(p => p.detail.Quantity), obj.Count()))
+                return await dbContext.MedicalNotes
+                    .Join(dbContext.MedicalNoteDetail, p => p.Id, f => f.MedicalNoteId, (p, f) => new { notes = p, detail = f })
+                    .Join(dbContext.Medicines, p => p.detail.MedicineId, f => f.Id, (p, f) => new { notes = p.notes, medicine = f, detail = p.detail })
+                    .Join(dbContext.Units, p => p.medicine.UnitId, f => f.Id, (p, f) => new { notes = p.notes, medicine = p.medicine, detail = p.detail, unit = f })
+                    .GroupBy(p => new { id = p.medicine.Id, name = p.medicine.Name, unit = p.unit.Name })
+                    .Select(obj => new UsageReport(obj.Key.name, obj.Key.unit, obj.Sum(p => p.detail.Quantity), obj.Count()))
                     .ToListAsync();
             }
         }
@@ -106,43 +106,50 @@ namespace ClinicManagement.Services
         {
             using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-                return await dbContext.Medicines.Join(dbContext.Units, p => p.UnitId, f => f.Id, (p, f) => new { medicine = p, unit = f })
-                    .Join(dbContext.MedicalNoteDetail, p => p.medicine.Id, f => f.MedicineId, (p, f) => new { medicine = p.medicine, unit = p.unit, detail = f })
-                    .Join(dbContext.MedicalNotes, p => p.detail.MedicalNoteId, f => f.Id, (p, f) => new { medicine = p.medicine, unit = p.unit, detail = p.detail, note = f })
-                    .Where(p => p.note.CreateIn.Month == month && p.note.CreateIn.Year == year)
-                    .GroupBy(p => new { Id = p.medicine.Id, Name = p.medicine.Name, UnitId = p.unit.Id, UnitName = p.unit.Name })
-                    .Select(obj => new UsageReport(obj.Key.Name, obj.Key.UnitName, obj.Sum(p => p.detail.Quantity), obj.Count()))
+                DateTime start = new DateTime(year, month, 1);
+                DateTime end = start.AddMonths(1).AddDays(-1);
+
+                return await dbContext.MedicalNotes
+                    .Where(p => p.CreateIn > start && p.CreateIn < end)
+                    .Join(dbContext.MedicalNoteDetail, p => p.Id, f => f.MedicalNoteId, (p, f) => new { notes = p, detail = f })
+                    .Join(dbContext.Medicines, p => p.detail.MedicineId, f => f.Id, (p, f) => new { notes = p.notes, medicine = f, detail = p.detail })
+                    .Join(dbContext.Units, p => p.medicine.UnitId, f => f.Id, (p, f) => new { notes = p.notes, medicine = p.medicine, detail = p.detail, unit = f })
+                    .GroupBy(p => new { id = p.medicine.Id, name = p.medicine.Name, unit = p.unit.Name })
+                    .Select(obj => new UsageReport(obj.Key.name, obj.Key.unit, obj.Sum(p => p.detail.Quantity), obj.Count()))
                     .ToListAsync();
+
             }
         }
 
-        //public async Task<IEnumerable<Statistic>> GetStatistic(int month, int year)
-        //{
-        //    using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
-        //    {
-        //        DbFunctions
+        public async Task<IEnumerable<Statistic>> GetStatistic(int month, int year)
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                DateTime start = new DateTime(year, month, 1);
+                DateTime end = start.AddMonths(1).AddDays(-1);
 
-        //        //var list = await dbContext.Bills
-        //        //    .Join(dbContext.MedicalNotes, p => p.MedicalNoteId, f => f.Id, (p, f) => new { bill = p, note = f })
-        //        //    .Where(p =>  == month && p.note.CreateIn.Value.Year == year)
-        //        //    .GroupBy(p => new { p.note.CreateIn.Day })
-        //        //    .Select(obj => new { Day = obj.Key.Day, Count = obj.Count(), Sum = obj.Sum(p => p.bill.MedicalCost + p.bill.MedicineCost) })
-        //        //    .Select(obj => new Statistic(1, 1, obj.bill.MedicineCost + obj.bill.MedicalCost))
-        //        //    .ToListAsync();
-        //        //return list;
-        //    }
-        //}
+                return await dbContext.Bills
+                    .Join(dbContext.MedicalNotes, p => p.MedicalNoteId, f => f.Id, (p, f) => new { Id = p.Id, noteId = f.Id,  medicalcost = p.MedicalCost, medicinecost = p.MedicineCost, createin = f.CreateIn})
+                    .Where(p => p.createin >= start && p.createin <= end)
+                    .GroupBy(p => EF.Property<DateTime>(p, "createin").Date)
+                    .Select(obj => new Statistic(obj.Key, obj.Count(), obj.Sum(p => p.medicalcost + p.medicinecost)))
+                    .ToListAsync();
+            }
+        }
 
         public async Task<IEnumerable<ImportReport>> GetImportReport(int month, int year)
         {
             using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
+                DateTime start = new DateTime(year, month, 1);
+                DateTime end = start.AddMonths(1).AddDays(-1);
+
                 return await dbContext.Imports.Join(dbContext.ImportDetail, p => p.Id, f => f.ImportId, (p, f) => new { import = p, detail = f })
                     .Join(dbContext.Medicines, p => p.detail.MedicineId, f => f.Id, (p, f) => new { import = p.import, detail = p.detail, medicine = f })
-                    .Join(dbContext.Units, p => p.medicine.UnitId, f => f.Id, (p, f) => new { import = p.import, detail = p.detail, medicine = p.medicine, unit = f })
-                    .Where(p => p.import.CreateIn.Month == month && p.import.CreateIn.Year == year)
-                    .GroupBy(p => new { Id = p.medicine.Id, Name = p.medicine.Name, UnitId = p.unit.Id, UnitName = p.unit.Name })
-                    .Select(obj => new ImportReport(obj.Key.Name, obj.Key.UnitName, obj.Sum(p => p.detail.Quantity), obj.Sum(p => p.detail.Quantity * p.detail.Price)))
+                    .Join(dbContext.Units, p => p.medicine.UnitId, f => f.Id, (p, f) => new { id = p.detail.MedicineId, name = p.medicine.Name, unitname = f.Name, quantity = p.detail.Quantity, price = p.detail.Price * p.detail.Quantity, createin = p.import.CreateIn })
+                    .Where(p => p.createin >= start && p.createin <= end )
+                    .GroupBy(p => new { Id = p.id, Name = p.name, Unitname = p.unitname})
+                    .Select(obj => new ImportReport(obj.Key.Name, obj.Key.Unitname, obj.Sum(p => p.quantity), obj.Sum(p => p.price)))
                     .ToListAsync();
             }
         }

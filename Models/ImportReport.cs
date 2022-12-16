@@ -14,9 +14,5 @@
         public string UnitName { get; }
         public int Quantity { get; }
         public int Price { get; }
-        public int Sum
-        {
-            get => Quantity * Price;
-        }
     }
 }

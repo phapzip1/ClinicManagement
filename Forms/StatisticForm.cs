@@ -120,6 +120,11 @@ namespace ClinicManagement.Forms
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
 
+            provider.GetAllUsageReports(12, 2022).ContinueWith(res =>
+            {
+                Console.WriteLine(res.Result);
+            });
+
             provider.GetStatistic(int.Parse(month), int.Parse(year)).ContinueWith(res =>
             {
                 if (res.Result.Count() >= 1) {
