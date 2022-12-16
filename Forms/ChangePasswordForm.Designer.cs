@@ -71,8 +71,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.125F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.875F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(507, 160);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -84,7 +84,7 @@
             this.customTextBox2.BorderSize = 3;
             this.customTextBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.customTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox2.Location = new System.Drawing.Point(210, 51);
+            this.customTextBox2.Location = new System.Drawing.Point(209, 51);
             this.customTextBox2.Multiline = false;
             this.customTextBox2.Name = "customTextBox2";
             this.customTextBox2.Padding = new System.Windows.Forms.Padding(7);
@@ -97,14 +97,14 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 48);
+            this.label1.Size = new System.Drawing.Size(200, 30);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Mật khẩu mới";
+            this.label1.Text = "Mật khẩu mới:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tableLayoutPanel2
@@ -115,20 +115,20 @@
             this.tableLayoutPanel2.Controls.Add(this.rjButton1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSeeInformation, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(207, 92);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(206, 93);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(300, 68);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(301, 67);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // rjButton1
             // 
             this.rjButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
             this.rjButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
             this.rjButton1.BorderRadius = 20;
             this.rjButton1.BorderSize = 2;
@@ -136,9 +136,9 @@
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.rjButton1.ForeColor = System.Drawing.Color.Black;
-            this.rjButton1.Location = new System.Drawing.Point(153, 9);
+            this.rjButton1.Location = new System.Drawing.Point(153, 8);
             this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(144, 50);
+            this.rjButton1.Size = new System.Drawing.Size(145, 50);
             this.rjButton1.TabIndex = 20;
             this.rjButton1.Text = "Hủy bỏ";
             this.rjButton1.TextColor = System.Drawing.Color.Black;
@@ -147,8 +147,8 @@
             // btnSeeInformation
             // 
             this.btnSeeInformation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeeInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.btnSeeInformation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.btnSeeInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.btnSeeInformation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
             this.btnSeeInformation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
             this.btnSeeInformation.BorderRadius = 20;
             this.btnSeeInformation.BorderSize = 2;
@@ -156,7 +156,7 @@
             this.btnSeeInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeeInformation.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSeeInformation.ForeColor = System.Drawing.Color.Black;
-            this.btnSeeInformation.Location = new System.Drawing.Point(3, 9);
+            this.btnSeeInformation.Location = new System.Drawing.Point(3, 8);
             this.btnSeeInformation.Name = "btnSeeInformation";
             this.btnSeeInformation.Size = new System.Drawing.Size(144, 50);
             this.btnSeeInformation.TabIndex = 19;
@@ -172,7 +172,7 @@
             this.customTextBox1.BorderSize = 3;
             this.customTextBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.customTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox1.Location = new System.Drawing.Point(210, 3);
+            this.customTextBox1.Location = new System.Drawing.Point(209, 3);
             this.customTextBox1.Multiline = false;
             this.customTextBox1.Name = "customTextBox1";
             this.customTextBox1.Padding = new System.Windows.Forms.Padding(7);
@@ -185,14 +185,14 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(3, 61);
+            this.label2.Location = new System.Drawing.Point(3, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 31);
+            this.label2.Size = new System.Drawing.Size(200, 30);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nhập lại mật khẩu";
+            this.label2.Text = "Nhập lại mật khẩu:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ChangePasswordForm

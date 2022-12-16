@@ -123,16 +123,21 @@ namespace ClinicManagement.Forms
             provider.GetStatistic(int.Parse(month), int.Parse(year)).ContinueWith(res =>
             {
                 if (res.Result.Count() >= 1) {
-                    int i = 1;
-                    foreach (var item in res.Result)
+                    dataGridView1.Invoke((MethodInvoker)delegate
                     {
-                        medicineDetailBinding.Add(new IndexStatistic(i++, item));
-                        totalpatients += item.PatientCount;
-                        totalrevenue += item.Revenue;
-                    }
-                    lbltotalpatients.Text = totalpatients.ToString() + " người";
-                    lbltotalrevenue.Text = totalrevenue.ToString() + " VNĐ";
-                    groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
+                        int i = 1;
+                        foreach (var item in res.Result)
+                        {
+
+                            medicineDetailBinding.Add(new IndexStatistic(i++, item));
+                            totalpatients += item.PatientCount;
+                            totalrevenue += item.Revenue;
+                        }
+                        lbltotalpatients.Text = totalpatients.ToString() + " người";
+                        lbltotalrevenue.Text = totalrevenue.ToString() + " VNĐ";
+                        groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
+                    });
+
                 }
                 else
                 {

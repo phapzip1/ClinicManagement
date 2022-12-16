@@ -20,7 +20,7 @@ namespace ClinicManagement
             using (ClinicDbContext dbContext = _clinicDbContextFactory.CreateDbContext())
             {
 
-                //dbContext.Database.Migrate();
+                dbContext.Database.Migrate();
 
                 //IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);
                 //dataCreator.CreatePatient(new Models.Patient("8", "test", "male", DateTime.Now, "345"));

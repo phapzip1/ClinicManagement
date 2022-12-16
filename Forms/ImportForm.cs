@@ -18,7 +18,7 @@ namespace ClinicManagement.Forms
         {
             InitializeComponent();
 
-            //_clinicDbContextFactory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString());
+            _clinicDbContextFactory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString());
             provider = new DBProvider(_clinicDbContextFactory);
             creator = new DBCreator(_clinicDbContextFactory);
 

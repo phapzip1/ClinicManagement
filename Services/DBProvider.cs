@@ -120,12 +120,16 @@ namespace ClinicManagement.Services
         {
             using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-                return await dbContext.Bills.Join(dbContext.MedicalNotes, p => p.MedicalNoteId, f => f.Id, (p, f) => new { bill = p, note = f })
-                    .Where(p => p.note.CreateIn.Month == month && p.note.CreateIn.Year == year)
-                    .GroupBy(p => new { p.note.CreateIn.Day })
-                    .Select(obj => new Statistic(obj.Key.Day, obj.Count(), obj.Sum(p => p.bill.MedicalCost + p.bill.MedicineCost)))
-                    .OrderBy(obj => obj.Day)
+                DbFunctions
+
+                var list = await dbContext.Bills
+                    .Join(dbContext.MedicalNotes, p => p.MedicalNoteId, f => f.Id, (p, f) => new { bill = p, note = f })
+                    .Where(p =>  == month && p.note.CreateIn.Value.Year == year)
+                    //.GroupBy(p => new { p.note.CreateIn.Day })
+                    //.Select(obj => new {Day = obj.Key.Day, Count = obj.Count(), Sum = obj.Sum(p => p.bill.MedicalCost + p.bill.MedicineCost)})
+                    .Select(obj => new Statistic(1, 1, obj.bill.MedicineCost + obj.bill.MedicalCost))
                     .ToListAsync();
+                return list;
             }
         }
 
