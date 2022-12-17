@@ -6,7 +6,7 @@
 	<li>Nguyễn Huỳnh Tuấn Khanh 20521437 </li>
 	<li>Nguyễn Thanh Sang 20521833 </li>
 	<li>Nguyễn Ngọc Mai Khanh 20520900 </li>
-	<li>Nguyễn Văn Gia Bảo 20521106 </li>
+	<li>Nguyễn Văn Gia Bảo 20521106 </li>  
 *Lớp:* SE104.N11.KHCL      
 ## Link Github:    
 https://github.com/phapzip1/ClinicManagement   
