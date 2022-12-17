@@ -18,7 +18,7 @@ Vào link github của dự án [ĐỀ TÀI QUẢN LÝ PHÒNG MẠCH TƯ](https:
 Sử dụng git bash ở thư mục muốn cài đặt và copy câu lệnh:     
 >gh repo clone phapzip1/ClinicManagement     
 ## Run source code:     
-Mở file source code (đã cài đặt từ Github) bằng Visual Studio, sau đó chọn thiết bị và run app     
+Mở file source code (đã cài đặt từ Github) bằng Visual Studio, sau đó run app(Ctrl F5)      
 ***Tài khoản mẫu cho user:***    
 
 ***Tài khoản mẫu cho admin:***     
