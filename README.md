@@ -2,13 +2,11 @@
 ## Thông tin nhóm: 
 **Nhóm 4**  
 *Danh sách thành viên (5 thành viên):* 
-<ul> 
 	<li>Nguyễn Văn Pháp 20521731 (Nhóm trưởng) </li>			
 	<li>Nguyễn Huỳnh Tuấn Khanh 20521437 </li>
 	<li>Nguyễn Thanh Sang 20521833 </li>
 	<li>Nguyễn Ngọc Mai Khanh 20520900 </li>
 	<li>Nguyễn Văn Gia Bảo 20521106 </li>
-</ul>
 *Lớp:* SE104.N11.KHCL      
 ## Link Github:    
 https://github.com/phapzip1/ClinicManagement   
