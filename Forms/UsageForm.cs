@@ -108,7 +108,7 @@ namespace ClinicManagement.Forms
                     {
                         IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);
                         dbContext.Database.Migrate();
-                        dataCreator.CreateUsage(new Models.Unit(guid, tbxUnitName.Texts.ToString()));
+                        //dataCreator.CreateUsageReport(new Models.Unit(guid, tbxUnitName.Texts.ToString()));
                         MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -117,6 +117,11 @@ namespace ClinicManagement.Forms
                     MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnAddUsage_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

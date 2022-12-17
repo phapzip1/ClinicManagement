@@ -12,10 +12,12 @@ namespace ClinicManagement.Models
         private static string next_Patient = "0";
         private static int patient_Count = 0;
         private static bool isExam = false;
+        private static string patientNow_id = "0";
         
         public static string Connects_String { get => connects_String; set => connects_String=value; }
         public static string Next_Patient { get => next_Patient; set => next_Patient=value; }
         public static int Patient_Count { get => patient_Count; set => patient_Count=value; }
         public static bool IsExam { get => isExam; set => isExam=value; }
+        public static string PatientNow_id { get => patientNow_id; set => patientNow_id=value; }
     }
 }

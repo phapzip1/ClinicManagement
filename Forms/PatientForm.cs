@@ -201,7 +201,7 @@ namespace ClinicManagement.Forms
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            string searchValue = tbxPatientIDNow.Text.ToString();
+            InforForm.PatientNow_id= tbxPatientIDNow.Text.ToString();
 
             dtgvQueue.Rows.Remove(dtgvQueue.Rows[0]);
 
@@ -213,6 +213,8 @@ namespace ClinicManagement.Forms
                 MessageBox.Show(InforForm.Next_Patient, "Tb", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dtgvQueue.Rows[1].Selected= false;
                 lblNextPatient.Text = InforForm.Next_Patient;
+
+                tbxPatientIDNow.Texts = dtgvQueue.SelectedRows[firstRowIndex].Cells[0].Value.ToString();
             }
         }
 

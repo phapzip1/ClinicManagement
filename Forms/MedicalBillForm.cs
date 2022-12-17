@@ -38,27 +38,38 @@ namespace ClinicManagement.Forms
             tbxMedicalBillNumber.Texts = string.Empty;
             tbxPrice.Text = string.Empty;
             tbxFinalPrice.Text = string.Empty;
+
+            rbtnNotMedicalList.Checked= false;
         }
 
         //Sự kiện
-        private void btnExit_Click(object sender, EventArgs e)
+        private void timerMedical_Tick(object sender, EventArgs e)
         {
-            ResetMedicalBill();
+            lblNextPatient.Text = InforForm.Next_Patient.ToString();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            DialogResult= MessageBox.Show("Bạn chắc chắn muốn huỷ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (DialogResult == DialogResult.OK)
+            {
+                ResetMedicalBill();
+            }
+        }
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
         {
             tbxMedicalBillNumber.ReadOnly= true;
-            Guid guid= Guid.NewGuid();  
-            tbxMedicalBillNumber.Texts= guid.ToString();    
+            Guid guid = Guid.NewGuid();
+            tbxMedicalBillNumber.Texts= guid.ToString();
         }
 
-        private void rbtnNotList_CheckedChanged(object sender, EventArgs e)
+        private void rbtnNotMedicalList_CheckedChanged(object sender, EventArgs e)
         {
             isChecked = rbtnNotMedicalList.Checked;
         }
 
-        private void rbtnNotList_MouseClick(object sender, MouseEventArgs e)
+        private void rbtnNotMedicalList_MouseClick(object sender, MouseEventArgs e)
         {
             if (rbtnNotMedicalList.Checked && !isChecked)
                 rbtnNotMedicalList.Checked = false;
@@ -69,36 +80,34 @@ namespace ClinicManagement.Forms
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if(isChecked == false && tbxMedicalNumer.Texts == string.Empty)
-            {
-                MessageBox.Show("Chưa kê khai thuốc!", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Stop);
-            }
-        }
-
-        private void timerMedical_Tick(object sender, EventArgs e)
-        {
-            lblNextPatient.Text = InforForm.Next_Patient.ToString();
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnExit_Click_1(object sender, EventArgs e)
+        private void btnDelMedical_Click(object sender, EventArgs e)
         {
-            DialogResult= MessageBox.Show("Bạn chắc chắn muốn huỷ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (DialogResult == DialogResult.OK)
+            int count = dtgvMedicalList.SelectedRows.Count;
+
+            for (int i = 0; i < count; i++)
             {
-                ResetMedicalBill();
+                dtgvMedicalList.Rows.RemoveAt(dtgvMedicalList.SelectedRows[0].Index);
             }
+        }
+
+        private void btnChangeMedical_Click(object sender, EventArgs e)
+        {
+            int count = dtgvMedicalList.SelectedRows.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                dtgvMedicalList.Rows.RemoveAt(dtgvMedicalList.SelectedRows[0].Index);
+            }
+        }
+
+        private void btnAddMedical_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

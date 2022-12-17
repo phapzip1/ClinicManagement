@@ -296,6 +296,7 @@
             this.btnAddUsage.Text = "Thêm";
             this.btnAddUsage.TextColor = System.Drawing.Color.Black;
             this.btnAddUsage.UseVisualStyleBackColor = false;
+            this.btnAddUsage.Click += new System.EventHandler(this.btnAddUsage_Click);
             // 
             // label4
             // 
