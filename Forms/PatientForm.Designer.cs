@@ -725,6 +725,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PatientForm";
             this.Text = "Bệnh Nhân";
+            this.Load += new System.EventHandler(this.PatientForm_Load);
             this.plPatientInfor.ResumeLayout(false);
             this.plPatientInfor.PerformLayout();
             this.panel3.ResumeLayout(false);

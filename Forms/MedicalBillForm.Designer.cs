@@ -61,9 +61,9 @@
             this.Soluongthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerMedical = new System.Windows.Forms.Timer(this.components);
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
-            this.btnDelMedical = new ClinicManagement.Classes.RJButton();
-            this.btnAddMedical = new ClinicManagement.Classes.RJButton();
             this.plMedicalBillInfor = new System.Windows.Forms.Panel();
+            this.btnEdit = new ClinicManagement.Classes.RJButton();
+            this.btnDelMedical = new ClinicManagement.Classes.RJButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cbxUsage = new CustomControls.RJControls.RJComboBox();
             this.cbxIllness = new CustomControls.RJControls.RJComboBox();
@@ -85,8 +85,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tbxMedicalBillPatient = new ClinicManagement.Classes.CustomTextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnAddMedical = new ClinicManagement.Classes.RJButton();
             this.rbtnNotMedicalList = new ClinicManagement.Classes.RJRadioButton();
-            this.btnExit = new ClinicManagement.Classes.RJButton();
             this.btnUpdate = new ClinicManagement.Classes.RJButton();
             this.btnAdd = new ClinicManagement.Classes.RJButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -423,6 +423,41 @@
             this.gradientPanel1.Size = new System.Drawing.Size(1189, 846);
             this.gradientPanel1.TabIndex = 75;
             // 
+            // plMedicalBillInfor
+            // 
+            this.plMedicalBillInfor.BackColor = System.Drawing.Color.Transparent;
+            this.plMedicalBillInfor.Controls.Add(this.btnEdit);
+            this.plMedicalBillInfor.Controls.Add(this.btnDelMedical);
+            this.plMedicalBillInfor.Controls.Add(this.tableLayoutPanel1);
+            this.plMedicalBillInfor.Controls.Add(this.btnAddMedical);
+            this.plMedicalBillInfor.Controls.Add(this.rbtnNotMedicalList);
+            this.plMedicalBillInfor.Controls.Add(this.btnUpdate);
+            this.plMedicalBillInfor.Controls.Add(this.btnAdd);
+            this.plMedicalBillInfor.Controls.Add(this.label1);
+            this.plMedicalBillInfor.Location = new System.Drawing.Point(12, 12);
+            this.plMedicalBillInfor.Name = "plMedicalBillInfor";
+            this.plMedicalBillInfor.Size = new System.Drawing.Size(781, 348);
+            this.plMedicalBillInfor.TabIndex = 19;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnEdit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnEdit.BorderRadius = 20;
+            this.btnEdit.BorderSize = 2;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEdit.ForeColor = System.Drawing.Color.Black;
+            this.btnEdit.Location = new System.Drawing.Point(623, 295);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(109, 50);
+            this.btnEdit.TabIndex = 63;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.TextColor = System.Drawing.Color.Black;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            // 
             // btnDelMedical
             // 
             this.btnDelMedical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
@@ -434,7 +469,7 @@
             this.btnDelMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelMedical.ForeColor = System.Drawing.Color.Black;
-            this.btnDelMedical.Location = new System.Drawing.Point(583, 282);
+            this.btnDelMedical.Location = new System.Drawing.Point(508, 295);
             this.btnDelMedical.Name = "btnDelMedical";
             this.btnDelMedical.Size = new System.Drawing.Size(109, 50);
             this.btnDelMedical.TabIndex = 62;
@@ -442,42 +477,6 @@
             this.btnDelMedical.TextColor = System.Drawing.Color.Black;
             this.btnDelMedical.UseVisualStyleBackColor = false;
             this.btnDelMedical.Click += new System.EventHandler(this.btnDelMedical_Click);
-            // 
-            // btnAddMedical
-            // 
-            this.btnAddMedical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnAddMedical.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnAddMedical.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnAddMedical.BorderRadius = 20;
-            this.btnAddMedical.BorderSize = 2;
-            this.btnAddMedical.FlatAppearance.BorderSize = 0;
-            this.btnAddMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAddMedical.ForeColor = System.Drawing.Color.Black;
-            this.btnAddMedical.Location = new System.Drawing.Point(468, 282);
-            this.btnAddMedical.Name = "btnAddMedical";
-            this.btnAddMedical.Size = new System.Drawing.Size(109, 50);
-            this.btnAddMedical.TabIndex = 61;
-            this.btnAddMedical.Text = "Thêm";
-            this.btnAddMedical.TextColor = System.Drawing.Color.Black;
-            this.btnAddMedical.UseVisualStyleBackColor = false;
-            this.btnAddMedical.Click += new System.EventHandler(this.btnAddMedical_Click);
-            // 
-            // plMedicalBillInfor
-            // 
-            this.plMedicalBillInfor.BackColor = System.Drawing.Color.Transparent;
-            this.plMedicalBillInfor.Controls.Add(this.btnDelMedical);
-            this.plMedicalBillInfor.Controls.Add(this.tableLayoutPanel1);
-            this.plMedicalBillInfor.Controls.Add(this.btnAddMedical);
-            this.plMedicalBillInfor.Controls.Add(this.rbtnNotMedicalList);
-            this.plMedicalBillInfor.Controls.Add(this.btnExit);
-            this.plMedicalBillInfor.Controls.Add(this.btnUpdate);
-            this.plMedicalBillInfor.Controls.Add(this.btnAdd);
-            this.plMedicalBillInfor.Controls.Add(this.label1);
-            this.plMedicalBillInfor.Location = new System.Drawing.Point(12, 12);
-            this.plMedicalBillInfor.Name = "plMedicalBillInfor";
-            this.plMedicalBillInfor.Size = new System.Drawing.Size(781, 348);
-            this.plMedicalBillInfor.TabIndex = 19;
             // 
             // tableLayoutPanel1
             // 
@@ -837,6 +836,26 @@
             this.label12.Text = "Tên thuốc:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnAddMedical
+            // 
+            this.btnAddMedical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnAddMedical.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnAddMedical.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnAddMedical.BorderRadius = 20;
+            this.btnAddMedical.BorderSize = 2;
+            this.btnAddMedical.FlatAppearance.BorderSize = 0;
+            this.btnAddMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAddMedical.ForeColor = System.Drawing.Color.Black;
+            this.btnAddMedical.Location = new System.Drawing.Point(393, 295);
+            this.btnAddMedical.Name = "btnAddMedical";
+            this.btnAddMedical.Size = new System.Drawing.Size(109, 50);
+            this.btnAddMedical.TabIndex = 61;
+            this.btnAddMedical.Text = "Thêm";
+            this.btnAddMedical.TextColor = System.Drawing.Color.Black;
+            this.btnAddMedical.UseVisualStyleBackColor = false;
+            this.btnAddMedical.Click += new System.EventHandler(this.btnAddMedical_Click);
+            // 
             // rbtnNotMedicalList
             // 
             this.rbtnNotMedicalList.AutoSize = true;
@@ -856,26 +875,6 @@
             this.rbtnNotMedicalList.CheckedChanged += new System.EventHandler(this.rbtnNotMedicalList_CheckedChanged);
             this.rbtnNotMedicalList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rbtnNotMedicalList_MouseClick);
             // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnExit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnExit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnExit.BorderRadius = 20;
-            this.btnExit.BorderSize = 2;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(353, 282);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(109, 50);
-            this.btnExit.TabIndex = 39;
-            this.btnExit.Text = "Huỷ";
-            this.btnExit.TextColor = System.Drawing.Color.Black;
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
-            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
@@ -887,7 +886,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(238, 282);
+            this.btnUpdate.Location = new System.Drawing.Point(278, 295);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 50);
             this.btnUpdate.TabIndex = 6;
@@ -907,7 +906,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(123, 282);
+            this.btnAdd.Location = new System.Drawing.Point(163, 295);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(109, 50);
             this.btnAdd.TabIndex = 38;
@@ -937,6 +936,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MedicalBillForm";
             this.Text = "Phiếu khám bệnh";
+            this.Load += new System.EventHandler(this.MedicalBillForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -972,7 +972,6 @@
         private Classes.GradientPanel gradientPanel1;
         private Panel plMedicalBillInfor;
         private Classes.RJRadioButton rbtnNotMedicalList;
-        private Classes.RJButton btnExit;
         private Classes.RJButton btnUpdate;
         private Classes.RJButton btnAdd;
         private Label label1;
@@ -1008,5 +1007,6 @@
         private Label label11;
         private Classes.CustomTextBox tbxMedicalBillPatient;
         private Label label12;
+        private Classes.RJButton btnEdit;
     }
 }

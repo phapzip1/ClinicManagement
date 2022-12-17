@@ -34,6 +34,7 @@ namespace ClinicManagement.Forms
         static Guid patient = new Guid();
         InforForm InforForm = new InforForm();
         Patient aPatient;
+        private IDataProvider provider;
 
         //Khởi tạo
         public PatientForm()
@@ -243,6 +244,11 @@ namespace ClinicManagement.Forms
                 dtgvQueue.Rows[1].Selected= false;
                 lblNextPatient.Text = InforForm.Next_Patient;
             }
+        }
+
+        private void PatientForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

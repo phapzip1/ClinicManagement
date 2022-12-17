@@ -1,4 +1,6 @@
-﻿using ClinicManagement.Models;
+﻿using ClinicManagement.Classes;
+using ClinicManagement.Models;
+using ClinicManagement.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,10 @@ namespace ClinicManagement.Forms
 
         //Radio button
         bool isChecked = false;
+
+        //Data
+        private IDataProvider provider;
+        private BindingList<ComboboxItem> bindingLists;
 
         public MedicalBillForm()
         {
@@ -108,6 +114,11 @@ namespace ClinicManagement.Forms
         private void btnAddMedical_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MedicalBillForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
