@@ -91,11 +91,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(648, 37);
+            this.label12.Location = new System.Drawing.Point(625, 34);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(215, 24);
+            this.label12.Size = new System.Drawing.Size(255, 27);
             this.label12.TabIndex = 19;
             this.label12.Text = "Danh sách cách dùng";
             // 
@@ -181,6 +181,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(341, 347);
             this.panel2.TabIndex = 17;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // tbxUsageName
             // 
@@ -190,13 +191,13 @@
             this.tbxUsageName.BorderSize = 1;
             this.tbxUsageName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxUsageName.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxUsageName.Location = new System.Drawing.Point(47, 131);
+            this.tbxUsageName.Location = new System.Drawing.Point(33, 73);
             this.tbxUsageName.Multiline = false;
             this.tbxUsageName.Name = "tbxUsageName";
             this.tbxUsageName.Padding = new System.Windows.Forms.Padding(7);
             this.tbxUsageName.PasswordChar = false;
             this.tbxUsageName.ReadOnly = false;
-            this.tbxUsageName.Size = new System.Drawing.Size(248, 38);
+            this.tbxUsageName.Size = new System.Drawing.Size(279, 38);
             this.tbxUsageName.TabIndex = 27;
             this.tbxUsageName.Texts = "";
             this.tbxUsageName.UnderlinedStyle = false;
@@ -212,9 +213,9 @@
             this.btnSearchUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearchUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchUsage.Location = new System.Drawing.Point(161, 244);
+            this.btnSearchUsage.Location = new System.Drawing.Point(33, 198);
             this.btnSearchUsage.Name = "btnSearchUsage";
-            this.btnSearchUsage.Size = new System.Drawing.Size(110, 51);
+            this.btnSearchUsage.Size = new System.Drawing.Size(127, 51);
             this.btnSearchUsage.TabIndex = 23;
             this.btnSearchUsage.Text = "Tra cứu";
             this.btnSearchUsage.TextColor = System.Drawing.Color.Black;
@@ -231,11 +232,11 @@
             this.btnNotSaveUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveUsage.Location = new System.Drawing.Point(43, 244);
+            this.btnNotSaveUsage.Location = new System.Drawing.Point(184, 198);
             this.btnNotSaveUsage.Name = "btnNotSaveUsage";
-            this.btnNotSaveUsage.Size = new System.Drawing.Size(110, 51);
+            this.btnNotSaveUsage.Size = new System.Drawing.Size(127, 51);
             this.btnNotSaveUsage.TabIndex = 22;
-            this.btnNotSaveUsage.Text = "Không lưu";
+            this.btnNotSaveUsage.Text = "Huỷ";
             this.btnNotSaveUsage.TextColor = System.Drawing.Color.Black;
             this.btnNotSaveUsage.UseVisualStyleBackColor = false;
             // 
@@ -250,9 +251,9 @@
             this.btnSaveUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveUsage.Location = new System.Drawing.Point(224, 188);
+            this.btnSaveUsage.Location = new System.Drawing.Point(32, 255);
             this.btnSaveUsage.Name = "btnSaveUsage";
-            this.btnSaveUsage.Size = new System.Drawing.Size(99, 51);
+            this.btnSaveUsage.Size = new System.Drawing.Size(127, 51);
             this.btnSaveUsage.TabIndex = 19;
             this.btnSaveUsage.Text = "Lưu";
             this.btnSaveUsage.TextColor = System.Drawing.Color.Black;
@@ -270,9 +271,9 @@
             this.btnUpdateUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateUsage.Location = new System.Drawing.Point(112, 188);
+            this.btnUpdateUsage.Location = new System.Drawing.Point(184, 141);
             this.btnUpdateUsage.Name = "btnUpdateUsage";
-            this.btnUpdateUsage.Size = new System.Drawing.Size(106, 51);
+            this.btnUpdateUsage.Size = new System.Drawing.Size(127, 51);
             this.btnUpdateUsage.TabIndex = 18;
             this.btnUpdateUsage.Text = "Cập nhật";
             this.btnUpdateUsage.TextColor = System.Drawing.Color.Black;
@@ -289,9 +290,9 @@
             this.btnAddUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnAddUsage.Location = new System.Drawing.Point(11, 188);
+            this.btnAddUsage.Location = new System.Drawing.Point(33, 141);
             this.btnAddUsage.Name = "btnAddUsage";
-            this.btnAddUsage.Size = new System.Drawing.Size(94, 51);
+            this.btnAddUsage.Size = new System.Drawing.Size(127, 51);
             this.btnAddUsage.TabIndex = 17;
             this.btnAddUsage.Text = "Thêm";
             this.btnAddUsage.TextColor = System.Drawing.Color.Black;
@@ -303,7 +304,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(47, 101);
+            this.label4.Location = new System.Drawing.Point(91, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 26);
             this.label4.TabIndex = 16;
@@ -313,11 +314,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(459, 0);
+            this.label1.Location = new System.Drawing.Point(37, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 24);
+            this.label1.Size = new System.Drawing.Size(289, 27);
             this.label1.TabIndex = 2;
             this.label1.Text = "THÔNG TIN CÁCH DÙNG";
             // 
@@ -349,11 +350,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(671, 37);
+            this.label2.Location = new System.Drawing.Point(655, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 24);
+            this.label2.Size = new System.Drawing.Size(209, 27);
             this.label2.TabIndex = 19;
             this.label2.Text = "Danh sách đơn vị";
             // 
@@ -448,7 +449,7 @@
             this.tbxUnitName.BorderSize = 1;
             this.tbxUnitName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxUnitName.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxUnitName.Location = new System.Drawing.Point(33, 120);
+            this.tbxUnitName.Location = new System.Drawing.Point(34, 72);
             this.tbxUnitName.Multiline = false;
             this.tbxUnitName.Name = "tbxUnitName";
             this.tbxUnitName.Padding = new System.Windows.Forms.Padding(7);
@@ -470,9 +471,9 @@
             this.btnSearchUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearchUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchUnit.Location = new System.Drawing.Point(173, 235);
+            this.btnSearchUnit.Location = new System.Drawing.Point(32, 197);
             this.btnSearchUnit.Name = "btnSearchUnit";
-            this.btnSearchUnit.Size = new System.Drawing.Size(117, 51);
+            this.btnSearchUnit.Size = new System.Drawing.Size(127, 51);
             this.btnSearchUnit.TabIndex = 23;
             this.btnSearchUnit.Text = "Tra cứu";
             this.btnSearchUnit.TextColor = System.Drawing.Color.Black;
@@ -489,11 +490,11 @@
             this.btnNotSaveUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveUnit.Location = new System.Drawing.Point(50, 235);
+            this.btnNotSaveUnit.Location = new System.Drawing.Point(184, 197);
             this.btnNotSaveUnit.Name = "btnNotSaveUnit";
-            this.btnNotSaveUnit.Size = new System.Drawing.Size(117, 51);
+            this.btnNotSaveUnit.Size = new System.Drawing.Size(127, 51);
             this.btnNotSaveUnit.TabIndex = 22;
-            this.btnNotSaveUnit.Text = "Không lưu";
+            this.btnNotSaveUnit.Text = "Huỷ";
             this.btnNotSaveUnit.TextColor = System.Drawing.Color.Black;
             this.btnNotSaveUnit.UseVisualStyleBackColor = false;
             this.btnNotSaveUnit.Click += new System.EventHandler(this.btnNotSaveUnit_Click);
@@ -509,9 +510,9 @@
             this.btnSaveUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveUnit.Location = new System.Drawing.Point(224, 179);
+            this.btnSaveUnit.Location = new System.Drawing.Point(33, 254);
             this.btnSaveUnit.Name = "btnSaveUnit";
-            this.btnSaveUnit.Size = new System.Drawing.Size(99, 51);
+            this.btnSaveUnit.Size = new System.Drawing.Size(127, 51);
             this.btnSaveUnit.TabIndex = 19;
             this.btnSaveUnit.Text = "Lưu";
             this.btnSaveUnit.TextColor = System.Drawing.Color.Black;
@@ -529,9 +530,9 @@
             this.btnUpdateUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateUnit.Location = new System.Drawing.Point(112, 179);
+            this.btnUpdateUnit.Location = new System.Drawing.Point(184, 140);
             this.btnUpdateUnit.Name = "btnUpdateUnit";
-            this.btnUpdateUnit.Size = new System.Drawing.Size(106, 51);
+            this.btnUpdateUnit.Size = new System.Drawing.Size(127, 51);
             this.btnUpdateUnit.TabIndex = 18;
             this.btnUpdateUnit.Text = "Cập nhật";
             this.btnUpdateUnit.TextColor = System.Drawing.Color.Black;
@@ -549,9 +550,9 @@
             this.btnAddUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnAddUnit.Location = new System.Drawing.Point(11, 179);
+            this.btnAddUnit.Location = new System.Drawing.Point(33, 140);
             this.btnAddUnit.Name = "btnAddUnit";
-            this.btnAddUnit.Size = new System.Drawing.Size(94, 51);
+            this.btnAddUnit.Size = new System.Drawing.Size(127, 51);
             this.btnAddUnit.TabIndex = 17;
             this.btnAddUnit.Text = "Thêm";
             this.btnAddUnit.TextColor = System.Drawing.Color.Black;
@@ -563,7 +564,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(33, 91);
+            this.label3.Location = new System.Drawing.Point(104, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 26);
             this.label3.TabIndex = 16;
@@ -573,11 +574,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(459, 0);
+            this.label6.Location = new System.Drawing.Point(53, 34);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(196, 24);
+            this.label6.Size = new System.Drawing.Size(226, 27);
             this.label6.TabIndex = 2;
             this.label6.Text = "THÔNG TIN ĐƠN VỊ";
             // 

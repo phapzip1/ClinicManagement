@@ -30,6 +30,7 @@ namespace ClinicManagement.Forms
 
         int max_Patient = 40;
         int nextP = 0;
+        string patient_Name = "";
 
         static Guid patient = new Guid();
         InforForm InforForm = new InforForm();
@@ -61,6 +62,7 @@ namespace ClinicManagement.Forms
         }
 
         //Hàm
+        #region Hàm
         private void ResetMonitor()
         {
             //Đặt màn hình về mặc định
@@ -91,6 +93,7 @@ namespace ClinicManagement.Forms
         {
 
         }
+        #endregion
 
         //Sự kiện
         private void btnAdd_Click(object sender, EventArgs e)

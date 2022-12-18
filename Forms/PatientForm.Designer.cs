@@ -156,7 +156,7 @@
             this.tbxPatientIDNow.Padding = new System.Windows.Forms.Padding(7);
             this.tbxPatientIDNow.PasswordChar = false;
             this.tbxPatientIDNow.ReadOnly = false;
-            this.tbxPatientIDNow.Size = new System.Drawing.Size(270, 38);
+            this.tbxPatientIDNow.Size = new System.Drawing.Size(265, 38);
             this.tbxPatientIDNow.TabIndex = 23;
             this.tbxPatientIDNow.Texts = "";
             this.tbxPatientIDNow.UnderlinedStyle = false;
@@ -218,7 +218,7 @@
             this.lblNextPatient.AutoSize = true;
             this.lblNextPatient.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNextPatient.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblNextPatient.Location = new System.Drawing.Point(223, 42);
+            this.lblNextPatient.Location = new System.Drawing.Point(223, 46);
             this.lblNextPatient.Name = "lblNextPatient";
             this.lblNextPatient.Size = new System.Drawing.Size(43, 50);
             this.lblNextPatient.TabIndex = 13;
@@ -239,20 +239,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(41, 19);
+            this.label2.Location = new System.Drawing.Point(25, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 24);
+            this.label2.Size = new System.Drawing.Size(253, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "THÔNG TIN ĐĂNG KÝ";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dtgvPatientList);
-            this.panel3.Location = new System.Drawing.Point(12, 377);
+            this.panel3.Location = new System.Drawing.Point(12, 393);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1165, 465);
+            this.panel3.Size = new System.Drawing.Size(1165, 449);
             this.panel3.TabIndex = 3;
             // 
             // dtgvPatientList
@@ -301,40 +301,40 @@
             this.dtgvPatientList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
             this.dtgvPatientList.RowTemplate.Height = 29;
             this.dtgvPatientList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPatientList.Size = new System.Drawing.Size(1165, 465);
+            this.dtgvPatientList.Size = new System.Drawing.Size(1165, 449);
             this.dtgvPatientList.TabIndex = 2;
             // 
             // PatientID
             // 
-            this.PatientID.FillWeight = 115.7601F;
+            this.PatientID.FillWeight = 113.6557F;
             this.PatientID.HeaderText = "Mã bệnh nhân";
             this.PatientID.MinimumWidth = 6;
             this.PatientID.Name = "PatientID";
             // 
             // PatientName
             // 
-            this.PatientName.FillWeight = 103.033F;
+            this.PatientName.FillWeight = 116.8409F;
             this.PatientName.HeaderText = "Họ tên bệnh nhân";
             this.PatientName.MinimumWidth = 6;
             this.PatientName.Name = "PatientName";
             // 
             // Gender
             // 
-            this.Gender.FillWeight = 50.66104F;
+            this.Gender.FillWeight = 63.32629F;
             this.Gender.HeaderText = "Giới tính";
             this.Gender.MinimumWidth = 6;
             this.Gender.Name = "Gender";
             // 
             // YearOfBirth
             // 
-            this.YearOfBirth.FillWeight = 48.84798F;
+            this.YearOfBirth.FillWeight = 66.37107F;
             this.YearOfBirth.HeaderText = "Năm sinh";
             this.YearOfBirth.MinimumWidth = 6;
             this.YearOfBirth.Name = "YearOfBirth";
             // 
             // DiaChi
             // 
-            this.DiaChi.FillWeight = 155.3786F;
+            this.DiaChi.FillWeight = 113.4867F;
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.MinimumWidth = 6;
             this.DiaChi.Name = "DiaChi";
@@ -343,11 +343,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(519, 350);
+            this.label11.Location = new System.Drawing.Point(492, 363);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(216, 24);
+            this.label11.Size = new System.Drawing.Size(259, 27);
             this.label11.TabIndex = 13;
             this.label11.Text = "Danh sách bệnh nhân";
             // 
@@ -414,13 +414,14 @@
             this.dtpkBob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpkBob.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.dtpkBob.BorderSize = 0;
-            this.dtpkBob.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpkBob.Location = new System.Drawing.Point(184, 136);
+            this.dtpkBob.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpkBob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkBob.Location = new System.Drawing.Point(184, 133);
             this.dtpkBob.Name = "dtpkBob";
-            this.dtpkBob.Size = new System.Drawing.Size(328, 29);
-            this.dtpkBob.SkinColor = System.Drawing.Color.Navy;
+            this.dtpkBob.Size = new System.Drawing.Size(328, 34);
+            this.dtpkBob.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
             this.dtpkBob.TabIndex = 26;
-            this.dtpkBob.TextColor = System.Drawing.Color.White;
+            this.dtpkBob.TextColor = System.Drawing.Color.Black;
             // 
             // label7
             // 
@@ -610,11 +611,11 @@
             // lblPatientData
             // 
             this.lblPatientData.AutoSize = true;
-            this.lblPatientData.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPatientData.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPatientData.ForeColor = System.Drawing.Color.Black;
-            this.lblPatientData.Location = new System.Drawing.Point(167, 19);
+            this.lblPatientData.Location = new System.Drawing.Point(149, 0);
             this.lblPatientData.Name = "lblPatientData";
-            this.lblPatientData.Size = new System.Drawing.Size(244, 24);
+            this.lblPatientData.Size = new System.Drawing.Size(286, 27);
             this.lblPatientData.TabIndex = 0;
             this.lblPatientData.Text = "THÔNG TIN BỆNH NHÂN";
             // 
@@ -639,20 +640,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(934, 23);
+            this.label1.Location = new System.Drawing.Point(911, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 24);
+            this.label1.Size = new System.Drawing.Size(248, 27);
             this.label1.TabIndex = 35;
             this.label1.Text = "Bệnh nhân đang chờ";
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.dtgvQueue);
-            this.panel4.Location = new System.Drawing.Point(892, 50);
+            this.panel4.Location = new System.Drawing.Point(892, 53);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(285, 297);
+            this.panel4.Size = new System.Drawing.Size(285, 294);
             this.panel4.TabIndex = 34;
             // 
             // dtgvQueue
@@ -698,7 +699,7 @@
             this.dtgvQueue.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
             this.dtgvQueue.RowTemplate.Height = 29;
             this.dtgvQueue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvQueue.Size = new System.Drawing.Size(285, 297);
+            this.dtgvQueue.Size = new System.Drawing.Size(285, 294);
             this.dtgvQueue.TabIndex = 4;
             // 
             // STT
@@ -773,16 +774,16 @@
         private Classes.CustomTextBox tbxPatientName;
         private Classes.CustomTextBox tbxPatientID;
         private CustomControls.RJControls.RJComboBox cbxGender;
-        private DataGridViewTextBoxColumn PatientID;
-        private DataGridViewTextBoxColumn PatientName;
-        private DataGridViewTextBoxColumn Gender;
-        private DataGridViewTextBoxColumn YearOfBirth;
-        private DataGridViewTextBoxColumn DiaChi;
         private Classes.RJButton btnLast;
         private Panel panel4;
         private DataGridView dtgvQueue;
         private DataGridViewTextBoxColumn STT;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private Label label1;
+        private DataGridViewTextBoxColumn PatientID;
+        private DataGridViewTextBoxColumn PatientName;
+        private DataGridViewTextBoxColumn Gender;
+        private DataGridViewTextBoxColumn YearOfBirth;
+        private DataGridViewTextBoxColumn DiaChi;
     }
 }

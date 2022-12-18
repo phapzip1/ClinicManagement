@@ -56,6 +56,10 @@ namespace ClinicManagement.Forms
             string tendv = tbxUsageName.Texts.ToString();
             if(tendv.Length > 20)
                 MessageBox.Show("Tên đơn vị quá dài!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+
+            }
         }
 
         private void btnSaveUnit_Click(object sender, EventArgs e)
@@ -120,6 +124,11 @@ namespace ClinicManagement.Forms
         }
 
         private void btnAddUsage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

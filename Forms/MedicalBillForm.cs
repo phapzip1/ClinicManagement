@@ -17,7 +17,7 @@ namespace ClinicManagement.Forms
     {
 
         //Radio button
-        bool isChecked = false;
+        //bool isChecked = false;
 
         //Data
         private IDataProvider provider;
@@ -26,6 +26,8 @@ namespace ClinicManagement.Forms
         public MedicalBillForm()
         {
             InitializeComponent();
+
+
 
             lblNextPatient.Text = Models.InforForm.Next_Patient.ToString();
             tbxMedicalBillDay.ReadOnly= true;
@@ -45,7 +47,7 @@ namespace ClinicManagement.Forms
             tbxPrice.Text = string.Empty;
             tbxFinalPrice.Text = string.Empty;
 
-            rbtnNotMedicalList.Checked= false;
+            cbxNotList.Checked= false;
         }
 
         //Sự kiện
@@ -70,55 +72,20 @@ namespace ClinicManagement.Forms
             tbxMedicalBillNumber.Texts= guid.ToString();
         }
 
-        private void rbtnNotMedicalList_CheckedChanged(object sender, EventArgs e)
-        {
-            isChecked = rbtnNotMedicalList.Checked;
-        }
+        //private void rbtnNotMedicalList_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    isChecked = rbtnNotMedicalList.Checked;
+        //}
 
-        private void rbtnNotMedicalList_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (rbtnNotMedicalList.Checked && !isChecked)
-                rbtnNotMedicalList.Checked = false;
-            else
-            {
-                rbtnNotMedicalList.Checked = true;
-                isChecked = false;
-            }
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDelMedical_Click(object sender, EventArgs e)
-        {
-            int count = dtgvMedicalList.SelectedRows.Count;
-
-            for (int i = 0; i < count; i++)
-            {
-                dtgvMedicalList.Rows.RemoveAt(dtgvMedicalList.SelectedRows[0].Index);
-            }
-        }
-
-        private void btnChangeMedical_Click(object sender, EventArgs e)
-        {
-            int count = dtgvMedicalList.SelectedRows.Count;
-
-            for (int i = 0; i < count; i++)
-            {
-                dtgvMedicalList.Rows.RemoveAt(dtgvMedicalList.SelectedRows[0].Index);
-            }
-        }
-
-        private void btnAddMedical_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MedicalBillForm_Load(object sender, EventArgs e)
-        {
-            
-        }
-    }
+        //private void rbtnNotMedicalList_MouseClick(object sender, MouseEventArgs e)
+        //{
+        //    if (rbtnNotMedicalList.Checked && !isChecked)
+        //        rbtnNotMedicalList.Checked = false;
+        //    else
+        //    {
+        //        rbtnNotMedicalList.Checked = true;
+        //        isChecked = false;
+        //    }
+        //}
+    }   
 }

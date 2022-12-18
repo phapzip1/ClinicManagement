@@ -92,5 +92,10 @@ namespace ClinicManagement.Forms
                 ResetMonitor();
             }
         }
+
+        private void tbxIllnessSympton__TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

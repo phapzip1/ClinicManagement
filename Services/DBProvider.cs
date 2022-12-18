@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 
 namespace ClinicManagement.Services
 {
-    public class DBProvider //: IDataProvider
+    public class DBProvider : IDataProvider
     {
         private readonly ClinicDbContextFactory _dbContextFactory;
 
