@@ -160,5 +160,18 @@ namespace ClinicManagement.Services
             };
         }
 
+        public async Task CreateMethod(Method method)
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                MethodDTO methodDTO = new MethodDTO()
+                {
+                    Id = method.Id,
+                    Name = method.Name,
+                };
+                dbContext.Methods.Add(methodDTO);
+                await dbContext.SaveChangesAsync();
+            }
+        }
     }
 }

@@ -191,5 +191,13 @@ namespace ClinicManagement.Services
                 return true;
             }
         }
+
+        public async Task<IEnumerable<Method>> GetAllMethods()
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                return await dbContext.Methods.Select(obj => new Method(obj.Id, obj.Name)).ToListAsync();
+            }
+        }
     }
 }
