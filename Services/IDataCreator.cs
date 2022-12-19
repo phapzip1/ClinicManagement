@@ -8,6 +8,7 @@ namespace ClinicManagement.Services
         Task CreateIllness(Illness illness);
         Task CreateUnit(Unit unit);
         Task CreateMedicine(Medicine medicine);
+        Task CreateMethod(Method method);
         Task CreateMedicalNote(MedicalNote medicicalNote);
         Task CreateBill(Bill bill);
         Task CreateImport(Import import);
