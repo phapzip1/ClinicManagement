@@ -17,7 +17,7 @@ namespace ClinicManagement.Forms
 
             _clinicDbContextFactory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString());
 
-            //provider = new DBProvider(_clinicDbContextFactory);
+            provider = new DBProvider(_clinicDbContextFactory);
             updater = new DBUpdater(_clinicDbContextFactory);
 
             provider.GetParams().ContinueWith(res =>

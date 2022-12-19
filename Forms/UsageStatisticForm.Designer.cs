@@ -58,12 +58,12 @@
             this.btnSeeInformation = new ClinicManagement.Classes.RJButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DVT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SLD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -489,6 +489,7 @@
             // 
             // STT
             // 
+            this.STT.DataPropertyName = "Index";
             this.STT.FillWeight = 70F;
             this.STT.HeaderText = "STT";
             this.STT.MinimumWidth = 6;
@@ -497,6 +498,7 @@
             // 
             // TT
             // 
+            this.TT.DataPropertyName = "Name";
             this.TT.HeaderText = "Tên Thuốc";
             this.TT.MinimumWidth = 6;
             this.TT.Name = "TT";
@@ -504,6 +506,7 @@
             // 
             // DVT
             // 
+            this.DVT.DataPropertyName = "UnitName";
             this.DVT.FillWeight = 125F;
             this.DVT.HeaderText = "Đơn Vị Tính";
             this.DVT.MinimumWidth = 6;
@@ -512,6 +515,7 @@
             // 
             // SL
             // 
+            this.SL.DataPropertyName = "Quantity";
             this.SL.HeaderText = "Số Lượng";
             this.SL.MinimumWidth = 6;
             this.SL.Name = "SL";
@@ -519,6 +523,7 @@
             // 
             // SLD
             // 
+            this.SLD.DataPropertyName = "Time";
             this.SLD.HeaderText = "Số Lần Dùng";
             this.SLD.MinimumWidth = 6;
             this.SLD.Name = "SLD";

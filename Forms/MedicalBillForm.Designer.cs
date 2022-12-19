@@ -875,6 +875,27 @@
             this.btnAddMedical.Text = "Thêm";
             this.btnAddMedical.TextColor = System.Drawing.Color.Black;
             this.btnAddMedical.UseVisualStyleBackColor = false;
+            this.btnAddMedical.Click += new System.EventHandler(this.btnAddMedical_Click);
+            // 
+            // rbtnNotMedicalList
+            // 
+            this.rbtnNotMedicalList.AutoSize = true;
+            this.rbtnNotMedicalList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(210)))), ((int)(((byte)(255)))));
+            this.rbtnNotMedicalList.CheckedColor = System.Drawing.Color.Transparent;
+            this.rbtnNotMedicalList.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbtnNotMedicalList.ForeColor = System.Drawing.Color.Black;
+            this.rbtnNotMedicalList.Location = new System.Drawing.Point(182, 247);
+            this.rbtnNotMedicalList.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rbtnNotMedicalList.Name = "rbtnNotMedicalList";
+            this.rbtnNotMedicalList.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rbtnNotMedicalList.Size = new System.Drawing.Size(205, 29);
+            this.rbtnNotMedicalList.TabIndex = 59;
+            this.rbtnNotMedicalList.TabStop = true;
+            this.rbtnNotMedicalList.Text = "Không kê khai thuốc";
+            this.rbtnNotMedicalList.UnCheckedColor = System.Drawing.Color.Black;
+            this.rbtnNotMedicalList.UseVisualStyleBackColor = false;
+            this.rbtnNotMedicalList.CheckedChanged += new System.EventHandler(this.rbtnNotMedicalList_CheckedChanged);
+            this.rbtnNotMedicalList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.rbtnNotMedicalList_MouseClick);
             // 
             // btnUpdate
             // 
