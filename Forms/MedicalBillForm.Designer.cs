@@ -74,7 +74,6 @@
             this.tbxMedicalNumer = new ClinicManagement.Classes.CustomTextBox();
             this.cbx_MedicalCate = new CustomControls.RJControls.RJComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbxSympton = new CustomControls.RJControls.RJComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -90,6 +89,7 @@
             this.btnAddMedical = new ClinicManagement.Classes.RJButton();
             this.btnUpdate = new ClinicManagement.Classes.RJButton();
             this.btnAdd = new ClinicManagement.Classes.RJButton();
+            this.tbxSympton = new ClinicManagement.Classes.CustomTextBox();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPatientList)).BeginInit();
@@ -513,7 +513,6 @@
             this.tableLayoutPanel1.Controls.Add(this.tbxMedicalNumer, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.cbx_MedicalCate, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cbxSympton, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 3);
@@ -526,6 +525,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbxMedicalBillPatient, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label12, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tbxSympton, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 43);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -663,25 +663,6 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Số phiếu khám:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // cbxSympton
-            // 
-            this.cbxSympton.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbxSympton.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.cbxSympton.BorderSize = 2;
-            this.cbxSympton.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbxSympton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxSympton.ForeColor = System.Drawing.Color.DimGray;
-            this.cbxSympton.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbxSympton.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbxSympton.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbxSympton.Location = new System.Drawing.Point(187, 129);
-            this.cbxSympton.MinimumSize = new System.Drawing.Size(50, 20);
-            this.cbxSympton.Name = "cbxSympton";
-            this.cbxSympton.Padding = new System.Windows.Forms.Padding(2);
-            this.cbxSympton.Size = new System.Drawing.Size(205, 36);
-            this.cbxSympton.TabIndex = 69;
-            this.cbxSympton.Texts = "";
             // 
             // label4
             // 
@@ -916,6 +897,25 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
+            // tbxSympton
+            // 
+            this.tbxSympton.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxSympton.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.tbxSympton.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxSympton.BorderSize = 2;
+            this.tbxSympton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxSympton.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxSympton.Location = new System.Drawing.Point(187, 129);
+            this.tbxSympton.Multiline = false;
+            this.tbxSympton.Name = "tbxSympton";
+            this.tbxSympton.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxSympton.PasswordChar = false;
+            this.tbxSympton.ReadOnly = false;
+            this.tbxSympton.Size = new System.Drawing.Size(205, 38);
+            this.tbxSympton.TabIndex = 75;
+            this.tbxSympton.Texts = "";
+            this.tbxSympton.UnderlinedStyle = false;
+            // 
             // MedicalBillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -981,7 +981,6 @@
         private Classes.CustomTextBox tbxMedicalNumer;
         private CustomControls.RJControls.RJComboBox cbx_MedicalCate;
         private Label label3;
-        private CustomControls.RJControls.RJComboBox cbxSympton;
         private Label label4;
         private Label label5;
         private Label label6;
@@ -997,5 +996,6 @@
         private Classes.RJButton btnEdit;
         private CheckBox cbxNotList;
         private Label lblPatientData;
+        private Classes.CustomTextBox tbxSympton;
     }
 }

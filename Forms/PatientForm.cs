@@ -28,7 +28,6 @@ namespace ClinicManagement.Forms
     {
         //Giá trị
         bool timer = false;
-        //DBAccess dBAccess = new DBAccess();
 
         int nextP = 0;
         string patient_Name = "";
@@ -55,8 +54,6 @@ namespace ClinicManagement.Forms
             bindingLists = new BindingList<ComboboxItem>();
 
             provider = new DBProvider(_clinicDbContextFactory); // receive data 
-
-            //dic = new Dictionary<string, int>();
 
             //patientDetailBinding = new BindingSource() { DataSource = new List<Patient>() }; // create binding
 
@@ -116,13 +113,7 @@ namespace ClinicManagement.Forms
         {
             try
             {
-                ClinicDbContextFactory _dbContextFactory = new ClinicDbContextFactory(InforForm.Connects_String);
-                using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
-                {
-                    //IDataProvider dataProvider = new DBProvider(_dbContextFactory);
-                    dbContext.Database.Migrate();
-
-                }
+                
             }
             catch (Exception ex)
             {

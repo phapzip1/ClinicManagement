@@ -14,18 +14,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ClinicManagement.DbContexts;
+using ClinicManagement.Services;
+using ClinicManagement.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ClinicManagement.Forms
 {
     public partial class UsageStatisticForm : Form
     {
-        DataTable dtBAOCAOSUDUNGTHUOC = new DataTable();       
-        DBAccess dBAccess = new DBAccess();
+        //DataTable dtBAOCAOSUDUNGTHUOC = new DataTable();       
+        //DBAccess dBAccess = new DBAccess();
         int yearnow = DateTime.Now.Year;
         int monthnow = DateTime.Now.Month;
+
+        private BindingSource medicineDetailBinding;
+        private ClinicDbContextFactory factory;
+        private IDataProvider provider;
         public UsageStatisticForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
+
+            factory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString()); // create location contact 
+            provider = new DBProvider(factory); // receive data 
+            medicineDetailBinding = new BindingSource() { DataSource = new List<IndexUsageStatisticForm>() }; // create binding
+            dataGridView4.DataSource = medicineDetailBinding;
+
 
             dataGridView4.AllowUserToAddRows = false;         
             saveFileDialog1.Filter = "Excel |*.xlsx";
@@ -103,24 +118,31 @@ namespace ClinicManagement.Forms
             string month = cbbMonth.SelectedItem.ToString();
             string year = cbbYear.SelectedItem.ToString();
 
+            
             dataGridView4.Rows.Clear();
-            dtBAOCAOSUDUNGTHUOC.Clear();
-            string query = "select BAOCAOSUDUNGTHUOC.MATHUOC, DONVI.TENDV, SLDUNG, SOLANDUNG  from BAOCAOSUDUNGTHUOC, THUOC, DONVI Where BAOCAOSUDUNGTHUOC.MATHUOC = THUOC.MATHUOC and THUOC.MADONVI = DONVI.MADV and THANG = '" + Int32.Parse(month) + "' and NAM = '" + Int32.Parse(year) + "'";
-            dBAccess.readDatathroughAdapter(query, dtBAOCAOSUDUNGTHUOC);
+            dataGridView4.Refresh();
+            //dtBAOCAOSUDUNGTHUOC.Clear();
+            //string query = "select BAOCAOSUDUNGTHUOC.MATHUOC, DONVI.TENDV, SLDUNG, SOLANDUNG  from BAOCAOSUDUNGTHUOC, THUOC, DONVI Where BAOCAOSUDUNGTHUOC.MATHUOC = THUOC.MATHUOC and THUOC.MADONVI = DONVI.MADV and THANG = '" + Int32.Parse(month) + "' and NAM = '" + Int32.Parse(year) + "'";
+            //dBAccess.readDatathroughAdapter(query, dtBAOCAOSUDUNGTHUOC);
 
-
-            if (dtBAOCAOSUDUNGTHUOC.Rows.Count >= 1)
+            provider.GetAllUsageReports(int.Parse(month), int.Parse(year)).ContinueWith(res =>
             {
-                for (int i = 0; i < dtBAOCAOSUDUNGTHUOC.Rows.Count; i++)
-                {   // STT, Thuốc, đơn vị tính, số lượng, số lần dùng
-                    dataGridView4.Rows.Add(i + 1, dtBAOCAOSUDUNGTHUOC.Rows[i]["MATHUOC"].ToString(), dtBAOCAOSUDUNGTHUOC.Rows[i]["TENDV"].ToString(), dtBAOCAOSUDUNGTHUOC.Rows[i]["SLDUNG"].ToString(), dtBAOCAOSUDUNGTHUOC.Rows[i]["SOLANDUNG"].ToString());
-
-                }            
-            }
-            else
-            {
-                MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                if (res.Result.Count() >= 1)
+                {
+                    dataGridView4.Invoke((MethodInvoker)delegate
+                    {
+                        int i = 1;
+                        foreach (var item in res.Result)
+                        {
+                            medicineDetailBinding.Add(new IndexUsageStatisticForm(i++, item));
+                        }
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            });
         }
 
         private void UsageStatisticForm_Load(object sender, EventArgs e)

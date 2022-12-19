@@ -36,21 +36,25 @@ namespace ClinicManagement.Forms
 
             bindingLists = new BindingList<ComboboxItem>();
 
+            cbxIllness.DataSource= bindingLists;
+
             provider = new DBProvider(_clinicDbContextFactory);
 
             lblNextPatient.Text = Models.InforForm.Next_Patient.ToString();
             tbxMedicalBillDay.ReadOnly= true;
             tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
 
+            //Trieu chung
+            //****//
             provider.GetAllIllness().ContinueWith(res =>
             {
                 if (IsHandleCreated)
                 {
-                    cbxSympton.Invoke((MethodInvoker)delegate
+                    cbxIllness.Invoke((MethodInvoker)delegate
                     {
                         foreach (var item in res.Result)
                         {
-                            bindingLists.Add(new ComboboxItem(item.Symptom, item));
+                            bindingLists.Add(new ComboboxItem(item.Name, item));
                             bindingLists.ResetBindings();
                         }
                     });

@@ -36,8 +36,9 @@ namespace ClinicManagement.Forms
             dataGridView1.Columns["MedicineId"].Visible = false;
             dataGridView1.Columns["ImportId"].Visible = false;
 
+
             _quantityTb.Minimum = 0;
-            _priceTb.Minimum = 0; 
+            _priceTb.Minimum = 0;
             _quantityTb.Maximum = decimal.MaxValue;
             _priceTb.Maximum = decimal.MaxValue;
         }
@@ -48,7 +49,7 @@ namespace ClinicManagement.Forms
             int sum = 0;
             foreach (ImportDetail item in medicineDetailBinding.List)
             {
-                //sum += item.Sum;
+                sum += item.Sum;
             }
             _totalTb.Texts = sum.ToString();
         }

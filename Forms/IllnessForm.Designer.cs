@@ -35,11 +35,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvIllnessList = new System.Windows.Forms.DataGridView();
-            this.MaBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrieuChung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThuocDacTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plIllnessInfor = new System.Windows.Forms.Panel();
+            this.btnDel = new ClinicManagement.Classes.RJButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxIllnessSympton = new ClinicManagement.Classes.CustomTextBox();
@@ -53,7 +50,9 @@
             this.btnAddIllness = new ClinicManagement.Classes.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
-            this.btnDel = new ClinicManagement.Classes.RJButton();
+            this.MaBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrieuChung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvIllnessList)).BeginInit();
@@ -118,8 +117,7 @@
             this.dtgvIllnessList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaBenh,
             this.TenBenh,
-            this.TrieuChung,
-            this.ThuocDacTri});
+            this.TrieuChung});
             this.dtgvIllnessList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvIllnessList.EnableHeadersVisualStyles = false;
             this.dtgvIllnessList.Location = new System.Drawing.Point(0, 0);
@@ -145,34 +143,6 @@
             this.dtgvIllnessList.Size = new System.Drawing.Size(1154, 603);
             this.dtgvIllnessList.TabIndex = 3;
             // 
-            // MaBenh
-            // 
-            this.MaBenh.FillWeight = 96.88831F;
-            this.MaBenh.HeaderText = "Mã bệnh ";
-            this.MaBenh.MinimumWidth = 6;
-            this.MaBenh.Name = "MaBenh";
-            // 
-            // TenBenh
-            // 
-            this.TenBenh.FillWeight = 104.5855F;
-            this.TenBenh.HeaderText = "Tên bệnh";
-            this.TenBenh.MinimumWidth = 6;
-            this.TenBenh.Name = "TenBenh";
-            // 
-            // TrieuChung
-            // 
-            this.TrieuChung.FillWeight = 119.1177F;
-            this.TrieuChung.HeaderText = "Triệu chứng";
-            this.TrieuChung.MinimumWidth = 6;
-            this.TrieuChung.Name = "TrieuChung";
-            // 
-            // ThuocDacTri
-            // 
-            this.ThuocDacTri.FillWeight = 81.10384F;
-            this.ThuocDacTri.HeaderText = "Thuốc đặc trị";
-            this.ThuocDacTri.MinimumWidth = 6;
-            this.ThuocDacTri.Name = "ThuocDacTri";
-            // 
             // plIllnessInfor
             // 
             this.plIllnessInfor.BackColor = System.Drawing.Color.Transparent;
@@ -189,6 +159,26 @@
             this.plIllnessInfor.Name = "plIllnessInfor";
             this.plIllnessInfor.Size = new System.Drawing.Size(1154, 135);
             this.plIllnessInfor.TabIndex = 18;
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnDel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnDel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnDel.BorderRadius = 20;
+            this.btnDel.BorderSize = 2;
+            this.btnDel.FlatAppearance.BorderSize = 0;
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDel.ForeColor = System.Drawing.Color.Black;
+            this.btnDel.Location = new System.Drawing.Point(981, 10);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(134, 55);
+            this.btnDel.TabIndex = 64;
+            this.btnDel.Text = "Xoá";
+            this.btnDel.TextColor = System.Drawing.Color.Black;
+            this.btnDel.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 
@@ -409,25 +399,26 @@
             this.gradientPanel1.Size = new System.Drawing.Size(1189, 845);
             this.gradientPanel1.TabIndex = 21;
             // 
-            // btnDel
+            // MaBenh
             // 
-            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnDel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnDel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnDel.BorderRadius = 20;
-            this.btnDel.BorderSize = 2;
-            this.btnDel.FlatAppearance.BorderSize = 0;
-            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDel.ForeColor = System.Drawing.Color.Black;
-            this.btnDel.Location = new System.Drawing.Point(981, 10);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(134, 55);
-            this.btnDel.TabIndex = 64;
-            this.btnDel.Text = "Xoá";
-            this.btnDel.TextColor = System.Drawing.Color.Black;
-            this.btnDel.UseVisualStyleBackColor = false;
+            this.MaBenh.FillWeight = 96.88831F;
+            this.MaBenh.HeaderText = "Mã bệnh ";
+            this.MaBenh.MinimumWidth = 6;
+            this.MaBenh.Name = "MaBenh";
+            // 
+            // TenBenh
+            // 
+            this.TenBenh.FillWeight = 104.5855F;
+            this.TenBenh.HeaderText = "Tên bệnh";
+            this.TenBenh.MinimumWidth = 6;
+            this.TenBenh.Name = "TenBenh";
+            // 
+            // TrieuChung
+            // 
+            this.TrieuChung.FillWeight = 119.1177F;
+            this.TrieuChung.HeaderText = "Triệu chứng";
+            this.TrieuChung.MinimumWidth = 6;
+            this.TrieuChung.Name = "TrieuChung";
             // 
             // IllnessForm
             // 
@@ -470,12 +461,11 @@
         private Classes.CustomTextBox tbxIllnessName;
         private Classes.GradientPanel gradientPanel1;
         private TableLayoutPanel tableLayoutPanel1;
-        private DataGridViewTextBoxColumn MaBenh;
-        private DataGridViewTextBoxColumn TenBenh;
-        private DataGridViewTextBoxColumn TrieuChung;
-        private DataGridViewTextBoxColumn ThuocDacTri;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
         private Classes.RJButton btnDel;
+        private DataGridViewTextBoxColumn MaBenh;
+        private DataGridViewTextBoxColumn TenBenh;
+        private DataGridViewTextBoxColumn TrieuChung;
     }
 }

@@ -17,7 +17,8 @@ namespace ClinicManagement.Forms
 {
     public partial class UsageForm : Form
     {
-        DBAccess dBAccess = new DBAccess();
+        Guid guid1;
+
 
         public UsageForm()
         {
@@ -48,6 +49,7 @@ namespace ClinicManagement.Forms
         //Xử lý
         private void btnAddUnit_Click(object sender, EventArgs e)
         {
+            guid1= Guid.NewGuid();
             tbxUnitName.ReadOnly= false;
         }
 
@@ -64,8 +66,6 @@ namespace ClinicManagement.Forms
 
         private void btnSaveUnit_Click(object sender, EventArgs e)
         {
-            Guid guid = Guid.NewGuid();
-
             if (tbxUnitName.Texts.Length == 0)
             {
                 MessageBox.Show("Hãy nhập tên đơn vị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -79,7 +79,7 @@ namespace ClinicManagement.Forms
                     {
                         IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);
                         dbContext.Database.Migrate();
-                        dataCreator.CreateUnit(new Models.Unit(guid, tbxUnitName.Texts.ToString()));
+                        dataCreator.CreateUnit(new Models.Unit(guid1, tbxUnitName.Texts.ToString()));
                         MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -125,7 +125,8 @@ namespace ClinicManagement.Forms
 
         private void btnAddUsage_Click(object sender, EventArgs e)
         {
-
+            guid1= Guid.NewGuid();
+            tbxUsageName.ReadOnly= false;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
