@@ -24,8 +24,6 @@ namespace ClinicManagement.Forms
 {
     public partial class UsageStatisticForm : Form
     {
-        //DataTable dtBAOCAOSUDUNGTHUOC = new DataTable();       
-        //DBAccess dBAccess = new DBAccess();
         int yearnow = DateTime.Now.Year;
         int monthnow = DateTime.Now.Month;
 
@@ -116,14 +114,9 @@ namespace ClinicManagement.Forms
         private void btnSeeInformation2_Click(object sender, EventArgs e)
         {
             string month = cbbMonth.SelectedItem.ToString();
-            string year = cbbYear.SelectedItem.ToString();
-
-            
+            string year = cbbYear.SelectedItem.ToString();            
             dataGridView4.Rows.Clear();
             dataGridView4.Refresh();
-            //dtBAOCAOSUDUNGTHUOC.Clear();
-            //string query = "select BAOCAOSUDUNGTHUOC.MATHUOC, DONVI.TENDV, SLDUNG, SOLANDUNG  from BAOCAOSUDUNGTHUOC, THUOC, DONVI Where BAOCAOSUDUNGTHUOC.MATHUOC = THUOC.MATHUOC and THUOC.MADONVI = DONVI.MADV and THANG = '" + Int32.Parse(month) + "' and NAM = '" + Int32.Parse(year) + "'";
-            //dBAccess.readDatathroughAdapter(query, dtBAOCAOSUDUNGTHUOC);
 
             provider.GetAllUsageReports(int.Parse(month), int.Parse(year)).ContinueWith(res =>
             {
@@ -144,7 +137,6 @@ namespace ClinicManagement.Forms
                 }
             });
         }
-
         private void UsageStatisticForm_Load(object sender, EventArgs e)
         {
             cbbMonth.SelectedItem = monthnow.ToString();

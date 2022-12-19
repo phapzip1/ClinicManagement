@@ -10,6 +10,14 @@
             Price = price;
         }
 
+        public ImportReport (ImportReport importReport)
+        {
+            this.MedicineName = importReport.MedicineName;
+            this.UnitName = importReport.UnitName;
+            this.Quantity = importReport.Quantity;
+            this.Price = importReport.Price;
+        }
+
         public string MedicineName { get; }
         public string UnitName { get; }
         public int Quantity { get; }

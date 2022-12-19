@@ -35,15 +35,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.plPatientInfor = new System.Windows.Forms.Panel();
-            this.btnLast = new ClinicManagement.Classes.RJButton();
+            this.btnDel = new ClinicManagement.Classes.RJButton();
             this.btnGo = new ClinicManagement.Classes.RJButton();
             this.tbxPatientIDNow = new ClinicManagement.Classes.CustomTextBox();
-            this.btnSearch = new ClinicManagement.Classes.RJButton();
             this.btnRegister = new ClinicManagement.Classes.RJButton();
             this.label10 = new System.Windows.Forms.Label();
             this.lblNextPatient = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSearch = new ClinicManagement.Classes.RJButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvPatientList = new System.Windows.Forms.DataGridView();
             this.PatientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,10 +88,9 @@
             // plPatientInfor
             // 
             this.plPatientInfor.BackColor = System.Drawing.Color.Transparent;
-            this.plPatientInfor.Controls.Add(this.btnLast);
+            this.plPatientInfor.Controls.Add(this.btnDel);
             this.plPatientInfor.Controls.Add(this.btnGo);
             this.plPatientInfor.Controls.Add(this.tbxPatientIDNow);
-            this.plPatientInfor.Controls.Add(this.btnSearch);
             this.plPatientInfor.Controls.Add(this.btnRegister);
             this.plPatientInfor.Controls.Add(this.label10);
             this.plPatientInfor.Controls.Add(this.lblNextPatient);
@@ -102,31 +101,31 @@
             this.plPatientInfor.Size = new System.Drawing.Size(295, 324);
             this.plPatientInfor.TabIndex = 2;
             // 
-            // btnLast
+            // btnDel
             // 
-            this.btnLast.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnLast.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnLast.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnLast.BorderRadius = 20;
-            this.btnLast.BorderSize = 2;
-            this.btnLast.FlatAppearance.BorderSize = 0;
-            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLast.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLast.ForeColor = System.Drawing.Color.Black;
-            this.btnLast.Location = new System.Drawing.Point(151, 268);
-            this.btnLast.Name = "btnLast";
-            this.btnLast.Size = new System.Drawing.Size(137, 51);
-            this.btnLast.TabIndex = 25;
-            this.btnLast.Text = "Về cuối";
-            this.btnLast.TextColor = System.Drawing.Color.Black;
-            this.btnLast.UseVisualStyleBackColor = false;
-            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnDel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnDel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnDel.BorderRadius = 20;
+            this.btnDel.BorderSize = 2;
+            this.btnDel.FlatAppearance.BorderSize = 0;
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDel.ForeColor = System.Drawing.Color.Black;
+            this.btnDel.Location = new System.Drawing.Point(80, 266);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(137, 51);
+            this.btnDel.TabIndex = 25;
+            this.btnDel.Text = "Xoá";
+            this.btnDel.TextColor = System.Drawing.Color.Black;
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnLast_Click);
             // 
             // btnGo
             // 
             this.btnGo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
             this.btnGo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnGo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnGo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.btnGo.BorderRadius = 20;
             this.btnGo.BorderSize = 2;
             this.btnGo.FlatAppearance.BorderSize = 0;
@@ -145,8 +144,8 @@
             // tbxPatientIDNow
             // 
             this.tbxPatientIDNow.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxPatientIDNow.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxPatientIDNow.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxPatientIDNow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxPatientIDNow.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxPatientIDNow.BorderSize = 2;
             this.tbxPatientIDNow.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientIDNow.ForeColor = System.Drawing.Color.DimGray;
@@ -160,26 +159,6 @@
             this.tbxPatientIDNow.TabIndex = 23;
             this.tbxPatientIDNow.Texts = "";
             this.tbxPatientIDNow.UnderlinedStyle = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnSearch.BorderRadius = 20;
-            this.btnSearch.BorderSize = 2;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.Location = new System.Drawing.Point(8, 268);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(137, 51);
-            this.btnSearch.TabIndex = 19;
-            this.btnSearch.Text = "Tra cứu";
-            this.btnSearch.TextColor = System.Drawing.Color.Black;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnRegister
             // 
@@ -246,6 +225,26 @@
             this.label2.Size = new System.Drawing.Size(253, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "THÔNG TIN ĐĂNG KÝ";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnSearch.BorderRadius = 20;
+            this.btnSearch.BorderSize = 2;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnSearch.Location = new System.Drawing.Point(276, 266);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(96, 51);
+            this.btnSearch.TabIndex = 19;
+            this.btnSearch.Text = "Tra cứu";
+            this.btnSearch.TextColor = System.Drawing.Color.Black;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // panel3
             // 
@@ -357,6 +356,7 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.lblPatientData);
             this.panel1.Location = new System.Drawing.Point(12, 23);
@@ -393,7 +393,7 @@
             // cbxGender
             // 
             this.cbxGender.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbxGender.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.cbxGender.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.cbxGender.BorderSize = 2;
             this.cbxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbxGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -425,13 +425,13 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
             this.label7.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(3, 182);
+            this.label7.Location = new System.Drawing.Point(3, 172);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 26);
+            this.label7.Size = new System.Drawing.Size(88, 46);
             this.label7.TabIndex = 15;
             this.label7.Text = "Địa chỉ:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -440,8 +440,8 @@
             // 
             this.tbxPatientAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxPatientAddress.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxPatientAddress.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxPatientAddress.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxPatientAddress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxPatientAddress.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxPatientAddress.BorderSize = 2;
             this.tbxPatientAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientAddress.ForeColor = System.Drawing.Color.DimGray;
@@ -458,52 +458,52 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
             this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(3, 137);
+            this.label6.Location = new System.Drawing.Point(3, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 26);
+            this.label6.Size = new System.Drawing.Size(113, 43);
             this.label6.TabIndex = 14;
             this.label6.Text = "Năm sinh:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
             this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(3, 94);
+            this.label5.Location = new System.Drawing.Point(3, 86);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 26);
+            this.label5.Size = new System.Drawing.Size(109, 43);
             this.label5.TabIndex = 13;
             this.label5.Text = "Giới tính: ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
             this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 51);
+            this.label4.Location = new System.Drawing.Point(3, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 26);
+            this.label4.Size = new System.Drawing.Size(91, 43);
             this.label4.TabIndex = 12;
             this.label4.Text = "Họ tên: ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
             this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(3, 8);
+            this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 26);
+            this.label3.Size = new System.Drawing.Size(160, 43);
             this.label3.TabIndex = 11;
             this.label3.Text = "Mã bệnh nhân:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -512,8 +512,8 @@
             // 
             this.tbxPatientName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxPatientName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxPatientName.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxPatientName.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxPatientName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxPatientName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxPatientName.BorderSize = 2;
             this.tbxPatientName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientName.ForeColor = System.Drawing.Color.DimGray;
@@ -532,8 +532,8 @@
             // 
             this.tbxPatientID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxPatientID.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxPatientID.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxPatientID.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxPatientID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxPatientID.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxPatientID.BorderSize = 2;
             this.tbxPatientID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientID.ForeColor = System.Drawing.Color.DimGray;
@@ -559,9 +559,9 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(339, 268);
+            this.btnExit.Location = new System.Drawing.Point(378, 268);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(96, 51);
+            this.btnExit.Size = new System.Drawing.Size(96, 47);
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "Huỷ";
             this.btnExit.TextColor = System.Drawing.Color.Black;
@@ -579,7 +579,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(234, 268);
+            this.btnSave.Location = new System.Drawing.Point(171, 266);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(99, 51);
             this.btnSave.TabIndex = 12;
@@ -599,7 +599,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(134, 268);
+            this.btnAdd.Location = new System.Drawing.Point(71, 266);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 51);
             this.btnAdd.TabIndex = 4;
@@ -774,7 +774,7 @@
         private Classes.CustomTextBox tbxPatientName;
         private Classes.CustomTextBox tbxPatientID;
         private CustomControls.RJControls.RJComboBox cbxGender;
-        private Classes.RJButton btnLast;
+        private Classes.RJButton btnDel;
         private Panel panel4;
         private DataGridView dtgvQueue;
         private DataGridViewTextBoxColumn STT;

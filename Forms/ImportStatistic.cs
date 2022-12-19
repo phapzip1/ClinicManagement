@@ -1,4 +1,7 @@
-﻿using DatabaseProject;
+﻿using ClinicManagement.DbContexts;
+using ClinicManagement.Models;
+using ClinicManagement.Services;
+using DatabaseProject;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,14 +18,21 @@ namespace ClinicManagement.Forms
 {
     public partial class ImportStatistic : Form
     {
-        DataTable dtBAOCAONHAPTHUOC = new DataTable();      
-        DBAccess dBAccess = new DBAccess();
         int yearnow = DateTime.Now.Year;
         int monthnow = DateTime.Now.Month;
+
+        private BindingSource medicineDetailBinding;
+        private ClinicDbContextFactory factory;
+        private IDataProvider provider;
+
         public ImportStatistic()
         {
             InitializeComponent();
-            
+            factory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString()); // create location contact 
+            provider = new DBProvider(factory); // receive data 
+            medicineDetailBinding = new BindingSource() { DataSource = new List<IndexImportReport>() }; // create binding
+            dataGridView1.DataSource = medicineDetailBinding;
+
             dataGridView1.AllowUserToAddRows = false;
             saveFileDialog1.Filter = "Excel |*.xlsx";
             saveFileDialog1.Title = "Báo cáo doanh thu theo tháng";
@@ -96,36 +106,33 @@ namespace ClinicManagement.Forms
             int totalprice = 0;
             string month = cbbMonth.SelectedItem.ToString();
             string year = cbbYear.SelectedItem.ToString();
-
-            dtBAOCAONHAPTHUOC.Clear();
             dataGridView1.Rows.Clear();
-            
 
-            string query1 = "Select CTNHAPTHUOC.MATHUOC , THUOC.MADONVI, TENDV, SLNHAP, SLTON, PHIEUNHAPTHUOC.TONGTIEN from CTNHAPTHUOC, PHIEUNHAPTHUOC, THUOC, DONVI Where CTNHAPTHUOC.SOPHIEU = PHIEUNHAPTHUOC.SOPHIEU and CTNHAPTHUOC.MATHUOC = THUOC.MATHUOC and THUOC.MADONVI = DONVI.MADV and month(NGAYLAP) = '" + Int32.Parse(month) + "' and year(NGAYLAP) = '" + Int32.Parse(year) + "'";
-            dBAccess.readDatathroughAdapter(query1, dtBAOCAONHAPTHUOC);
-
-            if (dtBAOCAONHAPTHUOC.Rows.Count >= 1)
-            {        
-                for (int i = 0; i < dtBAOCAONHAPTHUOC.Rows.Count; i++)
-                {   
-                    dataGridView1.Rows.Add(i + 1, dtBAOCAONHAPTHUOC.Rows[i]["MATHUOC"].ToString(), dtBAOCAONHAPTHUOC.Rows[i]["MADONVI"].ToString(), dtBAOCAONHAPTHUOC.Rows[i]["TENDV"].ToString(), dtBAOCAONHAPTHUOC.Rows[i]["SLNHAP"].ToString(), dtBAOCAONHAPTHUOC.Rows[i]["SLTON"].ToString(), dtBAOCAONHAPTHUOC.Rows[i]["TONGTIEN"].ToString());
-                    totalprice += int.Parse(dtBAOCAONHAPTHUOC.Rows[i]["TONGTIEN"].ToString());
-                }
-
-                lbltotalprice.Text = totalprice.ToString() + " VNĐ";
-                groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
-            }
-            else
+            provider.GetImportReport(int.Parse(month), int.Parse(year)).ContinueWith(res =>
             {
-                MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                lbltotalprice.Text = ".................................";
-                groupBox1.Text = "Tổng hợp báo cáo";
-            }
+                if (res.Result.Count() >= 1)
+                {
+                    dataGridView1.Invoke((MethodInvoker)delegate
+                    {
+                        int i = 1;
+                        foreach (var item in res.Result)
+                        {
 
-            
-                
+                            medicineDetailBinding.Add(new IndexImportReport(i++, item));
+                            totalprice += item.Price;
+                        }
+                        lbltotalprice.Text = totalprice.ToString() + " VNĐ";
+                        groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lbltotalprice.Text = ".................................";
+                    groupBox1.Text = "Tổng hợp báo cáo";
+                }
+            });
         }
-
         private void ImportStatistic_Load(object sender, EventArgs e)
         {
             cbbMonth.SelectedItem = monthnow.ToString();

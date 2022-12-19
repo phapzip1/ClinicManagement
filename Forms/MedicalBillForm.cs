@@ -1,4 +1,5 @@
 ﻿using ClinicManagement.Classes;
+using ClinicManagement.DbContexts;
 using ClinicManagement.Models;
 using ClinicManagement.Services;
 using System;
@@ -20,18 +21,48 @@ namespace ClinicManagement.Forms
         //bool isChecked = false;
 
         //Data
+        private Guid guid1= Guid.NewGuid();
         private IDataProvider provider;
         private BindingList<ComboboxItem> bindingLists;
+        private BindingSource medicineDetailBinding;
+
+        private ClinicDbContextFactory _clinicDbContextFactory;
 
         public MedicalBillForm()
         {
             InitializeComponent();
 
+            _clinicDbContextFactory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString());
 
+            bindingLists = new BindingList<ComboboxItem>();
+
+            cbxIllness.DataSource= bindingLists;
+
+            provider = new DBProvider(_clinicDbContextFactory);
 
             lblNextPatient.Text = Models.InforForm.Next_Patient.ToString();
             tbxMedicalBillDay.ReadOnly= true;
             tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
+
+            //Trieu chung
+            //****//
+            provider.GetAllIllness().ContinueWith(res =>
+            {
+                if (IsHandleCreated)
+                {
+                    cbxIllness.Invoke((MethodInvoker)delegate
+                    {
+                        foreach (var item in res.Result)
+                        {
+                            bindingLists.Add(new ComboboxItem(item.Name, item));
+                            bindingLists.ResetBindings();
+                        }
+                    });
+                }
+            });
+
+            tbxMedicalBillNumber.ReadOnly= true;
+            tbxMedicalBillPatient.ReadOnly= true;
         }
 
         //Hàm
@@ -54,6 +85,8 @@ namespace ClinicManagement.Forms
         private void timerMedical_Tick(object sender, EventArgs e)
         {
             lblNextPatient.Text = InforForm.Next_Patient.ToString();
+
+            tbxMedicalBillPatient.Texts = InforForm.PatientNow_id.ToString();
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
@@ -70,6 +103,12 @@ namespace ClinicManagement.Forms
             tbxMedicalBillNumber.ReadOnly= true;
             Guid guid = Guid.NewGuid();
             tbxMedicalBillNumber.Texts= guid.ToString();
+            tbxMedicalBillPatient.Texts= InforForm.PatientNow_id.ToString();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
         }
 
         //private void rbtnNotMedicalList_CheckedChanged(object sender, EventArgs e)
