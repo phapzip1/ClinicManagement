@@ -19,6 +19,7 @@ namespace ClinicManagement.Forms
 
         //Radio button
         //bool isChecked = false;
+        int Final_Price = 0;
 
         //Data
         private Guid guid1= Guid.NewGuid();
@@ -50,6 +51,7 @@ namespace ClinicManagement.Forms
             tbxMedicalBillDay.ReadOnly= true;
             tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
 
+            #region tenbenh, tenthuoc, cachdung
             //Ten benh
             provider.GetAllIllness().ContinueWith(res =>
             {
@@ -97,9 +99,12 @@ namespace ClinicManagement.Forms
                     });
                 }
             });
+            #endregion
 
             tbxMedicalBillNumber.ReadOnly= true;
             tbxMedicalBillPatient.ReadOnly= true;
+            tbxPrice.ReadOnly= true;
+            tbxFinalPrice.ReadOnly= true;
         }
 
         //Hàm
@@ -148,20 +153,23 @@ namespace ClinicManagement.Forms
 
         }
 
-        //private void rbtnNotMedicalList_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    isChecked = rbtnNotMedicalList.Checked;
-        //}
+        private void btnAddMedical_Click(object sender, EventArgs e)
+        {
+            if (cbxMedicines.SelectedItem != null)
+            {
+                ComboboxItem item = (ComboboxItem)cbxMedicines.SelectedItem;
+                Medicine value = (Medicine)item.Value;
 
-        //private void rbtnNotMedicalList_MouseClick(object sender, MouseEventArgs e)
-        //{
-        //    if (rbtnNotMedicalList.Checked && !isChecked)
-        //        rbtnNotMedicalList.Checked = false;
-        //    else
-        //    {
-        //        rbtnNotMedicalList.Checked = true;
-        //        isChecked = false;
-        //    }
-        //}
+                if (((List<Medicine>)medicineDetailBinding.List).Where(p => p.Id == value.Id).Count() == 0)
+                {
+                    //medicineDetailBinding.Add(new Medicine());
+                    Final_Price += int.Parse(tbxPrice.Texts);
+                }
+                else
+                {
+                    MessageBox.Show("Mã sản phẩm đã tồn tại");
+                }
+            }
+        }
     }   
 }

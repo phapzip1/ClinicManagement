@@ -56,15 +56,15 @@
             this.label16 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvMedicalList = new System.Windows.Forms.DataGridView();
-            this.Sothutu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluongthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cachdung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerMedical = new System.Windows.Forms.Timer(this.components);
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
             this.plMedicalBillInfor = new System.Windows.Forms.Panel();
             this.lblPatientData = new System.Windows.Forms.Label();
             this.cbxNotList = new System.Windows.Forms.CheckBox();
-            this.btnEdit = new ClinicManagement.Classes.RJButton();
+            this.btnSaveMedi = new ClinicManagement.Classes.RJButton();
             this.btnDelMedical = new ClinicManagement.Classes.RJButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cbxUsage = new CustomControls.RJControls.RJComboBox();
@@ -355,9 +355,9 @@
             this.dtgvMedicalList.ColumnHeadersHeight = 60;
             this.dtgvMedicalList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvMedicalList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Sothutu,
             this.dataGridViewTextBoxColumn3,
-            this.Soluongthuoc});
+            this.Soluongthuoc,
+            this.Cachdung});
             this.dtgvMedicalList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvMedicalList.EnableHeadersVisualStyles = false;
             this.dtgvMedicalList.Location = new System.Drawing.Point(0, 0);
@@ -382,26 +382,26 @@
             this.dtgvMedicalList.Size = new System.Drawing.Size(378, 318);
             this.dtgvMedicalList.TabIndex = 5;
             // 
-            // Sothutu
-            // 
-            this.Sothutu.FillWeight = 64.33887F;
-            this.Sothutu.HeaderText = "STT";
-            this.Sothutu.MinimumWidth = 6;
-            this.Sothutu.Name = "Sothutu";
-            // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.FillWeight = 175.268F;
+            this.dataGridViewTextBoxColumn3.FillWeight = 106.7489F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Thuốc";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // Soluongthuoc
             // 
-            this.Soluongthuoc.FillWeight = 88.14429F;
+            this.Soluongthuoc.FillWeight = 78.87059F;
             this.Soluongthuoc.HeaderText = "Số lượng";
             this.Soluongthuoc.MinimumWidth = 6;
             this.Soluongthuoc.Name = "Soluongthuoc";
+            // 
+            // Cachdung
+            // 
+            this.Cachdung.FillWeight = 142.1316F;
+            this.Cachdung.HeaderText = "Cách dùng";
+            this.Cachdung.MinimumWidth = 6;
+            this.Cachdung.Name = "Cachdung";
             // 
             // timerMedical
             // 
@@ -428,7 +428,7 @@
             this.plMedicalBillInfor.BackColor = System.Drawing.Color.Transparent;
             this.plMedicalBillInfor.Controls.Add(this.lblPatientData);
             this.plMedicalBillInfor.Controls.Add(this.cbxNotList);
-            this.plMedicalBillInfor.Controls.Add(this.btnEdit);
+            this.plMedicalBillInfor.Controls.Add(this.btnSaveMedi);
             this.plMedicalBillInfor.Controls.Add(this.btnDelMedical);
             this.plMedicalBillInfor.Controls.Add(this.tableLayoutPanel1);
             this.plMedicalBillInfor.Controls.Add(this.btnAddMedical);
@@ -461,24 +461,24 @@
             this.cbxNotList.Text = "Không kê khai thuốc ";
             this.cbxNotList.UseVisualStyleBackColor = true;
             // 
-            // btnEdit
+            // btnSaveMedi
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnEdit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnEdit.BorderRadius = 20;
-            this.btnEdit.BorderSize = 2;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnEdit.Location = new System.Drawing.Point(565, 295);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(109, 50);
-            this.btnEdit.TabIndex = 63;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.TextColor = System.Drawing.Color.Black;
-            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnSaveMedi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnSaveMedi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnSaveMedi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnSaveMedi.BorderRadius = 20;
+            this.btnSaveMedi.BorderSize = 2;
+            this.btnSaveMedi.FlatAppearance.BorderSize = 0;
+            this.btnSaveMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveMedi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSaveMedi.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveMedi.Location = new System.Drawing.Point(610, 295);
+            this.btnSaveMedi.Name = "btnSaveMedi";
+            this.btnSaveMedi.Size = new System.Drawing.Size(140, 50);
+            this.btnSaveMedi.TabIndex = 63;
+            this.btnSaveMedi.Text = "Lưu thuốc";
+            this.btnSaveMedi.TextColor = System.Drawing.Color.Black;
+            this.btnSaveMedi.UseVisualStyleBackColor = false;
             // 
             // btnDelMedical
             // 
@@ -491,11 +491,11 @@
             this.btnDelMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelMedical.ForeColor = System.Drawing.Color.Black;
-            this.btnDelMedical.Location = new System.Drawing.Point(450, 295);
+            this.btnDelMedical.Location = new System.Drawing.Point(464, 295);
             this.btnDelMedical.Name = "btnDelMedical";
-            this.btnDelMedical.Size = new System.Drawing.Size(109, 50);
+            this.btnDelMedical.Size = new System.Drawing.Size(140, 50);
             this.btnDelMedical.TabIndex = 62;
-            this.btnDelMedical.Text = "Xoá";
+            this.btnDelMedical.Text = "Xoá thuốc";
             this.btnDelMedical.TextColor = System.Drawing.Color.Black;
             this.btnDelMedical.UseVisualStyleBackColor = false;
             // 
@@ -868,13 +868,14 @@
             this.btnAddMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddMedical.ForeColor = System.Drawing.Color.Black;
-            this.btnAddMedical.Location = new System.Drawing.Point(335, 295);
+            this.btnAddMedical.Location = new System.Drawing.Point(318, 295);
             this.btnAddMedical.Name = "btnAddMedical";
-            this.btnAddMedical.Size = new System.Drawing.Size(109, 50);
+            this.btnAddMedical.Size = new System.Drawing.Size(140, 50);
             this.btnAddMedical.TabIndex = 61;
-            this.btnAddMedical.Text = "Thêm";
+            this.btnAddMedical.Text = "Thêm thuốc";
             this.btnAddMedical.TextColor = System.Drawing.Color.Black;
             this.btnAddMedical.UseVisualStyleBackColor = false;
+            this.btnAddMedical.Click += new System.EventHandler(this.btnAddMedical_Click);
             // 
             // btnUpdate
             // 
@@ -887,9 +888,9 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(220, 295);
+            this.btnUpdate.Location = new System.Drawing.Point(172, 295);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(109, 50);
+            this.btnUpdate.Size = new System.Drawing.Size(140, 50);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Lưu";
             this.btnUpdate.TextColor = System.Drawing.Color.Black;
@@ -907,9 +908,9 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(105, 295);
+            this.btnAdd.Location = new System.Drawing.Point(26, 295);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(109, 50);
+            this.btnAdd.Size = new System.Drawing.Size(140, 50);
             this.btnAdd.TabIndex = 38;
             this.btnAdd.Text = "Khám";
             this.btnAdd.TextColor = System.Drawing.Color.Black;
@@ -962,9 +963,6 @@
         private Panel plMedicalBillInfor;
         private Classes.RJButton btnUpdate;
         private Classes.RJButton btnAdd;
-        private DataGridViewTextBoxColumn Sothutu;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn Soluongthuoc;
         private DataGridViewTextBoxColumn SPK;
         private DataGridViewTextBoxColumn Ngay;
         private DataGridViewTextBoxColumn Trieuchung;
@@ -993,9 +991,12 @@
         private Label label11;
         private Classes.CustomTextBox tbxMedicalBillPatient;
         private Label label12;
-        private Classes.RJButton btnEdit;
+        private Classes.RJButton btnSaveMedi;
         private CheckBox cbxNotList;
         private Label lblPatientData;
         private Classes.CustomTextBox tbxSympton;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn Soluongthuoc;
+        private DataGridViewTextBoxColumn Cachdung;
     }
 }
