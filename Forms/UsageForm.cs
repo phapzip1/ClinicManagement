@@ -1,8 +1,10 @@
-﻿using ClinicManagement.DbContexts;
+﻿using ClinicManagement.Classes;
+using ClinicManagement.DbContexts;
 using ClinicManagement.Models;
 using ClinicManagement.Services;
 using DatabaseProject;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,9 +22,29 @@ namespace ClinicManagement.Forms
         Guid guid1;
         bool isAdd = false;
 
+        private IDataProvider provider;
+        private BindingSource UnitUsageBinding;
+        private BindingSource UsageUsageBinding;
+        private ClinicDbContextFactory _clinicDbContextFactory;
+        private IDataUpdater updater;
+
         public UsageForm()
         {
             InitializeComponent();
+
+            _clinicDbContextFactory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString());
+
+            UnitUsageBinding = new BindingSource(){ DataSource= new List<Unit>()};
+            UsageUsageBinding = new BindingSource() { DataSource= new List<Method>()};
+
+            provider = new DBProvider(_clinicDbContextFactory);
+            updater = new DBUpdater(_clinicDbContextFactory);
+
+            dtgvUnit.DataSource = UnitUsageBinding;
+            dtgvUnit.Columns["Id"].Visible= false;
+
+            dtgvUsage.DataSource= UsageUsageBinding;
+            dtgvUsage.Columns["Id"].Visible= false;
 
             ResetMonitor1();
             ReserMonitor2();
@@ -31,19 +53,13 @@ namespace ClinicManagement.Forms
         //Hàm 
         private void ResetMonitor1()
         {
-            //tbxUnitID.Texts = string.Empty;
             tbxUnitName.Text = string.Empty;
-
-            //tbxUnitID.ReadOnly= false;
             tbxUnitName.ReadOnly= false;
         }
 
         private void ReserMonitor2()
         {
-            //tbxUsageID.Text = string.Empty;
             tbxUsageName.Text = string.Empty;
-
-           // tbxUsageID.ReadOnly= false;
             tbxUsageName.ReadOnly= false;
         }
         //Xử lý
@@ -73,7 +89,13 @@ namespace ClinicManagement.Forms
             }
             else if (isAdd == false)
             {
-
+                int index = dtgvUnit.SelectedRows[0].Index;
+                Guid id =((Unit)UnitUsageBinding.List[index]).Id;
+                string unitname = tbxUnitName.Texts.ToString();
+                updater.UpdateUnit(new Unit(id, unitname)).ContinueWith(res =>
+                {
+                    getUnit();
+                });
             }
             else
             {
@@ -86,6 +108,8 @@ namespace ClinicManagement.Forms
                         dbContext.Database.Migrate();
                         dataCreator.CreateUnit(new Models.Unit(guid1, tbxUnitName.Texts.ToString()));
                         MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        getUnit();
+                        isAdd= false;
                     }
                 }
                 catch (Exception ex)
@@ -110,7 +134,13 @@ namespace ClinicManagement.Forms
             }
             else if (isAdd == false)
             {
-
+                int index = dtgvUsage.SelectedRows[0].Index;
+                Guid id = ((Unit)UsageUsageBinding.List[index]).Id;
+                string usagename = tbxUsageName.Texts.ToString();
+                updater.UpdateUnit(new Unit(id, usagename)).ContinueWith(res =>
+                {
+                    getMethod();
+                });
             }
             else
             {
@@ -123,6 +153,8 @@ namespace ClinicManagement.Forms
                         dbContext.Database.Migrate();
                         dataCreator.CreateMethod(new Models.Method(guid, tbxUsageName.Texts.ToString()));
                         MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        getMethod();
+                        isAdd= false;
                     }
                 }
                 catch (Exception ex)
@@ -144,31 +176,16 @@ namespace ClinicManagement.Forms
 
         }
 
-        private void btnSearchUnit_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUnitDel_Click(object sender, EventArgs e)
         {
             try
             {
-                ClinicDbContextFactory _clinicDbContextFactory = new ClinicDbContextFactory(InforForm.Connects_String);
-                using (ClinicDbContext dbContext = _clinicDbContextFactory.CreateDbContext())
+                int index = dtgvUnit.SelectedRows[0].Index;
+                Guid id = ((Unit)UnitUsageBinding.List[index]).Id;
+                updater.RemoveUnit(id).ContinueWith(res =>
                 {
-                    IDataUpdater dataUpdater = new DBUpdater(_clinicDbContextFactory);
-
-                    dbContext.Database.Migrate();
-                    int count = dtgvUnit.SelectedRows.Count;
-
-                    //dataUpdater.RemoveUnit(dtgvUnit.SelectedRows[0].Index);
-
-                    for (int i = 0; i < count; i++)
-                    {
-                        dtgvUnit.Rows.RemoveAt(dtgvUnit.SelectedRows[0].Index);
-                    }
-                    MessageBox.Show("Xoá thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    getUnit();
+                });
             }
             catch (Exception ex)
             {
@@ -178,10 +195,93 @@ namespace ClinicManagement.Forms
 
         private void btnUsageDel_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int index = dtgvUsage.SelectedRows[0].Index;
+                Guid id = ((Method)UsageUsageBinding.List[index]).Id;
+                updater.RemoveMethod(id).ContinueWith(res =>
+                {
+                    getMethod();
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnNotSaveUsage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgvUnit_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void UsageForm_Load(object sender, EventArgs e)
+        {
+            //Unit
+            getUnit();
+
+            //Usage (Method)
+            getMethod();
+        }
+
+        private void getMethod()
+        {
+            provider.GetAllMethods().ContinueWith(res =>
+            {
+                if (IsHandleCreated)
+                {
+                    if (res.Result.Count() >= 1)
+                    {
+                        dtgvUsage.Invoke((MethodInvoker)delegate
+                        {
+                            UsageUsageBinding.Clear();
+                            int i = 1;
+                            foreach (var item in res.Result)
+                            {
+                                UsageUsageBinding.Add(item);
+                            }
+                        });
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy thông tin!", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            });
+        }
+
+        private void getUnit()
+        {
+            provider.GetAllUnits().ContinueWith(res =>
+            {
+                if (IsHandleCreated)
+                {
+                    if (res.Result.Count() >= 1)
+                    {
+                        dtgvUnit.Invoke((MethodInvoker)delegate
+                        {
+                            UnitUsageBinding.Clear();
+                            int i = 1;
+                            foreach (var item in res.Result)
+                            {
+                                UnitUsageBinding.Add(item);
+                            }
+                        });
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy thông tin!", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            });
+        }
+
+        private void UsageForm_LocationChanged(object sender, EventArgs e)
         {
 
         }

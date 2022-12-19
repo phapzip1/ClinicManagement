@@ -72,7 +72,7 @@
             this.tbxFinalPrice = new ClinicManagement.Classes.CustomTextBox();
             this.tbxPrice = new ClinicManagement.Classes.CustomTextBox();
             this.tbxMedicalNumer = new ClinicManagement.Classes.CustomTextBox();
-            this.cbx_MedicalCate = new CustomControls.RJControls.RJComboBox();
+            this.cbxMedicines = new CustomControls.RJControls.RJComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -511,7 +511,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tbxFinalPrice, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.tbxPrice, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.tbxMedicalNumer, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cbx_MedicalCate, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cbxMedicines, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
@@ -632,24 +632,24 @@
             this.tbxMedicalNumer.Texts = "0";
             this.tbxMedicalNumer.UnderlinedStyle = false;
             // 
-            // cbx_MedicalCate
+            // cbxMedicines
             // 
-            this.cbx_MedicalCate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbx_MedicalCate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.cbx_MedicalCate.BorderSize = 2;
-            this.cbx_MedicalCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbx_MedicalCate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbx_MedicalCate.ForeColor = System.Drawing.Color.DimGray;
-            this.cbx_MedicalCate.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbx_MedicalCate.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbx_MedicalCate.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbx_MedicalCate.Location = new System.Drawing.Point(554, 3);
-            this.cbx_MedicalCate.MinimumSize = new System.Drawing.Size(50, 20);
-            this.cbx_MedicalCate.Name = "cbx_MedicalCate";
-            this.cbx_MedicalCate.Padding = new System.Windows.Forms.Padding(2);
-            this.cbx_MedicalCate.Size = new System.Drawing.Size(206, 36);
-            this.cbx_MedicalCate.TabIndex = 67;
-            this.cbx_MedicalCate.Texts = "";
+            this.cbxMedicines.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbxMedicines.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.cbxMedicines.BorderSize = 2;
+            this.cbxMedicines.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbxMedicines.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbxMedicines.ForeColor = System.Drawing.Color.DimGray;
+            this.cbxMedicines.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbxMedicines.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbxMedicines.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbxMedicines.Location = new System.Drawing.Point(554, 3);
+            this.cbxMedicines.MinimumSize = new System.Drawing.Size(50, 20);
+            this.cbxMedicines.Name = "cbxMedicines";
+            this.cbxMedicines.Padding = new System.Windows.Forms.Padding(2);
+            this.cbxMedicines.Size = new System.Drawing.Size(206, 36);
+            this.cbxMedicines.TabIndex = 67;
+            this.cbxMedicines.Texts = "";
             // 
             // label3
             // 
@@ -979,7 +979,7 @@
         private Classes.CustomTextBox tbxFinalPrice;
         private Classes.CustomTextBox tbxPrice;
         private Classes.CustomTextBox tbxMedicalNumer;
-        private CustomControls.RJControls.RJComboBox cbx_MedicalCate;
+        private CustomControls.RJControls.RJComboBox cbxMedicines;
         private Label label3;
         private Label label4;
         private Label label5;

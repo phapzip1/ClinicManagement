@@ -35,9 +35,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvIllnessList = new System.Windows.Forms.DataGridView();
-            this.MaBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrieuChung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plIllnessInfor = new System.Windows.Forms.Panel();
             this.btnDel = new ClinicManagement.Classes.RJButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -46,12 +43,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxIllnessName = new ClinicManagement.Classes.CustomTextBox();
-            this.btnSearchIllness = new ClinicManagement.Classes.RJButton();
             this.btnNotSaveIllness = new ClinicManagement.Classes.RJButton();
             this.btnSaveIllness = new ClinicManagement.Classes.RJButton();
             this.btnAddIllness = new ClinicManagement.Classes.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
+            this.TenBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrieuChung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvIllnessList)).BeginInit();
@@ -114,7 +112,6 @@
             this.dtgvIllnessList.ColumnHeadersHeight = 60;
             this.dtgvIllnessList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvIllnessList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaBenh,
             this.TenBenh,
             this.TrieuChung});
             this.dtgvIllnessList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -142,34 +139,12 @@
             this.dtgvIllnessList.Size = new System.Drawing.Size(1154, 603);
             this.dtgvIllnessList.TabIndex = 3;
             // 
-            // MaBenh
-            // 
-            this.MaBenh.FillWeight = 96.88831F;
-            this.MaBenh.HeaderText = "Mã bệnh ";
-            this.MaBenh.MinimumWidth = 6;
-            this.MaBenh.Name = "MaBenh";
-            // 
-            // TenBenh
-            // 
-            this.TenBenh.FillWeight = 104.5855F;
-            this.TenBenh.HeaderText = "Tên bệnh";
-            this.TenBenh.MinimumWidth = 6;
-            this.TenBenh.Name = "TenBenh";
-            // 
-            // TrieuChung
-            // 
-            this.TrieuChung.FillWeight = 119.1177F;
-            this.TrieuChung.HeaderText = "Triệu chứng";
-            this.TrieuChung.MinimumWidth = 6;
-            this.TrieuChung.Name = "TrieuChung";
-            // 
             // plIllnessInfor
             // 
             this.plIllnessInfor.BackColor = System.Drawing.Color.Transparent;
             this.plIllnessInfor.Controls.Add(this.btnDel);
             this.plIllnessInfor.Controls.Add(this.tableLayoutPanel2);
             this.plIllnessInfor.Controls.Add(this.tableLayoutPanel1);
-            this.plIllnessInfor.Controls.Add(this.btnSearchIllness);
             this.plIllnessInfor.Controls.Add(this.btnNotSaveIllness);
             this.plIllnessInfor.Controls.Add(this.btnSaveIllness);
             this.plIllnessInfor.Controls.Add(this.btnAddIllness);
@@ -198,6 +173,7 @@
             this.btnDel.Text = "Xoá";
             this.btnDel.TextColor = System.Drawing.Color.Black;
             this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -292,26 +268,6 @@
             this.tbxIllnessName.Texts = "";
             this.tbxIllnessName.UnderlinedStyle = false;
             // 
-            // btnSearchIllness
-            // 
-            this.btnSearchIllness.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSearchIllness.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSearchIllness.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnSearchIllness.BorderRadius = 20;
-            this.btnSearchIllness.BorderSize = 2;
-            this.btnSearchIllness.FlatAppearance.BorderSize = 0;
-            this.btnSearchIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSearchIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchIllness.Location = new System.Drawing.Point(836, 75);
-            this.btnSearchIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSearchIllness.Name = "btnSearchIllness";
-            this.btnSearchIllness.Size = new System.Drawing.Size(134, 55);
-            this.btnSearchIllness.TabIndex = 21;
-            this.btnSearchIllness.Text = "Tra cứu";
-            this.btnSearchIllness.TextColor = System.Drawing.Color.Black;
-            this.btnSearchIllness.UseVisualStyleBackColor = false;
-            // 
             // btnNotSaveIllness
             // 
             this.btnNotSaveIllness.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
@@ -323,7 +279,7 @@
             this.btnNotSaveIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveIllness.Location = new System.Drawing.Point(696, 75);
+            this.btnNotSaveIllness.Location = new System.Drawing.Point(765, 80);
             this.btnNotSaveIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNotSaveIllness.Name = "btnNotSaveIllness";
             this.btnNotSaveIllness.Size = new System.Drawing.Size(134, 55);
@@ -397,6 +353,22 @@
             this.gradientPanel1.Size = new System.Drawing.Size(1189, 845);
             this.gradientPanel1.TabIndex = 21;
             // 
+            // TenBenh
+            // 
+            this.TenBenh.DataPropertyName = "Name";
+            this.TenBenh.FillWeight = 104.5855F;
+            this.TenBenh.HeaderText = "Tên bệnh";
+            this.TenBenh.MinimumWidth = 6;
+            this.TenBenh.Name = "TenBenh";
+            // 
+            // TrieuChung
+            // 
+            this.TrieuChung.DataPropertyName = "Symptom";
+            this.TrieuChung.FillWeight = 119.1177F;
+            this.TrieuChung.HeaderText = "Triệu chứng";
+            this.TrieuChung.MinimumWidth = 6;
+            this.TrieuChung.Name = "TrieuChung";
+            // 
             // IllnessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -407,6 +379,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "IllnessForm";
             this.Text = "Loại bệnh và bệnh";
+            this.Load += new System.EventHandler(this.IllnessForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -428,7 +401,6 @@
         private Classes.RJButton btnSaveIllness;
         private Classes.RJButton btnAddIllness;
         private Label label3;
-        private Classes.RJButton btnSearchIllness;
         private Classes.RJButton btnNotSaveIllness;
         private Panel panel5;
         private Label label10;
@@ -440,7 +412,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
         private Classes.RJButton btnDel;
-        private DataGridViewTextBoxColumn MaBenh;
         private DataGridViewTextBoxColumn TenBenh;
         private DataGridViewTextBoxColumn TrieuChung;
     }

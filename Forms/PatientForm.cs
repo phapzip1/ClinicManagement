@@ -31,7 +31,7 @@ namespace ClinicManagement.Forms
 
         int nextP = 0;
         string patient_Name = "";
-        Queue queue = new Queue();
+        Queue<QueueInfor> queue = new Queue<QueueInfor>();
 
         //Data
         static Guid patient = new Guid();
@@ -39,7 +39,7 @@ namespace ClinicManagement.Forms
         Patient aPatient;
         private IDataProvider provider;
         private BindingList<ComboboxItem> bindingLists;
-        private BindingSource medicineDetailBinding;
+        private BindingSource patientDetailBinding;
 
         private ClinicDbContextFactory _clinicDbContextFactory;
 
@@ -55,9 +55,9 @@ namespace ClinicManagement.Forms
 
             provider = new DBProvider(_clinicDbContextFactory); // receive data 
 
-            //medicineDetailBinding = new BindingSource() { DataSource = new List<Patient>() }; // create binding
+            patientDetailBinding = new BindingSource() { DataSource = new List<Patient>() }; // create binding
 
-            //dtgvPatientList.DataSource = medicineDetailBinding;
+            dtgvPatientList.DataSource = patientDetailBinding;
 
             lblNextPatient.Text = Models.InforForm.Next_Patient.ToString();
             ResetMonitor();
@@ -65,6 +65,10 @@ namespace ClinicManagement.Forms
             // fill cbxGender
             cbxGender.Items.Add("Nam");
             cbxGender.Items.Add("Nữ");
+
+            dtgvQueue.AllowUserToAddRows = false;
+            dtgvQueue.ReadOnly= true;
+            dtgvPatientList.ReadOnly= true;
         }
 
         //Hàm
@@ -72,15 +76,23 @@ namespace ClinicManagement.Forms
         private void ResetMonitor()
         {
             //Đặt màn hình về mặc định
+            //tbxPatientID.Texts = "";
+            //tbxPatientID.ReadOnly = true;
+            //tbxPatientName.Texts = "";
+            //tbxPatientName.ReadOnly = true;
+            //tbxPatientAddress.Texts = "";
+            //tbxPatientAddress.ReadOnly = true;
+            //dtpkBob.Value = DateTime.Now;
+            //cbxGender.SelectedIndex = -1;
+
             tbxPatientID.Texts = "";
-            tbxPatientID.ReadOnly = true;
+            tbxPatientID.ReadOnly = false;
             tbxPatientName.Texts = "";
-            tbxPatientName.ReadOnly = true;
+            tbxPatientName.ReadOnly = false;
             tbxPatientAddress.Texts = "";
-            tbxPatientAddress.ReadOnly = true;
-            dtpkBob.Value = DateTime.Now;
+            tbxPatientAddress.ReadOnly = false;
             cbxGender.SelectedIndex = -1;
-            //timerPatient.Enabled = false;
+            dtpkBob.Value = DateTime.Today;
         }
 
         private void StartMonitor()
@@ -95,9 +107,10 @@ namespace ClinicManagement.Forms
                 dtpkBob.Value = DateTime.Today;
         }
 
-        private void LoadDtgv()
+        private void UpLoadDtgv()
         {
-
+            dtgvQueue.DataSource = queue.ToList();
+            dtgvQueue.Show();
         }
         #endregion
 
@@ -111,16 +124,31 @@ namespace ClinicManagement.Forms
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            string id = tbxPatientID.Texts.ToString();
             try
             {
-                
+                provider.GetPatient(id).ContinueWith(res =>
+                {
+                    if(res.Result != null)
+                    {
+                        tbxPatientName.Invoke((MethodInvoker)delegate
+                        {
+                            tbxPatientName.Texts = res.Result.Fullname;
+                            tbxPatientAddress.Texts = res.Result.Address;
+                            if (res.Result.Gender == "male")
+                            {
+                                cbxGender.SelectedIndex = 0;
+                            }
+                            else { cbxGender.SelectedIndex = 1; }
+                            dtpkBob.Value = res.Result.Dob;
+                        });
+                    }
+                });
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -138,8 +166,12 @@ namespace ClinicManagement.Forms
                 }
             });
             
-            InforForm.Patient_Count++;               
-            lblNextPatient.Text = InforForm.Next_Patient;            
+            InforForm.Patient_Count++;
+            InforForm.Next_Patient = InforForm.Patient_Count.ToString();
+            lblNextPatient.Text = InforForm.Next_Patient;
+
+            queue.Enqueue(new QueueInfor(lblNextPatient.Text, tbxPatientIDNow.Texts.ToString()));
+            UpLoadDtgv();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -172,9 +204,6 @@ namespace ClinicManagement.Forms
                     MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     dtgvPatientList.Rows.Add(new Models.Patient(tbxPatientID.Texts.ToString(), tbxPatientName.Texts.ToString(), gender, dtpkBob.Value, tbxPatientAddress.Texts.ToString()));
-                    
-                    //lblNiceSave.Show();
-                    //timerPatient.Start();
                 }
             }
             catch (Exception ex)
@@ -202,19 +231,8 @@ namespace ClinicManagement.Forms
         {
             InforForm.PatientNow_id= tbxPatientIDNow.Text.ToString();
 
-            dtgvQueue.Rows.Remove(dtgvQueue.Rows[0]);
-
-            if (dtgvQueue.Rows.Count > 0)
-            {
-                dtgvQueue.Rows[1].Selected= true;
-                int firstRowIndex = dtgvQueue.SelectedRows.Count - 1;
-                Models.InforForm.Next_Patient = dtgvQueue.SelectedRows[firstRowIndex].Cells[0].Value.ToString();
-                dtgvQueue.Rows[1].Selected= false;
-                lblNextPatient.Text = InforForm.Next_Patient;
-
-                firstRowIndex = dtgvQueue.SelectedRows.Count - 1;
-                tbxPatientIDNow.Texts = dtgvQueue.SelectedRows[firstRowIndex].Cells[0].Value.ToString();
-            }
+            queue.Dequeue();
+            UpLoadDtgv();
         }
 
         private void rbtnPatientFemale_Paint(object sender, PaintEventArgs e)
@@ -228,24 +246,41 @@ namespace ClinicManagement.Forms
 
         private void btnLast_Click(object sender, EventArgs e)
         {
-            DataGridViewRow curr_row = dtgvQueue.Rows[0];
-            int curr_index = dtgvQueue.Rows.GetLastRow(DataGridViewElementStates.Visible);
-            dtgvQueue.Rows.Remove(curr_row);
-            dtgvQueue.Rows.Insert(curr_index, curr_row);
-
-            if (dtgvQueue.Rows.Count > 0)
-            {
-                dtgvQueue.Rows[1].Selected= true;
-                int firstRowIndex = dtgvQueue.SelectedRows.Count - 1;
-                Models.InforForm.Next_Patient = dtgvQueue.SelectedRows[firstRowIndex].Cells[0].Value.ToString();
-                dtgvQueue.Rows[1].Selected= false;
-                lblNextPatient.Text = InforForm.Next_Patient;
-            }
+            queue.Dequeue();
+            UpLoadDtgv();
         }
 
         private void PatientForm_Load(object sender, EventArgs e)
         {
-            
+            try
+            {
+                provider.GetAllPatients().ContinueWith(res =>
+                {
+                    if (IsHandleCreated)
+                    {
+                        if (res.Result.Count() >= 1)
+                        {
+                            dtgvPatientList.Invoke((MethodInvoker)delegate
+                            {
+                                patientDetailBinding.Clear();
+                                int i = 1;
+                                foreach (var item in res.Result)
+                                {
+                                    patientDetailBinding.Add(item);
+                                }
+                            });
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy thông tin!", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

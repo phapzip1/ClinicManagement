@@ -23,7 +23,9 @@ namespace ClinicManagement.Forms
         //Data
         private Guid guid1= Guid.NewGuid();
         private IDataProvider provider;
-        private BindingList<ComboboxItem> bindingLists;
+        private BindingList<ComboboxItem> IllnessbindingLists;
+        private BindingList<ComboboxItem> MedicinesbindingLists;
+        private BindingList<ComboboxItem> MethodbindingLists;
         private BindingSource medicineDetailBinding;
 
         private ClinicDbContextFactory _clinicDbContextFactory;
@@ -34,9 +36,13 @@ namespace ClinicManagement.Forms
 
             _clinicDbContextFactory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString());
 
-            bindingLists = new BindingList<ComboboxItem>();
+            IllnessbindingLists = new BindingList<ComboboxItem>();
+            MedicinesbindingLists = new BindingList<ComboboxItem>();
+            MethodbindingLists= new BindingList<ComboboxItem>();
 
-            cbxIllness.DataSource= bindingLists;
+            cbxIllness.DataSource= IllnessbindingLists;
+            cbxMedicines.DataSource= MedicinesbindingLists;
+            cbxUsage.DataSource= MethodbindingLists;
 
             provider = new DBProvider(_clinicDbContextFactory);
 
@@ -44,8 +50,7 @@ namespace ClinicManagement.Forms
             tbxMedicalBillDay.ReadOnly= true;
             tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
 
-            //Trieu chung
-            //****//
+            //Ten benh
             provider.GetAllIllness().ContinueWith(res =>
             {
                 if (IsHandleCreated)
@@ -54,8 +59,40 @@ namespace ClinicManagement.Forms
                     {
                         foreach (var item in res.Result)
                         {
-                            bindingLists.Add(new ComboboxItem(item.Name, item));
-                            bindingLists.ResetBindings();
+                            IllnessbindingLists.Add(new ComboboxItem(item.Name, item));
+                            IllnessbindingLists.ResetBindings();
+                        }
+                    });
+                }
+            });
+
+            //Ten thuoc
+            provider.GetMedicines().ContinueWith(res =>
+            {
+                if (IsHandleCreated)
+                {
+                    cbxIllness.Invoke((MethodInvoker)delegate
+                    {
+                        foreach (var item in res.Result)
+                        {
+                            MedicinesbindingLists.Add(new ComboboxItem(item.Name, item));
+                            MedicinesbindingLists.ResetBindings();
+                        }
+                    });
+                }
+            });
+
+            //Cach dung
+            provider.GetAllMethods().ContinueWith(res =>
+            {
+                if (IsHandleCreated)
+                {
+                    cbxUsage.Invoke((MethodInvoker)delegate
+                    {
+                        foreach (var item in res.Result)
+                        {
+                            MethodbindingLists.Add(new ComboboxItem(item.Name, item));
+                            MethodbindingLists.ResetBindings();
                         }
                     });
                 }

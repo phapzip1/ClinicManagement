@@ -305,6 +305,7 @@
             // 
             // PatientID
             // 
+            this.PatientID.DataPropertyName = "Id";
             this.PatientID.FillWeight = 113.6557F;
             this.PatientID.HeaderText = "Mã bệnh nhân";
             this.PatientID.MinimumWidth = 6;
@@ -312,6 +313,7 @@
             // 
             // PatientName
             // 
+            this.PatientName.DataPropertyName = "Fullname";
             this.PatientName.FillWeight = 116.8409F;
             this.PatientName.HeaderText = "Họ tên bệnh nhân";
             this.PatientName.MinimumWidth = 6;
@@ -319,6 +321,7 @@
             // 
             // Gender
             // 
+            this.Gender.DataPropertyName = "Gender";
             this.Gender.FillWeight = 63.32629F;
             this.Gender.HeaderText = "Giới tính";
             this.Gender.MinimumWidth = 6;
@@ -326,6 +329,7 @@
             // 
             // YearOfBirth
             // 
+            this.YearOfBirth.DataPropertyName = "Dob";
             this.YearOfBirth.FillWeight = 66.37107F;
             this.YearOfBirth.HeaderText = "Năm sinh";
             this.YearOfBirth.MinimumWidth = 6;
@@ -333,6 +337,7 @@
             // 
             // DiaChi
             // 
+            this.DiaChi.DataPropertyName = "Address";
             this.DiaChi.FillWeight = 113.4867F;
             this.DiaChi.HeaderText = "Địa chỉ";
             this.DiaChi.MinimumWidth = 6;
