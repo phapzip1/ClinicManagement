@@ -26,6 +26,16 @@ namespace ClinicManagement.Services
             }
         }
 
+        public async Task RemoveMethod(Guid methodId)
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                var obj = dbContext.Methods.FirstOrDefault(p => p.Id == methodId);
+                dbContext.Methods.Remove(obj);
+                await dbContext.SaveChangesAsync();
+            }
+        }
+
         public async Task RemovePatient(string patientId)
         {
             using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
@@ -146,5 +156,7 @@ namespace ClinicManagement.Services
                 await dbContext.SaveChangesAsync();
             }
         }
+
+        
     }
 }
