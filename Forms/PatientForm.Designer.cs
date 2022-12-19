@@ -125,7 +125,7 @@
             // 
             this.btnGo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
             this.btnGo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnGo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnGo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.btnGo.BorderRadius = 20;
             this.btnGo.BorderSize = 2;
             this.btnGo.FlatAppearance.BorderSize = 0;
@@ -144,8 +144,8 @@
             // tbxPatientIDNow
             // 
             this.tbxPatientIDNow.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxPatientIDNow.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxPatientIDNow.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxPatientIDNow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxPatientIDNow.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxPatientIDNow.BorderSize = 2;
             this.tbxPatientIDNow.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientIDNow.ForeColor = System.Drawing.Color.DimGray;
@@ -393,7 +393,7 @@
             // cbxGender
             // 
             this.cbxGender.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbxGender.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.cbxGender.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.cbxGender.BorderSize = 2;
             this.cbxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbxGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -440,8 +440,8 @@
             // 
             this.tbxPatientAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxPatientAddress.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxPatientAddress.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxPatientAddress.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxPatientAddress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxPatientAddress.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxPatientAddress.BorderSize = 2;
             this.tbxPatientAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientAddress.ForeColor = System.Drawing.Color.DimGray;
@@ -512,8 +512,8 @@
             // 
             this.tbxPatientName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxPatientName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxPatientName.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxPatientName.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxPatientName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxPatientName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxPatientName.BorderSize = 2;
             this.tbxPatientName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientName.ForeColor = System.Drawing.Color.DimGray;
@@ -532,8 +532,8 @@
             // 
             this.tbxPatientID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbxPatientID.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxPatientID.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxPatientID.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxPatientID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxPatientID.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxPatientID.BorderSize = 2;
             this.tbxPatientID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientID.ForeColor = System.Drawing.Color.DimGray;

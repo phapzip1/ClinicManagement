@@ -194,19 +194,20 @@
             this.btnUsageDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsageDel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUsageDel.ForeColor = System.Drawing.Color.Black;
-            this.btnUsageDel.Location = new System.Drawing.Point(184, 141);
+            this.btnUsageDel.Location = new System.Drawing.Point(175, 134);
             this.btnUsageDel.Name = "btnUsageDel";
-            this.btnUsageDel.Size = new System.Drawing.Size(127, 51);
+            this.btnUsageDel.Size = new System.Drawing.Size(142, 55);
             this.btnUsageDel.TabIndex = 28;
             this.btnUsageDel.Text = "Xoá";
             this.btnUsageDel.TextColor = System.Drawing.Color.Black;
             this.btnUsageDel.UseVisualStyleBackColor = false;
+            this.btnUsageDel.Click += new System.EventHandler(this.btnUsageDel_Click);
             // 
             // tbxUsageName
             // 
             this.tbxUsageName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxUsageName.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxUsageName.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxUsageName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxUsageName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxUsageName.BorderSize = 2;
             this.tbxUsageName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxUsageName.ForeColor = System.Drawing.Color.DimGray;
@@ -232,9 +233,9 @@
             this.btnSearchUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearchUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchUsage.Location = new System.Drawing.Point(34, 255);
+            this.btnSearchUsage.Location = new System.Drawing.Point(25, 256);
             this.btnSearchUsage.Name = "btnSearchUsage";
-            this.btnSearchUsage.Size = new System.Drawing.Size(127, 51);
+            this.btnSearchUsage.Size = new System.Drawing.Size(142, 55);
             this.btnSearchUsage.TabIndex = 23;
             this.btnSearchUsage.Text = "Tra cứu";
             this.btnSearchUsage.TextColor = System.Drawing.Color.Black;
@@ -251,13 +252,14 @@
             this.btnNotSaveUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveUsage.Location = new System.Drawing.Point(183, 198);
+            this.btnNotSaveUsage.Location = new System.Drawing.Point(175, 195);
             this.btnNotSaveUsage.Name = "btnNotSaveUsage";
-            this.btnNotSaveUsage.Size = new System.Drawing.Size(127, 51);
+            this.btnNotSaveUsage.Size = new System.Drawing.Size(142, 55);
             this.btnNotSaveUsage.TabIndex = 22;
             this.btnNotSaveUsage.Text = "Huỷ";
             this.btnNotSaveUsage.TextColor = System.Drawing.Color.Black;
             this.btnNotSaveUsage.UseVisualStyleBackColor = false;
+            this.btnNotSaveUsage.Click += new System.EventHandler(this.btnNotSaveUsage_Click);
             // 
             // btnSaveUsage
             // 
@@ -270,9 +272,9 @@
             this.btnSaveUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveUsage.Location = new System.Drawing.Point(34, 198);
+            this.btnSaveUsage.Location = new System.Drawing.Point(25, 195);
             this.btnSaveUsage.Name = "btnSaveUsage";
-            this.btnSaveUsage.Size = new System.Drawing.Size(127, 51);
+            this.btnSaveUsage.Size = new System.Drawing.Size(142, 55);
             this.btnSaveUsage.TabIndex = 19;
             this.btnSaveUsage.Text = "Lưu";
             this.btnSaveUsage.TextColor = System.Drawing.Color.Black;
@@ -290,9 +292,9 @@
             this.btnAddUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnAddUsage.Location = new System.Drawing.Point(33, 141);
+            this.btnAddUsage.Location = new System.Drawing.Point(25, 134);
             this.btnAddUsage.Name = "btnAddUsage";
-            this.btnAddUsage.Size = new System.Drawing.Size(127, 51);
+            this.btnAddUsage.Size = new System.Drawing.Size(142, 55);
             this.btnAddUsage.TabIndex = 17;
             this.btnAddUsage.Text = "Thêm";
             this.btnAddUsage.TextColor = System.Drawing.Color.Black;
@@ -452,19 +454,20 @@
             this.btnUnitDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnitDel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUnitDel.ForeColor = System.Drawing.Color.Black;
-            this.btnUnitDel.Location = new System.Drawing.Point(183, 140);
+            this.btnUnitDel.Location = new System.Drawing.Point(175, 134);
             this.btnUnitDel.Name = "btnUnitDel";
-            this.btnUnitDel.Size = new System.Drawing.Size(127, 51);
+            this.btnUnitDel.Size = new System.Drawing.Size(142, 55);
             this.btnUnitDel.TabIndex = 26;
             this.btnUnitDel.Text = "Xoá";
             this.btnUnitDel.TextColor = System.Drawing.Color.Black;
             this.btnUnitDel.UseVisualStyleBackColor = false;
+            this.btnUnitDel.Click += new System.EventHandler(this.btnUnitDel_Click);
             // 
             // tbxUnitName
             // 
             this.tbxUnitName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxUnitName.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxUnitName.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxUnitName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxUnitName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxUnitName.BorderSize = 2;
             this.tbxUnitName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxUnitName.ForeColor = System.Drawing.Color.DimGray;
@@ -490,9 +493,9 @@
             this.btnSearchUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearchUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchUnit.Location = new System.Drawing.Point(34, 254);
+            this.btnSearchUnit.Location = new System.Drawing.Point(25, 256);
             this.btnSearchUnit.Name = "btnSearchUnit";
-            this.btnSearchUnit.Size = new System.Drawing.Size(127, 51);
+            this.btnSearchUnit.Size = new System.Drawing.Size(142, 55);
             this.btnSearchUnit.TabIndex = 23;
             this.btnSearchUnit.Text = "Tra cứu";
             this.btnSearchUnit.TextColor = System.Drawing.Color.Black;
@@ -510,9 +513,9 @@
             this.btnNotSaveUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveUnit.Location = new System.Drawing.Point(183, 197);
+            this.btnNotSaveUnit.Location = new System.Drawing.Point(175, 195);
             this.btnNotSaveUnit.Name = "btnNotSaveUnit";
-            this.btnNotSaveUnit.Size = new System.Drawing.Size(127, 51);
+            this.btnNotSaveUnit.Size = new System.Drawing.Size(142, 55);
             this.btnNotSaveUnit.TabIndex = 22;
             this.btnNotSaveUnit.Text = "Huỷ";
             this.btnNotSaveUnit.TextColor = System.Drawing.Color.Black;
@@ -530,9 +533,9 @@
             this.btnSaveUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveUnit.Location = new System.Drawing.Point(34, 197);
+            this.btnSaveUnit.Location = new System.Drawing.Point(25, 195);
             this.btnSaveUnit.Name = "btnSaveUnit";
-            this.btnSaveUnit.Size = new System.Drawing.Size(127, 51);
+            this.btnSaveUnit.Size = new System.Drawing.Size(142, 55);
             this.btnSaveUnit.TabIndex = 19;
             this.btnSaveUnit.Text = "Lưu";
             this.btnSaveUnit.TextColor = System.Drawing.Color.Black;
@@ -550,9 +553,9 @@
             this.btnAddUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnAddUnit.Location = new System.Drawing.Point(33, 140);
+            this.btnAddUnit.Location = new System.Drawing.Point(25, 134);
             this.btnAddUnit.Name = "btnAddUnit";
-            this.btnAddUnit.Size = new System.Drawing.Size(127, 51);
+            this.btnAddUnit.Size = new System.Drawing.Size(142, 55);
             this.btnAddUnit.TabIndex = 17;
             this.btnAddUnit.Text = "Thêm";
             this.btnAddUnit.TextColor = System.Drawing.Color.Black;

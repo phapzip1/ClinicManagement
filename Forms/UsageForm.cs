@@ -18,7 +18,7 @@ namespace ClinicManagement.Forms
     public partial class UsageForm : Form
     {
         Guid guid1;
-
+        bool isAdd = false;
 
         public UsageForm()
         {
@@ -51,6 +51,7 @@ namespace ClinicManagement.Forms
         {
             guid1= Guid.NewGuid();
             tbxUnitName.ReadOnly= false;
+            isAdd= true;
         }
 
         private void btnUpdateUnit_Click(object sender, EventArgs e)
@@ -68,7 +69,11 @@ namespace ClinicManagement.Forms
         {
             if (tbxUnitName.Texts.Length == 0)
             {
-                MessageBox.Show("Hãy nhập tên đơn vị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Phải có tên đơn vị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (isAdd == false)
+            {
+
             }
             else
             {
@@ -103,6 +108,10 @@ namespace ClinicManagement.Forms
             {
                 MessageBox.Show("Hãy nhập tên đơn vị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (isAdd == false)
+            {
+
+            }
             else
             {
                 try
@@ -112,7 +121,7 @@ namespace ClinicManagement.Forms
                     {
                         IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);
                         dbContext.Database.Migrate();
-                        //dataCreator.CreateUsageReport(new Models.Unit(guid, tbxUnitName.Texts.ToString()));
+                        dataCreator.CreateMethod(new Models.Method(guid, tbxUsageName.Texts.ToString()));
                         MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -127,6 +136,7 @@ namespace ClinicManagement.Forms
         {
             guid1= Guid.NewGuid();
             tbxUsageName.ReadOnly= false;
+            isAdd= true;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -135,6 +145,43 @@ namespace ClinicManagement.Forms
         }
 
         private void btnSearchUnit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUnitDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ClinicDbContextFactory _clinicDbContextFactory = new ClinicDbContextFactory(InforForm.Connects_String);
+                using (ClinicDbContext dbContext = _clinicDbContextFactory.CreateDbContext())
+                {
+                    IDataUpdater dataUpdater = new DBUpdater(_clinicDbContextFactory);
+
+                    dbContext.Database.Migrate();
+                    int count = dtgvUnit.SelectedRows.Count;
+
+                    //dataUpdater.RemoveUnit(dtgvUnit.SelectedRows[0].Index);
+
+                    for (int i = 0; i < count; i++)
+                    {
+                        dtgvUnit.Rows.RemoveAt(dtgvUnit.SelectedRows[0].Index);
+                    }
+                    MessageBox.Show("Xoá thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnUsageDel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNotSaveUsage_Click(object sender, EventArgs e)
         {
 
         }

@@ -86,10 +86,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tbxMedicalBillPatient = new ClinicManagement.Classes.CustomTextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.tbxSympton = new ClinicManagement.Classes.CustomTextBox();
             this.btnAddMedical = new ClinicManagement.Classes.RJButton();
             this.btnUpdate = new ClinicManagement.Classes.RJButton();
             this.btnAdd = new ClinicManagement.Classes.RJButton();
-            this.tbxSympton = new ClinicManagement.Classes.CustomTextBox();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvPatientList)).BeginInit();
@@ -472,7 +472,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnEdit.Location = new System.Drawing.Point(623, 295);
+            this.btnEdit.Location = new System.Drawing.Point(565, 295);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(109, 50);
             this.btnEdit.TabIndex = 63;
@@ -491,7 +491,7 @@
             this.btnDelMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelMedical.ForeColor = System.Drawing.Color.Black;
-            this.btnDelMedical.Location = new System.Drawing.Point(508, 295);
+            this.btnDelMedical.Location = new System.Drawing.Point(450, 295);
             this.btnDelMedical.Name = "btnDelMedical";
             this.btnDelMedical.Size = new System.Drawing.Size(109, 50);
             this.btnDelMedical.TabIndex = 62;
@@ -540,7 +540,7 @@
             // cbxUsage
             // 
             this.cbxUsage.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbxUsage.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.cbxUsage.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.cbxUsage.BorderSize = 2;
             this.cbxUsage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbxUsage.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -559,7 +559,7 @@
             // cbxIllness
             // 
             this.cbxIllness.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbxIllness.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.cbxIllness.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.cbxIllness.BorderSize = 2;
             this.cbxIllness.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbxIllness.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -578,8 +578,8 @@
             // tbxFinalPrice
             // 
             this.tbxFinalPrice.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxFinalPrice.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxFinalPrice.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxFinalPrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxFinalPrice.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxFinalPrice.BorderSize = 2;
             this.tbxFinalPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxFinalPrice.ForeColor = System.Drawing.Color.DimGray;
@@ -597,8 +597,8 @@
             // tbxPrice
             // 
             this.tbxPrice.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxPrice.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxPrice.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxPrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxPrice.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxPrice.BorderSize = 2;
             this.tbxPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPrice.ForeColor = System.Drawing.Color.DimGray;
@@ -616,8 +616,8 @@
             // tbxMedicalNumer
             // 
             this.tbxMedicalNumer.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxMedicalNumer.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxMedicalNumer.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxMedicalNumer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxMedicalNumer.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxMedicalNumer.BorderSize = 2;
             this.tbxMedicalNumer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxMedicalNumer.ForeColor = System.Drawing.Color.DimGray;
@@ -635,7 +635,7 @@
             // cbx_MedicalCate
             // 
             this.cbx_MedicalCate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbx_MedicalCate.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.cbx_MedicalCate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.cbx_MedicalCate.BorderSize = 2;
             this.cbx_MedicalCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbx_MedicalCate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -745,8 +745,8 @@
             // tbxMedicalBillNumber
             // 
             this.tbxMedicalBillNumber.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxMedicalBillNumber.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxMedicalBillNumber.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxMedicalBillNumber.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxMedicalBillNumber.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxMedicalBillNumber.BorderSize = 2;
             this.tbxMedicalBillNumber.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxMedicalBillNumber.ForeColor = System.Drawing.Color.DimGray;
@@ -777,8 +777,8 @@
             // tbxMedicalBillDay
             // 
             this.tbxMedicalBillDay.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxMedicalBillDay.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxMedicalBillDay.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxMedicalBillDay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxMedicalBillDay.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxMedicalBillDay.BorderSize = 2;
             this.tbxMedicalBillDay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxMedicalBillDay.ForeColor = System.Drawing.Color.DimGray;
@@ -809,8 +809,8 @@
             // tbxMedicalBillPatient
             // 
             this.tbxMedicalBillPatient.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxMedicalBillPatient.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxMedicalBillPatient.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxMedicalBillPatient.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxMedicalBillPatient.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxMedicalBillPatient.BorderSize = 2;
             this.tbxMedicalBillPatient.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxMedicalBillPatient.ForeColor = System.Drawing.Color.DimGray;
@@ -838,6 +838,25 @@
             this.label12.Text = "Tên thuốc:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tbxSympton
+            // 
+            this.tbxSympton.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxSympton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxSympton.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
+            this.tbxSympton.BorderSize = 2;
+            this.tbxSympton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxSympton.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxSympton.Location = new System.Drawing.Point(187, 129);
+            this.tbxSympton.Multiline = false;
+            this.tbxSympton.Name = "tbxSympton";
+            this.tbxSympton.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxSympton.PasswordChar = false;
+            this.tbxSympton.ReadOnly = false;
+            this.tbxSympton.Size = new System.Drawing.Size(205, 38);
+            this.tbxSympton.TabIndex = 75;
+            this.tbxSympton.Texts = "";
+            this.tbxSympton.UnderlinedStyle = false;
+            // 
             // btnAddMedical
             // 
             this.btnAddMedical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
@@ -849,7 +868,7 @@
             this.btnAddMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddMedical.ForeColor = System.Drawing.Color.Black;
-            this.btnAddMedical.Location = new System.Drawing.Point(393, 295);
+            this.btnAddMedical.Location = new System.Drawing.Point(335, 295);
             this.btnAddMedical.Name = "btnAddMedical";
             this.btnAddMedical.Size = new System.Drawing.Size(109, 50);
             this.btnAddMedical.TabIndex = 61;
@@ -868,7 +887,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(278, 295);
+            this.btnUpdate.Location = new System.Drawing.Point(220, 295);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 50);
             this.btnUpdate.TabIndex = 6;
@@ -888,7 +907,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(163, 295);
+            this.btnAdd.Location = new System.Drawing.Point(105, 295);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(109, 50);
             this.btnAdd.TabIndex = 38;
@@ -896,25 +915,6 @@
             this.btnAdd.TextColor = System.Drawing.Color.Black;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
-            // 
-            // tbxSympton
-            // 
-            this.tbxSympton.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxSympton.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxSympton.BorderFocusColor = System.Drawing.Color.Turquoise;
-            this.tbxSympton.BorderSize = 2;
-            this.tbxSympton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbxSympton.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxSympton.Location = new System.Drawing.Point(187, 129);
-            this.tbxSympton.Multiline = false;
-            this.tbxSympton.Name = "tbxSympton";
-            this.tbxSympton.Padding = new System.Windows.Forms.Padding(7);
-            this.tbxSympton.PasswordChar = false;
-            this.tbxSympton.ReadOnly = false;
-            this.tbxSympton.Size = new System.Drawing.Size(205, 38);
-            this.tbxSympton.TabIndex = 75;
-            this.tbxSympton.Texts = "";
-            this.tbxSympton.UnderlinedStyle = false;
             // 
             // MedicalBillForm
             // 

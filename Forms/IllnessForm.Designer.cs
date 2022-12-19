@@ -35,6 +35,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvIllnessList = new System.Windows.Forms.DataGridView();
+            this.MaBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrieuChung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plIllnessInfor = new System.Windows.Forms.Panel();
             this.btnDel = new ClinicManagement.Classes.RJButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -50,9 +53,6 @@
             this.btnAddIllness = new ClinicManagement.Classes.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
-            this.MaBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrieuChung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvIllnessList)).BeginInit();
@@ -143,6 +143,27 @@
             this.dtgvIllnessList.Size = new System.Drawing.Size(1154, 603);
             this.dtgvIllnessList.TabIndex = 3;
             // 
+            // MaBenh
+            // 
+            this.MaBenh.FillWeight = 96.88831F;
+            this.MaBenh.HeaderText = "Mã bệnh ";
+            this.MaBenh.MinimumWidth = 6;
+            this.MaBenh.Name = "MaBenh";
+            // 
+            // TenBenh
+            // 
+            this.TenBenh.FillWeight = 104.5855F;
+            this.TenBenh.HeaderText = "Tên bệnh";
+            this.TenBenh.MinimumWidth = 6;
+            this.TenBenh.Name = "TenBenh";
+            // 
+            // TrieuChung
+            // 
+            this.TrieuChung.FillWeight = 119.1177F;
+            this.TrieuChung.HeaderText = "Triệu chứng";
+            this.TrieuChung.MinimumWidth = 6;
+            this.TrieuChung.Name = "TrieuChung";
+            // 
             // plIllnessInfor
             // 
             this.plIllnessInfor.BackColor = System.Drawing.Color.Transparent;
@@ -210,8 +231,8 @@
             // tbxIllnessSympton
             // 
             this.tbxIllnessSympton.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxIllnessSympton.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxIllnessSympton.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxIllnessSympton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxIllnessSympton.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxIllnessSympton.BorderSize = 2;
             this.tbxIllnessSympton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxIllnessSympton.ForeColor = System.Drawing.Color.DimGray;
@@ -257,8 +278,8 @@
             // tbxIllnessName
             // 
             this.tbxIllnessName.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxIllnessName.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.tbxIllnessName.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxIllnessName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxIllnessName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
             this.tbxIllnessName.BorderSize = 2;
             this.tbxIllnessName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxIllnessName.ForeColor = System.Drawing.Color.DimGray;
@@ -398,27 +419,6 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(1189, 845);
             this.gradientPanel1.TabIndex = 21;
-            // 
-            // MaBenh
-            // 
-            this.MaBenh.FillWeight = 96.88831F;
-            this.MaBenh.HeaderText = "Mã bệnh ";
-            this.MaBenh.MinimumWidth = 6;
-            this.MaBenh.Name = "MaBenh";
-            // 
-            // TenBenh
-            // 
-            this.TenBenh.FillWeight = 104.5855F;
-            this.TenBenh.HeaderText = "Tên bệnh";
-            this.TenBenh.MinimumWidth = 6;
-            this.TenBenh.Name = "TenBenh";
-            // 
-            // TrieuChung
-            // 
-            this.TrieuChung.FillWeight = 119.1177F;
-            this.TrieuChung.HeaderText = "Triệu chứng";
-            this.TrieuChung.MinimumWidth = 6;
-            this.TrieuChung.Name = "TrieuChung";
             // 
             // IllnessForm
             // 

@@ -15,7 +15,7 @@ namespace DatabaseProject
         private static SqlDataAdapter adapter = new SqlDataAdapter();
         public SqlTransaction DbTran;
 
-        private static string strConnString = "Data Source=.;Initial Catalog=DoAn;Integrated Security=True";
+        private static string strConnString = "Data Source=???;Initial Catalog=DoAn;Integrated Security=True";
 
         public void createConn()
         {

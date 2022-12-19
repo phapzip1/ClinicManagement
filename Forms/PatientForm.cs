@@ -39,7 +39,7 @@ namespace ClinicManagement.Forms
         Patient aPatient;
         private IDataProvider provider;
         private BindingList<ComboboxItem> bindingLists;
-        private BindingSource patientDetailBinding;
+        private BindingSource medicineDetailBinding;
 
         private ClinicDbContextFactory _clinicDbContextFactory;
 
@@ -55,9 +55,9 @@ namespace ClinicManagement.Forms
 
             provider = new DBProvider(_clinicDbContextFactory); // receive data 
 
-            //patientDetailBinding = new BindingSource() { DataSource = new List<Patient>() }; // create binding
+            //medicineDetailBinding = new BindingSource() { DataSource = new List<Patient>() }; // create binding
 
-            dtgvPatientList.DataSource = patientDetailBinding;
+            //dtgvPatientList.DataSource = medicineDetailBinding;
 
             lblNextPatient.Text = Models.InforForm.Next_Patient.ToString();
             ResetMonitor();
