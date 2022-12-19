@@ -6,6 +6,7 @@ namespace ClinicManagement.Services
     public interface IDataProvider
     {
         Task<IEnumerable<Patient>> GetAllPatients();
+        Task<Patient> GetPatient(string Id);
         Task<IEnumerable<Medicine>> GetMedicines();
         Task<IEnumerable<Bill>> GetAllBills();
         Task<IEnumerable<Unit>> GetAllUnits();

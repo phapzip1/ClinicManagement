@@ -207,5 +207,16 @@ namespace ClinicManagement.Services
                 return await dbContext.Units.Select(p => new Unit(p.Id, p.Name)).ToListAsync();
             }
         }
+
+        public async Task<Patient> GetPatient(string Id)
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                var obj = await dbContext.Patients.FirstOrDefaultAsync(p => p.Id == Id);
+                if (obj != null)
+                    return new Patient(obj.Id, obj.Fullname, obj.Gender ,obj.Dob, obj.Address);
+                return null;
+            }
+        }
     }
 }
