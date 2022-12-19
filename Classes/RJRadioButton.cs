@@ -41,6 +41,16 @@ namespace ClinicManagement.Classes
                 }
             }
 
+        public Color BackColor
+        {
+            get { return base.BackColor; }
+            set
+            {
+                base.BackColor = value;
+                this.Invalidate();
+            }
+        }
+
             //Overridden methods
             protected override void OnPaint(PaintEventArgs pevent)
             {

@@ -37,7 +37,7 @@ namespace ClinicManagement.Forms
             dataGridView1.Columns["ImportId"].Visible = false;
 
             _quantityTb.Minimum = 0;
-            _priceTb.Minimum = 0;
+            _priceTb.Minimum = 0; 
             _quantityTb.Maximum = decimal.MaxValue;
             _priceTb.Maximum = decimal.MaxValue;
         }
@@ -64,7 +64,7 @@ namespace ClinicManagement.Forms
                 int price = int.Parse(_priceTb.Text);
                 if (((List<ImportDetail>)medicineDetailBinding.List).Where(p => p.MedicineId == value.Id).Count() == 0)
                 {
-                    //medicineDetailBinding.Add(new ImportDetail(Guid.Empty, value.Id, value.Name, value.UnitName, qty, price));
+                    medicineDetailBinding.Add(new ImportDetail(Guid.Empty, value.Id, value.Name, value.UnitName, qty, price));
                 }
                 else
                 {
@@ -91,9 +91,9 @@ namespace ClinicManagement.Forms
 
         private void Save_Handler(object sender, EventArgs e)
         {
-            //Import import = new Import(Guid.NewGuid(), DateTime.Now, int.Parse(_totalTb.Texts), medicineDetailBinding.DataSource as IEnumerable<ImportDetail>);
-            //creator.CreateImport(import);
-            //Console.WriteLine(Guid.NewGuid());
+            Import import = new Import(Guid.NewGuid(), DateTime.Now, int.Parse(_totalTb.Texts), medicineDetailBinding.DataSource as IEnumerable<ImportDetail>);
+            creator.CreateImport(import);
+            Console.WriteLine(Guid.NewGuid());
         }
 
         private void Form_Loaded(object sender, EventArgs e)

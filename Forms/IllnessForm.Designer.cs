@@ -39,27 +39,26 @@
             this.TenBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrieuChung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThuocDacTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plIllnessInfor = new System.Windows.Forms.Panel();
-            this.rjComboBox2 = new CustomControls.RJControls.RJComboBox();
-            this.rjComboBox1 = new CustomControls.RJControls.RJComboBox();
-            this.customTextBox3 = new ClinicManagement.Classes.CustomTextBox();
-            this.customTextBox2 = new ClinicManagement.Classes.CustomTextBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbxIllnessSympton = new ClinicManagement.Classes.CustomTextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbxIllnessName = new ClinicManagement.Classes.CustomTextBox();
             this.btnSearchIllness = new ClinicManagement.Classes.RJButton();
             this.btnNotSaveIllness = new ClinicManagement.Classes.RJButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnSaveIllness = new ClinicManagement.Classes.RJButton();
             this.btnUpdateIllness = new ClinicManagement.Classes.RJButton();
             this.btnAddIllness = new ClinicManagement.Classes.RJButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvIllnessList)).BeginInit();
             this.plIllnessInfor.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,21 +78,21 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(565, 243);
+            this.label10.Location = new System.Drawing.Point(497, 175);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(163, 24);
+            this.label10.Size = new System.Drawing.Size(195, 27);
             this.label10.TabIndex = 20;
             this.label10.Text = "Danh sách bệnh";
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.dtgvIllnessList);
-            this.panel5.Location = new System.Drawing.Point(3, 272);
+            this.panel5.Location = new System.Drawing.Point(3, 206);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1154, 537);
+            this.panel5.Size = new System.Drawing.Size(1154, 603);
             this.panel5.TabIndex = 19;
             // 
             // dtgvIllnessList
@@ -119,8 +118,7 @@
             this.MaBenh,
             this.TenBenh,
             this.TrieuChung,
-            this.ThuocDacTri,
-            this.LoaiBenh});
+            this.ThuocDacTri});
             this.dtgvIllnessList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvIllnessList.EnableHeadersVisualStyles = false;
             this.dtgvIllnessList.Location = new System.Drawing.Point(0, 0);
@@ -143,7 +141,7 @@
             this.dtgvIllnessList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
             this.dtgvIllnessList.RowTemplate.Height = 29;
             this.dtgvIllnessList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvIllnessList.Size = new System.Drawing.Size(1154, 537);
+            this.dtgvIllnessList.Size = new System.Drawing.Size(1154, 603);
             this.dtgvIllnessList.TabIndex = 3;
             // 
             // MaBenh
@@ -174,110 +172,114 @@
             this.ThuocDacTri.MinimumWidth = 6;
             this.ThuocDacTri.Name = "ThuocDacTri";
             // 
-            // LoaiBenh
-            // 
-            this.LoaiBenh.FillWeight = 93.30489F;
-            this.LoaiBenh.HeaderText = "Tên loại bệnh";
-            this.LoaiBenh.MinimumWidth = 6;
-            this.LoaiBenh.Name = "LoaiBenh";
-            // 
             // plIllnessInfor
             // 
             this.plIllnessInfor.BackColor = System.Drawing.Color.Transparent;
-            this.plIllnessInfor.Controls.Add(this.rjComboBox2);
-            this.plIllnessInfor.Controls.Add(this.rjComboBox1);
-            this.plIllnessInfor.Controls.Add(this.customTextBox3);
-            this.plIllnessInfor.Controls.Add(this.customTextBox2);
+            this.plIllnessInfor.Controls.Add(this.tableLayoutPanel2);
+            this.plIllnessInfor.Controls.Add(this.tableLayoutPanel1);
             this.plIllnessInfor.Controls.Add(this.btnSearchIllness);
             this.plIllnessInfor.Controls.Add(this.btnNotSaveIllness);
-            this.plIllnessInfor.Controls.Add(this.label8);
-            this.plIllnessInfor.Controls.Add(this.label9);
-            this.plIllnessInfor.Controls.Add(this.label6);
             this.plIllnessInfor.Controls.Add(this.btnSaveIllness);
             this.plIllnessInfor.Controls.Add(this.btnUpdateIllness);
             this.plIllnessInfor.Controls.Add(this.btnAddIllness);
-            this.plIllnessInfor.Controls.Add(this.label3);
             this.plIllnessInfor.Location = new System.Drawing.Point(3, 36);
             this.plIllnessInfor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.plIllnessInfor.Name = "plIllnessInfor";
-            this.plIllnessInfor.Size = new System.Drawing.Size(1154, 203);
+            this.plIllnessInfor.Size = new System.Drawing.Size(1154, 135);
             this.plIllnessInfor.TabIndex = 18;
             // 
-            // rjComboBox2
+            // tableLayoutPanel2
             // 
-            this.rjComboBox2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox2.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.rjComboBox2.BorderSize = 2;
-            this.rjComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjComboBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox2.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox2.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox2.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox2.Location = new System.Drawing.Point(765, 80);
-            this.rjComboBox2.MinimumSize = new System.Drawing.Size(50, 20);
-            this.rjComboBox2.Name = "rjComboBox2";
-            this.rjComboBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.rjComboBox2.Size = new System.Drawing.Size(197, 37);
-            this.rjComboBox2.TabIndex = 63;
-            this.rjComboBox2.Texts = "";
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tbxIllnessSympton, 1, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 71);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(482, 47);
+            this.tableLayoutPanel2.TabIndex = 63;
             // 
-            // rjComboBox1
+            // label1
             // 
-            this.rjComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox1.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.rjComboBox1.BorderSize = 2;
-            this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.Location = new System.Drawing.Point(765, 28);
-            this.rjComboBox1.MinimumSize = new System.Drawing.Size(50, 20);
-            this.rjComboBox1.Name = "rjComboBox1";
-            this.rjComboBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.rjComboBox1.Size = new System.Drawing.Size(197, 37);
-            this.rjComboBox1.TabIndex = 62;
-            this.rjComboBox1.Texts = "";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(186, 47);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Tên triệu chứng:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // customTextBox3
+            // tbxIllnessSympton
             // 
-            this.customTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox3.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.customTextBox3.BorderFocusColor = System.Drawing.Color.Turquoise;
-            this.customTextBox3.BorderSize = 2;
-            this.customTextBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox3.Location = new System.Drawing.Point(297, 76);
-            this.customTextBox3.Multiline = false;
-            this.customTextBox3.Name = "customTextBox3";
-            this.customTextBox3.Padding = new System.Windows.Forms.Padding(7);
-            this.customTextBox3.PasswordChar = false;
-            this.customTextBox3.ReadOnly = false;
-            this.customTextBox3.Size = new System.Drawing.Size(238, 38);
-            this.customTextBox3.TabIndex = 61;
-            this.customTextBox3.Texts = "";
-            this.customTextBox3.UnderlinedStyle = false;
+            this.tbxIllnessSympton.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxIllnessSympton.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.tbxIllnessSympton.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxIllnessSympton.BorderSize = 2;
+            this.tbxIllnessSympton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxIllnessSympton.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxIllnessSympton.Location = new System.Drawing.Point(195, 3);
+            this.tbxIllnessSympton.Multiline = false;
+            this.tbxIllnessSympton.Name = "tbxIllnessSympton";
+            this.tbxIllnessSympton.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxIllnessSympton.PasswordChar = false;
+            this.tbxIllnessSympton.ReadOnly = false;
+            this.tbxIllnessSympton.Size = new System.Drawing.Size(284, 38);
+            this.tbxIllnessSympton.TabIndex = 61;
+            this.tbxIllnessSympton.Texts = "";
+            this.tbxIllnessSympton.UnderlinedStyle = false;
+            this.tbxIllnessSympton._TextChanged += new System.EventHandler(this.tbxIllnessSympton__TextChanged);
             // 
-            // customTextBox2
+            // tableLayoutPanel1
             // 
-            this.customTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.customTextBox2.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.customTextBox2.BorderFocusColor = System.Drawing.Color.Turquoise;
-            this.customTextBox2.BorderSize = 2;
-            this.customTextBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.customTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.customTextBox2.Location = new System.Drawing.Point(297, 25);
-            this.customTextBox2.Multiline = false;
-            this.customTextBox2.Name = "customTextBox2";
-            this.customTextBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.customTextBox2.PasswordChar = false;
-            this.customTextBox2.ReadOnly = false;
-            this.customTextBox2.Size = new System.Drawing.Size(238, 38);
-            this.customTextBox2.TabIndex = 60;
-            this.customTextBox2.Texts = "";
-            this.customTextBox2.UnderlinedStyle = false;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tbxIllnessName, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 18);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(482, 47);
+            this.tableLayoutPanel1.TabIndex = 62;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(186, 47);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Tên bệnh:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbxIllnessName
+            // 
+            this.tbxIllnessName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxIllnessName.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.tbxIllnessName.BorderFocusColor = System.Drawing.Color.Turquoise;
+            this.tbxIllnessName.BorderSize = 2;
+            this.tbxIllnessName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxIllnessName.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxIllnessName.Location = new System.Drawing.Point(195, 3);
+            this.tbxIllnessName.Multiline = false;
+            this.tbxIllnessName.Name = "tbxIllnessName";
+            this.tbxIllnessName.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxIllnessName.PasswordChar = false;
+            this.tbxIllnessName.ReadOnly = false;
+            this.tbxIllnessName.Size = new System.Drawing.Size(284, 38);
+            this.tbxIllnessName.TabIndex = 60;
+            this.tbxIllnessName.Texts = "";
+            this.tbxIllnessName.UnderlinedStyle = false;
             // 
             // btnSearchIllness
             // 
@@ -290,10 +292,10 @@
             this.btnSearchIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearchIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchIllness.Location = new System.Drawing.Point(759, 123);
+            this.btnSearchIllness.Location = new System.Drawing.Point(1015, 41);
             this.btnSearchIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchIllness.Name = "btnSearchIllness";
-            this.btnSearchIllness.Size = new System.Drawing.Size(134, 67);
+            this.btnSearchIllness.Size = new System.Drawing.Size(134, 55);
             this.btnSearchIllness.TabIndex = 21;
             this.btnSearchIllness.Text = "Tra cứu";
             this.btnSearchIllness.TextColor = System.Drawing.Color.Black;
@@ -310,50 +312,15 @@
             this.btnNotSaveIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveIllness.Location = new System.Drawing.Point(618, 123);
+            this.btnNotSaveIllness.Location = new System.Drawing.Point(875, 41);
             this.btnNotSaveIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNotSaveIllness.Name = "btnNotSaveIllness";
-            this.btnNotSaveIllness.Size = new System.Drawing.Size(134, 67);
+            this.btnNotSaveIllness.Size = new System.Drawing.Size(134, 55);
             this.btnNotSaveIllness.TabIndex = 20;
-            this.btnNotSaveIllness.Text = "Không lưu";
+            this.btnNotSaveIllness.Text = "Huỷ";
             this.btnNotSaveIllness.TextColor = System.Drawing.Color.Black;
             this.btnNotSaveIllness.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(542, 88);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(187, 26);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Tên thuốc đặc trị:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(542, 35);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(228, 26);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Tên loại thuốc đặc trị:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(166, 89);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(138, 26);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Triệu chứng:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNotSaveIllness.Click += new System.EventHandler(this.btnNotSaveIllness_Click);
             // 
             // btnSaveIllness
             // 
@@ -366,14 +333,15 @@
             this.btnSaveIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSaveIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveIllness.Location = new System.Drawing.Point(490, 123);
+            this.btnSaveIllness.Location = new System.Drawing.Point(748, 41);
             this.btnSaveIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveIllness.Name = "btnSaveIllness";
-            this.btnSaveIllness.Size = new System.Drawing.Size(121, 67);
+            this.btnSaveIllness.Size = new System.Drawing.Size(121, 55);
             this.btnSaveIllness.TabIndex = 19;
             this.btnSaveIllness.Text = "Lưu";
             this.btnSaveIllness.TextColor = System.Drawing.Color.Black;
             this.btnSaveIllness.UseVisualStyleBackColor = false;
+            this.btnSaveIllness.Click += new System.EventHandler(this.btnSaveIllness_Click);
             // 
             // btnUpdateIllness
             // 
@@ -386,14 +354,15 @@
             this.btnUpdateIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateIllness.Location = new System.Drawing.Point(362, 123);
+            this.btnUpdateIllness.Location = new System.Drawing.Point(621, 41);
             this.btnUpdateIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdateIllness.Name = "btnUpdateIllness";
-            this.btnUpdateIllness.Size = new System.Drawing.Size(121, 67);
+            this.btnUpdateIllness.Size = new System.Drawing.Size(121, 55);
             this.btnUpdateIllness.TabIndex = 18;
             this.btnUpdateIllness.Text = "Cập nhật";
             this.btnUpdateIllness.TextColor = System.Drawing.Color.Black;
             this.btnUpdateIllness.UseVisualStyleBackColor = false;
+            this.btnUpdateIllness.Click += new System.EventHandler(this.btnUpdateIllness_Click);
             // 
             // btnAddIllness
             // 
@@ -406,35 +375,24 @@
             this.btnAddIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnAddIllness.Location = new System.Drawing.Point(234, 123);
+            this.btnAddIllness.Location = new System.Drawing.Point(494, 41);
             this.btnAddIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddIllness.Name = "btnAddIllness";
-            this.btnAddIllness.Size = new System.Drawing.Size(121, 67);
+            this.btnAddIllness.Size = new System.Drawing.Size(121, 55);
             this.btnAddIllness.TabIndex = 17;
             this.btnAddIllness.Text = "Thêm";
             this.btnAddIllness.TextColor = System.Drawing.Color.Black;
             this.btnAddIllness.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(166, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 26);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Tên bệnh:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAddIllness.Click += new System.EventHandler(this.btnAddIllness_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(549, 0);
+            this.label2.Location = new System.Drawing.Point(482, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 24);
+            this.label2.Size = new System.Drawing.Size(212, 27);
             this.label2.TabIndex = 2;
             this.label2.Text = "THÔNG TIN BỆNH";
             // 
@@ -464,7 +422,10 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvIllnessList)).EndInit();
             this.plIllnessInfor.ResumeLayout(false);
-            this.plIllnessInfor.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.gradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -478,23 +439,20 @@
         private Classes.RJButton btnUpdateIllness;
         private Classes.RJButton btnAddIllness;
         private Label label3;
-        private Label label6;
-        private Label label8;
-        private Label label9;
         private Classes.RJButton btnSearchIllness;
         private Classes.RJButton btnNotSaveIllness;
         private Panel panel5;
         private Label label10;
         private DataGridView dtgvIllnessList;
+        private Classes.CustomTextBox tbxIllnessSympton;
+        private Classes.CustomTextBox tbxIllnessName;
+        private Classes.GradientPanel gradientPanel1;
+        private TableLayoutPanel tableLayoutPanel1;
         private DataGridViewTextBoxColumn MaBenh;
         private DataGridViewTextBoxColumn TenBenh;
         private DataGridViewTextBoxColumn TrieuChung;
         private DataGridViewTextBoxColumn ThuocDacTri;
-        private DataGridViewTextBoxColumn LoaiBenh;
-        private CustomControls.RJControls.RJComboBox rjComboBox2;
-        private CustomControls.RJControls.RJComboBox rjComboBox1;
-        private Classes.CustomTextBox customTextBox3;
-        private Classes.CustomTextBox customTextBox2;
-        private Classes.GradientPanel gradientPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label label1;
     }
 }

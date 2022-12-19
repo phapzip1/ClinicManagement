@@ -1,4 +1,8 @@
-﻿using DatabaseProject;
+﻿using ClinicManagement.DbContexts;
+using ClinicManagement.Models;
+using ClinicManagement.Services;
+using DatabaseProject;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,12 +48,7 @@ namespace ClinicManagement.Forms
         //Xử lý
         private void btnAddUnit_Click(object sender, EventArgs e)
         {
-            //tbxUnitID.ReadOnly= true;
-            int _id = 1;
-            _id = dBAccess.executeQuery("SELECT TOP 1 MADV FROM DONVI ORDER BY MADV DESC");
-            if (_id > 1) { _id = _id + 1; }
-            else _id = 1;
-            //tbxUnitID.Texts = _id.ToString();
+            tbxUnitName.ReadOnly= false;
         }
 
         private void btnUpdateUnit_Click(object sender, EventArgs e)
@@ -57,16 +56,81 @@ namespace ClinicManagement.Forms
             string tendv = tbxUsageName.Texts.ToString();
             if(tendv.Length > 20)
                 MessageBox.Show("Tên đơn vị quá dài!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+
+            }
         }
 
         private void btnSaveUnit_Click(object sender, EventArgs e)
         {
+            Guid guid = Guid.NewGuid();
 
+            if (tbxUnitName.Texts.Length == 0)
+            {
+                MessageBox.Show("Hãy nhập tên đơn vị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    ClinicDbContextFactory _clinicDbContextFactory = new ClinicDbContextFactory(InforForm.Connects_String);
+                    using (ClinicDbContext dbContext = _clinicDbContextFactory.CreateDbContext())
+                    {
+                        IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);
+                        dbContext.Database.Migrate();
+                        dataCreator.CreateUnit(new Models.Unit(guid, tbxUnitName.Texts.ToString()));
+                        MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnNotSaveUnit_Click(object sender, EventArgs e)
         {
             ResetMonitor1();
+        }
+
+        private void btnSaveUsage_Click(object sender, EventArgs e)
+        {
+            Guid guid = Guid.NewGuid();
+
+            if (tbxUnitName.Texts.Length == 0)
+            {
+                MessageBox.Show("Hãy nhập tên đơn vị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                try
+                {
+                    ClinicDbContextFactory _clinicDbContextFactory = new ClinicDbContextFactory(InforForm.Connects_String);
+                    using (ClinicDbContext dbContext = _clinicDbContextFactory.CreateDbContext())
+                    {
+                        IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);
+                        dbContext.Database.Migrate();
+                        //dataCreator.CreateUsageReport(new Models.Unit(guid, tbxUnitName.Texts.ToString()));
+                        MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnAddUsage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
