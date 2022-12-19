@@ -31,8 +31,8 @@ namespace ClinicManagement.Forms
         public StatisticForm()
         {
             InitializeComponent();
-            //factory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString()); // create location contact 
-            //provider = new DBProvider(factory); // receive data 
+            factory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString()); // create location contact 
+            provider = new DBProvider(factory); // receive data 
 
             medicineDetailBinding = new BindingSource() { DataSource = new List<IndexStatistic>() }; // create binding
             

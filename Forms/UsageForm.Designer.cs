@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.plIllnessCategory = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dtgvPatientList = new System.Windows.Forms.DataGridView();
+            this.dtgvUsage = new System.Windows.Forms.DataGridView();
             this.MaCachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenCachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnUsageDel = new ClinicManagement.Classes.RJButton();
             this.tbxUsageName = new ClinicManagement.Classes.CustomTextBox();
             this.btnSearchUsage = new ClinicManagement.Classes.RJButton();
             this.btnNotSaveUsage = new ClinicManagement.Classes.RJButton();
@@ -53,10 +54,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvUnit = new System.Windows.Forms.DataGridView();
             this.MaDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnUnitDel = new ClinicManagement.Classes.RJButton();
             this.tbxUnitName = new ClinicManagement.Classes.CustomTextBox();
             this.btnSearchUnit = new ClinicManagement.Classes.RJButton();
             this.btnNotSaveUnit = new ClinicManagement.Classes.RJButton();
@@ -67,12 +69,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.plIllnessCategory.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPatientList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvUsage)).BeginInit();
             this.panel2.SuspendLayout();
             this.gradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvUnit)).BeginInit();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,57 +103,57 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dtgvPatientList);
+            this.panel3.Controls.Add(this.dtgvUsage);
             this.panel3.Location = new System.Drawing.Point(349, 64);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(798, 347);
             this.panel3.TabIndex = 18;
             // 
-            // dtgvPatientList
+            // dtgvUsage
             // 
-            this.dtgvPatientList.AllowUserToAddRows = false;
-            this.dtgvPatientList.AllowUserToDeleteRows = false;
-            this.dtgvPatientList.AllowUserToResizeColumns = false;
-            this.dtgvPatientList.AllowUserToResizeRows = false;
-            this.dtgvPatientList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvPatientList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvPatientList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgvPatientList.ColumnHeadersHeight = 60;
-            this.dtgvPatientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtgvPatientList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvUsage.AllowUserToAddRows = false;
+            this.dtgvUsage.AllowUserToDeleteRows = false;
+            this.dtgvUsage.AllowUserToResizeColumns = false;
+            this.dtgvUsage.AllowUserToResizeRows = false;
+            this.dtgvUsage.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvUsage.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvUsage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dtgvUsage.ColumnHeadersHeight = 60;
+            this.dtgvUsage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgvUsage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaCachDung,
             this.TenCachDung});
-            this.dtgvPatientList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvPatientList.EnableHeadersVisualStyles = false;
-            this.dtgvPatientList.Location = new System.Drawing.Point(0, 0);
-            this.dtgvPatientList.Name = "dtgvPatientList";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvPatientList.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvPatientList.RowHeadersVisible = false;
-            this.dtgvPatientList.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            this.dtgvPatientList.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtgvPatientList.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dtgvPatientList.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dtgvPatientList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
-            this.dtgvPatientList.RowTemplate.Height = 29;
-            this.dtgvPatientList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPatientList.Size = new System.Drawing.Size(798, 347);
-            this.dtgvPatientList.TabIndex = 5;
+            this.dtgvUsage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvUsage.EnableHeadersVisualStyles = false;
+            this.dtgvUsage.Location = new System.Drawing.Point(0, 0);
+            this.dtgvUsage.Name = "dtgvUsage";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvUsage.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dtgvUsage.RowHeadersVisible = false;
+            this.dtgvUsage.RowHeadersWidth = 51;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.dtgvUsage.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dtgvUsage.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtgvUsage.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dtgvUsage.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
+            this.dtgvUsage.RowTemplate.Height = 29;
+            this.dtgvUsage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvUsage.Size = new System.Drawing.Size(798, 347);
+            this.dtgvUsage.TabIndex = 5;
             // 
             // MaCachDung
             // 
@@ -170,6 +172,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.btnUsageDel);
             this.panel2.Controls.Add(this.tbxUsageName);
             this.panel2.Controls.Add(this.btnSearchUsage);
             this.panel2.Controls.Add(this.btnNotSaveUsage);
@@ -182,6 +185,25 @@
             this.panel2.Size = new System.Drawing.Size(341, 347);
             this.panel2.TabIndex = 17;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnUsageDel
+            // 
+            this.btnUsageDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnUsageDel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnUsageDel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnUsageDel.BorderRadius = 20;
+            this.btnUsageDel.BorderSize = 2;
+            this.btnUsageDel.FlatAppearance.BorderSize = 0;
+            this.btnUsageDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsageDel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnUsageDel.ForeColor = System.Drawing.Color.Black;
+            this.btnUsageDel.Location = new System.Drawing.Point(185, 198);
+            this.btnUsageDel.Name = "btnUsageDel";
+            this.btnUsageDel.Size = new System.Drawing.Size(127, 51);
+            this.btnUsageDel.TabIndex = 28;
+            this.btnUsageDel.Text = "Xoá";
+            this.btnUsageDel.TextColor = System.Drawing.Color.Black;
+            this.btnUsageDel.UseVisualStyleBackColor = false;
             // 
             // tbxUsageName
             // 
@@ -213,7 +235,7 @@
             this.btnSearchUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearchUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchUsage.Location = new System.Drawing.Point(33, 198);
+            this.btnSearchUsage.Location = new System.Drawing.Point(34, 255);
             this.btnSearchUsage.Name = "btnSearchUsage";
             this.btnSearchUsage.Size = new System.Drawing.Size(127, 51);
             this.btnSearchUsage.TabIndex = 23;
@@ -232,7 +254,7 @@
             this.btnNotSaveUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveUsage.Location = new System.Drawing.Point(184, 198);
+            this.btnNotSaveUsage.Location = new System.Drawing.Point(184, 255);
             this.btnNotSaveUsage.Name = "btnNotSaveUsage";
             this.btnNotSaveUsage.Size = new System.Drawing.Size(127, 51);
             this.btnNotSaveUsage.TabIndex = 22;
@@ -251,7 +273,7 @@
             this.btnSaveUsage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUsage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUsage.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveUsage.Location = new System.Drawing.Point(32, 255);
+            this.btnSaveUsage.Location = new System.Drawing.Point(34, 198);
             this.btnSaveUsage.Name = "btnSaveUsage";
             this.btnSaveUsage.Size = new System.Drawing.Size(127, 51);
             this.btnSaveUsage.TabIndex = 19;
@@ -360,57 +382,57 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Controls.Add(this.dtgvUnit);
             this.panel4.Location = new System.Drawing.Point(349, 64);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(798, 335);
             this.panel4.TabIndex = 18;
             // 
-            // dataGridView1
+            // dtgvUnit
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeight = 60;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvUnit.AllowUserToAddRows = false;
+            this.dtgvUnit.AllowUserToDeleteRows = false;
+            this.dtgvUnit.AllowUserToResizeColumns = false;
+            this.dtgvUnit.AllowUserToResizeRows = false;
+            this.dtgvUnit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvUnit.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvUnit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dtgvUnit.ColumnHeadersHeight = 60;
+            this.dtgvUnit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgvUnit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDonVi,
             this.TenDonVi});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(798, 335);
-            this.dataGridView1.TabIndex = 5;
+            this.dtgvUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvUnit.EnableHeadersVisualStyles = false;
+            this.dtgvUnit.Location = new System.Drawing.Point(0, 0);
+            this.dtgvUnit.Name = "dtgvUnit";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvUnit.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dtgvUnit.RowHeadersVisible = false;
+            this.dtgvUnit.RowHeadersWidth = 51;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            this.dtgvUnit.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dtgvUnit.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtgvUnit.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dtgvUnit.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
+            this.dtgvUnit.RowTemplate.Height = 29;
+            this.dtgvUnit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvUnit.Size = new System.Drawing.Size(798, 335);
+            this.dtgvUnit.TabIndex = 5;
             // 
             // MaDonVi
             // 
@@ -429,6 +451,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.btnUnitDel);
             this.panel5.Controls.Add(this.tbxUnitName);
             this.panel5.Controls.Add(this.btnSearchUnit);
             this.panel5.Controls.Add(this.btnNotSaveUnit);
@@ -440,6 +463,25 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(341, 335);
             this.panel5.TabIndex = 17;
+            // 
+            // btnUnitDel
+            // 
+            this.btnUnitDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnUnitDel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnUnitDel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnUnitDel.BorderRadius = 20;
+            this.btnUnitDel.BorderSize = 2;
+            this.btnUnitDel.FlatAppearance.BorderSize = 0;
+            this.btnUnitDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUnitDel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnUnitDel.ForeColor = System.Drawing.Color.Black;
+            this.btnUnitDel.Location = new System.Drawing.Point(184, 197);
+            this.btnUnitDel.Name = "btnUnitDel";
+            this.btnUnitDel.Size = new System.Drawing.Size(127, 51);
+            this.btnUnitDel.TabIndex = 26;
+            this.btnUnitDel.Text = "Xoá";
+            this.btnUnitDel.TextColor = System.Drawing.Color.Black;
+            this.btnUnitDel.UseVisualStyleBackColor = false;
             // 
             // tbxUnitName
             // 
@@ -471,13 +513,14 @@
             this.btnSearchUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearchUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchUnit.Location = new System.Drawing.Point(32, 197);
+            this.btnSearchUnit.Location = new System.Drawing.Point(34, 254);
             this.btnSearchUnit.Name = "btnSearchUnit";
             this.btnSearchUnit.Size = new System.Drawing.Size(127, 51);
             this.btnSearchUnit.TabIndex = 23;
             this.btnSearchUnit.Text = "Tra cứu";
             this.btnSearchUnit.TextColor = System.Drawing.Color.Black;
             this.btnSearchUnit.UseVisualStyleBackColor = false;
+            this.btnSearchUnit.Click += new System.EventHandler(this.btnSearchUnit_Click);
             // 
             // btnNotSaveUnit
             // 
@@ -490,7 +533,7 @@
             this.btnNotSaveUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveUnit.Location = new System.Drawing.Point(184, 197);
+            this.btnNotSaveUnit.Location = new System.Drawing.Point(184, 254);
             this.btnNotSaveUnit.Name = "btnNotSaveUnit";
             this.btnNotSaveUnit.Size = new System.Drawing.Size(127, 51);
             this.btnNotSaveUnit.TabIndex = 22;
@@ -510,7 +553,7 @@
             this.btnSaveUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSaveUnit.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveUnit.Location = new System.Drawing.Point(33, 254);
+            this.btnSaveUnit.Location = new System.Drawing.Point(34, 197);
             this.btnSaveUnit.Name = "btnSaveUnit";
             this.btnSaveUnit.Size = new System.Drawing.Size(127, 51);
             this.btnSaveUnit.TabIndex = 19;
@@ -595,14 +638,14 @@
             this.plIllnessCategory.ResumeLayout(false);
             this.plIllnessCategory.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvPatientList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvUsage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvUnit)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
@@ -614,7 +657,7 @@
         private Panel plIllnessCategory;
         private Label label12;
         private Panel panel3;
-        private DataGridView dtgvPatientList;
+        private DataGridView dtgvUsage;
         private Panel panel2;
         private Classes.RJButton btnSearchUsage;
         private Classes.RJButton btnNotSaveUsage;
@@ -630,7 +673,7 @@
         private Panel panel1;
         private Label label2;
         private Panel panel4;
-        private DataGridView dataGridView1;
+        private DataGridView dtgvUnit;
         private DataGridViewTextBoxColumn MaDonVi;
         private DataGridViewTextBoxColumn TenDonVi;
         private Panel panel5;
@@ -642,5 +685,7 @@
         private Classes.RJButton btnAddUnit;
         private Label label3;
         private Label label6;
+        private Classes.RJButton btnUsageDel;
+        private Classes.RJButton btnUnitDel;
     }
 }

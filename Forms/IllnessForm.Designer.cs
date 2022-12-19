@@ -53,6 +53,7 @@
             this.btnAddIllness = new ClinicManagement.Classes.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
+            this.btnDel = new ClinicManagement.Classes.RJButton();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvIllnessList)).BeginInit();
@@ -175,6 +176,7 @@
             // plIllnessInfor
             // 
             this.plIllnessInfor.BackColor = System.Drawing.Color.Transparent;
+            this.plIllnessInfor.Controls.Add(this.btnDel);
             this.plIllnessInfor.Controls.Add(this.tableLayoutPanel2);
             this.plIllnessInfor.Controls.Add(this.tableLayoutPanel1);
             this.plIllnessInfor.Controls.Add(this.btnSearchIllness);
@@ -292,7 +294,7 @@
             this.btnSearchIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearchIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnSearchIllness.Location = new System.Drawing.Point(1015, 41);
+            this.btnSearchIllness.Location = new System.Drawing.Point(841, 73);
             this.btnSearchIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchIllness.Name = "btnSearchIllness";
             this.btnSearchIllness.Size = new System.Drawing.Size(134, 55);
@@ -312,7 +314,7 @@
             this.btnNotSaveIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNotSaveIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNotSaveIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnNotSaveIllness.Location = new System.Drawing.Point(875, 41);
+            this.btnNotSaveIllness.Location = new System.Drawing.Point(701, 73);
             this.btnNotSaveIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNotSaveIllness.Name = "btnNotSaveIllness";
             this.btnNotSaveIllness.Size = new System.Drawing.Size(134, 55);
@@ -333,10 +335,10 @@
             this.btnSaveIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSaveIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveIllness.Location = new System.Drawing.Point(748, 41);
+            this.btnSaveIllness.Location = new System.Drawing.Point(841, 10);
             this.btnSaveIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSaveIllness.Name = "btnSaveIllness";
-            this.btnSaveIllness.Size = new System.Drawing.Size(121, 55);
+            this.btnSaveIllness.Size = new System.Drawing.Size(134, 55);
             this.btnSaveIllness.TabIndex = 19;
             this.btnSaveIllness.Text = "Lưu";
             this.btnSaveIllness.TextColor = System.Drawing.Color.Black;
@@ -354,10 +356,10 @@
             this.btnUpdateIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdateIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateIllness.Location = new System.Drawing.Point(621, 41);
+            this.btnUpdateIllness.Location = new System.Drawing.Point(701, 10);
             this.btnUpdateIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdateIllness.Name = "btnUpdateIllness";
-            this.btnUpdateIllness.Size = new System.Drawing.Size(121, 55);
+            this.btnUpdateIllness.Size = new System.Drawing.Size(134, 55);
             this.btnUpdateIllness.TabIndex = 18;
             this.btnUpdateIllness.Text = "Cập nhật";
             this.btnUpdateIllness.TextColor = System.Drawing.Color.Black;
@@ -375,10 +377,10 @@
             this.btnAddIllness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddIllness.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddIllness.ForeColor = System.Drawing.Color.Black;
-            this.btnAddIllness.Location = new System.Drawing.Point(494, 41);
+            this.btnAddIllness.Location = new System.Drawing.Point(561, 10);
             this.btnAddIllness.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddIllness.Name = "btnAddIllness";
-            this.btnAddIllness.Size = new System.Drawing.Size(121, 55);
+            this.btnAddIllness.Size = new System.Drawing.Size(134, 55);
             this.btnAddIllness.TabIndex = 17;
             this.btnAddIllness.Text = "Thêm";
             this.btnAddIllness.TextColor = System.Drawing.Color.Black;
@@ -406,6 +408,26 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(1189, 845);
             this.gradientPanel1.TabIndex = 21;
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnDel.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnDel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnDel.BorderRadius = 20;
+            this.btnDel.BorderSize = 2;
+            this.btnDel.FlatAppearance.BorderSize = 0;
+            this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDel.ForeColor = System.Drawing.Color.Black;
+            this.btnDel.Location = new System.Drawing.Point(981, 10);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(134, 55);
+            this.btnDel.TabIndex = 64;
+            this.btnDel.Text = "Xoá";
+            this.btnDel.TextColor = System.Drawing.Color.Black;
+            this.btnDel.UseVisualStyleBackColor = false;
             // 
             // IllnessForm
             // 
@@ -454,5 +476,6 @@
         private DataGridViewTextBoxColumn ThuocDacTri;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
+        private Classes.RJButton btnDel;
     }
 }

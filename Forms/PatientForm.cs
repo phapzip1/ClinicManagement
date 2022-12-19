@@ -1,4 +1,5 @@
-﻿using ClinicManagement.DbContexts;
+﻿using ClinicManagement.Classes;
+using ClinicManagement.DbContexts;
 using ClinicManagement.DTOs;
 using ClinicManagement.Models;
 using ClinicManagement.Services;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Office.Interop.Excel;
 using MySqlX.XDevAPI.Relational;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,33 +30,40 @@ namespace ClinicManagement.Forms
         bool timer = false;
         //DBAccess dBAccess = new DBAccess();
 
-        int max_Patient = 40;
         int nextP = 0;
         string patient_Name = "";
+        Queue queue = new Queue();
 
+        //Data
         static Guid patient = new Guid();
         InforForm InforForm = new InforForm();
         Patient aPatient;
         private IDataProvider provider;
+        private BindingList<ComboboxItem> bindingLists;
+        private BindingSource patientDetailBinding;
+
+        private ClinicDbContextFactory _clinicDbContextFactory;
+
+        private Dictionary<string, int> dic;
 
         //Khởi tạo
         public PatientForm()
         {
             InitializeComponent();
 
+            _clinicDbContextFactory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString());
+            bindingLists = new BindingList<ComboboxItem>();
+
+            provider = new DBProvider(_clinicDbContextFactory); // receive data 
+
+            //dic = new Dictionary<string, int>();
+
+            //patientDetailBinding = new BindingSource() { DataSource = new List<Patient>() }; // create binding
+
+            dtgvPatientList.DataSource = patientDetailBinding;
+
             lblNextPatient.Text = Models.InforForm.Next_Patient.ToString();
             ResetMonitor();
-
-            try
-            {
-                /*
-                 * Nạp số bệnh nhân tối đa trong ngày vào max_Patient
-                 */
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
             // fill cbxGender
             cbxGender.Items.Add("Nam");
@@ -125,29 +134,21 @@ namespace ClinicManagement.Forms
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (InforForm.Patient_Count >= max_Patient) {
-                MessageBox.Show("Vượt quá số bệnh nhân có thể tiếp nhận trong ngày!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if(tbxPatientIDNow.Texts == string.Empty) {
-                MessageBox.Show("Hãy điền mã bệnh nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);   
-            }
-            else
+            provider.GetParams().ContinueWith(res =>
             {
-                InforForm.Patient_Count++;
-
-                dtgvQueue.Rows.Add("1", "1");
-                dtgvQueue.Rows.Add("2", "2");
-                dtgvQueue.Rows.Add("3", "3");
-                
-                if (dtgvQueue.Rows.Count > 0)
+                int max_Patient = res.Result["MaxPatients"];
+                if (InforForm.Patient_Count >= max_Patient)
                 {
-                    dtgvQueue.Rows[1].Selected= true;
-                    int firstRowIndex = dtgvQueue.SelectedRows.Count - 1;
-                    Models.InforForm.Next_Patient = dtgvQueue.SelectedRows[firstRowIndex].Cells[0].Value.ToString();
-                    dtgvQueue.Rows[1].Selected= false;
-                    lblNextPatient.Text = InforForm.Next_Patient;
+                    MessageBox.Show("Vượt quá số bệnh nhân có thể tiếp nhận trong ngày!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
+                else if (tbxPatientIDNow.Texts == string.Empty)
+                {
+                    MessageBox.Show("Hãy điền mã bệnh nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            });
+            
+            InforForm.Patient_Count++;               
+            lblNextPatient.Text = InforForm.Next_Patient;            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -178,6 +179,9 @@ namespace ClinicManagement.Forms
                     dataCreator.CreatePatient(new Models.Patient(tbxPatientID.Texts.ToString(), tbxPatientName.Texts.ToString(), gender, dtpkBob.Value, tbxPatientAddress.Texts.ToString()));
 
                     MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dtgvPatientList.Rows.Add(new Models.Patient(tbxPatientID.Texts.ToString(), tbxPatientName.Texts.ToString(), gender, dtpkBob.Value, tbxPatientAddress.Texts.ToString()));
+                    
                     //lblNiceSave.Show();
                     //timerPatient.Start();
                 }
@@ -214,10 +218,10 @@ namespace ClinicManagement.Forms
                 dtgvQueue.Rows[1].Selected= true;
                 int firstRowIndex = dtgvQueue.SelectedRows.Count - 1;
                 Models.InforForm.Next_Patient = dtgvQueue.SelectedRows[firstRowIndex].Cells[0].Value.ToString();
-                MessageBox.Show(InforForm.Next_Patient, "Tb", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dtgvQueue.Rows[1].Selected= false;
                 lblNextPatient.Text = InforForm.Next_Patient;
 
+                firstRowIndex = dtgvQueue.SelectedRows.Count - 1;
                 tbxPatientIDNow.Texts = dtgvQueue.SelectedRows[firstRowIndex].Cells[0].Value.ToString();
             }
         }
@@ -243,7 +247,6 @@ namespace ClinicManagement.Forms
                 dtgvQueue.Rows[1].Selected= true;
                 int firstRowIndex = dtgvQueue.SelectedRows.Count - 1;
                 Models.InforForm.Next_Patient = dtgvQueue.SelectedRows[firstRowIndex].Cells[0].Value.ToString();
-                MessageBox.Show(InforForm.Next_Patient, "Tb", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dtgvQueue.Rows[1].Selected= false;
                 lblNextPatient.Text = InforForm.Next_Patient;
             }

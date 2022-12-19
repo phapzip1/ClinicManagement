@@ -132,5 +132,10 @@ namespace ClinicManagement.Forms
         {
 
         }
+
+        private void btnSearchUnit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

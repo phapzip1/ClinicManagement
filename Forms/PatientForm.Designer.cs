@@ -425,13 +425,13 @@
             // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
             this.label7.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(3, 182);
+            this.label7.Location = new System.Drawing.Point(3, 172);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 26);
+            this.label7.Size = new System.Drawing.Size(88, 46);
             this.label7.TabIndex = 15;
             this.label7.Text = "Địa chỉ:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -458,52 +458,52 @@
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
             this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(3, 137);
+            this.label6.Location = new System.Drawing.Point(3, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(175, 26);
+            this.label6.Size = new System.Drawing.Size(113, 43);
             this.label6.TabIndex = 14;
             this.label6.Text = "Năm sinh:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
             this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(3, 94);
+            this.label5.Location = new System.Drawing.Point(3, 86);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 26);
+            this.label5.Size = new System.Drawing.Size(109, 43);
             this.label5.TabIndex = 13;
             this.label5.Text = "Giới tính: ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
             this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 51);
+            this.label4.Location = new System.Drawing.Point(3, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(175, 26);
+            this.label4.Size = new System.Drawing.Size(91, 43);
             this.label4.TabIndex = 12;
             this.label4.Text = "Họ tên: ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
             this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(3, 8);
+            this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 26);
+            this.label3.Size = new System.Drawing.Size(160, 43);
             this.label3.TabIndex = 11;
             this.label3.Text = "Mã bệnh nhân:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
