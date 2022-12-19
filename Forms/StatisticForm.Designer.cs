@@ -46,12 +46,12 @@
             this.btnExport = new ClinicManagement.Classes.RJButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnSeeInformation = new ClinicManagement.Classes.RJButton();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSeeInformation = new ClinicManagement.Classes.RJButton();
             this.gradientPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -298,26 +298,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1076, 492);
             this.dataGridView1.TabIndex = 1;
             // 
-            // btnSeeInformation
-            // 
-            this.btnSeeInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSeeInformation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSeeInformation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnSeeInformation.BorderRadius = 20;
-            this.btnSeeInformation.BorderSize = 2;
-            this.btnSeeInformation.FlatAppearance.BorderSize = 0;
-            this.btnSeeInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeeInformation.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSeeInformation.ForeColor = System.Drawing.Color.Black;
-            this.btnSeeInformation.Location = new System.Drawing.Point(666, 49);
-            this.btnSeeInformation.Name = "btnSeeInformation";
-            this.btnSeeInformation.Size = new System.Drawing.Size(180, 50);
-            this.btnSeeInformation.TabIndex = 10;
-            this.btnSeeInformation.Text = "Xem báo cáo";
-            this.btnSeeInformation.TextColor = System.Drawing.Color.Black;
-            this.btnSeeInformation.UseVisualStyleBackColor = false;
-            this.btnSeeInformation.Click += new System.EventHandler(this.btnSeeInformation_Click_1);
-            // 
             // STT
             // 
             this.STT.DataPropertyName = "Index";
@@ -359,6 +339,26 @@
             this.TL.MinimumWidth = 6;
             this.TL.Name = "TL";
             this.TL.ReadOnly = true;
+            // 
+            // btnSeeInformation
+            // 
+            this.btnSeeInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnSeeInformation.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnSeeInformation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnSeeInformation.BorderRadius = 20;
+            this.btnSeeInformation.BorderSize = 2;
+            this.btnSeeInformation.FlatAppearance.BorderSize = 0;
+            this.btnSeeInformation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeeInformation.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSeeInformation.ForeColor = System.Drawing.Color.Black;
+            this.btnSeeInformation.Location = new System.Drawing.Point(666, 49);
+            this.btnSeeInformation.Name = "btnSeeInformation";
+            this.btnSeeInformation.Size = new System.Drawing.Size(180, 50);
+            this.btnSeeInformation.TabIndex = 10;
+            this.btnSeeInformation.Text = "Xem báo cáo";
+            this.btnSeeInformation.TextColor = System.Drawing.Color.Black;
+            this.btnSeeInformation.UseVisualStyleBackColor = false;
+            this.btnSeeInformation.Click += new System.EventHandler(this.btnSeeInformation_Click_1);
             // 
             // StatisticForm
             // 

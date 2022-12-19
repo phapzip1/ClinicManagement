@@ -1,4 +1,6 @@
-﻿namespace ClinicManagement.Models
+﻿using Microsoft.Office.Interop.Excel;
+
+namespace ClinicManagement.Models
 {
     public class UsageReport
     {
@@ -8,6 +10,13 @@
             UnitName = unitName;
             Quantity = quantity;
             Time = time;
+        }
+        public UsageReport (UsageReport usageReport)
+        {
+            Name = usageReport.Name;
+            UnitName = usageReport.UnitName;
+            Quantity = usageReport.Quantity;
+            Time = usageReport.Time;
         }
 
         public string Name { get; }

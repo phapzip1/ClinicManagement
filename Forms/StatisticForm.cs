@@ -19,8 +19,8 @@ namespace ClinicManagement.Forms
 {
     public partial class StatisticForm : Form
     {
-        DBAccess dBAccess = new DBAccess();
-        DataTable dtCTBAOCAODOANHTHU = new DataTable();
+        //DBAccess dBAccess = new DBAccess();
+        //DataTable dtCTBAOCAODOANHTHU = new DataTable();
         int yearnow = DateTime.Now.Year;
         int monthnow = DateTime.Now.Month;
 
@@ -31,12 +31,9 @@ namespace ClinicManagement.Forms
         public StatisticForm()
         {
             InitializeComponent();
-            //factory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString()); // create location contact 
-            //provider = new DBProvider(factory); // receive data 
-
+            factory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString()); // create location contact 
+            provider = new DBProvider(factory); // receive data 
             medicineDetailBinding = new BindingSource() { DataSource = new List<IndexStatistic>() }; // create binding
-            
-
             dataGridView1.DataSource = medicineDetailBinding;
 
 
@@ -116,14 +113,14 @@ namespace ClinicManagement.Forms
             string month = cbbMonth.SelectedItem.ToString();          
             string year = cbbYear.SelectedItem.ToString();
 
-            dtCTBAOCAODOANHTHU.Clear();
+            //dtCTBAOCAODOANHTHU.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
 
-            provider.GetAllUsageReports(12, 2022).ContinueWith(res =>
-            {
-                Console.WriteLine(res.Result);
-            });
+            //provider.GetAllUsageReports(12, 2022).ContinueWith(res =>
+            //{
+            //    Console.WriteLine(res.Result);
+            //});
 
             provider.GetStatistic(int.Parse(month), int.Parse(year)).ContinueWith(res =>
             {
