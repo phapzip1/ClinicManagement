@@ -1,5 +1,6 @@
 ﻿using ClinicManagement.DbContexts;
 using ClinicManagement.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 
 namespace ClinicManagement.Services
@@ -59,6 +60,21 @@ namespace ClinicManagement.Services
                     dbContext.Units.Remove(obj);
                     await dbContext.SaveChangesAsync();
                 };
+            }
+        }
+
+        public async Task UpdateIllness(Illness illness)
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                var obj = dbContext.Illness.FirstOrDefault(p => p.Id == illness.Id);
+                if (obj != null)
+                {
+                    obj.Name = illness.Name;
+                    obj.Symptom = illness.Symptom;
+                    dbContext.Illness.Update(obj);
+                    await dbContext.SaveChangesAsync();
+                }
             }
         }
 

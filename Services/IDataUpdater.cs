@@ -9,6 +9,7 @@ namespace ClinicManagement.Services
         public Task UpdatePatient(Patient patient);
         public Task UpdateMedicine(Medicine medicine);
         public Task UpdateUnit(Unit unit);
+        public Task UpdateIllness(Illness illness);
         public Task UpdateMethod(Method method);
         public Task RemovePatient(string patientId);
         public Task RemoveMedicine(Guid medicineId);
