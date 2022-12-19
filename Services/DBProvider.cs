@@ -199,5 +199,13 @@ namespace ClinicManagement.Services
                 return await dbContext.Methods.Select(obj => new Method(obj.Id, obj.Name)).ToListAsync();
             }
         }
+
+        public async Task<IEnumerable<Unit>> GetAllUnits()
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                return await dbContext.Units.Select(p => new Unit(p.Id, p.Name)).ToListAsync();
+            }
+        }
     }
 }
