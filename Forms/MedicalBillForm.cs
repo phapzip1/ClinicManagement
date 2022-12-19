@@ -160,9 +160,12 @@ namespace ClinicManagement.Forms
                 ComboboxItem item = (ComboboxItem)cbxMedicines.SelectedItem;
                 Medicine value = (Medicine)item.Value;
 
-                if (((List<Medicine>)medicineDetailBinding.List).Where(p => p.Id == value.Id).Count() == 0)
+                ComboboxItem item1 = (ComboboxItem)cbxUsage.SelectedItem;
+                Method value1 = (Method)item.Value;
+
+                if (((List<MedicalNoteDetail>)medicineDetailBinding.List).Where(p => p.MedicineId == value.Id).Count() == 0)
                 {
-                    //medicineDetailBinding.Add(new Medicine());
+                    medicineDetailBinding.Add(new MedicalNoteDetail(value.Id, int.Parse(tbxQuantity.Texts), value1.Id));
                     Final_Price += int.Parse(tbxPrice.Texts);
                 }
                 else
@@ -170,6 +173,11 @@ namespace ClinicManagement.Forms
                     MessageBox.Show("Mã sản phẩm đã tồn tại");
                 }
             }
+        }
+
+        private void cbxMedicines_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }   
 }

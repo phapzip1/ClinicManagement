@@ -71,7 +71,7 @@
             this.cbxIllness = new CustomControls.RJControls.RJComboBox();
             this.tbxFinalPrice = new ClinicManagement.Classes.CustomTextBox();
             this.tbxPrice = new ClinicManagement.Classes.CustomTextBox();
-            this.tbxMedicalNumer = new ClinicManagement.Classes.CustomTextBox();
+            this.tbxQuantity = new ClinicManagement.Classes.CustomTextBox();
             this.cbxMedicines = new CustomControls.RJControls.RJComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -510,7 +510,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cbxIllness, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.tbxFinalPrice, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.tbxPrice, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tbxMedicalNumer, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tbxQuantity, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.cbxMedicines, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 1);
@@ -613,24 +613,24 @@
             this.tbxPrice.Texts = "0";
             this.tbxPrice.UnderlinedStyle = false;
             // 
-            // tbxMedicalNumer
+            // tbxQuantity
             // 
-            this.tbxMedicalNumer.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxMedicalNumer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.tbxMedicalNumer.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
-            this.tbxMedicalNumer.BorderSize = 2;
-            this.tbxMedicalNumer.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbxMedicalNumer.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxMedicalNumer.Location = new System.Drawing.Point(554, 45);
-            this.tbxMedicalNumer.Multiline = false;
-            this.tbxMedicalNumer.Name = "tbxMedicalNumer";
-            this.tbxMedicalNumer.Padding = new System.Windows.Forms.Padding(7);
-            this.tbxMedicalNumer.PasswordChar = false;
-            this.tbxMedicalNumer.ReadOnly = false;
-            this.tbxMedicalNumer.Size = new System.Drawing.Size(206, 38);
-            this.tbxMedicalNumer.TabIndex = 66;
-            this.tbxMedicalNumer.Texts = "0";
-            this.tbxMedicalNumer.UnderlinedStyle = false;
+            this.tbxQuantity.BackColor = System.Drawing.SystemColors.Window;
+            this.tbxQuantity.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
+            this.tbxQuantity.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
+            this.tbxQuantity.BorderSize = 2;
+            this.tbxQuantity.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbxQuantity.ForeColor = System.Drawing.Color.DimGray;
+            this.tbxQuantity.Location = new System.Drawing.Point(554, 45);
+            this.tbxQuantity.Multiline = false;
+            this.tbxQuantity.Name = "tbxQuantity";
+            this.tbxQuantity.Padding = new System.Windows.Forms.Padding(7);
+            this.tbxQuantity.PasswordChar = false;
+            this.tbxQuantity.ReadOnly = false;
+            this.tbxQuantity.Size = new System.Drawing.Size(206, 38);
+            this.tbxQuantity.TabIndex = 66;
+            this.tbxQuantity.Texts = "0";
+            this.tbxQuantity.UnderlinedStyle = false;
             // 
             // cbxMedicines
             // 
@@ -650,6 +650,7 @@
             this.cbxMedicines.Size = new System.Drawing.Size(206, 36);
             this.cbxMedicines.TabIndex = 67;
             this.cbxMedicines.Texts = "";
+            this.cbxMedicines.OnSelectedIndexChanged += new System.EventHandler(this.cbxMedicines_OnSelectedIndexChanged);
             // 
             // label3
             // 
@@ -976,7 +977,7 @@
         private CustomControls.RJControls.RJComboBox cbxIllness;
         private Classes.CustomTextBox tbxFinalPrice;
         private Classes.CustomTextBox tbxPrice;
-        private Classes.CustomTextBox tbxMedicalNumer;
+        private Classes.CustomTextBox tbxQuantity;
         private CustomControls.RJControls.RJComboBox cbxMedicines;
         private Label label3;
         private Label label4;
