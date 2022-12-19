@@ -15,5 +15,6 @@ namespace ClinicManagement.Services
         public Task RemoveMedicine(Guid medicineId);
         public Task RemoveUnit(Guid unitId);
         public Task RemoveMethod(Guid methodId);
+        public Task RemoveIllness(Guid illnessId);
     }
 }

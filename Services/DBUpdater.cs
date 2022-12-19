@@ -14,6 +14,19 @@ namespace ClinicManagement.Services
             _dbContextFactory = dbContextFactory;
         }
 
+        public async Task RemoveIllness(Guid illnessId)
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                var obj = dbContext.Illness.FirstOrDefault(p => p.Id == illnessId);
+                if (obj != null)
+                {
+                    dbContext.Illness.Remove(obj);
+                    await dbContext.SaveChangesAsync();
+                }
+            }
+        }
+
         public async Task RemoveMedicine(Guid medicineId)
         {
             using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
