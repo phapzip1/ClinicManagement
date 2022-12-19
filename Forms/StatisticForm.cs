@@ -19,8 +19,6 @@ namespace ClinicManagement.Forms
 {
     public partial class StatisticForm : Form
     {
-        //DBAccess dBAccess = new DBAccess();
-        //DataTable dtCTBAOCAODOANHTHU = new DataTable();
         int yearnow = DateTime.Now.Year;
         int monthnow = DateTime.Now.Month;
 
@@ -113,14 +111,8 @@ namespace ClinicManagement.Forms
             string month = cbbMonth.SelectedItem.ToString();          
             string year = cbbYear.SelectedItem.ToString();
 
-            //dtCTBAOCAODOANHTHU.Clear();
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-
-            //provider.GetAllUsageReports(12, 2022).ContinueWith(res =>
-            //{
-            //    Console.WriteLine(res.Result);
-            //});
 
             provider.GetStatistic(int.Parse(month), int.Parse(year)).ContinueWith(res =>
             {
@@ -130,7 +122,6 @@ namespace ClinicManagement.Forms
                         int i = 1;
                         foreach (var item in res.Result)
                         {
-
                             medicineDetailBinding.Add(new IndexStatistic(i++, item));
                             totalpatients += item.PatientCount;
                             totalrevenue += item.Revenue;
@@ -150,34 +141,6 @@ namespace ClinicManagement.Forms
                 }
                 
             });
-            //string query = "Select * from CTBAOCAODOANHTHU Where THANG = '" + Int32.Parse(month) + "' and NAM = '" + Int32.Parse(year) + "'";
-            //dBAccess.readDatathroughAdapter(query, dtCTBAOCAODOANHTHU);
-
-            //if (dtCTBAOCAODOANHTHU.Rows.Count >= 1)
-            //{           
-
-            //    for (int i = 0; i < dtCTBAOCAODOANHTHU.Rows.Count; i++)
-            //    {
-            //        //dataGridView1.Rows.Add(i + 1, dtCTBAOCAODOANHTHU.Rows[i]["NGAY"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["SOBENHNHAN"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["DOANHTHU"].ToString(), dtCTBAOCAODOANHTHU.Rows[i]["TYLE"].ToString());
-            //        //totalpatients += int.Parse(dtCTBAOCAODOANHTHU.Rows[i]["SOBENHNHAN"].ToString());
-            //        //totalrevenue += int.Parse(dtCTBAOCAODOANHTHU.Rows[i]["DOANHTHU"].ToString());
-            //    }
-
-            //    lbltotalpatients.Text = totalpatients.ToString() + " người";
-            //    lbltotalrevenue.Text = totalrevenue.ToString() + " VNĐ";
-            //    groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
-
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    lbltotalpatients.Text = "........................................";
-            //    lbltotalrevenue.Text = "........................................";
-            //    groupBox1.Text = "Tổng hợp báo cáo";
-            //}
-
-            
         }
         private void StatisticForm_Load(object sender, EventArgs e)
         {          

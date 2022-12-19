@@ -39,18 +39,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SLT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbbMonth = new CustomControls.RJControls.RJComboBox();
             this.btnSeeInformation = new ClinicManagement.Classes.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.btnExport = new ClinicManagement.Classes.RJButton();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SLN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gradientPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -171,10 +169,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
             this.MT,
-            this.MDV,
             this.TDV,
             this.SLN,
-            this.SLT,
             this.TT});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -199,57 +195,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1076, 541);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // STT
-            // 
-            this.STT.FillWeight = 60F;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            // 
-            // MT
-            // 
-            this.MT.HeaderText = "Mã Thuốc";
-            this.MT.MinimumWidth = 6;
-            this.MT.Name = "MT";
-            this.MT.ReadOnly = true;
-            // 
-            // MDV
-            // 
-            this.MDV.HeaderText = "Mã Đơn Vị";
-            this.MDV.MinimumWidth = 6;
-            this.MDV.Name = "MDV";
-            this.MDV.ReadOnly = true;
-            // 
-            // TDV
-            // 
-            this.TDV.FillWeight = 120F;
-            this.TDV.HeaderText = "Tên Đơn Vị";
-            this.TDV.MinimumWidth = 6;
-            this.TDV.Name = "TDV";
-            this.TDV.ReadOnly = true;
-            // 
-            // SLN
-            // 
-            this.SLN.HeaderText = "Số Lượng Nhập";
-            this.SLN.MinimumWidth = 6;
-            this.SLN.Name = "SLN";
-            this.SLN.ReadOnly = true;
-            // 
-            // SLT
-            // 
-            this.SLT.HeaderText = "Số Lượng Tồn";
-            this.SLT.MinimumWidth = 6;
-            this.SLT.Name = "SLT";
-            this.SLT.ReadOnly = true;
-            // 
-            // TT
-            // 
-            this.TT.HeaderText = "Tổng Tiền";
-            this.TT.MinimumWidth = 6;
-            this.TT.Name = "TT";
-            this.TT.ReadOnly = true;
             // 
             // cbbMonth
             // 
@@ -335,6 +280,49 @@
             this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "Index";
+            this.STT.FillWeight = 60F;
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // MT
+            // 
+            this.MT.DataPropertyName = "MedicineName";
+            this.MT.HeaderText = "Tên Thuốc";
+            this.MT.MinimumWidth = 6;
+            this.MT.Name = "MT";
+            this.MT.ReadOnly = true;
+            // 
+            // TDV
+            // 
+            this.TDV.DataPropertyName = "UnitName";
+            this.TDV.FillWeight = 120F;
+            this.TDV.HeaderText = "Tên Đơn Vị";
+            this.TDV.MinimumWidth = 6;
+            this.TDV.Name = "TDV";
+            this.TDV.ReadOnly = true;
+            // 
+            // SLN
+            // 
+            this.SLN.DataPropertyName = "Quantity";
+            this.SLN.FillWeight = 120F;
+            this.SLN.HeaderText = "Số Lượng Nhập";
+            this.SLN.MinimumWidth = 6;
+            this.SLN.Name = "SLN";
+            this.SLN.ReadOnly = true;
+            // 
+            // TT
+            // 
+            this.TT.DataPropertyName = "Price";
+            this.TT.HeaderText = "Tổng Tiền";
+            this.TT.MinimumWidth = 6;
+            this.TT.Name = "TT";
+            this.TT.ReadOnly = true;
+            // 
             // ImportStatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -360,13 +348,6 @@
         private Classes.GradientPanel gradientPanel1;
         private Panel panel2;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn STT;
-        private DataGridViewTextBoxColumn MT;
-        private DataGridViewTextBoxColumn MDV;
-        private DataGridViewTextBoxColumn TDV;
-        private DataGridViewTextBoxColumn SLN;
-        private DataGridViewTextBoxColumn SLT;
-        private DataGridViewTextBoxColumn TT;
         private SaveFileDialog saveFileDialog1;
         private CustomControls.RJControls.RJComboBox cbbYear;
         private Label label1;
@@ -377,5 +358,10 @@
         private GroupBox groupBox1;
         private Label label4;
         private Label lbltotalprice;
+        private DataGridViewTextBoxColumn STT;
+        private DataGridViewTextBoxColumn MT;
+        private DataGridViewTextBoxColumn TDV;
+        private DataGridViewTextBoxColumn SLN;
+        private DataGridViewTextBoxColumn TT;
     }
 }
