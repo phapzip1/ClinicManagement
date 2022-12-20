@@ -178,6 +178,11 @@ namespace ClinicManagement.Forms
                 {
                     MessageBox.Show("Hãy điền mã bệnh nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else
+                {
+                    InforForm.PatientNow_id= tbxPatientID.Texts;
+                } 
+                    
             });
         }
 

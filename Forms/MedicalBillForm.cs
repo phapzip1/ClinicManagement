@@ -48,9 +48,6 @@ namespace ClinicManagement.Forms
 
             provider = new DBProvider(_clinicDbContextFactory);
 
-            tbxMedicalBillDay.ReadOnly= true;
-            tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
-
             #region tenbenh, tenthuoc, cachdung
             //Ten benh
             provider.GetAllIllness().ContinueWith(res =>
@@ -107,6 +104,8 @@ namespace ClinicManagement.Forms
 
             //dtgvMedicalBill.Columns["Id"].Visible= false;
 
+            tbxMedicalBillDay.ReadOnly= true;
+            tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
             tbxMedicalBillNumber.ReadOnly= true;
             tbxMedicalBillPatient.ReadOnly= true;
             tbxPrice.ReadOnly= true;
@@ -172,8 +171,8 @@ namespace ClinicManagement.Forms
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
             tbxMedicalBillNumber.ReadOnly= true;
-            Guid guid = Guid.NewGuid();
-            tbxMedicalBillNumber.Texts= guid.ToString();
+            guid1 = Guid.NewGuid();
+            tbxMedicalBillNumber.Texts= guid1.ToString();
             tbxMedicalBillPatient.Texts= InforForm.PatientNow_id.ToString();
         }
 
