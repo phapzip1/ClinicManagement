@@ -42,11 +42,9 @@
             this.Ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Trieuchung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Benh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label16 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dtgvMedicalList = new System.Windows.Forms.DataGridView();
+            this.dtgvMedicineList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Soluongthuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cachdung = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,10 +52,9 @@
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
             this.plMedicalBillInfor = new System.Windows.Forms.Panel();
             this.lblPatientData = new System.Windows.Forms.Label();
-            this.chxNotList = new System.Windows.Forms.CheckBox();
-            this.btnSaveMedi = new ClinicManagement.Classes.RJButton();
             this.btnDelMedical = new ClinicManagement.Classes.RJButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.dtpkMedicalBillDay = new ClinicManagement.Classes.RJDatePicker();
             this.cbxUsage = new CustomControls.RJControls.RJComboBox();
             this.cbxIllness = new CustomControls.RJControls.RJComboBox();
             this.tbxFinalPrice = new ClinicManagement.Classes.CustomTextBox();
@@ -73,7 +70,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tbxMedicalBillNumber = new ClinicManagement.Classes.CustomTextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.tbxMedicalBillDay = new ClinicManagement.Classes.CustomTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tbxMedicalBillPatient = new ClinicManagement.Classes.CustomTextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -84,7 +80,7 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMedicalBill)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvMedicalList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvMedicineList)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.plMedicalBillInfor.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -133,9 +129,7 @@
             this.SPK,
             this.Ngay,
             this.Trieuchung,
-            this.Benh,
-            this.Thuoc,
-            this.Soluong});
+            this.Benh});
             this.dtgvMedicalBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvMedicalBill.EnableHeadersVisualStyles = false;
             this.dtgvMedicalBill.Location = new System.Drawing.Point(0, 0);
@@ -164,7 +158,7 @@
             // SPK
             // 
             this.SPK.DataPropertyName = "Id";
-            this.SPK.FillWeight = 95.45452F;
+            this.SPK.FillWeight = 151.4908F;
             this.SPK.HeaderText = "SPK";
             this.SPK.MinimumWidth = 6;
             this.SPK.Name = "SPK";
@@ -173,7 +167,7 @@
             // Ngay
             // 
             this.Ngay.DataPropertyName = "CreateIn";
-            this.Ngay.FillWeight = 95.15149F;
+            this.Ngay.FillWeight = 77.90955F;
             this.Ngay.HeaderText = "Ngày khám";
             this.Ngay.MinimumWidth = 6;
             this.Ngay.Name = "Ngay";
@@ -182,7 +176,7 @@
             // Trieuchung
             // 
             this.Trieuchung.DataPropertyName = "Symtoms";
-            this.Trieuchung.FillWeight = 118.9394F;
+            this.Trieuchung.FillWeight = 97.38698F;
             this.Trieuchung.HeaderText = "Triệu chứng";
             this.Trieuchung.MinimumWidth = 6;
             this.Trieuchung.Name = "Trieuchung";
@@ -191,27 +185,11 @@
             // Benh
             // 
             this.Benh.DataPropertyName = "IllnessName";
-            this.Benh.FillWeight = 95.15149F;
+            this.Benh.FillWeight = 77.90955F;
             this.Benh.HeaderText = "Bệnh";
             this.Benh.MinimumWidth = 6;
             this.Benh.Name = "Benh";
             this.Benh.ReadOnly = true;
-            // 
-            // Thuoc
-            // 
-            this.Thuoc.FillWeight = 95.15149F;
-            this.Thuoc.HeaderText = "Thuốc";
-            this.Thuoc.MinimumWidth = 6;
-            this.Thuoc.Name = "Thuoc";
-            this.Thuoc.ReadOnly = true;
-            // 
-            // Soluong
-            // 
-            this.Soluong.FillWeight = 95.15149F;
-            this.Soluong.HeaderText = "Số lượng";
-            this.Soluong.MinimumWidth = 6;
-            this.Soluong.Name = "Soluong";
-            this.Soluong.ReadOnly = true;
             // 
             // label16
             // 
@@ -227,20 +205,20 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.dtgvMedicalList);
+            this.panel5.Controls.Add(this.dtgvMedicineList);
             this.panel5.Location = new System.Drawing.Point(799, 42);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(378, 318);
             this.panel5.TabIndex = 18;
             // 
-            // dtgvMedicalList
+            // dtgvMedicineList
             // 
-            this.dtgvMedicalList.AllowUserToAddRows = false;
-            this.dtgvMedicalList.AllowUserToDeleteRows = false;
-            this.dtgvMedicalList.AllowUserToResizeColumns = false;
-            this.dtgvMedicalList.AllowUserToResizeRows = false;
-            this.dtgvMedicalList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvMedicalList.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvMedicineList.AllowUserToAddRows = false;
+            this.dtgvMedicineList.AllowUserToDeleteRows = false;
+            this.dtgvMedicineList.AllowUserToResizeColumns = false;
+            this.dtgvMedicineList.AllowUserToResizeRows = false;
+            this.dtgvMedicineList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvMedicineList.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -249,17 +227,17 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvMedicalList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgvMedicalList.ColumnHeadersHeight = 60;
-            this.dtgvMedicalList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtgvMedicalList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgvMedicineList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgvMedicineList.ColumnHeadersHeight = 60;
+            this.dtgvMedicineList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dtgvMedicineList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.Soluongthuoc,
             this.Cachdung});
-            this.dtgvMedicalList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvMedicalList.EnableHeadersVisualStyles = false;
-            this.dtgvMedicalList.Location = new System.Drawing.Point(0, 0);
-            this.dtgvMedicalList.Name = "dtgvMedicalList";
+            this.dtgvMedicineList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvMedicineList.EnableHeadersVisualStyles = false;
+            this.dtgvMedicineList.Location = new System.Drawing.Point(0, 0);
+            this.dtgvMedicineList.Name = "dtgvMedicineList";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -267,21 +245,22 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(149)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvMedicalList.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dtgvMedicalList.RowHeadersVisible = false;
-            this.dtgvMedicalList.RowHeadersWidth = 51;
+            this.dtgvMedicineList.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgvMedicineList.RowHeadersVisible = false;
+            this.dtgvMedicineList.RowHeadersWidth = 51;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            this.dtgvMedicalList.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dtgvMedicalList.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dtgvMedicalList.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dtgvMedicalList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
-            this.dtgvMedicalList.RowTemplate.Height = 29;
-            this.dtgvMedicalList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvMedicalList.Size = new System.Drawing.Size(378, 318);
-            this.dtgvMedicalList.TabIndex = 5;
+            this.dtgvMedicineList.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgvMedicineList.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtgvMedicineList.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dtgvMedicineList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
+            this.dtgvMedicineList.RowTemplate.Height = 29;
+            this.dtgvMedicineList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvMedicineList.Size = new System.Drawing.Size(378, 318);
+            this.dtgvMedicineList.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "MedicineName";
             this.dataGridViewTextBoxColumn3.FillWeight = 106.7489F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Thuốc";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
@@ -289,6 +268,7 @@
             // 
             // Soluongthuoc
             // 
+            this.Soluongthuoc.DataPropertyName = "Quantity";
             this.Soluongthuoc.FillWeight = 78.87059F;
             this.Soluongthuoc.HeaderText = "Số lượng";
             this.Soluongthuoc.MinimumWidth = 6;
@@ -296,6 +276,7 @@
             // 
             // Cachdung
             // 
+            this.Cachdung.DataPropertyName = "Method";
             this.Cachdung.FillWeight = 142.1316F;
             this.Cachdung.HeaderText = "Cách dùng";
             this.Cachdung.MinimumWidth = 6;
@@ -324,8 +305,6 @@
             // 
             this.plMedicalBillInfor.BackColor = System.Drawing.Color.Transparent;
             this.plMedicalBillInfor.Controls.Add(this.lblPatientData);
-            this.plMedicalBillInfor.Controls.Add(this.chxNotList);
-            this.plMedicalBillInfor.Controls.Add(this.btnSaveMedi);
             this.plMedicalBillInfor.Controls.Add(this.btnDelMedical);
             this.plMedicalBillInfor.Controls.Add(this.tableLayoutPanel1);
             this.plMedicalBillInfor.Controls.Add(this.btnAddMedical);
@@ -347,37 +326,6 @@
             this.lblPatientData.TabIndex = 65;
             this.lblPatientData.Text = "THÔNG TIN BỆNH NHÂN";
             // 
-            // chxNotList
-            // 
-            this.chxNotList.AutoSize = true;
-            this.chxNotList.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chxNotList.Location = new System.Drawing.Point(190, 262);
-            this.chxNotList.Name = "chxNotList";
-            this.chxNotList.Size = new System.Drawing.Size(194, 27);
-            this.chxNotList.TabIndex = 64;
-            this.chxNotList.Text = "Không kê khai thuốc ";
-            this.chxNotList.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveMedi
-            // 
-            this.btnSaveMedi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSaveMedi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnSaveMedi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnSaveMedi.BorderRadius = 20;
-            this.btnSaveMedi.BorderSize = 2;
-            this.btnSaveMedi.FlatAppearance.BorderSize = 0;
-            this.btnSaveMedi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveMedi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSaveMedi.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveMedi.Location = new System.Drawing.Point(610, 295);
-            this.btnSaveMedi.Name = "btnSaveMedi";
-            this.btnSaveMedi.Size = new System.Drawing.Size(140, 50);
-            this.btnSaveMedi.TabIndex = 63;
-            this.btnSaveMedi.Text = "Lưu thuốc";
-            this.btnSaveMedi.TextColor = System.Drawing.Color.Black;
-            this.btnSaveMedi.UseVisualStyleBackColor = false;
-            this.btnSaveMedi.Click += new System.EventHandler(this.btnSaveMedi_Click);
-            // 
             // btnDelMedical
             // 
             this.btnDelMedical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
@@ -389,7 +337,7 @@
             this.btnDelMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelMedical.ForeColor = System.Drawing.Color.Black;
-            this.btnDelMedical.Location = new System.Drawing.Point(464, 295);
+            this.btnDelMedical.Location = new System.Drawing.Point(564, 295);
             this.btnDelMedical.Name = "btnDelMedical";
             this.btnDelMedical.Size = new System.Drawing.Size(140, 50);
             this.btnDelMedical.TabIndex = 62;
@@ -405,6 +353,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.62596F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.89313F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.62596F));
+            this.tableLayoutPanel1.Controls.Add(this.dtpkMedicalBillDay, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cbxUsage, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.cbxIllness, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.tbxFinalPrice, 3, 3);
@@ -420,7 +369,6 @@
             this.tableLayoutPanel1.Controls.Add(this.label9, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.tbxMedicalBillNumber, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label10, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tbxMedicalBillDay, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbxMedicalBillPatient, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label12, 2, 0);
@@ -433,8 +381,23 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(775, 213);
             this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // dtpkMedicalBillDay
+            // 
+            this.dtpkMedicalBillDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpkMedicalBillDay.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.dtpkMedicalBillDay.BorderSize = 0;
+            this.dtpkMedicalBillDay.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpkMedicalBillDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkMedicalBillDay.Location = new System.Drawing.Point(187, 46);
+            this.dtpkMedicalBillDay.Name = "dtpkMedicalBillDay";
+            this.dtpkMedicalBillDay.Size = new System.Drawing.Size(215, 34);
+            this.dtpkMedicalBillDay.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.dtpkMedicalBillDay.TabIndex = 27;
+            this.dtpkMedicalBillDay.TextColor = System.Drawing.Color.Black;
             // 
             // cbxUsage
             // 
@@ -451,7 +414,7 @@
             this.cbxUsage.MinimumSize = new System.Drawing.Size(50, 20);
             this.cbxUsage.Name = "cbxUsage";
             this.cbxUsage.Padding = new System.Windows.Forms.Padding(2);
-            this.cbxUsage.Size = new System.Drawing.Size(206, 38);
+            this.cbxUsage.Size = new System.Drawing.Size(218, 38);
             this.cbxUsage.TabIndex = 68;
             this.cbxUsage.Texts = "";
             // 
@@ -470,7 +433,7 @@
             this.cbxIllness.MinimumSize = new System.Drawing.Size(50, 20);
             this.cbxIllness.Name = "cbxIllness";
             this.cbxIllness.Padding = new System.Windows.Forms.Padding(2);
-            this.cbxIllness.Size = new System.Drawing.Size(205, 38);
+            this.cbxIllness.Size = new System.Drawing.Size(215, 38);
             this.cbxIllness.TabIndex = 73;
             this.cbxIllness.Texts = "";
             // 
@@ -488,7 +451,7 @@
             this.tbxFinalPrice.Padding = new System.Windows.Forms.Padding(7);
             this.tbxFinalPrice.PasswordChar = false;
             this.tbxFinalPrice.ReadOnly = false;
-            this.tbxFinalPrice.Size = new System.Drawing.Size(206, 38);
+            this.tbxFinalPrice.Size = new System.Drawing.Size(218, 38);
             this.tbxFinalPrice.TabIndex = 64;
             this.tbxFinalPrice.Texts = "0";
             this.tbxFinalPrice.UnderlinedStyle = false;
@@ -507,7 +470,7 @@
             this.tbxPrice.Padding = new System.Windows.Forms.Padding(7);
             this.tbxPrice.PasswordChar = false;
             this.tbxPrice.ReadOnly = false;
-            this.tbxPrice.Size = new System.Drawing.Size(206, 38);
+            this.tbxPrice.Size = new System.Drawing.Size(218, 38);
             this.tbxPrice.TabIndex = 65;
             this.tbxPrice.Texts = "0";
             this.tbxPrice.UnderlinedStyle = false;
@@ -526,10 +489,12 @@
             this.tbxQuantity.Padding = new System.Windows.Forms.Padding(7);
             this.tbxQuantity.PasswordChar = false;
             this.tbxQuantity.ReadOnly = false;
-            this.tbxQuantity.Size = new System.Drawing.Size(206, 38);
+            this.tbxQuantity.Size = new System.Drawing.Size(218, 38);
             this.tbxQuantity.TabIndex = 66;
             this.tbxQuantity.Texts = "0";
             this.tbxQuantity.UnderlinedStyle = false;
+            this.tbxQuantity._TextChanged += new System.EventHandler(this.tbxQuantity__TextChanged);
+            this.tbxQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxQuantity_KeyPress);
             // 
             // cbxMedicines
             // 
@@ -546,7 +511,7 @@
             this.cbxMedicines.MinimumSize = new System.Drawing.Size(50, 20);
             this.cbxMedicines.Name = "cbxMedicines";
             this.cbxMedicines.Padding = new System.Windows.Forms.Padding(2);
-            this.cbxMedicines.Size = new System.Drawing.Size(206, 36);
+            this.cbxMedicines.Size = new System.Drawing.Size(218, 36);
             this.cbxMedicines.TabIndex = 67;
             this.cbxMedicines.Texts = "";
             this.cbxMedicines.OnSelectedIndexChanged += new System.EventHandler(this.cbxMedicines_OnSelectedIndexChanged);
@@ -656,7 +621,7 @@
             this.tbxMedicalBillNumber.Padding = new System.Windows.Forms.Padding(7);
             this.tbxMedicalBillNumber.PasswordChar = false;
             this.tbxMedicalBillNumber.ReadOnly = false;
-            this.tbxMedicalBillNumber.Size = new System.Drawing.Size(205, 38);
+            this.tbxMedicalBillNumber.Size = new System.Drawing.Size(215, 38);
             this.tbxMedicalBillNumber.TabIndex = 60;
             this.tbxMedicalBillNumber.Texts = "";
             this.tbxMedicalBillNumber.UnderlinedStyle = false;
@@ -673,25 +638,6 @@
             this.label10.TabIndex = 51;
             this.label10.Text = "Đơn giá:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tbxMedicalBillDay
-            // 
-            this.tbxMedicalBillDay.BackColor = System.Drawing.SystemColors.Window;
-            this.tbxMedicalBillDay.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.tbxMedicalBillDay.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
-            this.tbxMedicalBillDay.BorderSize = 2;
-            this.tbxMedicalBillDay.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbxMedicalBillDay.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxMedicalBillDay.Location = new System.Drawing.Point(187, 45);
-            this.tbxMedicalBillDay.Multiline = false;
-            this.tbxMedicalBillDay.Name = "tbxMedicalBillDay";
-            this.tbxMedicalBillDay.Padding = new System.Windows.Forms.Padding(7);
-            this.tbxMedicalBillDay.PasswordChar = false;
-            this.tbxMedicalBillDay.ReadOnly = false;
-            this.tbxMedicalBillDay.Size = new System.Drawing.Size(205, 38);
-            this.tbxMedicalBillDay.TabIndex = 74;
-            this.tbxMedicalBillDay.Texts = "";
-            this.tbxMedicalBillDay.UnderlinedStyle = false;
             // 
             // label11
             // 
@@ -720,7 +666,7 @@
             this.tbxMedicalBillPatient.Padding = new System.Windows.Forms.Padding(7);
             this.tbxMedicalBillPatient.PasswordChar = false;
             this.tbxMedicalBillPatient.ReadOnly = false;
-            this.tbxMedicalBillPatient.Size = new System.Drawing.Size(205, 38);
+            this.tbxMedicalBillPatient.Size = new System.Drawing.Size(215, 38);
             this.tbxMedicalBillPatient.TabIndex = 61;
             this.tbxMedicalBillPatient.Texts = "";
             this.tbxMedicalBillPatient.UnderlinedStyle = false;
@@ -752,7 +698,7 @@
             this.tbxSympton.Padding = new System.Windows.Forms.Padding(7);
             this.tbxSympton.PasswordChar = false;
             this.tbxSympton.ReadOnly = false;
-            this.tbxSympton.Size = new System.Drawing.Size(205, 38);
+            this.tbxSympton.Size = new System.Drawing.Size(215, 38);
             this.tbxSympton.TabIndex = 75;
             this.tbxSympton.Texts = "";
             this.tbxSympton.UnderlinedStyle = false;
@@ -768,7 +714,7 @@
             this.btnAddMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddMedical.ForeColor = System.Drawing.Color.Black;
-            this.btnAddMedical.Location = new System.Drawing.Point(318, 295);
+            this.btnAddMedical.Location = new System.Drawing.Point(418, 295);
             this.btnAddMedical.Name = "btnAddMedical";
             this.btnAddMedical.Size = new System.Drawing.Size(140, 50);
             this.btnAddMedical.TabIndex = 61;
@@ -788,7 +734,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(172, 295);
+            this.btnUpdate.Location = new System.Drawing.Point(272, 295);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(140, 50);
             this.btnUpdate.TabIndex = 6;
@@ -808,7 +754,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(26, 295);
+            this.btnAdd.Location = new System.Drawing.Point(126, 295);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(140, 50);
             this.btnAdd.TabIndex = 38;
@@ -831,7 +777,7 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMedicalBill)).EndInit();
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvMedicalList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvMedicineList)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel1.PerformLayout();
             this.plMedicalBillInfor.ResumeLayout(false);
@@ -848,7 +794,7 @@
         private DataGridView dtgvMedicalBill;
         private Label label16;
         private Panel panel5;
-        private DataGridView dtgvMedicalList;
+        private DataGridView dtgvMedicineList;
         private System.Windows.Forms.Timer timerMedical;
         private Classes.GradientPanel gradientPanel1;
         private Panel plMedicalBillInfor;
@@ -872,22 +818,18 @@
         private Label label9;
         private Classes.CustomTextBox tbxMedicalBillNumber;
         private Label label10;
-        private Classes.CustomTextBox tbxMedicalBillDay;
         private Label label11;
         private Classes.CustomTextBox tbxMedicalBillPatient;
         private Label label12;
-        private Classes.RJButton btnSaveMedi;
-        private CheckBox chxNotList;
         private Label lblPatientData;
         private Classes.CustomTextBox tbxSympton;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn Soluongthuoc;
-        private DataGridViewTextBoxColumn Cachdung;
         private DataGridViewTextBoxColumn SPK;
         private DataGridViewTextBoxColumn Ngay;
         private DataGridViewTextBoxColumn Trieuchung;
         private DataGridViewTextBoxColumn Benh;
-        private DataGridViewTextBoxColumn Thuoc;
-        private DataGridViewTextBoxColumn Soluong;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn Soluongthuoc;
+        private DataGridViewTextBoxColumn Cachdung;
+        private Classes.RJDatePicker dtpkMedicalBillDay;
     }
 }

@@ -115,5 +115,14 @@ namespace ClinicManagement.Forms
             });
         }
 
+        private void _btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
