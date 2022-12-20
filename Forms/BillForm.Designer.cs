@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
+            this.btnSave = new ClinicManagement.Classes.RJButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvMedicineList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +66,7 @@
             // 
             this.gradientPanel1.ColorBottom = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(166)))), ((int)(((byte)(250)))));
             this.gradientPanel1.ColorTop = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(216)))), ((int)(((byte)(252)))));
+            this.gradientPanel1.Controls.Add(this.btnSave);
             this.gradientPanel1.Controls.Add(this.panel2);
             this.gradientPanel1.Controls.Add(this.btnOK);
             this.gradientPanel1.Controls.Add(this.label16);
@@ -74,6 +76,26 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(801, 550);
             this.gradientPanel1.TabIndex = 0;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnSave.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnSave.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.BorderSize = 2;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Location = new System.Drawing.Point(235, 488);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(140, 50);
+            this.btnSave.TabIndex = 41;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.TextColor = System.Drawing.Color.Black;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // panel2
             // 
@@ -165,7 +187,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnOK.ForeColor = System.Drawing.Color.Black;
-            this.btnOK.Location = new System.Drawing.Point(337, 488);
+            this.btnOK.Location = new System.Drawing.Point(428, 488);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(140, 50);
             this.btnOK.TabIndex = 39;
@@ -418,7 +440,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 550);
             this.Controls.Add(this.gradientPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "BillForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hoá đơn thanh toán";
@@ -461,5 +483,6 @@
         private Classes.CustomTextBox tbxCount_price;
         private Classes.CustomTextBox tbxMedical_price;
         private Classes.CustomTextBox tbxMedicine_price;
+        private Classes.RJButton btnSave;
     }
 }

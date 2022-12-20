@@ -337,7 +337,7 @@
             this.btnDelMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelMedical.ForeColor = System.Drawing.Color.Black;
-            this.btnDelMedical.Location = new System.Drawing.Point(564, 295);
+            this.btnDelMedical.Location = new System.Drawing.Point(545, 295);
             this.btnDelMedical.Name = "btnDelMedical";
             this.btnDelMedical.Size = new System.Drawing.Size(140, 50);
             this.btnDelMedical.TabIndex = 62;
@@ -714,7 +714,7 @@
             this.btnAddMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddMedical.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAddMedical.ForeColor = System.Drawing.Color.Black;
-            this.btnAddMedical.Location = new System.Drawing.Point(418, 295);
+            this.btnAddMedical.Location = new System.Drawing.Point(399, 295);
             this.btnAddMedical.Name = "btnAddMedical";
             this.btnAddMedical.Size = new System.Drawing.Size(140, 50);
             this.btnAddMedical.TabIndex = 61;
@@ -734,7 +734,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(272, 295);
+            this.btnUpdate.Location = new System.Drawing.Point(253, 295);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(140, 50);
             this.btnUpdate.TabIndex = 6;
@@ -754,7 +754,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(126, 295);
+            this.btnAdd.Location = new System.Drawing.Point(107, 295);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(140, 50);
             this.btnAdd.TabIndex = 38;

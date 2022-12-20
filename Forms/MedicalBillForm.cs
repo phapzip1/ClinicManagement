@@ -193,7 +193,11 @@ namespace ClinicManagement.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (cbxIllness.SelectedItem != null)
+            if (tbxSympton.Texts == string.Empty)
+            {
+                MessageBox.Show("Hãy nhập triệu chứng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
+            else if (cbxIllness.SelectedItem != null)
             {
                 ComboboxItem item = (ComboboxItem)cbxIllness.SelectedItem;
                 Illness value = (Illness)item.Value;
@@ -206,9 +210,9 @@ namespace ClinicManagement.Forms
 
                     List<MedicalNoteDetail> medicalNoteDetails = (List<MedicalNoteDetail>)medicineBinding.List;
 
-                    BillForm billForm = new BillForm(medicalNoteDetails);
+                    BillForm billForm = new BillForm(medicalNoteDetails, medicalNote.Id);
                     billForm.name= tbxMedicalBillPatient.Texts.ToString();
-                    billForm.medical_price= Final_Price.ToString();
+                    billForm.medicine_price= Final_Price;
                     billForm._medicineBinding.DataSource= medicineBinding.DataSource;
                     billForm.ShowDialog();
 
@@ -223,7 +227,19 @@ namespace ClinicManagement.Forms
 
         private void btnAddMedical_Click(object sender, EventArgs e)
         {
-            if (cbxMedicines.SelectedItem != null)
+            if (cbxMedicines.SelectedItem == null)
+            {
+                MessageBox.Show("Hãy chọn thuốc!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (tbxQuantity.Texts == "0")
+            {
+                MessageBox.Show("Hãy nhập số lượng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (cbxUsage.SelectedItem == null)
+            {
+                MessageBox.Show("Hãy chọn cách dùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (cbxMedicines.SelectedItem != null)
             {
                 ComboboxItem item = (ComboboxItem)cbxMedicines.SelectedItem;
                 Medicine value = (Medicine)item.Value;
@@ -235,7 +251,7 @@ namespace ClinicManagement.Forms
                 {
                     medicineBinding.Add(new MedicalNoteDetail(value.Id, int.Parse(tbxQuantity.Texts), value1.Id, 
                         cbxMedicines.Texts.ToString(), cbxUsage.Texts.ToString()));
-                    Final_Price += int.Parse(tbxPrice.Texts);
+                    Final_Price += int.Parse(tbxFinalPrice.Texts);
                 }
                 else
                 {
