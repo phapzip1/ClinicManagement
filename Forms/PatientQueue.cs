@@ -36,7 +36,6 @@ namespace ClinicManagement.Forms
                                 dataGridView1.Invoke((MethodInvoker)delegate
                                 {
                                     binding.Add(res.Result);
-                                    Program.PatientQueue.Add(res.Result);
                                 });
                             }
                         }
@@ -57,8 +56,7 @@ namespace ClinicManagement.Forms
         {
             if (binding.List.Count > 0)
             {
-                binding.Remove(binding.List[0]);
-                Program.PatientQueue.RemoveAt(0);
+                binding.RemoveAt(0);
             }
             else
             {
@@ -72,7 +70,6 @@ namespace ClinicManagement.Forms
             {
                 int index = dataGridView1.SelectedRows[0].Index;
                 binding.RemoveAt(index);
-                Program.PatientQueue.RemoveAt(index);
             }
             else
             {
