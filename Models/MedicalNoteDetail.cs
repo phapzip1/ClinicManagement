@@ -2,11 +2,13 @@
 {
     public class MedicalNoteDetail
     {
-        public MedicalNoteDetail(Guid medicineId, int quantity, Guid methodId)
+        public MedicalNoteDetail(Guid medicineId, int quantity, Guid methodId, string medicineName, string method)
         {
             MedicineId=medicineId;
             Quantity=quantity;
             MethodId=methodId;
+            MedicineName =medicineName;
+            Method=method;
         }
 
         public MedicalNoteDetail(Guid medicalNoteId, Guid medicineId, string medicineName, Guid unitId, string unitName, int quantity, Guid methodId, string method)

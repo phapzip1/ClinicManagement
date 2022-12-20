@@ -181,6 +181,7 @@ namespace ClinicManagement.Forms
                 else
                 {
                     InforForm.PatientNow_id= tbxPatientID.Texts;
+                    InforForm.Next_Patient= tbxPatientName.Texts;
                 } 
                     
             });

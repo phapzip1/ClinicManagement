@@ -364,7 +364,7 @@
             this.tbxPatientAddress.BorderSize = 2;
             this.tbxPatientAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientAddress.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxPatientAddress.Location = new System.Drawing.Point(746, 105);
+            this.tbxPatientAddress.Location = new System.Drawing.Point(746, 103);
             this.tbxPatientAddress.Multiline = false;
             this.tbxPatientAddress.Name = "tbxPatientAddress";
             this.tbxPatientAddress.Padding = new System.Windows.Forms.Padding(7);
@@ -414,7 +414,7 @@
             this.dtpkBob.BorderSize = 0;
             this.dtpkBob.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpkBob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkBob.Location = new System.Drawing.Point(746, 57);
+            this.dtpkBob.Location = new System.Drawing.Point(746, 63);
             this.dtpkBob.Name = "dtpkBob";
             this.dtpkBob.Size = new System.Drawing.Size(365, 34);
             this.dtpkBob.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
@@ -428,9 +428,9 @@
             this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(610, 65);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 26);
+            this.label6.Size = new System.Drawing.Size(118, 26);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Năm sinh:";
+            this.label6.Text = "Ngày sinh:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnExit

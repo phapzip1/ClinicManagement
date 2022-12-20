@@ -2,6 +2,7 @@
 using ClinicManagement.DbContexts;
 using ClinicManagement.Models;
 using ClinicManagement.Services;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -20,15 +21,19 @@ namespace ClinicManagement.Forms
 
         //Radio button
         //bool isChecked = false;
-        int Final_Price = 0;
+        static int Final_Price = 0;
 
         //Data
         private Guid guid1 = Guid.NewGuid();
         private IDataProvider provider;
+        private IDataCreator creator;
+
         private BindingList<ComboboxItem> IllnessbindingLists;
         private BindingList<ComboboxItem> MedicinesbindingLists;
         private BindingList<ComboboxItem> MethodbindingLists;
         private BindingSource medicineDetailBinding;
+
+        private BindingSource medicineBinding;
 
         private ClinicDbContextFactory _clinicDbContextFactory;
 
@@ -47,6 +52,7 @@ namespace ClinicManagement.Forms
             cbxUsage.DataSource= MethodbindingLists;
 
             provider = new DBProvider(_clinicDbContextFactory);
+            creator = new DBCreator(_clinicDbContextFactory);
 
             #region tenbenh, tenthuoc, cachdung
             //Ten benh
@@ -102,10 +108,21 @@ namespace ClinicManagement.Forms
             medicineDetailBinding = new BindingSource() { DataSource = new List<MedicalNote>() };
             dtgvMedicalBill.DataSource = medicineDetailBinding;
 
-            //dtgvMedicalBill.Columns["Id"].Visible= false;
+            dtgvMedicalBill.Columns["IllnessId"].Visible= false;
+            dtgvMedicalBill.Columns["PatientId"].Visible= false;
+            dtgvMedicalBill.Columns["PatientName"].Visible= false;
+            dtgvMedicalBill.Columns["Details"].Visible= false;
 
-            tbxMedicalBillDay.ReadOnly= true;
-            tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
+            medicineBinding = new BindingSource() { DataSource = new List<MedicalNoteDetail>() };
+            dtgvMedicineList.DataSource = medicineBinding;
+
+            dtgvMedicineList.Columns["MedicalNoteId"].Visible= false;
+            dtgvMedicineList.Columns["MedicineId"].Visible= false;
+            dtgvMedicineList.Columns["UnitId"].Visible= false;
+            dtgvMedicineList.Columns["UnitName"].Visible= false;
+            dtgvMedicineList.Columns["MethodId"].Visible= false;
+
+            dtpkMedicalBillDay.Value = DateTime.Now;
             tbxMedicalBillNumber.ReadOnly= true;
             tbxMedicalBillPatient.ReadOnly= true;
             tbxPrice.ReadOnly= true;
@@ -118,19 +135,17 @@ namespace ClinicManagement.Forms
             tbxMedicalBillNumber.Texts = string.Empty;
             tbxMedicalBillNumber.ReadOnly= true;
 
-            tbxMedicalBillDay.ReadOnly= true;
             tbxMedicalBillPatient.Texts = string.Empty;
 
             tbxMedicalBillNumber.Texts = string.Empty;
             tbxPrice.Text = string.Empty;
             tbxFinalPrice.Text = string.Empty;
-
-            chxNotList.Checked= false;
         }
 
         private void getMedicalBill()
         {
-            provider.GetAllMedicalNote().ContinueWith(res =>
+            string id = InforForm.PatientNow_id;
+            provider.GetAllMedicalNote(id).ContinueWith(res =>
             {
                 if (IsHandleCreated)
                 {
@@ -178,14 +193,32 @@ namespace ClinicManagement.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (chxNotList.Checked)
+            if (cbxIllness.SelectedItem != null)
             {
+                ComboboxItem item = (ComboboxItem)cbxIllness.SelectedItem;
+                Illness value = (Illness)item.Value;
+                if (value != null)
+                {
+                    MedicalNote medicalNote = new MedicalNote(Guid.NewGuid(), InforForm.PatientNow_id, tbxMedicalBillPatient.Texts.ToString(), value.Id,
+                        item.Value.ToString(), tbxSympton.Texts.ToString(), DateTime.Now, medicineBinding.DataSource as IEnumerable<MedicalNoteDetail>);
 
-            }
-            else
-            {
+                    creator.CreateMedicalNote(medicalNote);
 
-            }
+                    List<MedicalNoteDetail> medicalNoteDetails = (List<MedicalNoteDetail>)medicineBinding.List;
+
+                    BillForm billForm = new BillForm(medicalNoteDetails);
+                    billForm.name= tbxMedicalBillPatient.Texts.ToString();
+                    billForm.medical_price= Final_Price.ToString();
+                    billForm._medicineBinding.DataSource= medicineBinding.DataSource;
+                    billForm.ShowDialog();
+
+                    Console.WriteLine(Guid.NewGuid());
+                }
+                else
+                {
+                    MessageBox.Show("Hãy chọn bệnh");
+                }
+            }           
         }
 
         private void btnAddMedical_Click(object sender, EventArgs e)
@@ -198,9 +231,10 @@ namespace ClinicManagement.Forms
                 ComboboxItem item1 = (ComboboxItem)cbxUsage.SelectedItem;
                 Method value1 = (Method)item1.Value;
 
-                if (((List<MedicalNoteDetail>)medicineDetailBinding.List).Where(p => p.MedicineId == value.Id).Count() == 0)
+                if (((List<MedicalNoteDetail>)medicineBinding.List).Where(p => p.MedicineId == value.Id).Count() == 0)
                 {
-                    medicineDetailBinding.Add(new MedicalNoteDetail(value.Id, int.Parse(tbxQuantity.Texts), value1.Id));
+                    medicineBinding.Add(new MedicalNoteDetail(value.Id, int.Parse(tbxQuantity.Texts), value1.Id, 
+                        cbxMedicines.Texts.ToString(), cbxUsage.Texts.ToString()));
                     Final_Price += int.Parse(tbxPrice.Texts);
                 }
                 else
@@ -216,40 +250,50 @@ namespace ClinicManagement.Forms
             {
                 ComboboxItem item = (ComboboxItem)cbxMedicines.SelectedItem;
                 Medicine value = (Medicine)item.Value;
-
-                if (((List<Medicine>)medicineDetailBinding.List).Where(p => p.Id == value.Id).Count() == 0)
-                {
-                    tbxPrice.Texts = value.Price.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Mã sản phẩm đã tồn tại");
-                }
+                tbxPrice.Texts = value.Price.ToString();
+            }
+            int quantity, price;
+            if (int.TryParse(tbxQuantity.Texts, out quantity) && int.TryParse(tbxPrice.Texts, out price))
+            {
+                tbxFinalPrice.Texts= (quantity*price).ToString();
             }
         }
 
         private void btnDelMedical_Click(object sender, EventArgs e)
         {
-            int count = dtgvMedicalList.SelectedRows.Count;
+            int count = dtgvMedicineList.SelectedRows.Count;
 
             for (int i = 0; i < count; i++)
             {
-                dtgvMedicalList.Rows.RemoveAt(dtgvMedicalList.SelectedRows[0].Index);
+                dtgvMedicineList.Rows.RemoveAt(dtgvMedicineList.SelectedRows[0].Index);
             }
-        }
-
-        private void btnSaveMedi_Click(object sender, EventArgs e)
-        {
-            //Import import = new Import(Guid.NewGuid(), DateTime.Now, int.Parse(_totalTb.Texts), medicineDetailBinding.DataSource as IEnumerable<ImportDetail>);
-            //MedicalNoteDetail medicalNoteDetail = new MedicalNoteDetail(tbxMedicalBillNumber.Texts.ToString() ,Guid.NewGuid(), cbxMedicines.Texts.ToString(), )
-            //    //Guid medicalNoteId, Guid medicineId, string medicineName, Guid unitId, string unitName, int quantity, Guid methodId, string method
-            //creator.CreateImport(import);
-            //Console.WriteLine(Guid.NewGuid());
         }
 
         private void MedicalBillForm_Load(object sender, EventArgs e)
         {
             getMedicalBill();
+
+            tbxMedicalBillNumber.Texts= guid1.ToString();
+            tbxMedicalBillPatient.Texts= InforForm.Next_Patient;
+        }
+
+        private void tbxQuantity__TextChanged(object sender, EventArgs e)
+        {
+            int quantity, price;
+            if (int.TryParse(tbxQuantity.Texts, out quantity) && int.TryParse(tbxPrice.Texts, out price))
+            {
+                tbxFinalPrice.Texts= (quantity*price).ToString();
+            }
+            else
+                MessageBox.Show("Chỉ nhập số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void tbxQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }   
 }

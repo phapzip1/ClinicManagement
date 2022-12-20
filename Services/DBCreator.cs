@@ -32,8 +32,8 @@ namespace ClinicManagement.Services
             {
                 MedicalNoteDTO medicalNoteDTO = ToMedicalNoteDTO(medicalNote);
                 context.MedicalNotes.Add(medicalNoteDTO);
-                context.MedicalNoteDetail.AddRange(medicalNote.Details.Select(e => ToMedicalNoteDetailDTO(e)));
-                await context.SaveChangesAsync();
+                context.MedicalNoteDetail.AddRange(medicalNote.Details.Select(e => ToMedicalNoteDetailDTO(e, medicalNote.Id)));
+                await context.SaveChangesAsync().ContinueWith(res => { Console.WriteLine(res.Result); });
             }
         }
 
@@ -125,11 +125,11 @@ namespace ClinicManagement.Services
             return details.Select(e => new ImportDetailDTO() { ImportId = id, MedicineId = e.MedicineId, Quantity = e.Quantity, Price = e.Price }).ToArray();
         }
 
-        private MedicalNoteDetailDTO ToMedicalNoteDetailDTO(MedicalNoteDetail detail)
+        private MedicalNoteDetailDTO ToMedicalNoteDetailDTO(MedicalNoteDetail detail, Guid id)
         {
             return new MedicalNoteDetailDTO()
             {
-                MedicalNoteId = detail.MedicalNoteId,
+                MedicalNoteId = id,
                 MedicineId = detail.MedicineId,
                 Quantity = detail.Quantity,
                 MethodId = detail.MethodId,
