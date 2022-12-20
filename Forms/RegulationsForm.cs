@@ -22,8 +22,8 @@ namespace ClinicManagement.Forms
 
             provider.GetParams().ContinueWith(res =>
             {
-                _fee.Texts = res.Result["MedicalCost"].ToString();
-                _max.Texts = res.Result["MaxPatients"].ToString();
+                _price.Texts = res.Result["MedicalCost"].ToString();
+                _patient.Texts = res.Result["MaxPatients"].ToString();
             });
 
         }
@@ -32,12 +32,15 @@ namespace ClinicManagement.Forms
         {
            
             int max, cost;
-            bool result1 = int.TryParse(_fee.Texts, out cost);
-            bool result2 = int.TryParse(_max.Texts, out max); 
+            bool result1 = int.TryParse(_price.Texts, out cost);
+            bool result2 = int.TryParse(_patient.Texts, out max); 
             if (result1 && result2)
             {
                 IDataUpdater updater = new DBUpdater(_clinicDbContextFactory);
-                updater.UpdateParameters(cost, max);
+                updater.UpdateParameters(cost, max).ContinueWith(res =>
+                {
+                    MessageBox.Show("Thay đổi thành công");
+                });
             }
         }
     }

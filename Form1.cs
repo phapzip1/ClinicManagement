@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 namespace ClinicManagement
 {
     public partial class Form1 : Form
-    {        
+    {
         #region Custom title bar
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
@@ -31,7 +31,7 @@ namespace ClinicManagement
                 }
             }
 
-            
+
         }
 
         #endregion
@@ -68,7 +68,7 @@ namespace ClinicManagement
         private Form _activeForm;
         public Form ActiveForm { get => _activeForm; set => _activeForm = value; }
 
-        
+
         #endregion
 
         public Form1()
@@ -113,7 +113,8 @@ namespace ClinicManagement
         #endregion
 
         #region Handle Event
-        private void HandleNavigate(object sender, EventArgs e) {
+        private void HandleNavigate(object sender, EventArgs e)
+        {
             if (((Button)sender) == CurrentPageBtn)
                 return;
             if (((Button)sender) == _profile)
@@ -151,6 +152,13 @@ namespace ClinicManagement
                 return;
             }
 
+            if (((Button)sender) == _rules)
+            {
+                RegulationsForm form = new RegulationsForm();
+                form.ShowDialog();
+                return;
+            }
+
             Button prev = CurrentPageBtn;
             CurrentPageBtn = ((Button)sender);
 
@@ -176,8 +184,7 @@ namespace ClinicManagement
                 OpenChildForm(new Forms.UsageStatisticForm());
             else if (CurrentPageBtn == _importReporting)
                 OpenChildForm(new Forms.ImportStatistic());
-            else if (CurrentPageBtn == _rules)
-                OpenChildForm(new Forms.RegulationsForm());
+
             else if (CurrentPageBtn == _medicine)
                 OpenChildForm(new Forms.MedicineForm());
             else if (CurrentPageBtn == _queue)
