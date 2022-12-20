@@ -2,6 +2,7 @@
 using ClinicManagement.DbContexts;
 using ClinicManagement.Models;
 using ClinicManagement.Services;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,7 @@ namespace ClinicManagement.Forms
         int Final_Price = 0;
 
         //Data
-        private Guid guid1= Guid.NewGuid();
+        private Guid guid1 = Guid.NewGuid();
         private IDataProvider provider;
         private BindingList<ComboboxItem> IllnessbindingLists;
         private BindingList<ComboboxItem> MedicinesbindingLists;
@@ -46,10 +47,6 @@ namespace ClinicManagement.Forms
             cbxUsage.DataSource= MethodbindingLists;
 
             provider = new DBProvider(_clinicDbContextFactory);
-
-            lblNextPatient.Text = Models.InforForm.Next_Patient.ToString();
-            tbxMedicalBillDay.ReadOnly= true;
-            tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
 
             #region tenbenh, tenthuoc, cachdung
             //Ten benh
@@ -101,6 +98,14 @@ namespace ClinicManagement.Forms
             });
             #endregion
 
+            //datagridview
+            medicineDetailBinding = new BindingSource() { DataSource = new List<MedicalNote>() };
+            dtgvMedicalBill.DataSource = medicineDetailBinding;
+
+            //dtgvMedicalBill.Columns["Id"].Visible= false;
+
+            tbxMedicalBillDay.ReadOnly= true;
+            tbxMedicalBillDay.Texts = DateTime.Today.ToString("dd/MM/yyyy");
             tbxMedicalBillNumber.ReadOnly= true;
             tbxMedicalBillPatient.ReadOnly= true;
             tbxPrice.ReadOnly= true;
@@ -114,21 +119,44 @@ namespace ClinicManagement.Forms
             tbxMedicalBillNumber.ReadOnly= true;
 
             tbxMedicalBillDay.ReadOnly= true;
-            tbxMedicalBillPatient.Texts = string.Empty;  
+            tbxMedicalBillPatient.Texts = string.Empty;
 
             tbxMedicalBillNumber.Texts = string.Empty;
             tbxPrice.Text = string.Empty;
             tbxFinalPrice.Text = string.Empty;
 
-            cbxNotList.Checked= false;
+            chxNotList.Checked= false;
+        }
+
+        private void getMedicalBill()
+        {
+            provider.GetAllMedicalNote().ContinueWith(res =>
+            {
+                if (IsHandleCreated)
+                {
+                    if (res.Result.Count() >= 1)
+                    {
+                        dtgvMedicalBill.Invoke((MethodInvoker)delegate
+                        {
+                            medicineDetailBinding.Clear();
+                            foreach (var item in res.Result)
+                            {
+                                medicineDetailBinding.Add(item);
+                            }
+                        });
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy phiếu khám bệnh!", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            });
         }
 
         //Sự kiện
         private void timerMedical_Tick(object sender, EventArgs e)
         {
-            lblNextPatient.Text = InforForm.Next_Patient.ToString();
 
-            tbxMedicalBillPatient.Texts = InforForm.PatientNow_id.ToString();
         }
 
         private void btnExit_Click_1(object sender, EventArgs e)
@@ -143,14 +171,21 @@ namespace ClinicManagement.Forms
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
             tbxMedicalBillNumber.ReadOnly= true;
-            Guid guid = Guid.NewGuid();
-            tbxMedicalBillNumber.Texts= guid.ToString();
+            guid1 = Guid.NewGuid();
+            tbxMedicalBillNumber.Texts= guid1.ToString();
             tbxMedicalBillPatient.Texts= InforForm.PatientNow_id.ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (chxNotList.Checked)
+            {
 
+            }
+            else
+            {
+
+            }
         }
 
         private void btnAddMedical_Click(object sender, EventArgs e)
@@ -161,7 +196,7 @@ namespace ClinicManagement.Forms
                 Medicine value = (Medicine)item.Value;
 
                 ComboboxItem item1 = (ComboboxItem)cbxUsage.SelectedItem;
-                Method value1 = (Method)item.Value;
+                Method value1 = (Method)item1.Value;
 
                 if (((List<MedicalNoteDetail>)medicineDetailBinding.List).Where(p => p.MedicineId == value.Id).Count() == 0)
                 {
@@ -177,7 +212,44 @@ namespace ClinicManagement.Forms
 
         private void cbxMedicines_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (cbxMedicines.SelectedItem != null)
+            {
+                ComboboxItem item = (ComboboxItem)cbxMedicines.SelectedItem;
+                Medicine value = (Medicine)item.Value;
+
+                if (((List<Medicine>)medicineDetailBinding.List).Where(p => p.Id == value.Id).Count() == 0)
+                {
+                    tbxPrice.Texts = value.Price.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Mã sản phẩm đã tồn tại");
+                }
+            }
+        }
+
+        private void btnDelMedical_Click(object sender, EventArgs e)
+        {
+            int count = dtgvMedicalList.SelectedRows.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                dtgvMedicalList.Rows.RemoveAt(dtgvMedicalList.SelectedRows[0].Index);
+            }
+        }
+
+        private void btnSaveMedi_Click(object sender, EventArgs e)
+        {
+            //Import import = new Import(Guid.NewGuid(), DateTime.Now, int.Parse(_totalTb.Texts), medicineDetailBinding.DataSource as IEnumerable<ImportDetail>);
+            //MedicalNoteDetail medicalNoteDetail = new MedicalNoteDetail(tbxMedicalBillNumber.Texts.ToString() ,Guid.NewGuid(), cbxMedicines.Texts.ToString(), )
+            //    //Guid medicalNoteId, Guid medicineId, string medicineName, Guid unitId, string unitName, int quantity, Guid methodId, string method
+            //creator.CreateImport(import);
+            //Console.WriteLine(Guid.NewGuid());
+        }
+
+        private void MedicalBillForm_Load(object sender, EventArgs e)
+        {
+            getMedicalBill();
         }
     }   
 }
