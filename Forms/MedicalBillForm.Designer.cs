@@ -63,7 +63,7 @@
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
             this.plMedicalBillInfor = new System.Windows.Forms.Panel();
             this.lblPatientData = new System.Windows.Forms.Label();
-            this.cbxNotList = new System.Windows.Forms.CheckBox();
+            this.chxNotList = new System.Windows.Forms.CheckBox();
             this.btnSaveMedi = new ClinicManagement.Classes.RJButton();
             this.btnDelMedical = new ClinicManagement.Classes.RJButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -427,7 +427,7 @@
             // 
             this.plMedicalBillInfor.BackColor = System.Drawing.Color.Transparent;
             this.plMedicalBillInfor.Controls.Add(this.lblPatientData);
-            this.plMedicalBillInfor.Controls.Add(this.cbxNotList);
+            this.plMedicalBillInfor.Controls.Add(this.chxNotList);
             this.plMedicalBillInfor.Controls.Add(this.btnSaveMedi);
             this.plMedicalBillInfor.Controls.Add(this.btnDelMedical);
             this.plMedicalBillInfor.Controls.Add(this.tableLayoutPanel1);
@@ -450,16 +450,16 @@
             this.lblPatientData.TabIndex = 65;
             this.lblPatientData.Text = "THÔNG TIN BỆNH NHÂN";
             // 
-            // cbxNotList
+            // chxNotList
             // 
-            this.cbxNotList.AutoSize = true;
-            this.cbxNotList.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbxNotList.Location = new System.Drawing.Point(190, 262);
-            this.cbxNotList.Name = "cbxNotList";
-            this.cbxNotList.Size = new System.Drawing.Size(194, 27);
-            this.cbxNotList.TabIndex = 64;
-            this.cbxNotList.Text = "Không kê khai thuốc ";
-            this.cbxNotList.UseVisualStyleBackColor = true;
+            this.chxNotList.AutoSize = true;
+            this.chxNotList.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.chxNotList.Location = new System.Drawing.Point(190, 262);
+            this.chxNotList.Name = "chxNotList";
+            this.chxNotList.Size = new System.Drawing.Size(194, 27);
+            this.chxNotList.TabIndex = 64;
+            this.chxNotList.Text = "Không kê khai thuốc ";
+            this.chxNotList.UseVisualStyleBackColor = true;
             // 
             // btnSaveMedi
             // 
@@ -479,6 +479,7 @@
             this.btnSaveMedi.Text = "Lưu thuốc";
             this.btnSaveMedi.TextColor = System.Drawing.Color.Black;
             this.btnSaveMedi.UseVisualStyleBackColor = false;
+            this.btnSaveMedi.Click += new System.EventHandler(this.btnSaveMedi_Click);
             // 
             // btnDelMedical
             // 
@@ -498,6 +499,7 @@
             this.btnDelMedical.Text = "Xoá thuốc";
             this.btnDelMedical.TextColor = System.Drawing.Color.Black;
             this.btnDelMedical.UseVisualStyleBackColor = false;
+            this.btnDelMedical.Click += new System.EventHandler(this.btnDelMedical_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -546,7 +548,7 @@
             this.cbxUsage.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbxUsage.ForeColor = System.Drawing.Color.DimGray;
             this.cbxUsage.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbxUsage.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbxUsage.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(218)))), ((int)(((byte)(252)))));
             this.cbxUsage.ListTextColor = System.Drawing.Color.DimGray;
             this.cbxUsage.Location = new System.Drawing.Point(554, 171);
             this.cbxUsage.MinimumSize = new System.Drawing.Size(50, 20);
@@ -565,7 +567,7 @@
             this.cbxIllness.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbxIllness.ForeColor = System.Drawing.Color.DimGray;
             this.cbxIllness.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbxIllness.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbxIllness.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(218)))), ((int)(((byte)(252)))));
             this.cbxIllness.ListTextColor = System.Drawing.Color.DimGray;
             this.cbxIllness.Location = new System.Drawing.Point(187, 171);
             this.cbxIllness.MinimumSize = new System.Drawing.Size(50, 20);
@@ -641,7 +643,7 @@
             this.cbxMedicines.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbxMedicines.ForeColor = System.Drawing.Color.DimGray;
             this.cbxMedicines.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbxMedicines.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbxMedicines.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(218)))), ((int)(((byte)(252)))));
             this.cbxMedicines.ListTextColor = System.Drawing.Color.DimGray;
             this.cbxMedicines.Location = new System.Drawing.Point(554, 3);
             this.cbxMedicines.MinimumSize = new System.Drawing.Size(50, 20);
@@ -993,7 +995,7 @@
         private Classes.CustomTextBox tbxMedicalBillPatient;
         private Label label12;
         private Classes.RJButton btnSaveMedi;
-        private CheckBox cbxNotList;
+        private CheckBox chxNotList;
         private Label lblPatientData;
         private Classes.CustomTextBox tbxSympton;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

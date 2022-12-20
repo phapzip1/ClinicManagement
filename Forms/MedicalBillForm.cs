@@ -2,6 +2,7 @@
 using ClinicManagement.DbContexts;
 using ClinicManagement.Models;
 using ClinicManagement.Services;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -120,7 +121,7 @@ namespace ClinicManagement.Forms
             tbxPrice.Text = string.Empty;
             tbxFinalPrice.Text = string.Empty;
 
-            cbxNotList.Checked= false;
+            chxNotList.Checked= false;
         }
 
         //Sự kiện
@@ -150,7 +151,14 @@ namespace ClinicManagement.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (chxNotList.Checked)
+            {
 
+            }
+            else
+            {
+
+            }
         }
 
         private void btnAddMedical_Click(object sender, EventArgs e)
@@ -161,7 +169,7 @@ namespace ClinicManagement.Forms
                 Medicine value = (Medicine)item.Value;
 
                 ComboboxItem item1 = (ComboboxItem)cbxUsage.SelectedItem;
-                Method value1 = (Method)item.Value;
+                Method value1 = (Method)item1.Value;
 
                 if (((List<MedicalNoteDetail>)medicineDetailBinding.List).Where(p => p.MedicineId == value.Id).Count() == 0)
                 {
@@ -177,7 +185,39 @@ namespace ClinicManagement.Forms
 
         private void cbxMedicines_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (cbxMedicines.SelectedItem != null)
+            {
+                ComboboxItem item = (ComboboxItem)cbxMedicines.SelectedItem;
+                Medicine value = (Medicine)item.Value;
+
+                if (((List<Medicine>)medicineDetailBinding.List).Where(p => p.Id == value.Id).Count() == 0)
+                {
+                    tbxPrice.Texts = value.Price.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Mã sản phẩm đã tồn tại");
+                }
+            }
+        }
+
+        private void btnDelMedical_Click(object sender, EventArgs e)
+        {
+            int count = dtgvMedicalList.SelectedRows.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                dtgvMedicalList.Rows.RemoveAt(dtgvMedicalList.SelectedRows[0].Index);
+            }
+        }
+
+        private void btnSaveMedi_Click(object sender, EventArgs e)
+        {
+            //Import import = new Import(Guid.NewGuid(), DateTime.Now, int.Parse(_totalTb.Texts), medicineDetailBinding.DataSource as IEnumerable<ImportDetail>);
+            //MedicalNoteDetail medicalNoteDetail = new MedicalNoteDetail(tbxMedicalBillNumber.Texts.ToString() ,Guid.NewGuid(), cbxMedicines.Texts.ToString(), )
+            //    //Guid medicalNoteId, Guid medicineId, string medicineName, Guid unitId, string unitName, int quantity, Guid methodId, string method
+            //creator.CreateImport(import);
+            //Console.WriteLine(Guid.NewGuid());
         }
     }   
 }

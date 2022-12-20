@@ -4,6 +4,7 @@ using ClinicManagement.DTOs;
 using ClinicManagement.Models;
 using ClinicManagement.Services;
 using DatabaseProject;
+using Google.Protobuf.WellKnownTypes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Office.Interop.Excel;
@@ -223,8 +224,7 @@ namespace ClinicManagement.Forms
 
         private void timerPatient_Tick(object sender, EventArgs e)
         {
-            //lblNiceSave.Hide();
-            //timerPatient.Enabled = false;
+            
         }
 
         private void btnGo_Click(object sender, EventArgs e)
@@ -265,7 +265,13 @@ namespace ClinicManagement.Forms
                                 patientDetailBinding.Clear();
                                 int i = 1;
                                 foreach (var item in res.Result)
-                                {
+                                { 
+                                        if (res.Result["Gender"] == "male")
+                                        res.Result["Gender"]  = "Nam";
+                                        else
+                                        {
+                                        res.Result["Gender"]  = "Nữ";
+                                        }
                                     patientDetailBinding.Add(item);
                                 }
                             });

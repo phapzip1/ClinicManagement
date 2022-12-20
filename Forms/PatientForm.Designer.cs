@@ -404,7 +404,7 @@
             this.cbxGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbxGender.ForeColor = System.Drawing.Color.DimGray;
             this.cbxGender.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbxGender.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbxGender.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(218)))), ((int)(((byte)(252)))));
             this.cbxGender.ListTextColor = System.Drawing.Color.DimGray;
             this.cbxGender.Location = new System.Drawing.Point(184, 89);
             this.cbxGender.MinimumSize = new System.Drawing.Size(50, 20);
