@@ -130,27 +130,27 @@ namespace ClinicManagement.Forms
 
         private void getMedicalBill()
         {
-            provider.GetAllMedicalNote().ContinueWith(res =>
-            {
-                if (IsHandleCreated)
-                {
-                    if (res.Result.Count() >= 1)
-                    {
-                        dtgvMedicalBill.Invoke((MethodInvoker)delegate
-                        {
-                            medicineDetailBinding.Clear();
-                            foreach (var item in res.Result)
-                            {
-                                medicineDetailBinding.Add(item);
-                            }
-                        });
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy phiếu khám bệnh!", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            });
+            //provider.GetAllMedicalNote().ContinueWith(res =>
+            //{
+            //    if (IsHandleCreated)
+            //    {
+            //        if (res.Result.Count() >= 1)
+            //        {
+            //            dtgvMedicalBill.Invoke((MethodInvoker)delegate
+            //            {
+            //                medicineDetailBinding.Clear();
+            //                foreach (var item in res.Result)
+            //                {
+            //                    medicineDetailBinding.Add(item);
+            //                }
+            //            });
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Không tìm thấy phiếu khám bệnh!", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        }
+            //    }
+            //});
         }
 
         //Sự kiện

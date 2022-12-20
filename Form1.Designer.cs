@@ -45,10 +45,11 @@
             this._rules = new System.Windows.Forms.Button();
             this._import = new System.Windows.Forms.Button();
             this._usage = new System.Windows.Forms.Button();
-            this._medicine = new System.Windows.Forms.Button();
             this._illness = new System.Windows.Forms.Button();
+            this._medicine = new System.Windows.Forms.Button();
             this._ticket = new System.Windows.Forms.Button();
             this._patienBtn = new System.Windows.Forms.Button();
+            this._queue = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this._logoContainer = new System.Windows.Forms.TableLayoutPanel();
             this._titleBar = new System.Windows.Forms.TableLayoutPanel();
@@ -101,10 +102,11 @@
             this._navContainer.Controls.Add(this._rules);
             this._navContainer.Controls.Add(this._import);
             this._navContainer.Controls.Add(this._usage);
-            this._navContainer.Controls.Add(this._medicine);
             this._navContainer.Controls.Add(this._illness);
+            this._navContainer.Controls.Add(this._medicine);
             this._navContainer.Controls.Add(this._ticket);
             this._navContainer.Controls.Add(this._patienBtn);
+            this._navContainer.Controls.Add(this._queue);
             this._navContainer.Controls.Add(this.label1);
             this._navContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this._navContainer.ForeColor = System.Drawing.Color.White;
@@ -124,11 +126,11 @@
             this._logout.ForeColor = System.Drawing.Color.White;
             this._logout.Image = global::ClinicManagement.Resource1.logout;
             this._logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._logout.Location = new System.Drawing.Point(0, 840);
+            this._logout.Location = new System.Drawing.Point(0, 900);
             this._logout.Name = "_logout";
             this._logout.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._logout.Size = new System.Drawing.Size(250, 60);
-            this._logout.TabIndex = 30;
+            this._logout.TabIndex = 48;
             this._logout.Tag = "NavBtn";
             this._logout.Text = "     Đăng xuất";
             this._logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,11 +148,11 @@
             this._profile.ForeColor = System.Drawing.Color.White;
             this._profile.Image = global::ClinicManagement.Resource1.man;
             this._profile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._profile.Location = new System.Drawing.Point(0, 780);
+            this._profile.Location = new System.Drawing.Point(0, 840);
             this._profile.Name = "_profile";
             this._profile.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._profile.Size = new System.Drawing.Size(250, 60);
-            this._profile.TabIndex = 29;
+            this._profile.TabIndex = 47;
             this._profile.Tag = "NavBtn";
             this._profile.Text = "     Đổi mật khẩu";
             this._profile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,10 +165,10 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 765);
+            this.label4.Location = new System.Drawing.Point(0, 825);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 15);
-            this.label4.TabIndex = 28;
+            this.label4.TabIndex = 46;
             this.label4.Text = "Hệ thống";
             // 
             // _restore
@@ -179,11 +181,11 @@
             this._restore.ForeColor = System.Drawing.Color.White;
             this._restore.Image = global::ClinicManagement.Resource1.restore;
             this._restore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._restore.Location = new System.Drawing.Point(0, 705);
+            this._restore.Location = new System.Drawing.Point(0, 765);
             this._restore.Name = "_restore";
             this._restore.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._restore.Size = new System.Drawing.Size(250, 60);
-            this._restore.TabIndex = 27;
+            this._restore.TabIndex = 45;
             this._restore.Tag = "NavBtn";
             this._restore.Text = "     Phục hồi";
             this._restore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -201,11 +203,11 @@
             this._backup.ForeColor = System.Drawing.Color.White;
             this._backup.Image = global::ClinicManagement.Resource1.backup;
             this._backup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._backup.Location = new System.Drawing.Point(0, 645);
+            this._backup.Location = new System.Drawing.Point(0, 705);
             this._backup.Name = "_backup";
             this._backup.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._backup.Size = new System.Drawing.Size(250, 60);
-            this._backup.TabIndex = 26;
+            this._backup.TabIndex = 44;
             this._backup.Tag = "NavBtn";
             this._backup.Text = "     Sao lưu";
             this._backup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,10 +220,10 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 630);
+            this.label3.Location = new System.Drawing.Point(0, 690);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 15);
-            this.label3.TabIndex = 25;
+            this.label3.TabIndex = 43;
             this.label3.Text = "Cơ sở dữ liệu";
             // 
             // _importReporting
@@ -234,11 +236,11 @@
             this._importReporting.ForeColor = System.Drawing.Color.White;
             this._importReporting.Image = global::ClinicManagement.Resource1.reportusage;
             this._importReporting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._importReporting.Location = new System.Drawing.Point(0, 570);
+            this._importReporting.Location = new System.Drawing.Point(0, 630);
             this._importReporting.Name = "_importReporting";
             this._importReporting.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._importReporting.Size = new System.Drawing.Size(250, 60);
-            this._importReporting.TabIndex = 24;
+            this._importReporting.TabIndex = 42;
             this._importReporting.Tag = "NavBtn";
             this._importReporting.Text = "     Báo cáo nhập thuốc";
             this._importReporting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -256,11 +258,11 @@
             this._usageReporting.ForeColor = System.Drawing.Color.White;
             this._usageReporting.Image = global::ClinicManagement.Resource1.reportimport;
             this._usageReporting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._usageReporting.Location = new System.Drawing.Point(0, 510);
+            this._usageReporting.Location = new System.Drawing.Point(0, 570);
             this._usageReporting.Name = "_usageReporting";
             this._usageReporting.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._usageReporting.Size = new System.Drawing.Size(250, 60);
-            this._usageReporting.TabIndex = 23;
+            this._usageReporting.TabIndex = 41;
             this._usageReporting.Tag = "NavBtn";
             this._usageReporting.Text = "     Báo cáo sử dụng thuốc";
             this._usageReporting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -278,11 +280,11 @@
             this._statistic.ForeColor = System.Drawing.Color.White;
             this._statistic.Image = global::ClinicManagement.Resource1.report;
             this._statistic.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._statistic.Location = new System.Drawing.Point(0, 450);
+            this._statistic.Location = new System.Drawing.Point(0, 510);
             this._statistic.Name = "_statistic";
             this._statistic.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._statistic.Size = new System.Drawing.Size(250, 60);
-            this._statistic.TabIndex = 22;
+            this._statistic.TabIndex = 40;
             this._statistic.Tag = "NavBtn";
             this._statistic.Text = "     Báo cáo doanh thu";
             this._statistic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -295,10 +297,10 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 435);
+            this.label2.Location = new System.Drawing.Point(0, 495);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 15);
-            this.label2.TabIndex = 21;
+            this.label2.TabIndex = 39;
             this.label2.Text = "Thống kê";
             // 
             // _rules
@@ -311,11 +313,11 @@
             this._rules.ForeColor = System.Drawing.Color.White;
             this._rules.Image = global::ClinicManagement.Resource1.auction;
             this._rules.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._rules.Location = new System.Drawing.Point(0, 375);
+            this._rules.Location = new System.Drawing.Point(0, 435);
             this._rules.Name = "_rules";
             this._rules.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._rules.Size = new System.Drawing.Size(250, 60);
-            this._rules.TabIndex = 20;
+            this._rules.TabIndex = 38;
             this._rules.Tag = "NavBtn";
             this._rules.Text = "     Quy định";
             this._rules.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -333,11 +335,11 @@
             this._import.ForeColor = System.Drawing.Color.White;
             this._import.Image = global::ClinicManagement.Resource1.import;
             this._import.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._import.Location = new System.Drawing.Point(0, 315);
+            this._import.Location = new System.Drawing.Point(0, 375);
             this._import.Name = "_import";
             this._import.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._import.Size = new System.Drawing.Size(250, 60);
-            this._import.TabIndex = 19;
+            this._import.TabIndex = 37;
             this._import.Tag = "NavBtn";
             this._import.Text = "     Phiếu nhập thuốc";
             this._import.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -355,17 +357,39 @@
             this._usage.ForeColor = System.Drawing.Color.White;
             this._usage.Image = global::ClinicManagement.Resource1.investigation;
             this._usage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._usage.Location = new System.Drawing.Point(0, 255);
+            this._usage.Location = new System.Drawing.Point(0, 315);
             this._usage.Name = "_usage";
             this._usage.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._usage.Size = new System.Drawing.Size(250, 60);
-            this._usage.TabIndex = 18;
+            this._usage.TabIndex = 36;
             this._usage.Tag = "NavBtn";
             this._usage.Text = "     Đơn vị và cách dùng";
             this._usage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._usage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._usage.UseVisualStyleBackColor = true;
             this._usage.Click += new System.EventHandler(this.HandleNavigate);
+            // 
+            // _illness
+            // 
+            this._illness.Dock = System.Windows.Forms.DockStyle.Top;
+            this._illness.FlatAppearance.BorderSize = 0;
+            this._illness.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this._illness.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(90)))), ((int)(((byte)(179)))));
+            this._illness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._illness.ForeColor = System.Drawing.Color.White;
+            this._illness.Image = global::ClinicManagement.Resource1.coronavirus;
+            this._illness.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._illness.Location = new System.Drawing.Point(0, 255);
+            this._illness.Name = "_illness";
+            this._illness.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this._illness.Size = new System.Drawing.Size(250, 60);
+            this._illness.TabIndex = 35;
+            this._illness.Tag = "NavBtn";
+            this._illness.Text = "     Loại bệnh và bệnh";
+            this._illness.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._illness.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this._illness.UseVisualStyleBackColor = true;
+            this._illness.Click += new System.EventHandler(this.HandleNavigate);
             // 
             // _medicine
             // 
@@ -381,35 +405,13 @@
             this._medicine.Name = "_medicine";
             this._medicine.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._medicine.Size = new System.Drawing.Size(250, 60);
-            this._medicine.TabIndex = 5;
+            this._medicine.TabIndex = 34;
             this._medicine.Tag = "NavBtn";
             this._medicine.Text = "     Thuốc";
             this._medicine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._medicine.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._medicine.UseVisualStyleBackColor = true;
             this._medicine.Click += new System.EventHandler(this.HandleNavigate);
-            // 
-            // _illness
-            // 
-            this._illness.Dock = System.Windows.Forms.DockStyle.Top;
-            this._illness.FlatAppearance.BorderSize = 0;
-            this._illness.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this._illness.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(90)))), ((int)(((byte)(179)))));
-            this._illness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._illness.ForeColor = System.Drawing.Color.White;
-            this._illness.Image = global::ClinicManagement.Resource1.coronavirus;
-            this._illness.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._illness.Location = new System.Drawing.Point(0, 135);
-            this._illness.Name = "_illness";
-            this._illness.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this._illness.Size = new System.Drawing.Size(250, 60);
-            this._illness.TabIndex = 4;
-            this._illness.Tag = "NavBtn";
-            this._illness.Text = "     Loại bệnh và bệnh";
-            this._illness.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._illness.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this._illness.UseVisualStyleBackColor = true;
-            this._illness.Click += new System.EventHandler(this.HandleNavigate);
             // 
             // _ticket
             // 
@@ -421,11 +423,11 @@
             this._ticket.ForeColor = System.Drawing.Color.White;
             this._ticket.Image = global::ClinicManagement.Resource1.file;
             this._ticket.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._ticket.Location = new System.Drawing.Point(0, 75);
+            this._ticket.Location = new System.Drawing.Point(0, 135);
             this._ticket.Name = "_ticket";
             this._ticket.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._ticket.Size = new System.Drawing.Size(250, 60);
-            this._ticket.TabIndex = 3;
+            this._ticket.TabIndex = 33;
             this._ticket.Tag = "NavBtn";
             this._ticket.Text = "     Phiếu khám bệnh";
             this._ticket.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -443,17 +445,39 @@
             this._patienBtn.ForeColor = System.Drawing.Color.White;
             this._patienBtn.Image = global::ClinicManagement.Resource1.examination;
             this._patienBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this._patienBtn.Location = new System.Drawing.Point(0, 15);
+            this._patienBtn.Location = new System.Drawing.Point(0, 75);
             this._patienBtn.Name = "_patienBtn";
             this._patienBtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this._patienBtn.Size = new System.Drawing.Size(250, 60);
-            this._patienBtn.TabIndex = 2;
+            this._patienBtn.TabIndex = 32;
             this._patienBtn.Tag = "NavBtn";
             this._patienBtn.Text = "     Bệnh nhân";
             this._patienBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this._patienBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this._patienBtn.UseVisualStyleBackColor = true;
             this._patienBtn.Click += new System.EventHandler(this.HandleNavigate);
+            // 
+            // _queue
+            // 
+            this._queue.Dock = System.Windows.Forms.DockStyle.Top;
+            this._queue.FlatAppearance.BorderSize = 0;
+            this._queue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this._queue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(49)))), ((int)(((byte)(116)))));
+            this._queue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this._queue.ForeColor = System.Drawing.Color.White;
+            this._queue.Image = global::ClinicManagement.Resource1.queue;
+            this._queue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._queue.Location = new System.Drawing.Point(0, 15);
+            this._queue.Name = "_queue";
+            this._queue.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this._queue.Size = new System.Drawing.Size(250, 60);
+            this._queue.TabIndex = 31;
+            this._queue.Tag = "NavBtn";
+            this._queue.Text = "     Danh sách khám bệnh";
+            this._queue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this._queue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this._queue.UseVisualStyleBackColor = true;
+            this._queue.Click += new System.EventHandler(this.HandleNavigate);
             // 
             // label1
             // 
@@ -607,10 +631,6 @@
         private BindingSource bindingSource1;
         private TableLayoutPanel _mainLayout;
         private Panel _navContainer;
-        private Label label1;
-        private Button _patienBtn;
-        private Button _illness;
-        private Button _ticket;
         private TableLayoutPanel _logoContainer;
         private TableLayoutPanel _titleBar;
         private Label _title;
@@ -632,6 +652,11 @@
         private Button _rules;
         private Button _import;
         private Button _usage;
+        private Button _illness;
         private Button _medicine;
+        private Button _ticket;
+        private Button _patienBtn;
+        private Button _queue;
+        private Label label1;
     }
 }

@@ -1,5 +1,6 @@
 using ClinicManagement.DbContexts;
 using ClinicManagement.Forms;
+using ClinicManagement.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -8,6 +9,7 @@ namespace ClinicManagement
     internal static class Program
     {
         public static IConfiguration Configuration;
+        public static List<Patient> PatientQueue;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -16,11 +18,11 @@ namespace ClinicManagement
         {         
             var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             Configuration = builder.Build();
+            PatientQueue = new List<Patient>();
 
             ClinicDbContextFactory _clinicDbContextFactory = new ClinicDbContextFactory(Configuration.GetSection("ConnectionStrings").Value.ToString());
             using (ClinicDbContext dbContext = _clinicDbContextFactory.CreateDbContext())
             {
-
                 dbContext.Database.Migrate();
 
                 //IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);

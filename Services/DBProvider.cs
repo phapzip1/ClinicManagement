@@ -219,5 +219,16 @@ namespace ClinicManagement.Services
                 return null;
             }
         }
+
+        public async Task<Patient> GetPatientById(string id)
+        {
+            using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
+            {
+                var obj = dbContext.Patients.FirstOrDefault(p => p.Id == id);
+                if (obj != null)
+                    return new Patient(obj.Id, obj.Fullname, obj.Gender, obj.Dob, obj.Address);
+                return null;
+            }
+        }
     }
 }

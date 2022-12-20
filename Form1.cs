@@ -180,6 +180,8 @@ namespace ClinicManagement
                 OpenChildForm(new Forms.RegulationsForm());
             else if (CurrentPageBtn == _medicine)
                 OpenChildForm(new Forms.MedicineForm());
+            else if (CurrentPageBtn == _queue)
+                OpenChildForm(new Forms.PatientQueue());
 
         }
 
