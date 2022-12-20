@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnRegister = new ClinicManagement.Classes.RJButton();
             this.btnSearch = new ClinicManagement.Classes.RJButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvPatientList = new System.Windows.Forms.DataGridView();
@@ -66,26 +65,6 @@
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnRegister.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.btnRegister.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.btnRegister.BorderRadius = 20;
-            this.btnRegister.BorderSize = 2;
-            this.btnRegister.FlatAppearance.BorderSize = 0;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRegister.ForeColor = System.Drawing.Color.Black;
-            this.btnRegister.Location = new System.Drawing.Point(812, 149);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(100, 50);
-            this.btnRegister.TabIndex = 21;
-            this.btnRegister.Text = "Đăng ký";
-            this.btnRegister.TextColor = System.Drawing.Color.Black;
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
@@ -97,7 +76,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.Location = new System.Drawing.Point(918, 149);
+            this.btnSearch.Location = new System.Drawing.Point(866, 147);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 50);
             this.btnSearch.TabIndex = 19;
@@ -224,7 +203,6 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.dtpkBob);
-            this.panel1.Controls.Add(this.btnRegister);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnSave);
@@ -398,7 +376,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(600, 149);
+            this.btnAdd.Location = new System.Drawing.Point(654, 147);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 50);
             this.btnAdd.TabIndex = 4;
@@ -444,7 +422,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(1024, 149);
+            this.btnExit.Location = new System.Drawing.Point(972, 147);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 50);
             this.btnExit.TabIndex = 12;
@@ -464,7 +442,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(706, 149);
+            this.btnSave.Location = new System.Drawing.Point(760, 147);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 50);
             this.btnSave.TabIndex = 12;
@@ -524,7 +502,6 @@
         #endregion
         private Panel panel3;
         private Classes.RJButton btnSearch;
-        private Classes.RJButton btnRegister;
         private DataGridView dtgvPatientList;
         private Label label11;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;

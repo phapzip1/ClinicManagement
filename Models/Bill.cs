@@ -2,6 +2,14 @@
 {
     public class Bill
     {
+        public Bill(Guid id, Guid medicalNoteId, int medicineCost, int medicalCost)
+        {
+            Id=id;
+            MedicalNoteId=medicalNoteId;
+            MedicineCost=medicineCost;
+            MedicalCost=medicalCost;
+        }
+
         public Bill(Guid id, Guid medicalNoteId, string name, int medicineCost, int medicalCost)
         {
             Id = id;
@@ -13,8 +21,8 @@
 
         public Guid Id { get; }
         public Guid MedicalNoteId { get; }
-        public string Name { get; }
         public int MedicineCost { get; }
         public int MedicalCost { get; }
+        public string Name { get; }
     }
 }

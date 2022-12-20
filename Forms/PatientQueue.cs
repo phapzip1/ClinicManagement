@@ -56,6 +56,8 @@ namespace ClinicManagement.Forms
         {
             if (binding.List.Count > 0)
             {
+                InforForm.PatientNow_id = ((Patient)binding[0]).Id;
+                InforForm.Next_Patient = ((Patient)binding[0]).Fullname;
                 binding.RemoveAt(0);
             }
             else

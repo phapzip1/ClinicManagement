@@ -1,6 +1,8 @@
-﻿using ClinicManagement.DbContexts;
+﻿using ClinicManagement.Classes;
+using ClinicManagement.DbContexts;
 using ClinicManagement.Models;
 using ClinicManagement.Services;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,28 +19,41 @@ namespace ClinicManagement.Forms
     {
         public string name;
         public string date;
-        public string medicine_price;
+        public int medicine_price;
         public string medical_price;
         public string count_price;
         public BindingSource _medicineBinding;
-        int medicinePrice = 0;
+        int medicalPrice = 0;
         int Discount = 0;
+        private Guid _guid;
 
-        DBProvider provider;
+        private IDataCreator creator;
+        private IDataProvider provider;
         private ClinicDbContextFactory _clinicDbContextFactory;
-        public BillForm(List<MedicalNoteDetail> list)
+        public BillForm(List<MedicalNoteDetail> list, Guid guid)
         {
             InitializeComponent();
 
             _clinicDbContextFactory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString());
+
             provider = new DBProvider(_clinicDbContextFactory);
+            creator = new DBCreator(_clinicDbContextFactory);
+
             provider.GetParams().ContinueWith(res =>
             {
-                medicinePrice = res.Result["MedicalCost"];
+                medicalPrice = res.Result["MedicalCost"];
             });
 
             _medicineBinding = new BindingSource() { DataSource = list};
             dtgvMedicineList.DataSource = _medicineBinding;
+
+            dtgvMedicineList.Columns["MedicalNoteId"].Visible= false;
+            dtgvMedicineList.Columns["UnitId"].Visible= false;
+            dtgvMedicineList.Columns["UnitName"].Visible= false; 
+            dtgvMedicineList.Columns["MedicineId"].Visible= false;
+            dtgvMedicineList.Columns["MethodId"].Visible= false;
+
+            _guid = guid;
         }
 
         public BillForm()
@@ -58,10 +73,25 @@ namespace ClinicManagement.Forms
         private void BillForm_Load(object sender, EventArgs e)
         {
             tbxName.Texts= name;
-            tbxDate.Texts= date;
-            tbxMedicine_price.Texts= medical_price;
-            tbxMedical_price.Texts= medicinePrice.ToString();
-            tbxCount_price.Texts= (int.Parse(medical_price) + medicinePrice).ToString();
+            tbxDate.Texts= DateTime.Now.ToString("dd/MM/yyyy");
+            tbxMedicine_price.Texts= medicine_price.ToString();
+            tbxMedical_price.Texts= medicalPrice.ToString();
+            tbxCount_price.Texts= (medicine_price + medicalPrice).ToString();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Guid guid = Guid.NewGuid();
+                Bill bill = new Bill(guid, _guid, medicine_price, int.Parse(medical_price));
+                creator.CreateBill(bill);
+                Console.WriteLine(guid);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
