@@ -74,9 +74,9 @@ namespace ClinicManagement.Forms
         {
             tbxName.Texts= name;
             tbxDate.Texts= DateTime.Now.ToString("dd/MM/yyyy");
-            tbxMedicine_price.Texts= medicine_price.ToString();
-            tbxMedical_price.Texts= medicalPrice.ToString();
-            tbxCount_price.Texts= (medicine_price + medicalPrice).ToString();
+            tbxMedicine_price.Texts= medicine_price.ToString() + "VND";
+            tbxMedical_price.Texts= medicalPrice.ToString() + "VND";
+            tbxCount_price.Texts= (medicine_price + medicalPrice).ToString() + "VND";
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -84,9 +84,10 @@ namespace ClinicManagement.Forms
             try
             {
                 Guid guid = Guid.NewGuid();
-                Bill bill = new Bill(guid, _guid, medicine_price, int.Parse(medical_price));
+                Bill bill = new Bill(guid, _guid, medicine_price, medicalPrice);
                 creator.CreateBill(bill);
                 Console.WriteLine(guid);
+                MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
