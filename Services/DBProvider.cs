@@ -24,13 +24,14 @@ namespace ClinicManagement.Services
             }
         }
 
-        public async Task<IEnumerable<MedicalNote>> GetAllMedicalNote()
+        public async Task<IEnumerable<MedicalNote>> GetAllMedicalNote(string patientId)
         {
             using (ClinicDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
                     return await dbContext.MedicalNotes                       
                             .Join(dbContext.Patients, m => m.PatientId, f => f.Id, (m, f) => new { notes = m, patient = f })
                             .Join(dbContext.Illness, m => m.notes.IllnessId, f => f.Id, (m, f) => new { notes = m.notes, patient = m.patient, illness = f })
+                            .Where(p => p.patient.Id == patientId)
                             .Select(obj => new MedicalNote(
                                 obj.notes.Id,
                                 obj.patient.Id,
