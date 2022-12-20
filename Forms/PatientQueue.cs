@@ -19,38 +19,6 @@ namespace ClinicManagement.Forms
             dataGridView1.Columns["Id"].Visible = false;
         }
 
-        private void Add_Handler(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(_patient.Texts))
-            {
-                string id = _patient.Texts;
-                Patient obj = Program.PatientQueue.FirstOrDefault(p => p.Id == id);
-                if (obj == null)
-                {
-                    provider.GetPatientById(id).ContinueWith(res =>
-                    {
-                        if (!res.IsFaulted)
-                        {
-                            if (IsHandleCreated)
-                            {
-                                dataGridView1.Invoke((MethodInvoker)delegate
-                                {
-                                    binding.Add(res.Result);
-                                });
-                            }
-                        }
-                    });
-                }
-                else
-                {
-                    MessageBox.Show("Đã tồn tại bệnh nhân!");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Trường mã bệnh nhân trống!");
-            }
-        }
 
         private void Append_Handler(object sender, EventArgs e)
         {

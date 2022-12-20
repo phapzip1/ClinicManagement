@@ -39,9 +39,6 @@
             this.SLN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this._patient = new ClinicManagement.Classes.CustomTextBox();
-            this._btnAdd = new ClinicManagement.Classes.RJButton();
             this._append = new ClinicManagement.Classes.RJButton();
             this._btnRemove = new ClinicManagement.Classes.RJButton();
             this.gradientPanel1.SuspendLayout();
@@ -59,7 +56,7 @@
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(914, 600);
+            this.gradientPanel1.Size = new System.Drawing.Size(800, 450);
             this.gradientPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -76,7 +73,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.33334F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(914, 600);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -106,7 +103,8 @@
             this.price});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 91);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 68);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -126,7 +124,7 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(908, 506);
+            this.dataGridView1.Size = new System.Drawing.Size(794, 380);
             this.dataGridView1.TabIndex = 4;
             // 
             // medicineName
@@ -175,74 +173,16 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this._patient, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this._btnAdd, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this._append, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this._btnRemove, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this._btnRemove, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(23, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(868, 88);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(760, 66);
             this.tableLayoutPanel2.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(3, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 60);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Mã bệnh nhân:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // _patient
-            // 
-            this._patient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._patient.BackColor = System.Drawing.SystemColors.Window;
-            this._patient.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this._patient.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
-            this._patient.BorderSize = 3;
-            this._patient.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._patient.ForeColor = System.Drawing.Color.DimGray;
-            this._patient.Location = new System.Drawing.Point(130, 25);
-            this._patient.Margin = new System.Windows.Forms.Padding(0);
-            this._patient.Multiline = false;
-            this._patient.Name = "_patient";
-            this._patient.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this._patient.PasswordChar = false;
-            this._patient.ReadOnly = false;
-            this._patient.Size = new System.Drawing.Size(217, 38);
-            this._patient.TabIndex = 6;
-            this._patient.Texts = "";
-            this._patient.UnderlinedStyle = false;
-            // 
-            // _btnAdd
-            // 
-            this._btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this._btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this._btnAdd.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this._btnAdd.BorderRadius = 20;
-            this._btnAdd.BorderSize = 2;
-            this._btnAdd.FlatAppearance.BorderSize = 0;
-            this._btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this._btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this._btnAdd.ForeColor = System.Drawing.Color.Black;
-            this._btnAdd.Location = new System.Drawing.Point(543, 18);
-            this._btnAdd.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
-            this._btnAdd.Name = "_btnAdd";
-            this._btnAdd.Size = new System.Drawing.Size(127, 51);
-            this._btnAdd.TabIndex = 21;
-            this._btnAdd.Text = "Thêm";
-            this._btnAdd.TextColor = System.Drawing.Color.Black;
-            this._btnAdd.UseVisualStyleBackColor = false;
-            this._btnAdd.Click += new System.EventHandler(this.Add_Handler);
             // 
             // _append
             // 
@@ -256,10 +196,10 @@
             this._append.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._append.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._append.ForeColor = System.Drawing.Color.Black;
-            this._append.Location = new System.Drawing.Point(370, 18);
-            this._append.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this._append.Location = new System.Drawing.Point(324, 14);
+            this._append.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this._append.Name = "_append";
-            this._append.Size = new System.Drawing.Size(127, 51);
+            this._append.Size = new System.Drawing.Size(112, 38);
             this._append.TabIndex = 22;
             this._append.Text = "Khám";
             this._append.TextColor = System.Drawing.Color.Black;
@@ -278,10 +218,10 @@
             this._btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this._btnRemove.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this._btnRemove.ForeColor = System.Drawing.Color.Black;
-            this._btnRemove.Location = new System.Drawing.Point(716, 18);
-            this._btnRemove.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this._btnRemove.Location = new System.Drawing.Point(476, 14);
+            this._btnRemove.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this._btnRemove.Name = "_btnRemove";
-            this._btnRemove.Size = new System.Drawing.Size(129, 51);
+            this._btnRemove.Size = new System.Drawing.Size(112, 38);
             this._btnRemove.TabIndex = 23;
             this._btnRemove.Text = "Xóa";
             this._btnRemove.TextColor = System.Drawing.Color.Black;
@@ -290,18 +230,16 @@
             // 
             // PatientQueue
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.gradientPanel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PatientQueue";
             this.Text = "PatientQueue";
             this.gradientPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -312,11 +250,8 @@
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dataGridView1;
         private TableLayoutPanel tableLayoutPanel2;
-        private Classes.CustomTextBox _patient;
-        private Classes.RJButton _btnAdd;
         private Classes.RJButton _append;
         private Classes.RJButton _btnRemove;
-        private Label label1;
         private DataGridViewTextBoxColumn medicineName;
         private DataGridViewTextBoxColumn TDV;
         private DataGridViewTextBoxColumn SLN;

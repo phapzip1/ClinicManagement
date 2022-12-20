@@ -296,5 +296,42 @@ namespace ClinicManagement.Forms
                 dtpkBob.Text = dob;
             }
         }
+
+        private void AppendHandler(object sender, EventArgs e)
+        {
+            string id = tbxPatientID.Texts.ToString();
+            if (!string.IsNullOrEmpty(id))
+            {
+                if (Program.PatientQueue.Where(p => p.Id == id).ToList().Count == 0)
+                {
+                    provider.GetPatient(id).ContinueWith(res =>
+                    {
+                        if (!res.IsFaulted)
+                        {
+                            if (res.Result != null && IsHandleCreated)
+                            {
+                                if (IsHandleCreated)
+                                {
+                                    tbxPatientID.Invoke((MethodInvoker)delegate
+                                    {
+                                        Program.PatientQueue.Add(res.Result);
+                                        MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    });
+                                }
+                            }
+                        }
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("Bệnh nhân đã có trong hàng đợi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chọn 1 bệnh nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+            
     }
 }
