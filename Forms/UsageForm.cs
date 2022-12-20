@@ -289,5 +289,29 @@ namespace ClinicManagement.Forms
         {
 
         }
+
+        private void dtgvUnit_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvUnit.SelectedRows.Count > 0) // make sure user select at least 1 row 
+            {
+                //int index = dtgvUnit.SelectedRows[0].Index;
+
+                DataGridViewRow row = this.dtgvUnit.Rows[e.RowIndex];
+                tbxUnitName.Texts = row.Cells[1].Value.ToString();
+                //string value = dtgvUsage.SelectedRows[0].Cells["Unit"].Value + string.Empty;
+
+                //tbxUnitName.Text = value;   
+            }
+        }
+
+        private void dtgvUsage_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvUsage.SelectedRows.Count > 0) // make sure user select at least 1 row 
+            {
+                string value = dtgvUsage.SelectedRows[0].Cells[1].Value + string.Empty;
+
+                tbxUsageName.Texts = value;
+            }
+        }
     }
 }

@@ -138,6 +138,7 @@
             this.dtgvIllnessList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvIllnessList.Size = new System.Drawing.Size(1154, 603);
             this.dtgvIllnessList.TabIndex = 3;
+            this.dtgvIllnessList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvIllnessList_CellClick);
             // 
             // TenBenh
             // 

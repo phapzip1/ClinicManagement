@@ -168,5 +168,17 @@ namespace ClinicManagement.Forms
         {
             getIllness();
         }
+
+        private void dtgvIllnessList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvIllnessList.SelectedRows.Count > 0) // make sure user select at least 1 row 
+            {
+                string value1 = dtgvIllnessList.SelectedRows[0].Cells[1].Value + string.Empty;
+                string value2 = dtgvIllnessList.SelectedRows[0].Cells[2].Value + string.Empty;
+
+                tbxIllnessName.Texts = value1;
+                tbxIllnessSympton.Texts = value2;
+            }
+        }
     }
 }

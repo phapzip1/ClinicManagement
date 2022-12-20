@@ -147,6 +147,7 @@
             this.dtgvUsage.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvUsage.Size = new System.Drawing.Size(798, 347);
             this.dtgvUsage.TabIndex = 5;
+            this.dtgvUsage.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvUsage_CellClick);
             // 
             // TenCachDung
             // 
@@ -380,6 +381,7 @@
             this.dtgvUnit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvUnit.Size = new System.Drawing.Size(798, 335);
             this.dtgvUnit.TabIndex = 5;
+            this.dtgvUnit.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvUnit_CellClick);
             // 
             // TenDonVi
             // 
