@@ -1,4 +1,5 @@
 using ClinicManagement.DbContexts;
+using ClinicManagement.Forms;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -12,7 +13,7 @@ namespace ClinicManagement
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {         
             var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             Configuration = builder.Build();
 
@@ -30,6 +31,23 @@ namespace ClinicManagement
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            //LoginForm loginForm = new LoginForm();
+            //loginForm.ShowDialog();
+            //if (!loginForm.IsSuccess)
+            //{
+            //    if (System.Windows.Forms.Application.MessageLoop)
+            //    {
+            //        // Use this since we are a WinForms app
+            //        System.Windows.Forms.Application.Exit();
+            //    }
+            //    else
+            //    {
+            //        // Use this since we are a console app
+            //        System.Environment.Exit(1);
+            //    }
+            //}
+
             Application.Run(new Form1());
         }
     }

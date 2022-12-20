@@ -100,7 +100,7 @@ namespace ClinicManagement.Services
                 {
                     obj.Price = medicine.Price;
                     obj.Stock = medicine.Stock;
-                    obj.Unit.Id = medicine.UnitId;
+                    obj.UnitId = medicine.UnitId;
                     obj.Name = medicine.Name;
                     dbContext.Medicines.Update(obj);
                     await dbContext.SaveChangesAsync();

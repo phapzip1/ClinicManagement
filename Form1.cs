@@ -131,7 +131,27 @@ namespace ClinicManagement
                 return;
             }
 
-                Button prev = CurrentPageBtn;
+            if (((Button)sender) == _logout)
+            {
+                LoginForm loginForm = new LoginForm();
+                loginForm.ShowDialog();
+                if (!loginForm.IsSuccess)
+                {
+                    if (System.Windows.Forms.Application.MessageLoop)
+                    {
+                        // Use this since we are a WinForms app
+                        System.Windows.Forms.Application.Exit();
+                    }
+                    else
+                    {
+                        // Use this since we are a console app
+                        System.Environment.Exit(1);
+                    }
+                }
+                return;
+            }
+
+            Button prev = CurrentPageBtn;
             CurrentPageBtn = ((Button)sender);
 
             CurrentPageBtn.BackColor = Utils.FromHex("#201447");
@@ -158,6 +178,8 @@ namespace ClinicManagement
                 OpenChildForm(new Forms.ImportStatistic());
             else if (CurrentPageBtn == _rules)
                 OpenChildForm(new Forms.RegulationsForm());
+            else if (CurrentPageBtn == _medicine)
+                OpenChildForm(new Forms.MedicineForm());
 
         }
 
