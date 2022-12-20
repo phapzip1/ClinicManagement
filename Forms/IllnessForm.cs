@@ -142,6 +142,7 @@ namespace ClinicManagement.Forms
             if (DialogResult == DialogResult.OK)
             {
                 ResetMonitor();
+                isSave= false;
             }
         }
 

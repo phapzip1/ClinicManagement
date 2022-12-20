@@ -20,7 +20,8 @@ namespace ClinicManagement.Forms
     public partial class UsageForm : Form
     {
         Guid guid1;
-        bool isAdd = false;
+        bool isAdd1 = false;
+        bool isAdd2 = false;    
 
         private IDataProvider provider;
         private BindingSource UnitUsageBinding;
@@ -55,13 +56,13 @@ namespace ClinicManagement.Forms
         #region Hàm
         private void ResetMonitor1()
         {
-            tbxUnitName.Text = string.Empty;
+            tbxUnitName.Texts = "";
             tbxUnitName.ReadOnly= false;
         }
 
         private void ReserMonitor2()
         {
-            tbxUsageName.Text = string.Empty;
+            tbxUsageName.Texts = "";
             tbxUsageName.ReadOnly= false;
         }
 
@@ -126,14 +127,14 @@ namespace ClinicManagement.Forms
         {
             guid1= Guid.NewGuid();
             ResetMonitor1();
-            isAdd= true;
+            isAdd1= true;
         }
 
         //Lưu cái thêm || Chỉnh sửa những gì chọn trên dtgv
         private void btnSaveUnit_Click(object sender, EventArgs e)
         {
             //Cập nhật
-            if (isAdd == false)
+            if (isAdd1 == false)
             {
                 //Hàng hiện tại
                 int index = dtgvUnit.SelectedRows[0].Index;
@@ -164,7 +165,7 @@ namespace ClinicManagement.Forms
                         dataCreator.CreateUnit(new Models.Unit(guid1, tbxUnitName.Texts.ToString()));
                         MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         getUnit();
-                        isAdd= false;
+                        isAdd1= false;
                     }
                 }
                 catch (Exception ex)
@@ -180,12 +181,13 @@ namespace ClinicManagement.Forms
             if (DialogResult == DialogResult.OK)
             {
                 ResetMonitor1();
+                isAdd1= false;
             }
         }
 
         private void btnSaveUsage_Click(object sender, EventArgs e)
         {
-            if (isAdd == false)
+            if (isAdd2 == false)
             {
                 int index = dtgvUsage.SelectedRows[0].Index;
                 Guid id = ((Unit)UsageUsageBinding.List[index]).Id;
@@ -211,7 +213,7 @@ namespace ClinicManagement.Forms
                         dataCreator.CreateMethod(new Models.Method(guid1, tbxUsageName.Texts.ToString()));
                         MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         getMethod();
-                        isAdd= false;
+                        isAdd2= false;
                     }
                 }
                 catch (Exception ex)
@@ -225,7 +227,7 @@ namespace ClinicManagement.Forms
         {
             guid1= Guid.NewGuid();
             tbxUsageName.ReadOnly= false;
-            isAdd= true;
+            isAdd2= true;
         }
 
         private void btnUnitDel_Click(object sender, EventArgs e)
@@ -270,6 +272,7 @@ namespace ClinicManagement.Forms
             if (DialogResult == DialogResult.OK)
             {
                 ReserMonitor2();
+                isAdd2= false;
             }
         }
 
