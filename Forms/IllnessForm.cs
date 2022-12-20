@@ -28,11 +28,10 @@ namespace ClinicManagement.Forms
             InitializeComponent();
 
             _clinicDbContextFactory = new ClinicDbContextFactory(Program.Configuration.GetSection("ConnectionStrings").Value.ToString());
-
-
             provider = new DBProvider(_clinicDbContextFactory);
             updater = new DBUpdater(_clinicDbContextFactory);
 
+            //dtgv
             IllnessBinding = new BindingSource() { DataSource= new List<Illness>() };
 
             dtgvIllnessList.DataSource = IllnessBinding;
@@ -113,7 +112,7 @@ namespace ClinicManagement.Forms
                             IDataCreator dataCreator = new DBCreator(_clinicDbContextFactory);
                             dbContext.Database.Migrate();
                             dataCreator.CreateIllness(new Models.Illness(guid, tbxIllnessName.Texts.ToString(), tbxIllnessSympton.Texts.ToString()));
-                            MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             getIllness();
                         }
                     }
@@ -132,6 +131,7 @@ namespace ClinicManagement.Forms
                 updater.UpdateIllness(new Illness(id, illnessname, sympton)).ContinueWith(res =>
                 {
                     getIllness();
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 });
             }
         }
@@ -145,11 +145,6 @@ namespace ClinicManagement.Forms
             }
         }
 
-        private void tbxIllnessSympton__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnDel_Click(object sender, EventArgs e)
         {
             try
@@ -159,17 +154,13 @@ namespace ClinicManagement.Forms
                 updater.RemoveIllness(id).ContinueWith(res =>
                 {
                     getIllness();
+                    MessageBox.Show("Xoá thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 });
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnSearchIllness_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void IllnessForm_Load(object sender, EventArgs e)

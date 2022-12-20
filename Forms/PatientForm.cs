@@ -7,6 +7,7 @@ using DatabaseProject;
 using Google.Protobuf.WellKnownTypes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Office.Interop.Excel;
 using MySqlX.XDevAPI.Relational;
 using System;
@@ -263,15 +264,8 @@ namespace ClinicManagement.Forms
                             dtgvPatientList.Invoke((MethodInvoker)delegate
                             {
                                 patientDetailBinding.Clear();
-                                int i = 1;
                                 foreach (var item in res.Result)
-                                { 
-                                        if (res.Result["Gender"] == "male")
-                                        res.Result["Gender"]  = "Nam";
-                                        else
-                                        {
-                                        res.Result["Gender"]  = "Nữ";
-                                        }
+                                {
                                     patientDetailBinding.Add(item);
                                 }
                             });

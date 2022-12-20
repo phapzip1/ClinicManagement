@@ -169,7 +169,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(341, 347);
             this.panel2.TabIndex = 17;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnUsageDel
             // 
@@ -381,7 +380,6 @@
             this.dtgvUnit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvUnit.Size = new System.Drawing.Size(798, 335);
             this.dtgvUnit.TabIndex = 5;
-            this.dtgvUnit.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvUnit_RowEnter);
             // 
             // TenDonVi
             // 

@@ -35,6 +35,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvIllnessList = new System.Windows.Forms.DataGridView();
+            this.TenBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrieuChung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plIllnessInfor = new System.Windows.Forms.Panel();
             this.btnDel = new ClinicManagement.Classes.RJButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -48,8 +50,6 @@
             this.btnAddIllness = new ClinicManagement.Classes.RJButton();
             this.label2 = new System.Windows.Forms.Label();
             this.gradientPanel1 = new ClinicManagement.Classes.GradientPanel();
-            this.TenBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrieuChung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvIllnessList)).BeginInit();
@@ -139,6 +139,22 @@
             this.dtgvIllnessList.Size = new System.Drawing.Size(1154, 603);
             this.dtgvIllnessList.TabIndex = 3;
             // 
+            // TenBenh
+            // 
+            this.TenBenh.DataPropertyName = "Name";
+            this.TenBenh.FillWeight = 104.5855F;
+            this.TenBenh.HeaderText = "Tên bệnh";
+            this.TenBenh.MinimumWidth = 6;
+            this.TenBenh.Name = "TenBenh";
+            // 
+            // TrieuChung
+            // 
+            this.TrieuChung.DataPropertyName = "Symptom";
+            this.TrieuChung.FillWeight = 119.1177F;
+            this.TrieuChung.HeaderText = "Triệu chứng";
+            this.TrieuChung.MinimumWidth = 6;
+            this.TrieuChung.Name = "TrieuChung";
+            // 
             // plIllnessInfor
             // 
             this.plIllnessInfor.BackColor = System.Drawing.Color.Transparent;
@@ -220,7 +236,6 @@
             this.tbxIllnessSympton.TabIndex = 61;
             this.tbxIllnessSympton.Texts = "";
             this.tbxIllnessSympton.UnderlinedStyle = false;
-            this.tbxIllnessSympton._TextChanged += new System.EventHandler(this.tbxIllnessSympton__TextChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -352,22 +367,6 @@
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(1189, 845);
             this.gradientPanel1.TabIndex = 21;
-            // 
-            // TenBenh
-            // 
-            this.TenBenh.DataPropertyName = "Name";
-            this.TenBenh.FillWeight = 104.5855F;
-            this.TenBenh.HeaderText = "Tên bệnh";
-            this.TenBenh.MinimumWidth = 6;
-            this.TenBenh.Name = "TenBenh";
-            // 
-            // TrieuChung
-            // 
-            this.TrieuChung.DataPropertyName = "Symptom";
-            this.TrieuChung.FillWeight = 119.1177F;
-            this.TrieuChung.HeaderText = "Triệu chứng";
-            this.TrieuChung.MinimumWidth = 6;
-            this.TrieuChung.Name = "TrieuChung";
             // 
             // IllnessForm
             // 
