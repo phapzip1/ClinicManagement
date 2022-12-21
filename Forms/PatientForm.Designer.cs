@@ -77,10 +77,9 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.Location = new System.Drawing.Point(720, 110);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Location = new System.Drawing.Point(823, 147);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(88, 38);
+            this.btnSearch.Size = new System.Drawing.Size(101, 51);
             this.btnSearch.TabIndex = 19;
             this.btnSearch.Text = "Tra cứu";
             this.btnSearch.TextColor = System.Drawing.Color.Black;
@@ -90,10 +89,9 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.dtgvPatientList);
-            this.panel3.Location = new System.Drawing.Point(10, 201);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(11, 268);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1019, 430);
+            this.panel3.Size = new System.Drawing.Size(1165, 573);
             this.panel3.TabIndex = 3;
             // 
             // dtgvPatientList
@@ -124,7 +122,6 @@
             this.dtgvPatientList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvPatientList.EnableHeadersVisualStyles = false;
             this.dtgvPatientList.Location = new System.Drawing.Point(0, 0);
-            this.dtgvPatientList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgvPatientList.Name = "dtgvPatientList";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -143,7 +140,7 @@
             this.dtgvPatientList.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(149)))), ((int)(((byte)(250)))));
             this.dtgvPatientList.RowTemplate.Height = 29;
             this.dtgvPatientList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPatientList.Size = new System.Drawing.Size(1019, 430);
+            this.dtgvPatientList.Size = new System.Drawing.Size(1165, 573);
             this.dtgvPatientList.TabIndex = 2;
             this.dtgvPatientList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPatientList_CellClick);
             // 
@@ -193,9 +190,9 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(424, 178);
+            this.label11.Location = new System.Drawing.Point(485, 237);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(213, 22);
+            this.label11.Size = new System.Drawing.Size(259, 27);
             this.label11.TabIndex = 13;
             this.label11.Text = "Danh sách bệnh nhân";
             // 
@@ -213,10 +210,9 @@
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.lblPatientData);
-            this.panel1.Location = new System.Drawing.Point(10, 17);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(11, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1019, 159);
+            this.panel1.Size = new System.Drawing.Size(1165, 212);
             this.panel1.TabIndex = 15;
             // 
             // rjButton1
@@ -230,10 +226,9 @@
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.rjButton1.ForeColor = System.Drawing.Color.Black;
-            this.rjButton1.Location = new System.Drawing.Point(814, 111);
-            this.rjButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rjButton1.Location = new System.Drawing.Point(930, 148);
             this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(88, 38);
+            this.rjButton1.Size = new System.Drawing.Size(101, 51);
             this.rjButton1.TabIndex = 33;
             this.rjButton1.Text = "Khám";
             this.rjButton1.TextColor = System.Drawing.Color.Black;
@@ -251,35 +246,33 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tbxPatientName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbxPatientID, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(38, 43);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(43, 57);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(461, 97);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(527, 129);
             this.tableLayoutPanel1.TabIndex = 32;
             // 
             // cbxGender
             // 
             this.cbxGender.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbxGender.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
-            this.cbxGender.BorderSize = 2;
+            this.cbxGender.BorderSize = 3;
             this.cbxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbxGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbxGender.ForeColor = System.Drawing.Color.DimGray;
             this.cbxGender.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.cbxGender.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(218)))), ((int)(((byte)(252)))));
             this.cbxGender.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbxGender.Location = new System.Drawing.Point(165, 66);
-            this.cbxGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbxGender.MinimumSize = new System.Drawing.Size(44, 15);
+            this.cbxGender.Location = new System.Drawing.Point(189, 89);
+            this.cbxGender.MinimumSize = new System.Drawing.Size(50, 20);
             this.cbxGender.Name = "cbxGender";
-            this.cbxGender.Padding = new System.Windows.Forms.Padding(2);
-            this.cbxGender.Size = new System.Drawing.Size(293, 28);
+            this.cbxGender.Padding = new System.Windows.Forms.Padding(3);
+            this.cbxGender.Size = new System.Drawing.Size(335, 37);
             this.cbxGender.TabIndex = 74;
             this.cbxGender.Texts = "";
             // 
@@ -289,9 +282,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Dock = System.Windows.Forms.DockStyle.Left;
             this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(3, 64);
+            this.label5.Location = new System.Drawing.Point(3, 86);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 33);
+            this.label5.Size = new System.Drawing.Size(109, 43);
             this.label5.TabIndex = 13;
             this.label5.Text = "Giới tính: ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -302,9 +295,9 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Dock = System.Windows.Forms.DockStyle.Left;
             this.label4.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 32);
+            this.label4.Location = new System.Drawing.Point(3, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 32);
+            this.label4.Size = new System.Drawing.Size(91, 43);
             this.label4.TabIndex = 12;
             this.label4.Text = "Họ tên: ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -317,7 +310,7 @@
             this.label3.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 32);
+            this.label3.Size = new System.Drawing.Size(160, 43);
             this.label3.TabIndex = 11;
             this.label3.Text = "Mã bệnh nhân:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -328,17 +321,16 @@
             this.tbxPatientName.BackColor = System.Drawing.SystemColors.Window;
             this.tbxPatientName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.tbxPatientName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
-            this.tbxPatientName.BorderSize = 2;
+            this.tbxPatientName.BorderSize = 3;
             this.tbxPatientName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientName.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxPatientName.Location = new System.Drawing.Point(165, 34);
-            this.tbxPatientName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxPatientName.Location = new System.Drawing.Point(189, 46);
             this.tbxPatientName.Multiline = false;
             this.tbxPatientName.Name = "tbxPatientName";
-            this.tbxPatientName.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.tbxPatientName.Padding = new System.Windows.Forms.Padding(7);
             this.tbxPatientName.PasswordChar = false;
             this.tbxPatientName.ReadOnly = false;
-            this.tbxPatientName.Size = new System.Drawing.Size(293, 30);
+            this.tbxPatientName.Size = new System.Drawing.Size(335, 38);
             this.tbxPatientName.TabIndex = 23;
             this.tbxPatientName.Texts = "";
             this.tbxPatientName.UnderlinedStyle = false;
@@ -349,17 +341,16 @@
             this.tbxPatientID.BackColor = System.Drawing.SystemColors.Window;
             this.tbxPatientID.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.tbxPatientID.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
-            this.tbxPatientID.BorderSize = 2;
+            this.tbxPatientID.BorderSize = 3;
             this.tbxPatientID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientID.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxPatientID.Location = new System.Drawing.Point(165, 2);
-            this.tbxPatientID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxPatientID.Location = new System.Drawing.Point(189, 3);
             this.tbxPatientID.Multiline = false;
             this.tbxPatientID.Name = "tbxPatientID";
-            this.tbxPatientID.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.tbxPatientID.Padding = new System.Windows.Forms.Padding(7);
             this.tbxPatientID.PasswordChar = false;
             this.tbxPatientID.ReadOnly = false;
-            this.tbxPatientID.Size = new System.Drawing.Size(293, 30);
+            this.tbxPatientID.Size = new System.Drawing.Size(335, 38);
             this.tbxPatientID.TabIndex = 22;
             this.tbxPatientID.Texts = "";
             this.tbxPatientID.UnderlinedStyle = false;
@@ -370,17 +361,16 @@
             this.tbxPatientAddress.BackColor = System.Drawing.SystemColors.Window;
             this.tbxPatientAddress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.tbxPatientAddress.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(107)))), ((int)(((byte)(247)))));
-            this.tbxPatientAddress.BorderSize = 2;
+            this.tbxPatientAddress.BorderSize = 3;
             this.tbxPatientAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbxPatientAddress.ForeColor = System.Drawing.Color.DimGray;
-            this.tbxPatientAddress.Location = new System.Drawing.Point(653, 77);
-            this.tbxPatientAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbxPatientAddress.Location = new System.Drawing.Point(746, 103);
             this.tbxPatientAddress.Multiline = false;
             this.tbxPatientAddress.Name = "tbxPatientAddress";
-            this.tbxPatientAddress.Padding = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.tbxPatientAddress.Padding = new System.Windows.Forms.Padding(7);
             this.tbxPatientAddress.PasswordChar = false;
             this.tbxPatientAddress.ReadOnly = false;
-            this.tbxPatientAddress.Size = new System.Drawing.Size(319, 30);
+            this.tbxPatientAddress.Size = new System.Drawing.Size(365, 38);
             this.tbxPatientAddress.TabIndex = 24;
             this.tbxPatientAddress.Texts = "";
             this.tbxPatientAddress.UnderlinedStyle = false;
@@ -390,9 +380,9 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(534, 81);
+            this.label7.Location = new System.Drawing.Point(610, 108);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 22);
+            this.label7.Size = new System.Drawing.Size(88, 26);
             this.label7.TabIndex = 15;
             this.label7.Text = "Địa chỉ:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -408,10 +398,9 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(534, 110);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Location = new System.Drawing.Point(610, 147);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(88, 38);
+            this.btnAdd.Size = new System.Drawing.Size(101, 51);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.TextColor = System.Drawing.Color.Black;
@@ -425,10 +414,9 @@
             this.dtpkBob.BorderSize = 0;
             this.dtpkBob.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpkBob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkBob.Location = new System.Drawing.Point(653, 47);
-            this.dtpkBob.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpkBob.Location = new System.Drawing.Point(746, 63);
             this.dtpkBob.Name = "dtpkBob";
-            this.dtpkBob.Size = new System.Drawing.Size(320, 29);
+            this.dtpkBob.Size = new System.Drawing.Size(365, 34);
             this.dtpkBob.SkinColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
             this.dtpkBob.TabIndex = 26;
             this.dtpkBob.TextColor = System.Drawing.Color.Black;
@@ -438,9 +426,9 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(534, 49);
+            this.label6.Location = new System.Drawing.Point(610, 65);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 22);
+            this.label6.Size = new System.Drawing.Size(118, 26);
             this.label6.TabIndex = 14;
             this.label6.Text = "Ngày sinh:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -456,10 +444,9 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(908, 111);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Location = new System.Drawing.Point(1038, 148);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(88, 38);
+            this.btnExit.Size = new System.Drawing.Size(101, 51);
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "Huỷ";
             this.btnExit.TextColor = System.Drawing.Color.Black;
@@ -477,10 +464,9 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(627, 110);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Location = new System.Drawing.Point(717, 147);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(88, 38);
+            this.btnSave.Size = new System.Drawing.Size(101, 51);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextColor = System.Drawing.Color.Black;
@@ -492,9 +478,9 @@
             this.lblPatientData.AutoSize = true;
             this.lblPatientData.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPatientData.ForeColor = System.Drawing.Color.Black;
-            this.lblPatientData.Location = new System.Drawing.Point(402, 0);
+            this.lblPatientData.Location = new System.Drawing.Point(459, 0);
             this.lblPatientData.Name = "lblPatientData";
-            this.lblPatientData.Size = new System.Drawing.Size(230, 22);
+            this.lblPatientData.Size = new System.Drawing.Size(286, 27);
             this.lblPatientData.TabIndex = 0;
             this.lblPatientData.Text = "THÔNG TIN BỆNH NHÂN";
             // 
@@ -508,18 +494,18 @@
             this.gradientPanel1.Controls.Add(this.panel3);
             this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1040, 634);
+            this.gradientPanel1.Size = new System.Drawing.Size(1189, 845);
             this.gradientPanel1.TabIndex = 16;
             // 
             // PatientForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(166)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(1040, 634);
+            this.ClientSize = new System.Drawing.Size(1189, 845);
             this.Controls.Add(this.gradientPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PatientForm";
             this.Text = "Bệnh Nhân";
             this.Load += new System.EventHandler(this.PatientForm_Load);
