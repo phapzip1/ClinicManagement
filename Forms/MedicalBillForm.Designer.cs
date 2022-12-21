@@ -550,9 +550,9 @@
             this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(3, 84);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 42);
+            this.label5.Size = new System.Drawing.Size(167, 42);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Mã bệnh nhân:";
+            this.label5.Text = "Tên bệnh nhân:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6

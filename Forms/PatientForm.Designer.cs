@@ -42,7 +42,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rjButton1 = new ClinicManagement.Classes.RJButton();
+            this.btnGo = new ClinicManagement.Classes.RJButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cbxGender = new CustomControls.RJControls.RJComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.Location = new System.Drawing.Point(823, 147);
+            this.btnSearch.Location = new System.Drawing.Point(819, 147);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(101, 51);
             this.btnSearch.TabIndex = 19;
@@ -199,7 +199,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.rjButton1);
+            this.panel1.Controls.Add(this.btnGo);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Controls.Add(this.tbxPatientAddress);
             this.panel1.Controls.Add(this.label7);
@@ -215,25 +215,25 @@
             this.panel1.Size = new System.Drawing.Size(1165, 212);
             this.panel1.TabIndex = 15;
             // 
-            // rjButton1
+            // btnGo
             // 
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
-            this.rjButton1.BorderRadius = 20;
-            this.rjButton1.BorderSize = 2;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjButton1.ForeColor = System.Drawing.Color.Black;
-            this.rjButton1.Location = new System.Drawing.Point(930, 148);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(101, 51);
-            this.rjButton1.TabIndex = 33;
-            this.rjButton1.Text = "Khám";
-            this.rjButton1.TextColor = System.Drawing.Color.Black;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.AppendHandler);
+            this.btnGo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnGo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(175)))), ((int)(((byte)(252)))));
+            this.btnGo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(164)))), ((int)(((byte)(250)))));
+            this.btnGo.BorderRadius = 20;
+            this.btnGo.BorderSize = 2;
+            this.btnGo.FlatAppearance.BorderSize = 0;
+            this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGo.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGo.ForeColor = System.Drawing.Color.Black;
+            this.btnGo.Location = new System.Drawing.Point(926, 148);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(101, 51);
+            this.btnGo.TabIndex = 33;
+            this.btnGo.Text = "Khám";
+            this.btnGo.TextColor = System.Drawing.Color.Black;
+            this.btnGo.UseVisualStyleBackColor = false;
+            this.btnGo.Click += new System.EventHandler(this.AppendHandler);
             // 
             // tableLayoutPanel1
             // 
@@ -354,6 +354,7 @@
             this.tbxPatientID.TabIndex = 22;
             this.tbxPatientID.Texts = "";
             this.tbxPatientID.UnderlinedStyle = false;
+            this.tbxPatientID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxPatientID_KeyPress);
             // 
             // tbxPatientAddress
             // 
@@ -398,7 +399,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(610, 147);
+            this.btnAdd.Location = new System.Drawing.Point(606, 147);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(101, 51);
             this.btnAdd.TabIndex = 4;
@@ -444,7 +445,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnExit.ForeColor = System.Drawing.Color.Black;
-            this.btnExit.Location = new System.Drawing.Point(1038, 148);
+            this.btnExit.Location = new System.Drawing.Point(1034, 148);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(101, 51);
             this.btnExit.TabIndex = 12;
@@ -464,7 +465,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Location = new System.Drawing.Point(717, 147);
+            this.btnSave.Location = new System.Drawing.Point(713, 147);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 51);
             this.btnSave.TabIndex = 12;
@@ -549,6 +550,6 @@
         private DataGridViewTextBoxColumn Gender;
         private DataGridViewTextBoxColumn YearOfBirth;
         private DataGridViewTextBoxColumn DiaChi;
-        private Classes.RJButton rjButton1;
+        private Classes.RJButton btnGo;
     }
 }
