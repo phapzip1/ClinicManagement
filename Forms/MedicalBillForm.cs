@@ -255,7 +255,7 @@ namespace ClinicManagement.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Mã sản phẩm đã tồn tại");
+                    MessageBox.Show("Thông tin bị lỗi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -309,6 +309,10 @@ namespace ClinicManagement.Forms
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
             }
         }
     }   

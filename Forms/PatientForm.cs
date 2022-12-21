@@ -65,16 +65,15 @@ namespace ClinicManagement.Forms
 
             dtgvPatientList.DataSource = patientDetailBinding;
 
-            //lblNextPatient.Text = Models.InforForm.Next_Patient.ToString();
             ResetMonitor();
 
             // fill cbxGender
             cbxGender.Items.Add("Nam");
             cbxGender.Items.Add("Nữ");
 
-            //dtgvQueue.AllowUserToAddRows = false;
-            //dtgvQueue.ReadOnly= true;
             dtgvPatientList.ReadOnly= true;
+
+            dtpkBob.MaxDate= DateTime.Now.AddDays(+1).Date;
         }
 
         //Hàm
@@ -82,7 +81,7 @@ namespace ClinicManagement.Forms
         private void ResetMonitor()
         {
             tbxPatientID.Texts = "";
-            tbxPatientID.ReadOnly = true;
+            //tbxPatientID.ReadOnly = true;
             tbxPatientName.Texts = "";
             tbxPatientName.ReadOnly = false;
             tbxPatientAddress.Texts = "";
@@ -189,9 +188,6 @@ namespace ClinicManagement.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //string gender;
-            //if (cbxGender.SelectedItem.ToString() == "Nam") { gender = "male"; }
-            //else { gender = "female"; }
             bool isDigitPresent = tbxPatientID.Texts.ToString().Any(c => char.IsDigit(c));
 
             if (tbxPatientName.Texts.ToString().Length> 30)
@@ -292,7 +288,6 @@ namespace ClinicManagement.Forms
                 tbxPatientName.Texts = fullname;
                 tbxPatientAddress.Texts = address;
                 cbxGender.Texts = gender;
-                //dtpkBob.Value = DateTime.ParseExact(dob, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 dtpkBob.Text = dob;
             }
         }
@@ -332,6 +327,17 @@ namespace ClinicManagement.Forms
                 MessageBox.Show("Chọn 1 bệnh nhân!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-            
+
+        private void tbxPatientID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
     }
 }
