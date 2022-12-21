@@ -353,6 +353,7 @@
             this._stock.Location = new System.Drawing.Point(444, 18);
             this._stock.Margin = new System.Windows.Forms.Padding(0);
             this._stock.Name = "_stock";
+            this._stock.ReadOnly = true;
             this._stock.Size = new System.Drawing.Size(136, 23);
             this._stock.TabIndex = 25;
             // 

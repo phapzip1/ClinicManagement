@@ -69,7 +69,7 @@ namespace ClinicManagement.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Mã sản phẩm đã tồn tại");
+                    MessageBox.Show("Mã sản phẩm đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -113,16 +113,6 @@ namespace ClinicManagement.Forms
                     });
                 }
             });
-        }
-
-        private void _btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void _btnAdd_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

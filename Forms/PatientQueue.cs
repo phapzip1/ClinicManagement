@@ -30,7 +30,7 @@ namespace ClinicManagement.Forms
             }
             else
             {
-                MessageBox.Show("Không còn bệnh nhân nào");
+                MessageBox.Show("Không còn bệnh nhân nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -43,7 +43,7 @@ namespace ClinicManagement.Forms
             }
             else
             {
-                MessageBox.Show("Không còn bệnh nhân nào");
+                MessageBox.Show("Không còn bệnh nhân nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

@@ -39,7 +39,7 @@ namespace ClinicManagement.Forms
                 IDataUpdater updater = new DBUpdater(_clinicDbContextFactory);
                 updater.UpdateParameters(cost, max).ContinueWith(res =>
                 {
-                    MessageBox.Show("Thay đổi thành công");
+                    MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 });
             }
         }

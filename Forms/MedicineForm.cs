@@ -86,7 +86,7 @@ namespace ClinicManagement.Forms
                     {
                         if (!res.IsFaulted)
                         {
-                            MessageBox.Show("Thêm Thành công");
+                            MessageBox.Show("Thêm Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }).ContinueWith(res =>
                     {
@@ -95,7 +95,7 @@ namespace ClinicManagement.Forms
             }
             else
             {
-                MessageBox.Show("Trường tên hoặc đơn vị trống!");
+                MessageBox.Show("Trường tên hoặc đơn vị trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -107,7 +107,7 @@ namespace ClinicManagement.Forms
             {
                 if (!res.IsFaulted)
                 {
-                    MessageBox.Show("Xóa Thành công");
+                    MessageBox.Show("Xóa Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }).ContinueWith(res =>
             {
@@ -126,7 +126,7 @@ namespace ClinicManagement.Forms
                 {
                     if (!res.IsFaulted)
                     {
-                        MessageBox.Show("Thêm Thành công");
+                        MessageBox.Show("Thêm Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }).ContinueWith(res =>
                 {
@@ -135,7 +135,7 @@ namespace ClinicManagement.Forms
             }
             else
             {
-                MessageBox.Show("Trường tên trống!");
+                MessageBox.Show("Trường tên trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

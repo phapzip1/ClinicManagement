@@ -22,17 +22,17 @@ namespace ClinicManagement.Forms
                 {
                     updater.UpdatePassword(_password.Texts).ContinueWith(res =>
                     {
-                        MessageBox.Show("Thao tác thành công");
+                        MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     });
                 }
                 else
                 {
-                    MessageBox.Show("Mật khẩu không khớp");
+                    MessageBox.Show("Mật khẩu không khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Không được để trống");
+                MessageBox.Show("Không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

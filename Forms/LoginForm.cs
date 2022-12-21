@@ -42,7 +42,7 @@ namespace ClinicManagement.Forms
                             {
                                 this.Invoke((MethodInvoker)delegate
                                 {
-                                    MessageBox.Show("Đăng nhập thành công");
+                                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.success = true;
                                     this.Close();
                                 });
@@ -50,18 +50,18 @@ namespace ClinicManagement.Forms
                         }
                         else
                         {
-                            MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác");
+                            MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     });
                 }
                 else
                 {
-                    MessageBox.Show("Username hoặc mật khẩu không chính xác");
+                    MessageBox.Show("Username hoặc mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Không được để trống");
+                MessageBox.Show("Không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

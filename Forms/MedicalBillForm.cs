@@ -220,7 +220,7 @@ namespace ClinicManagement.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Hãy chọn bệnh");
+                    MessageBox.Show("Hãy chọn bệnh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }           
         }
@@ -255,7 +255,7 @@ namespace ClinicManagement.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Mã sản phẩm đã tồn tại");
+                    MessageBox.Show("Mã sản phẩm đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
