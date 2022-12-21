@@ -266,7 +266,10 @@ namespace ClinicManagement.Forms
         {
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn huỷ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.OK)
-            ResetMonitor();
+            {
+                ResetMonitor();
+                dtgvPatientList.ClearSelection();
+            }
         }
 
         private void PatientForm_Load(object sender, EventArgs e)

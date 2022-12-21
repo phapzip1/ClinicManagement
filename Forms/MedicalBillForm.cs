@@ -2,6 +2,7 @@
 using ClinicManagement.DbContexts;
 using ClinicManagement.Models;
 using ClinicManagement.Services;
+using Google.Protobuf.WellKnownTypes;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Office.Interop.Excel;
 using System;
@@ -27,6 +28,7 @@ namespace ClinicManagement.Forms
         private Guid guid1 = Guid.NewGuid();
         private IDataProvider provider;
         private IDataCreator creator;
+        private IDataUpdater updater;
 
         private BindingList<ComboboxItem> IllnessbindingLists;
         private BindingList<ComboboxItem> MedicinesbindingLists;
@@ -53,6 +55,7 @@ namespace ClinicManagement.Forms
 
             provider = new DBProvider(_clinicDbContextFactory);
             creator = new DBCreator(_clinicDbContextFactory);
+            updater = new DBUpdater(_clinicDbContextFactory);
 
             #region tenbenh, tenthuoc, cachdung
             //Ten benh
@@ -239,13 +242,13 @@ namespace ClinicManagement.Forms
             {
                 MessageBox.Show("Hãy chọn cách dùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (cbxMedicines.SelectedItem != null)
+            else 
             {
                 ComboboxItem item = (ComboboxItem)cbxMedicines.SelectedItem;
                 Medicine value = (Medicine)item.Value;
 
                 ComboboxItem item1 = (ComboboxItem)cbxUsage.SelectedItem;
-                Method value1 = (Method)item1.Value;
+                Models.Method value1 = (Models.Method)item1.Value;
 
                 if (((List<MedicalNoteDetail>)medicineBinding.List).Where(p => p.MedicineId == value.Id).Count() == 0)
                 {

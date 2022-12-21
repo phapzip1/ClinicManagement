@@ -182,6 +182,7 @@ namespace ClinicManagement.Forms
             {
                 ResetMonitor1();
                 isAdd1= false;
+                dtgvUnit.ClearSelection();
             }
         }
 
@@ -273,6 +274,7 @@ namespace ClinicManagement.Forms
             {
                 ReserMonitor2();
                 isAdd2= false;
+                dtgvUsage.ClearSelection();
             }
         }
 

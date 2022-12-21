@@ -141,8 +141,10 @@ namespace ClinicManagement.Forms
             DialogResult= MessageBox.Show("Bạn chắc chắn muốn huỷ?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (DialogResult == DialogResult.OK)
             {
+                dtgvIllnessList.Refresh();
                 ResetMonitor();
                 isSave= false;
+                dtgvIllnessList.ClearSelection();
             }
         }
 
