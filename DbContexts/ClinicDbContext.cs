@@ -21,10 +21,10 @@ namespace ClinicManagement.DbContexts
         public DbSet<ParameterDTO> Parameters { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            
+        {           
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<MedicalNoteDetailDTO>().HasKey(e => new {e.MedicineId, e.MedicalNoteId });
+            modelBuilder.Entity<MedicalNoteDTO>().HasOne(p => p.Patient).WithMany(p => p.Notes).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<ImportDetailDTO>().HasKey(e => new { e.ImportId, e.MedicineId });
         }
     }

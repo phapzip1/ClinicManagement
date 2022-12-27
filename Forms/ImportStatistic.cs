@@ -37,7 +37,7 @@ namespace ClinicManagement.Forms
             saveFileDialog1.Filter = "Excel |*.xlsx";
             saveFileDialog1.Title = "Báo cáo doanh thu theo tháng";
 
-            for (int i = 2000; i <= yearnow; i++)  // fill cbbYear
+            for (int i = 2015; i <= yearnow; i++)  // fill cbbYear
             {
                 cbbYear.Items.Add(i.ToString());
             }

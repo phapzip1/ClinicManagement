@@ -35,15 +35,15 @@ namespace ClinicManagement.Forms
             dataGridView1.DataSource = medicineDetailBinding;
 
 
-            dataGridView1.AllowUserToAddRows = false;         
+            dataGridView1.AllowUserToAddRows = false;
             saveFileDialog1.Filter = "Excel |*.xlsx";
             saveFileDialog1.Title = "Báo cáo doanh thu theo tháng";
-           
-            for (int i=2000; i <= yearnow ; i++)  // fill cbbYear
+
+            for (int i = 2015; i <= yearnow; i++)  // fill cbbYear
             {
                 cbbYear.Items.Add(i.ToString());
             }
-            
+
         }
         private void ToExcel(DataGridView dataGridView1, string fileName)
         {
@@ -73,7 +73,7 @@ namespace ClinicManagement.Forms
                 {
                     for (int j = 0; j < dataGridView1.ColumnCount; j++)
                     {
-                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();                       
+                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
                     }
                 }
                 // sử dụng phương thức SaveAs() để lưu workbook với filename
@@ -81,7 +81,7 @@ namespace ClinicManagement.Forms
                 //đóng workbook
                 workbook.Close();
                 excel.Quit();
-                MessageBox.Show("Chúc mừng. Bạn đã xuất dữ liệu ra Excel thành công!","Thông Báo !!", MessageBoxButtons.OK,MessageBoxIcon.Information );
+                MessageBox.Show("Chúc mừng. Bạn đã xuất dữ liệu ra Excel thành công!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -94,7 +94,7 @@ namespace ClinicManagement.Forms
             }
         }
         private void btnExport_Click(object sender, EventArgs e)
-        {                      
+        {
             if (dataGridView1.Rows.Count == 0)
                 MessageBox.Show("Chưa có thông tin để in. Vui lòng chọn 'Xem báo cáo' trước khi in!", "Thông Báo !!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -108,7 +108,7 @@ namespace ClinicManagement.Forms
         {
             int totalpatients = 0;
             int totalrevenue = 0;
-            string month = cbbMonth.SelectedItem.ToString();          
+            string month = cbbMonth.SelectedItem.ToString();
             string year = cbbYear.SelectedItem.ToString();
 
             dataGridView1.Rows.Clear();
@@ -116,35 +116,36 @@ namespace ClinicManagement.Forms
 
             provider.GetStatistic(int.Parse(month), int.Parse(year)).ContinueWith(res =>
             {
-                if (res.Result.Count() >= 1) {
-                    dataGridView1.Invoke((MethodInvoker)delegate
+                dataGridView1.Invoke((MethodInvoker)delegate
+                {
+                    if (res.Result.Count() >= 1)
                     {
+                        totalrevenue = res.Result.Sum(p => p.Revenue);
                         int i = 1;
                         foreach (var item in res.Result)
                         {
-                            medicineDetailBinding.Add(new IndexStatistic(i++, item));
+                            medicineDetailBinding.Add(new IndexStatistic(i++, totalrevenue, item));
                             totalpatients += item.PatientCount;
-                            totalrevenue += item.Revenue;
                         }
                         lbltotalpatients.Text = totalpatients.ToString() + " người";
                         lbltotalrevenue.Text = totalrevenue.ToString() + " VNĐ";
                         groupBox1.Text = "Tổng hợp báo cáo tháng " + month.ToString() + " năm " + year.ToString();
-                    });
 
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lbltotalpatients.Text = "........................................";
-                    lbltotalrevenue.Text = "........................................";
-                    groupBox1.Text = "Tổng hợp báo cáo";
-                }
-                
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy thông tin. Vui lòng chọn thời gian khác !", "Thông báo !!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        lbltotalpatients.Text = "........................................";
+                        lbltotalrevenue.Text = "........................................";
+                        groupBox1.Text = "Tổng hợp báo cáo";
+                    }
+                });
+          
             });
         }
         private void StatisticForm_Load(object sender, EventArgs e)
-        {          
-            cbbMonth.SelectedItem = monthnow.ToString();          
+        {
+            cbbMonth.SelectedItem = monthnow.ToString();
             cbbYear.SelectedItem = yearnow.ToString();
         }
     }

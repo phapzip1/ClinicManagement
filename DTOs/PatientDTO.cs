@@ -15,5 +15,6 @@ namespace ClinicManagement.DTOs
         public string Gender { get; set; }
         public DateTime Dob { get; set; }
         public string Address { get; set; }
+        public ICollection<MedicalNoteDTO> Notes { get; set; }
     }
 }

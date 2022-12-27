@@ -4,12 +4,6 @@ namespace ClinicManagement.Models
 {
     public class Statistic
     {
-        public Statistic(int day, int patientCount, int revenue)
-        {
-            Day = day;
-            PatientCount = patientCount;
-            Revenue = revenue;
-        }
 
         public Statistic(DateTime date, int patientCount, int revenue)
         {
@@ -28,11 +22,12 @@ namespace ClinicManagement.Models
         public int Day { get; }
         public int PatientCount { get; }
         public int Revenue { get; }
-        public float Ratio
+        protected int _total;
+        public string Ratio
         {
             get
             {
-                return Revenue / (float)PatientCount;
+                return (Revenue * 100 / (float)_total).ToString("0.00");
             }
         }
     }
