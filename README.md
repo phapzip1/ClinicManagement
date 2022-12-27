@@ -22,4 +22,6 @@ Mở file source code (đã cài đặt từ Github) bằng Visual Studio, sau �
 ***Tài khoản mẫu cho user:***    
 
 ***Tài khoản mẫu cho admin:***     
+admin 
+123456 
 
